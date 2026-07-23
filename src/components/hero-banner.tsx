@@ -7,7 +7,7 @@ export default function HeroSection() {
       {/* Subtle Background Glows */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-emerald-600/10 blur-[120px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
       
-      <div className="container mx-auto px-6 py-16 md:py-24 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center z-10 relative">
+      <div className="container mx-auto py-16 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center z-10 relative">
         
         {/* Left Column: Text Content */}
         <div className="max-w-xl">

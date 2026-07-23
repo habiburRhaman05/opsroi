@@ -141,8 +141,16 @@
   }
 }
 
-/* OpsROI custom scroll-reveal and stagger animations */
+/* Override Tailwind container — cap at 1000px on lg+ (1024px+) */
 @layer utilities {
+  @media (min-width: 64rem) {
+    .container {
+      max-width: 1000px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+
   .auto-reveal {
     opacity: 0;
     transform: translateY(32px);

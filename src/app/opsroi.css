@@ -64,7 +64,6 @@
   --display: var(--font-bebas-neue), 'Segoe UI', sans-serif;
   --body: var(--font-roboto), 'Segoe UI', sans-serif;
 
-  --container: 1200px;
   --radius: 16px;
   --radius-sm: 10px;
   --shadow: 0 10px 30px rgba(29, 78, 95, 0.08);
@@ -183,12 +182,6 @@ h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; }
 h3 { font-size: 1.25rem; font-weight: 700; }
 
 p { color: var(--ink-soft); }
-
-.container {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 32px;
-}
 
 .eyebrow {
   display: inline-flex;
@@ -836,6 +829,22 @@ section { padding: 88px 0; scroll-margin-top: 84px; }
 .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
 /* -------------------- Contact form -------------------- */
+.form-error {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #d75a4a;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+.form-float input[aria-invalid="true"],
+.form-float select[aria-invalid="true"],
+.form-float textarea[aria-invalid="true"] {
+  border-color: #d75a4a;
+  box-shadow: 0 0 0 4px rgba(215, 90, 74, 0.12);
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -1031,7 +1040,6 @@ section { padding: 88px 0; scroll-margin-top: 84px; }
   }
 
   .header-row { padding: 14px 20px; }
-  .container { padding: 0 20px; }
   section { padding: 60px 0; }
   .hero { padding: 48px 0; }
   .grid-3, .grid-4, .grid-2 { grid-template-columns: 1fr; }
