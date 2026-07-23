@@ -1,5 +1,5 @@
-import { ScrollReveal } from "@/components/ScrollReveal";
-import { SectionLabel } from "@/components/ui/SectionLabel";
+import { ScrollReveal } from "@/src/components/ScrollReveal";
+import { SectionLabel } from "@/src/components/ui/SectionLabel";
 
 type SectionHeaderProps = {
   label: string;

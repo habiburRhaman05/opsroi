@@ -1,13 +1,9 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Inter, Roboto } from "next/font/google";
+import { Bebas_Neue, Roboto } from "next/font/google";
 import "./globals.css";
-import ScrollRevealObserver from "@/components/ScrollRevealObserver";
+import ScrollRevealObserver from "@/src/components/ScrollRevealObserver";
 
-const bebasNeue = Inter({
-  weight: "400",
- variable: '--font-inter',
-  subsets: ["latin"],
-});
+
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -28,7 +24,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bebasNeue.variable} ${roboto.variable} h-full antialiased scroll-smooth`}
+      className={` ${roboto.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col font-roboto">
         <ScrollRevealObserver />

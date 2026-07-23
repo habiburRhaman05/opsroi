@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useCallback, useMemo } from "react";
-import { ScrollReveal } from "@/components/ScrollReveal";
-import { SectionLabel } from "@/components/ui/SectionLabel";
-import { ICON_MAP, SearchIcon, PenIcon, DocusignIcon, MailchimpIcon, WixIcon, GoogleAdsIcon, MetaIcon } from "@/lib/icons";
-import { TIERS, type CalculatorItem, type TierKey } from "@/lib/calculator";
+import { ScrollReveal } from "@/src/components/ScrollReveal";
+import { SectionLabel } from "@/src/components/ui/SectionLabel";
+import { ICON_MAP, SearchIcon, PenIcon, DocusignIcon, MailchimpIcon, WixIcon, GoogleAdsIcon, MetaIcon } from "@/src/lib/icons";
+import { TIERS, type CalculatorItem, type TierKey } from "@/src/lib/calculator";
 
 const BRAND_ICONS: Record<string, React.ComponentType> = {
   docusign: DocusignIcon,
@@ -173,37 +173,27 @@ export function Calculator() {
   return (
     <section
       id="calculator"
-      className="pt-0 pb-24 bg-mist"
+      className="pt-20 pb-24 bg-mist"
     >
       
-      <div className="max-w-[1200px] mx-auto px-6 md:px-8">
-        <ScrollReveal>
-          <SectionLabel>Your Easiest Sell</SectionLabel>
-        </ScrollReveal>
-        <ScrollReveal>
-          <div className="inline-flex items-center gap-2 text-xs font-bold bg-white border border-line text-ink-soft px-3 py-1.5 rounded-full mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-green" />
-            Live preview, the exact tool you&apos;d hand your own prospects
-          </div>
-        </ScrollReveal>
-        <ScrollReveal>
-          <h2 className="text-xl sm:text-4xl md:text-5xl max-w-3xl mb-8">
-            You won&apos;t pitch software. You&apos;ll open this calculator,
-            tap what an operator already pays, and let the number close for
-            you.
-          </h2>
-        </ScrollReveal>
-        <ScrollReveal>
-          <div className="bg-[rgba(125,194,67,0.06)] border border-green/20 rounded-2xl p-5 md:p-6 max-w-2xl mb-16">
-            <p className="text-sm text-ink leading-relaxed">
-              <b className="text-green-deep">Try it yourself below</b> - this
-              runs on OpsROI&apos;s real tools and live pricing, the same
-              calculator your own trade&apos;s version would run once
-              it&apos;s built and tuned to your industry&apos;s stack. Tap the
-              tools and services a typical 15-20 person crew uses today.
+      <div className="max-w-[1056px] mx-auto px-6 md:px-8">
+        <div className="text-center mx-auto mb-12 max-w-3xl">
+          <ScrollReveal>
+            <SectionLabel className="justify-center">Your Easiest Sell</SectionLabel>
+          </ScrollReveal>
+          <ScrollReveal>
+            <h2 className="text-xl sm:text-4xl md:text-5xl">
+              Tap what they pay.{" "}
+              <span className="text-green">See what they save.</span>
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal>
+            <p className="text-ink-soft text-sm sm:text-base mx-auto max-w-xl">
+              A live calculator running on real OpsROI pricing. Pick the tools
+              and services a typical crew uses — the number closes itself.
             </p>
-          </div>
-        </ScrollReveal>
+          </ScrollReveal>
+        </div>
 
         <div className="grid lg:grid-cols-[1.4fr_1fr] gap-10 items-start">
           <ScrollReveal>

@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import Header from '@/src/components/Header';
+import Footer from '@/src/components/Footer';
 import Link from 'next/link';
 
 export default function StoryPage() {

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "./opsroi.css";
+@import "./opsroi.css" layer(base);
 
 @custom-variant dark (&:is(.dark *));
 
@@ -140,3 +140,63 @@
     @apply font-sans;
   }
 }
+
+/* OpsROI custom scroll-reveal and stagger animations */
+@layer utilities {
+  .auto-reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .auto-reveal.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .auto-reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  .stagger-item {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: calc(min(var(--stagger-i, 0), 8) * 70ms);
+  }
+  .stagger-group.is-revealed > .stagger-item {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .stagger-item-fade {
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: calc(min(var(--stagger-i, 0), 8) * 70ms);
+  }
+  .stagger-group.is-revealed > .stagger-item-fade {
+    opacity: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .stagger-item, .stagger-item-fade { opacity: 1; transform: none; transition: none; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--reveal-delay, 0s);
+    will-change: opacity, transform;
+  }
+  .reveal.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-fade {
+    opacity: 0;
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--reveal-delay, 0s);
+  }
+  .reveal-fade.is-revealed { opacity: 1; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal-fade { opacity: 1; transform: none; transition: none; }
+  }
+}
+

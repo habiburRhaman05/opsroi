@@ -61,7 +61,7 @@ export default function Header() {
           <path d="M9 14V4M9 4l-5 5M9 4l5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
-    <header className={`site-header ${isScrolled ? 'scrolled' : ''}`} id="siteHeader">
+    <header className={` container  site-header ${isScrolled ? 'scrolled' : ''}`} id="siteHeader">
       <div className="header-pill">
         <Link href="/" className="brand">
           <Image src="/OpsROI-header.webp" alt="OpsROI logo" width={100} height={32}  />
