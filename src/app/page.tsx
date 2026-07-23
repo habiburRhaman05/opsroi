@@ -24,7 +24,7 @@ export default function Home() {
       <main>
         <Hero />
         {/* <HeroSection/> */}
-        <TrustCarousel />
+        {/* <TrustCarousel /> */}
         <FeatureTabs />
         <Services />
         <HowItWorks />
