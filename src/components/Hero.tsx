@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { Play, X, ArrowRight, CheckCircle2, Zap, ShieldCheck, Sparkles } from 'lucide-react';
 
-const WORDS = ["Marketing Agencies.", "Coaching.", "Creative Studios.", "Home Services.", "Every Agency."];
+const WORDS = ["Marketing Agencies.", "Crm Automation.", "Creative Studios."];
 const LONGEST_WORD = "Marketing Agencies.";
 const DEMO_VIDEO_ID = "dQw4w9WgXcQ"; // Demo video ID
 
