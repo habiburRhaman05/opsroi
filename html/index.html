@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpsROI - The CRM Built for Agencies, Not One Industry</title>
+<meta name="description" content="OpsROI is the CRM and client-ops platform built for agencies of any niche - pipelines, automation, and ROI reporting in one place.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="header-pill">
+    <a href="#home" class="brand">
+      <img src="OpsROI-header.webp" alt="OpsROI logo">
+    </a>
+    <nav class="nav" id="siteNav">
+      <a href="#home" class="active">Home</a>
+      <a href="#product">Product</a>
+      <a href="#why">Why OpsROI</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="nav-cta-mobile">Contact us</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#contact" class="btn btn-primary">Contact us</a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteNav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+
+<!-- ================================================================
+     REPLACES the <section id="home" class="hero"> block.
+     Full-bleed dark hero (navy → navy-deep gradient, same tokens),
+     pill badge, and a floating dashboard mockup built in pure CSS
+     (no image asset needed) standing in for the product screenshot.
+     ================================================================ -->
+<section id="home" class="hero">
+  <div class="hero-glow hero-glow--a"></div>
+  <div class="hero-glow hero-glow--b"></div>
+
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="hero-badge fade-in-up" style="animation-delay: 0s;">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M9 1L3 9h4l-1 6 6-8H8l1-6z" fill="var(--green)"/></svg>
+        AI-Powered &middot; Built for Agencies
+      </div>
+
+      <h1 class="hero-h1 fade-in-up" style="animation-delay: 0.08s;">The <span class="ai-gradient">AI-powered</span> business operating system<br><span class="typewriter-wrap">for <span id="typewriter" class="typewriter-text">Marketing Agencies.</span><span class="type-cursor">|</span></span></h1>
+
+      <p class="lede fade-in-up" style="animation-delay: 0.16s;">One platform to run pipelines, automate follow-up, and prove ROI - powered by AI, built for any agency.</p>
+
+      <div class="hero-cta fade-in-up" style="animation-delay: 0.24s;">
+        <a href="#contact" class="btn btn-primary hero-btn-primary">
+          Start 14 Day Free Trial
+          <span class="hero-btn-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h9M7 3l4 4-4 4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a href="#product" class="btn btn-ghost hero-btn-ghost">See the platform →</a>
+      </div>
+
+      <div class="hero-note fade-in-up" style="animation-delay: 0.32s;">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="var(--green)" stroke-width="2"/><path d="M6 10.5l2.5 2.5L14 7" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        No credit card · 4-5 day setup · Any niche
+      </div>
+    </div>
+
+    <div class="hero-art fade-in-up" style="animation-delay: 0.3s;">
+      <div class="hero-art-glow"></div>
+      <div class="hero-image-wrap float-anim" id="heroImageWrap">
+        <img src="image/opsroi-dashboard.png" alt="OpsROI Dashboard" class="hero-real-image">
+        <!-- <img src="image/opsroi-dashboard.png" alt="" aria-hidden="true" class="hero-real-image-reflection"> -->
+        <div class="hero-float-badge hero-float-badge--a" style="top: 8%; right: -6%;">
+          <span class="hero-float-dot"></span> Live sync active
+        </div>
+        <div class="hero-float-badge hero-float-badge--b" style="bottom: 30%; left: -7%;">
+          <strong>+40%</strong> leads this month
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUST LOGOS CAROUSEL ================= -->
+<section class="trust-carousel-section">
+  <div class="container">
+    <div class="trust-header">
+      <span class="trust-label">Built for Any Client-Based Business</span>
+    </div>
+    
+    <div class="trust-slider-wrap">
+      <button class="trust-arrow trust-prev" id="trustPrev" aria-label="Previous"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      
+      <div class="trust-track-container" data-lenis-prevent>
+        <div class="trust-track" id="trustTrack">
+          <!-- Logo 1 -->
+         
+          <!-- Logo 3 -->
+          <div class="trust-slide">
+            <div class="trust-slide-inner" data-tooltip="Creative Studios">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 19l7-7 3 3-7 7-3-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M2 2l7.586 7.586" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+          <!-- Logo 4 -->
+          <div class="trust-slide">
+            <div class="trust-slide-inner" data-tooltip="Home Services">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 22V12h6v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <!-- Logo 5 -->
+          <div class="trust-slide">
+            <div class="trust-slide-inner" data-tooltip="Recruiting">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 21v-2a4 4 0 00-3-3.87" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <!-- Logo 6 -->
+          <div class="trust-slide">
+            <div class="trust-slide-inner" data-tooltip="SaaS & Tech">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+          <!-- Logo 7 -->
+          <div class="trust-slide">
+            <div class="trust-slide-inner" data-tooltip="Real Estate">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+           <div class="trust-slide">
+            <div class="trust-slide-inner" data-tooltip="Marketing Agencies">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <!-- Logo 2 -->
+          <div class="trust-slide">
+            <div class="trust-slide-inner" data-tooltip="Coaching & Consulting">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 21v-2a4 4 0 014-4h8a4 4 0 014 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <button class="trust-arrow trust-next" id="trustNext" aria-label="Next"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+    
+    <div class="trust-dots" id="trustDots"></div>
+  </div>
+</section>
+
+<!-- ================= FEATURE TABS (CHECKLIST STYLE) ================= -->
+<section id="product" class="section-alt feature-tabs">
+  <div class="container">
+    <div class="section-head center reveal" style="margin:0 auto 36px;">
+      <div class="eyebrow" style="justify-content:center;">Inside the Platform</div>
+      <h2>One platform for every stage of the client relationship.</h2>
+      <p>All the tools your agency needs to capture, run, and prove client work - in one place.</p>
+    </div>
+
+    <div class="tabs-wrap">
+      <div class="tab-list" role="tablist">
+        <button class="tab-btn active" data-ftab="capture">Capture</button>
+        <button class="tab-btn" data-ftab="nurture">Nurture</button>
+        <button class="tab-btn" data-ftab="close">Close</button>
+        <button class="tab-btn" data-ftab="report">Report</button>
+        <button class="tab-btn" data-ftab="retain">Retain</button>
+      </div>
+
+      <div class="feature-panel">
+
+        <div class="tab-panel active" id="ftab-capture">
+          <div class="feature-panel-grid">
+            <div>
+              <div class="feature-icon-badge"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 4l14 7-14 7 3-7-3-7z" stroke="#7DC243" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+              <h3>Get more leads in the door</h3>
+              <p class="feature-desc">Attract the right people, turn interest into leads, and keep your pipeline full - without a separate tool for every channel.</p>
+              <ul class="feature-checklist">
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Core CRM &amp; pipelines</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Forms, surveys &amp; quizzes</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Websites &amp; landing pages</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Missed-call text-back</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Chat widget / inbound DMs</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Ad &amp; social lead sync</li>
+              </ul>
+              <a href="#contact" class="btn btn-primary">Get Started Free →</a>
+            </div>
+            <div class="feature-visual">
+              <div class="chat-bubble-tag"><div class="chat-bubble-avatar">OR</div>OpsROI · Missed call</div>
+              <div class="chat-bubble">Sorry we missed your call! Want to book a time that works?</div>
+              <div class="visual-block" style="width:80%;"></div>
+              <div class="visual-block" style="width:55%;"></div>
+              <div class="visual-block" style="width:65%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="ftab-nurture">
+          <div class="feature-panel-grid">
+            <div>
+              <div class="feature-icon-badge"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 19l5-6 4 4 7-9" stroke="#ECB84D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <h3>Keep leads warm, automatically</h3>
+              <p class="feature-desc">Every lead gets followed up with - every time - without a rep having to remember to send it.</p>
+              <ul class="feature-checklist">
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Email &amp; SMS sequences</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Lead scoring &amp; tagging</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Auto-routing to the right rep</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Task reminders for your team</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Multi-channel drip campaigns</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Calendar &amp; booking sync</li>
+              </ul>
+              <a href="#contact" class="btn btn-primary">Get Started Free →</a>
+            </div>
+            <div class="feature-visual">
+              <div class="chat-bubble-tag"><div class="chat-bubble-avatar">OR</div>Follow-up sequence</div>
+              <div class="chat-bubble">Still thinking it over? Here's what other agencies asked before switching.</div>
+              <div class="visual-block" style="width:70%;"></div>
+              <div class="visual-block" style="width:50%;"></div>
+              <div class="visual-block" style="width:60%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="ftab-close">
+          <div class="feature-panel-grid">
+            <div>
+              <div class="feature-icon-badge"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="4" width="18" height="14" rx="2" stroke="#1D4E5F" stroke-width="1.8"/><path d="M2 8h18" stroke="#1D4E5F" stroke-width="1.8"/></svg></div>
+              <h3>Turn conversations into signed clients</h3>
+              <p class="feature-desc">Proposals, contracts, and payment collection live next to the lead record, so nothing gets handled outside the CRM.</p>
+              <ul class="feature-checklist">
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#1D4E5F"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Proposal &amp; e-signature</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#1D4E5F"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Invoicing &amp; payment links</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#1D4E5F"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Deal stage automation</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#1D4E5F"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Client onboarding forms</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#1D4E5F"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Subaccount auto-creation</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#1D4E5F"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Won/lost reason tracking</li>
+              </ul>
+              <a href="#contact" class="btn btn-primary">Get Started Free →</a>
+            </div>
+            <div class="feature-visual">
+              <div class="chat-bubble-tag"><div class="chat-bubble-avatar">OR</div>Deal won</div>
+              <div class="chat-bubble">Proposal signed - subaccount created and onboarding sequence started.</div>
+              <div class="visual-block" style="width:75%;"></div>
+              <div class="visual-block" style="width:45%;"></div>
+              <div class="visual-block" style="width:58%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="ftab-report">
+          <div class="feature-panel-grid">
+            <div>
+              <div class="feature-icon-badge"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#7DC243" stroke-width="1.8"/><path d="M11 6v5l3.5 2" stroke="#7DC243" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+              <h3>Prove the ROI, without the spreadsheet</h3>
+              <p class="feature-desc">White-labeled dashboards update automatically, so clients see results the moment they log in - not once a month in an email.</p>
+              <ul class="feature-checklist">
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Live client dashboards</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Automated monthly reports</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>White-label branding</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Attribution by channel</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Custom KPI builder</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Exportable client PDFs</li>
+              </ul>
+              <a href="#contact" class="btn btn-primary">Get Started Free →</a>
+            </div>
+            <div class="feature-visual">
+              <div class="chat-bubble-tag"><div class="chat-bubble-avatar">OR</div>Monthly report</div>
+              <div class="chat-bubble">Your dashboard updated - client retention is up 6% this month.</div>
+              <div class="visual-block" style="width:85%;"></div>
+              <div class="visual-block" style="width:60%;"></div>
+              <div class="visual-block" style="width:70%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="ftab-retain">
+          <div class="feature-panel-grid">
+            <div>
+              <div class="feature-icon-badge"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 18c0-3.9 3.1-7 7-7s7 3.1 7 7" stroke="#ECB84D" stroke-width="1.8" stroke-linecap="round"/><circle cx="11" cy="7" r="3.5" stroke="#ECB84D" stroke-width="1.8"/></svg></div>
+              <h3>Keep clients longer, without extra headcount</h3>
+              <p class="feature-desc">Standing support, health alerts, and renewal reminders mean retention isn't riding on one person remembering to follow up.</p>
+              <ul class="feature-checklist">
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Client health alerts</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Renewal &amp; upsell reminders</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Standing support team</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Client satisfaction surveys</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Escalation workflows</li>
+                <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Ongoing system tuning</li>
+              </ul>
+              <a href="#contact" class="btn btn-primary">Get Started Free →</a>
+            </div>
+            <div class="feature-visual">
+              <div class="chat-bubble-tag"><div class="chat-bubble-avatar">OR</div>Health alert</div>
+              <div class="chat-bubble">Riverside Dental hasn't opened their report in 20 days - flagged for outreach.</div>
+              <div class="visual-block" style="width:65%;"></div>
+              <div class="visual-block" style="width:78%;"></div>
+              <div class="visual-block" style="width:50%;"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ================= NO NICHE STATEMENT ================= -->
+<!-- <section class="section-alt">
+  <div class="container">
+    <div class="hero-grid" style="grid-template-columns: 1fr 1fr; align-items:center;">
+      <div>
+        <div class="eyebrow">No Niche Required</div>
+        <h2>We don't ask what kind of agency you are.</h2>
+        <p style="margin-top:16px; font-size:1.02rem;">Marketing, coaching, consulting, home services, creative, recruiting - OpsROI's systems are built around how agencies operate, not around one industry's playbook. If you manage client accounts and need to prove results, we fit.</p>
+        <div class="tag-row" style="margin-top:24px;">
+          <span class="tag">Marketing Agencies</span>
+          <span class="tag">Coaching &amp; Consulting</span>
+          <span class="tag">Creative Studios</span>
+          <span class="tag">Home Services</span>
+          <span class="tag">Recruiting</span>
+          <span class="tag">+ Any Client-Based Agency</span>
+        </div>
+      </div>
+      <div class="browser-frame">
+        <div class="browser-bar"><span></span><span></span><span></span></div>
+        <div class="screenshot-placeholder">
+          <strong>Client Pipeline Screenshot</strong>
+          <span>Replace this frame with a CRM screenshot</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- ================= FEATURES / SERVICES ================= -->
+<section id="services">
+  <div class="container">
+    <div class="section-head center reveal" style="margin:0 auto 52px;">
+      <div class="eyebrow" style="justify-content:center;">Platform</div>
+      <h2>Your all-in-one solution for business growth</h2>
+      <p>From first setup to day-to-day running, OpsROI covers the full operational stack behind your client work.</p>
+    </div>
+    <div class="grid-3" id="platformGrid">
+      <div class="platform-card">
+        <div class="icon-mark"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M2 8h18" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <h3>CRM Build &amp; Setup</h3>
+        <p>Pipelines, custom fields, and subaccounts configured around how your agency actually sells and delivers - ready to use from day one.</p>
+      </div>
+      <div class="platform-card">
+        <div class="icon-mark"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 19l5-6 4 4 7-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Workflow Automation</h3>
+        <p>Lead routing, follow-up sequences, and internal task automation so nothing falls through the cracks between sales and delivery.</p>
+      </div>
+      <div class="platform-card">
+        <div class="icon-mark"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.8"/><path d="M11 6v5l3.5 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>Client Reporting &amp; ROI Dashboards</h3>
+        <p>Automated, white-labeled reports that show clients exactly what their spend is producing - updated without manual work.</p>
+      </div>
+      <div class="platform-card">
+        <div class="icon-mark"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 18c0-3.9 3.1-7 7-7s7 3.1 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="11" cy="7" r="3.5" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <h3>Client Subaccount Management</h3>
+        <p>Every client gets their own clean, organized workspace - set up, maintained, and supported so your team doesn't have to.</p>
+      </div>
+      <div class="platform-card">
+        <div class="icon-mark"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2l2 5 5 .5-4 3.5 1.2 5-4.2-2.7L7 15l1-5-4-3.5 5-.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+        <h3>Sales &amp; Intake Systems</h3>
+        <p>Booking pages, forms, and intake flows that feed clean data straight into your CRM - no manual re-entry.</p>
+      </div>
+      <div class="platform-card">
+        <div class="icon-mark"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M2 11h18M11 2v18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>Ongoing Support</h3>
+        <p>A standing team you can reach when something needs to change - new pipeline, new automation, new report.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="section-alt how-it-works">
+  <div class="container">
+    <div class="section-head center reveal" style="margin:0 auto 52px;">
+      <div class="eyebrow" style="justify-content:center;">How It Works</div>
+      <h2>From first call to fully running, in three steps.</h2>
+    </div>
+
+    <div class="how-steps" id="howSteps">
+      <div class="how-steps-line"><span></span></div>
+
+      <div class="how-step" style="--d:0s">
+        <div class="how-step-marker">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 4l14 7-14 7 3-7-3-7z" stroke="var(--green)" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <span class="how-step-num">01</span>
+        </div>
+        <div class="how-step-card">
+          <div class="founder-role">Step One</div>
+          <h3>We map your agency</h3>
+          <p>A short call to understand how your agency sells, delivers, and reports today - no assumptions about your niche.</p>
+        </div>
+      </div>
+
+      <div class="how-step" style="--d:0.15s">
+        <div class="how-step-marker">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="16" height="16" rx="4" stroke="var(--gold)" stroke-width="1.8"/><path d="M3 9h16" stroke="var(--gold)" stroke-width="1.8"/></svg>
+          <span class="how-step-num">02</span>
+        </div>
+        <div class="how-step-card">
+          <div class="founder-role">Step Two</div>
+          <h3>We build the systems</h3>
+          <p>Your CRM, automations, and reporting get built and configured around that exact workflow.</p>
+        </div>
+      </div>
+
+      <div class="how-step" style="--d:0.3s">
+        <div class="how-step-marker">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3v4M11 15v4M3 11h4M15 11h4" stroke="var(--navy)" stroke-width="1.8" stroke-linecap="round"/><circle cx="11" cy="11" r="4" stroke="var(--navy)" stroke-width="1.8"/></svg>
+          <span class="how-step-num">03</span>
+        </div>
+        <div class="how-step-card">
+          <div class="founder-role">Step Three</div>
+          <h3>We keep it running</h3>
+          <p>OpsROI stays on as your ops partner - maintaining, adjusting, and supporting as your agency grows.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOUNDERS ================= -->
+<section id="founders">
+  <div class="container">
+    <div class="section-head center reveal" style="margin:0 auto 52px;">
+      <div class="eyebrow" style="justify-content:center;">Our Founders</div>
+      <h2>Why we built OpsROI</h2>
+      <p>OpsROI started with a simple frustration: agencies are great at getting clients results, but drown in the operations required to prove it. We built the platform we wished we'd had.</p>
+    </div>
+
+    <div class="founder-card-premium reveal">
+      <div class="founder-photo-premium">
+        <div class="photo-glow"></div>
+        <div class="photo-inner">
+          <img src="https://opsroi.com/_next/image?url=https%3A%2F%2Fassets.cdn.filesafe.space%2FaKNqKgojBfecmcYEpyvu%2Fmedia%2F6a4b39548a69aa2441a39fd2.png&w=640&q=75" alt="">
+        </div>
+      </div>
+      <div class="founder-content">
+        <div class="founder-role">Founder &amp; Owner</div>
+        <h3>Chris Ruvalcaba</h3>
+        <p>Chris founded OpsROI after years of watching agencies win great clients and then lose them - not from bad work, but from operations that couldn't keep up: messy CRMs, missed follow-ups, and reporting that never quite proved the value being delivered.</p>
+        <p style="margin-top:14px;">OpsROI is his answer to that gap - a CRM and client-ops platform any agency can plug into, regardless of who their clients are. No niche requirement, no rebuilding your process from scratch. Just the systems, structure, and support to turn client work into a clear, visible return.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ================= COMPARE ================= -->
+<section class="included-compare">
+  <div class="container">
+    <div class="section-head center reveal" style="margin:0 auto 48px; max-width: 600px;">
+      <div class="eyebrow" style="justify-content:center;">Compare</div>
+      <h2 style="font-size: 2.8rem; margin-bottom: 16px;">What's included with OpsROI</h2>
+      <p style="font-size: 1.1rem; line-height: 1.6;">Everything you'd normally stitch together from six different tools - built into one platform, one login, one bill.</p>
+    </div>
+
+    <div class="included-card reveal">
+      <div class="included-table-wrap">
+        <div class="included-row included-head">
+          <span>Features</span>
+          <span>Replaces</span>
+          <span>Other tools</span>
+          <span class="included-col-highlight" style="color:var(--gold);">OpsROI</span>
+        </div>
+
+        <div class="included-row">
+          <span class="included-feature">CRM &amp; Pipeline Management</span>
+          <span class="included-replaces"><i class="integration-dot" style="background:var(--green);">HS</i><i class="integration-dot" style="background:var(--navy);">PD</i></span>
+          <span class="included-cost">$99/month</span>
+          <span class="included-col-highlight included-check"><svg width="18" height="18" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="var(--green)"/><path d="M4.5 8.5l2 2 4.5-5" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <div class="included-row">
+          <span class="included-feature">Websites &amp; Sales Funnels</span>
+          <span class="included-replaces"><i class="integration-dot" style="background:var(--gold);">CF</i><i class="integration-dot" style="background:var(--navy-deep);">UB</i></span>
+          <span class="included-cost">$297/month</span>
+          <span class="included-col-highlight included-check"><svg width="18" height="18" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="var(--green)"/><path d="M4.5 8.5l2 2 4.5-5" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <div class="included-row">
+          <span class="included-feature">Forms, Surveys &amp; Quizzes</span>
+          <span class="included-replaces"><i class="integration-dot" style="background:var(--green-deep);">TF</i><i class="integration-dot" style="background:var(--gold);">GF</i></span>
+          <span class="included-cost">$49/month</span>
+          <span class="included-col-highlight included-check"><svg width="18" height="18" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="var(--green)"/><path d="M4.5 8.5l2 2 4.5-5" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <div class="included-row">
+          <span class="included-feature">Workflow Automation</span>
+          <span class="included-replaces"><i class="integration-dot" style="background:var(--navy);">ZP</i><i class="integration-dot" style="background:var(--green);">MK</i></span>
+          <span class="included-cost">$169/month</span>
+          <span class="included-col-highlight included-check"><svg width="18" height="18" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="var(--green)"/><path d="M4.5 8.5l2 2 4.5-5" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <div class="included-row">
+          <span class="included-feature">Email &amp; SMS Follow-Up</span>
+          <span class="included-replaces"><i class="integration-dot" style="background:var(--gold);">MC</i><i class="integration-dot" style="background:var(--navy-deep);">TW</i></span>
+          <span class="included-cost">$149/month</span>
+          <span class="included-col-highlight included-check"><svg width="18" height="18" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="var(--green)"/><path d="M4.5 8.5l2 2 4.5-5" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <div class="included-row">
+          <span class="included-feature">Booking &amp; Missed-Call Text-Back</span>
+          <span class="included-replaces"><i class="integration-dot" style="background:var(--green);">CL</i><i class="integration-dot" style="background:var(--navy);">CR</i></span>
+          <span class="included-cost">$69/month</span>
+          <span class="included-col-highlight included-check"><svg width="18" height="18" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="var(--green)"/><path d="M4.5 8.5l2 2 4.5-5" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <div class="included-row">
+          <span class="included-feature">Client Subaccounts</span>
+          <span class="included-replaces"><i class="integration-dot" style="background:var(--navy-deep);">NT</i><i class="integration-dot" style="background:var(--gold);">SS</i></span>
+          <span class="included-cost">$99/month</span>
+          <span class="included-col-highlight included-check"><svg width="18" height="18" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="var(--green)"/><path d="M4.5 8.5l2 2 4.5-5" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <div class="included-row">
+          <span class="included-feature">White-Labeled ROI Dashboards</span>
+          <span class="included-replaces"><i class="integration-dot" style="background:var(--green-deep);">DS</i></span>
+          <span class="included-cost">$199/month</span>
+          <span class="included-col-highlight included-check"><svg width="18" height="18" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="var(--green)"/><path d="M4.5 8.5l2 2 4.5-5" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <div class="included-row">
+          <span class="included-feature">Ongoing Ops Support Team</span>
+          <span class="included-replaces"><span class="included-unique">Unique to OpsROI</span></span>
+          <span class="included-cost">-</span>
+          <span class="included-col-highlight included-check"><svg width="18" height="18" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="var(--green)"/><path d="M4.5 8.5l2 2 4.5-5" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        
+        <div class="included-row included-total">
+          <span class="included-feature">Overall price</span>
+          <span></span>
+          <span class="included-cost included-cost-strike">$1,130+/month</span>
+          <span class="included-col-highlight included-price"><span class="included-price-symbol">$</span>247<span class="included-price-per">/mo</span></span>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:40px;">
+        <a href="#pricing" class="btn btn-primary" style="padding: 16px 36px; font-size: 1.05rem;">See Full Pricing &amp; Plans →</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ================= TESTIMONIALS (DARK CAROUSEL) ================= -->
+     <section class="testi-dark">
+  <div class="container">
+    <h2 class="testi-heading reveal">Why agencies choose OpsROI</h2>
+
+    <div class="testi-3d-stage" id="testiStage" data-lenis-prevent>
+
+      <div class="testi-card" data-pos="0">
+        <div class="testi-photo">
+          <img src="https://cdn.prod.website-files.com/693317e747432cd054b3bdc6/695c39198d03b01b176e33f6_carrie-lupoli.avif" alt="Maria Keegan">
+        </div>
+        <div class="testi-body">
+          <span class="testi-quote-mark">&ldquo;</span>
+          <p class="testi-quote">We run a home services agency, not a tech company, and every CRM we tried before this made us feel like an edge case. OpsROI set up our pipeline in under a week and it just fit.</p>
+          <div class="testi-name">Maria Keegan</div>
+          <div class="testi-role">Founder, Ironclad Roofing Marketing</div>
+          <div class="testi-stat">
+            <span class="testi-stat-num">4.5 days</span>
+            <span class="testi-stat-label">to a fully running pipeline</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card" data-pos="1">
+        <div class="testi-photo">
+          <img src="https://cdn.prod.website-files.com/693317e747432cd054b3bdc6/695c39191a2208a9be6f5054_justin-welsh.avif" alt="Devon Park">
+        </div>
+        <div class="testi-body">
+          <span class="testi-quote-mark">&ldquo;</span>
+          <p class="testi-quote">The ROI dashboards changed our client conversations completely. Instead of defending our invoice every month, clients open a link and see it themselves. Retention is up since we switched.</p>
+          <div class="testi-name">Devon Park</div>
+          <div class="testi-role">Managing Partner, Bloom Coaching Collective</div>
+          <div class="testi-stat">
+            <span class="testi-stat-num">96%</span>
+            <span class="testi-stat-label">client retention since switching</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- swap this photo for a third real headshot when you have one - reusing carrie-lupoli.avif as a placeholder -->
+      <div class="testi-card" data-pos="-1">
+        <div class="testi-photo">
+          <img src="https://cdn.prod.website-files.com/693317e747432cd054b3bdc6/695c39198d03b01b176e33f6_carrie-lupoli.avif" alt="Talia Reyes">
+        </div>
+        <div class="testi-body">
+          <span class="testi-quote-mark">&ldquo;</span>
+          <p class="testi-quote">We scaled from 12 to 40 client accounts without hiring an ops person, because OpsROI already was one. Subaccounts alone saved us a full-time hire.</p>
+          <div class="testi-name">Talia Reyes</div>
+          <div class="testi-role">CEO, Talent Bridge Recruiting</div>
+          <div class="testi-stat">
+            <span class="testi-stat-num">3.3x</span>
+            <span class="testi-stat-label">client accounts, same headcount</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="testi-controls">
+      <div class="testi-dots" id="testiDots"></div>
+      <div class="testi-arrows">
+        <button class="testi-arrow" id="testiPrev" aria-label="Previous testimonial"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M11 4l-6 5 6 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="testi-arrow" id="testiNext" aria-label="Next testimonial"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4l6 5-6 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ================= PRICING ================= -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-head center reveal" style="margin:0 auto 52px;">
+      <div class="eyebrow" style="justify-content:center;">Pricing</div>
+      <h2>Straightforward pricing, whatever you run.</h2>
+      <p>No niche upcharge, no per-client tax on subaccounts. Pick the tier that matches your agency's size.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card reveal" style="--reveal-delay: 0s;">
+        <div class="price-tier-name">Growth</div>
+        <div class="price-tier-desc">For solo operators and small agencies getting their first real CRM in place.</div>
+        <div class="price-amount"><span class="num">$2,950</span><span class="per">/ month</span></div>
+        <ul class="price-features">
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><path d="M4 9l3 3 7-7.5" stroke="#7DC243" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Up to 5 client subaccounts</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><path d="M4 9l3 3 7-7.5" stroke="#7DC243" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Core CRM &amp; pipelines</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><path d="M4 9l3 3 7-7.5" stroke="#7DC243" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Standard automations</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><path d="M4 9l3 3 7-7.5" stroke="#7DC243" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Email support</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" style="width:100%;">Get Started</a>
+      </div>
+      <div class="price-card featured reveal-fade" style="--reveal-delay: 0.1s;">
+        <div class="price-badge">Most Popular</div>
+        <div class="price-tier-name">Pro</div>
+        <div class="price-tier-desc">For agencies running multiple client accounts who need reporting and automation to scale.</div>
+        <div class="price-amount"><span class="num">$4,995</span><span class="per">/ month</span></div>
+        <ul class="price-features">
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><path d="M4 9l3 3 7-7.5" stroke="#7DC243" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Up to 25 client subaccounts</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><path d="M4 9l3 3 7-7.5" stroke="#7DC243" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>White-labeled ROI dashboards</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><path d="M4 9l3 3 7-7.5" stroke="#7DC243" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Advanced workflow automation</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><path d="M4 9l3 3 7-7.5" stroke="#7DC243" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Priority support</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><path d="M4 9l3 3 7-7.5" stroke="#7DC243" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Guided onboarding &amp; setup</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" style="width:100%;">Get Started</a>
+      </div>
+      <div class="price-card reveal" style="--reveal-delay: 0.2s;">
+        <div class="price-tier-name">Elite</div>
+        <div class="price-tier-desc">For larger agencies that need unlimited scale and a dedicated ops partner.</div>
+        <div class="price-amount"><span class="num">$7,495</span><span class="per">/ month</span></div>
+        <ul class="price-features">
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><path d="M4 9l3 3 7-7.5" stroke="#7DC243" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Unlimited client subaccounts</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><path d="M4 9l3 3 7-7.5" stroke="#7DC243" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Custom reporting builds</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><path d="M4 9l3 3 7-7.5" stroke="#7DC243" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Dedicated ops partner</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><path d="M4 9l3 3 7-7.5" stroke="#7DC243" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Custom automation builds</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><path d="M4 9l3 3 7-7.5" stroke="#7DC243" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Same-day support</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" style="width:100%;">Talk to Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA BAND ================= -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-band-premium">
+      <div class="cta-glow cta-glow-1"></div>
+      <div class="cta-glow cta-glow-2"></div>
+      
+      <div class="cta-content">
+        <h2 class="cta-title">Ready to see what your agency's ops could look like?</h2>
+        <p class="cta-desc">Book a short call and we'll walk through what OpsROI would set up for your agency - no niche requirements, no long contracts.</p>
+        <div class="cta-actions">
+          <a href="#contact" class="btn btn-cta-premium">
+            <span>Book a Call</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="integrations-bar">
+  <div class="container">
+    <div class="integrations-title reveal">Integrates With Your Favorite Tools</div>
+  </div>
+
+  <div class="marquee-wrap" data-lenis-prevent>
+    <div class="marquee-track">
+      <!-- set A -->
+      <div class="marquee-logo"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/msgsndr/knES3eSWYIsc5YSZ3YLl/media/67ab96a506eacd595072e016.png" alt="Integration partner logo" loading="lazy"></div>
+      <div class="marquee-logo"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/msgsndr/knES3eSWYIsc5YSZ3YLl/media/67ab96a534b29a1b3eca6435.png" alt="Integration partner logo" loading="lazy"></div>
+      <div class="marquee-logo"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/msgsndr/knES3eSWYIsc5YSZ3YLl/media/67ab96a5ee6da9500a35043d.png" alt="Integration partner logo" loading="lazy"></div>
+      <div class="marquee-logo"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/msgsndr/knES3eSWYIsc5YSZ3YLl/media/67ab96a5ee6da9493235043e.png" alt="Integration partner logo" loading="lazy"></div>
+      <div class="marquee-logo"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/msgsndr/knES3eSWYIsc5YSZ3YLl/media/67ab96a506eacd2a0b72e015.png" alt="Integration partner logo" loading="lazy"></div>
+      <div class="marquee-logo"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/msgsndr/knES3eSWYIsc5YSZ3YLl/media/67ab96a579284b08c36a77ad.png" alt="Integration partner logo" loading="lazy"></div>
+      <div class="marquee-logo"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/msgsndr/knES3eSWYIsc5YSZ3YLl/media/67abd58650fb000ed8851f30.png" alt="Integration partner logo" loading="lazy"></div>
+      <!-- set B (exact duplicate - required for the seamless loop, do not remove) -->
+      <div class="marquee-logo" aria-hidden="true"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/msgsndr/knES3eSWYIsc5YSZ3YLl/media/67ab96a506eacd595072e016.png" alt="" loading="lazy"></div>
+      <div class="marquee-logo" aria-hidden="true"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/msgsndr/knES3eSWYIsc5YSZ3YLl/media/67ab96a534b29a1b3eca6435.png" alt="" loading="lazy"></div>
+      <div class="marquee-logo" aria-hidden="true"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/msgsndr/knES3eSWYIsc5YSZ3YLl/media/67ab96a5ee6da9500a35043d.png" alt="" loading="lazy"></div>
+      <div class="marquee-logo" aria-hidden="true"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/msgsndr/knES3eSWYIsc5YSZ3YLl/media/67ab96a5ee6da9493235043e.png" alt="" loading="lazy"></div>
+      <div class="marquee-logo" aria-hidden="true"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/msgsndr/knES3eSWYIsc5YSZ3YLl/media/67ab96a506eacd2a0b72e015.png" alt="" loading="lazy"></div>
+      <div class="marquee-logo" aria-hidden="true"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/msgsndr/knES3eSWYIsc5YSZ3YLl/media/67ab96a579284b08c36a77ad.png" alt="" loading="lazy"></div>
+      <div class="marquee-logo" aria-hidden="true"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/msgsndr/knES3eSWYIsc5YSZ3YLl/media/67abd58650fb000ed8851f30.png" alt="" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head center reveal" style="margin:0 auto 44px;">
+      <div class="eyebrow" style="justify-content:center;">FAQ</div>
+      <h2>Questions agencies ask before switching.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal" style="--reveal-delay: 0s;">
+        <button class="faq-question">Do we need to fit a specific niche to use OpsROI? <svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18"><path d="M9 2v14M2 9h14" stroke="#1D4E5F" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-answer"><p>No. OpsROI is built around how agencies operate - pipelines, subaccounts, and reporting - not around any single industry's playbook. Marketing, coaching, creative, home services, recruiting, or anything else with client accounts is a fit.</p></div>
+      </div>
+      <div class="faq-item reveal" style="--reveal-delay: 0.06s;">
+        <button class="faq-question">How long does setup actually take? <svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18"><path d="M9 2v14M2 9h14" stroke="#1D4E5F" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-answer"><p>Most agencies are fully live in 4-5 business days. We map your current sales and delivery process on a short call, then build your CRM, automations, and reporting around it.</p></div>
+      </div>
+      <div class="faq-item reveal" style="--reveal-delay: 0.12s;">
+        <button class="faq-question">Can we migrate from our current CRM? <svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18"><path d="M9 2v14M2 9h14" stroke="#1D4E5F" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-answer"><p>Yes. We handle migration of contacts, pipelines, and history as part of onboarding, so your team isn't stuck re-entering data from scratch.</p></div>
+      </div>
+      <div class="faq-item reveal" style="--reveal-delay: 0.18s;">
+        <button class="faq-question">What does client subaccount management include? <svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18"><path d="M9 2v14M2 9h14" stroke="#1D4E5F" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-answer"><p>Every client gets their own clean, organized workspace inside your account - set up, maintained, and supported so your team never has to manually stand one up.</p></div>
+      </div>
+      <div class="faq-item reveal" style="--reveal-delay: 0.24s;">
+        <button class="faq-question">Is there a long-term contract? <svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18"><path d="M9 2v14M2 9h14" stroke="#1D4E5F" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-answer"><p>No. All plans are month-to-month. If OpsROI isn't the right fit, you can cancel anytime.</p></div>
+      </div>
+      <div class="faq-item reveal" style="--reveal-delay: 0.3s;">
+        <button class="faq-question">What kind of support do we get after setup? <svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18"><path d="M9 2v14M2 9h14" stroke="#1D4E5F" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-answer"><p>A real, standing team you can reach when something needs to change - a new pipeline, a new automation, a new report - not a ticket queue.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section-alt">
+  <div class="container">
+    <div class="section-head center reveal" style="margin:0 auto 52px;">
+      <div class="eyebrow" style="justify-content:center;">Contact</div>
+      <h2>Let's talk about your agency's ops.</h2>
+      <p>Tell us a bit about your agency and we'll get back to you within one business day - no niche is out of scope.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-form-premium reveal" style="--reveal-delay: 0s;">
+        <h3 style="margin-bottom:28px; color:var(--navy); font-size:1.6rem;">Send us a message</h3>
+        <form class="premium-form">
+          <div class="two-col">
+            <div class="form-float">
+              <input type="text" id="name" placeholder=" " required>
+              <label for="name">Full name</label>
+            </div>
+            <div class="form-float">
+              <input type="text" id="agency" placeholder=" " required>
+              <label for="agency">Agency name</label>
+            </div>
+          </div>
+          <div class="two-col">
+            <div class="form-float">
+              <input type="email" id="email" placeholder=" " required>
+              <label for="email">Email</label>
+            </div>
+            <div class="form-float">
+              <input type="tel" id="phone" placeholder=" " required>
+              <label for="phone">Phone</label>
+            </div>
+          </div>
+          <div class="form-float select-float">
+            <select id="clients" required>
+              <option value="" disabled selected hidden></option>
+              <option value="marketing">Marketing / Ad Agency</option>
+              <option value="coaching">Coaching &amp; Consulting</option>
+              <option value="creative">Creative / Design Studio</option>
+              <option value="home">Home Services</option>
+              <option value="recruiting">Recruiting</option>
+              <option value="other">Other - any niche welcome</option>
+            </select>
+            <label for="clients">What does your agency serve?</label>
+          </div>
+          <div class="form-float">
+            <textarea id="message" rows="4" placeholder=" " required data-lenis-prevent></textarea>
+            <label for="message">What are you looking to fix or set up?</label>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; padding:14px; font-size:1.05rem;">Send Message</button>
+        </form>
+      </div>
+
+      <div class="contact-info-panel reveal" style="--reveal-delay: 0.12s;">
+        <div class="contact-info-item">
+          <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="currentColor" stroke-width="1.8"/><path d="M4 6l8 7 8-7" stroke="currentColor" stroke-width="1.8"/></svg></div>
+          <div><h4>Email</h4><p>hello@opsroi.com</p></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><h4>Phone</h4><p>(800) 555-0199</p></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="1.8"/></svg></div>
+          <div><h4>Location</h4><p>Fully Remote<br>Austin, TX &amp; Global</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-badge" style="width: 140px; height: auto; background: none; border-radius: 0; padding: 0;"><img src="OpsROI-footer.webp" alt="OpsROI logo" style="width: 100%; height: auto;"></div>
+        <p>The CRM and client-ops platform designed specifically to turn your agency's client work into a clear, visible return.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#product">Platform Overview</a>
+        <a href="#why">Why OpsROI</a>
+        <a href="#pricing">Pricing Plans</a>
+        <a href="#integrations">Integrations</a>
+        <a href="#compare">Compare Tools</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#founders">Our Founders</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#">Careers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact & Legal</h4>
+        <a href="mailto:hello@opsroi.com">hello@opsroi.com</a>
+        <a href="tel:+10000000000">(000) 000-0000</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 OpsROI. All rights reserved.</span>
+      <span>Agency operations, powered end-to-end.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar" id="scrollProgressBar"></div></div>
+<button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 14V4M9 4l-5 5M9 4l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="https://unpkg.com/lenis@1.3.25/dist/lenis.min.js"></script>
+<script>
+  // Product tabs
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.tab;
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('panel-' + tab).classList.add('active');
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Feature checklist tabs (Capture / Nurture / Close / Report / Retain)
+  document.querySelectorAll('.feature-tabs .tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.ftab;
+      const scope = btn.closest('.feature-tabs');
+      scope.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      scope.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('ftab-' + tab).classList.add('active');
+    });
+  });
+
+  // Testimonial carousel arrows
+  (function () {
+    const track = document.getElementById('testiTrack');
+    const prev = document.getElementById('testiPrev');
+    const next = document.getElementById('testiNext');
+    if (!track) return;
+    const scrollAmount = () => track.querySelector('.testi-card').offsetWidth + 24;
+    prev.addEventListener('click', () => track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' }));
+    next.addEventListener('click', () => track.scrollBy({ left: scrollAmount(), behavior: 'smooth' }));
+  })();
+
+
+/* ============================================================
+   FILE 3 - JS ADDITIONS
+   Replace the existing "Testimonial carousel arrows" block near
+   the bottom of index-2.html's <script> with everything below.
+   (It supersedes the old block - same IDs, adds autoplay + dots.)
+   Add the "How It Works reveal" block as a new addition anywhere
+   inside the same <script> tag.
+   ============================================================ */
+
+// How It Works - draw the connecting line + stagger the steps in on scroll
+(function () {
+  const howSteps = document.getElementById('howSteps');
+  if (!howSteps) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        howSteps.classList.add('in-view');
+        io.disconnect();
+      }
+    });
+  }, { threshold: 0.35 });
+  io.observe(howSteps);
+})();
+
+// Testimonials - peek carousel with dots + autoplay (replaces old arrow-only block)
+(function () {
+  const wrap = document.querySelector('.testi-peek-wrap');
+  const track = document.getElementById('testiTrack');
+  const prev = document.getElementById('testiPrev');
+  const next = document.getElementById('testiNext');
+  const dotsWrap = document.getElementById('testiDots');
+  if (!track || !wrap) return;
+
+  const cards = Array.from(track.querySelectorAll('.testi-card'));
+  let index = 0;
+  let timer = null;
+
+  // build dots
+  cards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'testi-dot';
+    dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+    dot.addEventListener('click', () => goTo(i, true));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap.querySelectorAll('.testi-dot'));
+
+  function render() {
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    const style = getComputedStyle(cards[0]);
+    const marginTotal = parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+    const step = cardWidth + marginTotal;
+    const wrapWidth = wrap.getBoundingClientRect().width;
+    const offset = (wrapWidth - cardWidth) / 2;
+    track.style.transform = `translateX(${offset - index * step}px)`;
+
+    cards.forEach((c, i) => c.classList.toggle('is-active', i === index));
+    dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
+  }
+
+  function goTo(i, userAction) {
+    index = (i + cards.length) % cards.length;
+    render();
+    if (userAction) restartAutoplay();
+  }
+
+  function startAutoplay() {
+    timer = setInterval(() => goTo(index + 1, false), 5000);
+  }
+  function restartAutoplay() {
+    clearInterval(timer);
+    startAutoplay();
+  }
+
+  prev.addEventListener('click', () => goTo(index - 1, true));
+  next.addEventListener('click', () => goTo(index + 1, true));
+  wrap.addEventListener('mouseenter', () => clearInterval(timer));
+  wrap.addEventListener('mouseleave', startAutoplay);
+  window.addEventListener('resize', render);
+
+  render();
+  startAutoplay();
+})();
+(function () {
+  const stage = document.getElementById('testiStage');
+  const prev = document.getElementById('testiPrev');
+  const next = document.getElementById('testiNext');
+  const dotsWrap = document.getElementById('testiDots');
+  if (!stage) return;
+
+  const cards = Array.from(stage.querySelectorAll('.testi-card'));
+  const len = cards.length;
+  let index = 0;
+  let timer = null;
+
+  cards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'testi-dot';
+    dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+    dot.addEventListener('click', () => goTo(i, true));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap.querySelectorAll('.testi-dot'));
+
+  function render() {
+    cards.forEach((c, i) => {
+      let d = i - index;
+      d = ((d % len) + len) % len;
+      if (d > len / 2) d -= len;
+      c.dataset.pos = d;
+    });
+    dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
+  }
+
+  function goTo(i, userAction) {
+    index = (i + len) % len;
+    render();
+    if (userAction) restartAutoplay();
+  }
+
+  function startAutoplay() { timer = setInterval(() => goTo(index + 1, false), 5000); }
+  function restartAutoplay() { clearInterval(timer); startAutoplay(); }
+
+  prev.addEventListener('click', () => goTo(index - 1, true));
+  next.addEventListener('click', () => goTo(index + 1, true));
+  stage.addEventListener('mouseenter', () => clearInterval(timer));
+  stage.addEventListener('mouseleave', startAutoplay);
+
+  render();
+  startAutoplay();
+})();
+  
+// Header scroll effect
+(function() {
+  const header = document.getElementById('siteHeader');
+  if (!header) return;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+})();
+
+// Mobile nav toggle
+(function() {
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('siteNav');
+  if (!toggle || !nav) return;
+
+  function closeNav() {
+    nav.classList.remove('nav-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  function openNav() {
+    nav.classList.add('nav-open');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.contains('nav-open');
+    if (isOpen) { closeNav(); } else { openNav(); }
+  });
+
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeNav);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!nav.classList.contains('nav-open')) return;
+    if (nav.contains(e.target) || toggle.contains(e.target)) return;
+    closeNav();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeNav();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 720) closeNav();
+  });
+})();
+
+// Lenis smooth (inertia) scroll — premium eased scrolling, skipped for reduced-motion users
+// or if the CDN script failed to load, in which case the page falls back to native scrolling.
+var lenis = null;
+(function() {
+  var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion || typeof Lenis === 'undefined') return;
+
+  lenis = new Lenis({
+    autoRaf: true,
+    anchors: true,
+    allowNestedScroll: true,
+    stopInertiaOnNavigate: true,
+    autoToggle: true
+  });
+})();
+
+// Scroll progress bar + back-to-top + hero parallax, driven by Lenis when available,
+// falling back to a native (rAF-throttled) scroll listener otherwise.
+(function() {
+  const progressBar = document.getElementById('scrollProgressBar');
+  const backToTop = document.getElementById('backToTop');
+  const heroArt = document.querySelector('.hero-art');
+  const heroGlowA = document.querySelector('.hero-glow--a');
+  const heroGlowB = document.querySelector('.hero-glow--b');
+  const heroSection = document.querySelector('.hero');
+
+  function update() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+
+    if (progressBar) progressBar.style.width = progress + '%';
+    if (backToTop) backToTop.classList.toggle('is-visible', scrollTop > 600);
+
+    if (heroSection && (heroGlowA || heroGlowB)) {
+      const heroHeight = heroSection.offsetHeight;
+      if (scrollTop < heroHeight) {
+        const drift = scrollTop * 0.15;
+        if (heroGlowA) heroGlowA.style.transform = 'translateY(' + drift + 'px)';
+        if (heroGlowB) heroGlowB.style.transform = 'translateY(' + (-drift) + 'px)';
+      }
+    }
+  }
+
+  if (lenis) {
+    lenis.on('scroll', update);
+  } else {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => { update(); ticking = false; });
+    }, { passive: true });
+  }
+
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      if (lenis) {
+        lenis.scrollTo(0, { duration: 1.4 });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  }
+
+  update();
+})();
+
+// Scroll reveal — fades/slides sections and cards in as they enter the viewport
+(function() {
+  const revealEls = document.querySelectorAll('.reveal, .reveal-fade');
+  if (!revealEls.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    revealEls.forEach(el => el.classList.add('is-revealed'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+
+  revealEls.forEach(el => observer.observe(el));
+})();
+
+// Trust Carousel
+(function() {
+  const track = document.getElementById('trustTrack');
+  const prev = document.getElementById('trustPrev');
+  const next = document.getElementById('trustNext');
+  const dotsWrap = document.getElementById('trustDots');
+  if (!track) return;
+  
+  const slides = Array.from(track.querySelectorAll('.trust-slide'));
+  const totalSlides = slides.length;
+  let visibleSlides = 5;
+  if (window.innerWidth <= 980) visibleSlides = 4;
+  if (window.innerWidth <= 768) visibleSlides = 3;
+  if (window.innerWidth <= 480) visibleSlides = 2;
+  
+  let maxIndex = Math.max(0, totalSlides - visibleSlides);
+  let index = 0;
+  
+  // build dots
+  for (let i = 0; i <= maxIndex; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'trust-dot';
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  }
+  const dots = Array.from(dotsWrap.querySelectorAll('.trust-dot'));
+  
+  function render() {
+    const slideWidth = slides[0].offsetWidth;
+    const gap = 20;
+    const offset = index * (slideWidth + gap);
+    track.style.transform = `translateX(-${offset}px)`;
+    
+    dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
+  }
+  
+  function goTo(i) {
+    index = Math.max(0, Math.min(i, maxIndex));
+    render();
+  }
+  
+  prev.addEventListener('click', () => goTo(index - 1));
+  next.addEventListener('click', () => goTo(index + 1));
+  window.addEventListener('resize', () => {
+    visibleSlides = 5;
+    if (window.innerWidth <= 980) visibleSlides = 4;
+    if (window.innerWidth <= 768) visibleSlides = 3;
+    if (window.innerWidth <= 480) visibleSlides = 2;
+    maxIndex = Math.max(0, totalSlides - visibleSlides);
+    
+    if (dotsWrap.children.length !== maxIndex + 1) {
+      dotsWrap.innerHTML = '';
+      for (let i = 0; i <= maxIndex; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'trust-dot';
+        dot.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(dot);
+      }
+      dots.length = 0;
+      Array.from(dotsWrap.querySelectorAll('.trust-dot')).forEach(d => dots.push(d));
+    }
+    
+    goTo(Math.min(index, maxIndex));
+  });
+  
+  render();
+})();
+// Typing Effect
+(function() {
+  const words = ["Marketing Agencies.", "Coaching.", "Creative Studios.", "Home Services.", "Every agency."];
+  let i = 0;
+  let timer;
+  const el = document.getElementById("typewriter");
+  if(!el) return;
+
+  function typingEffect() {
+    let word = words[i].split("");
+    var loopTyping = function() {
+      if (word.length > 0) {
+        el.innerHTML += word.shift();
+      } else {
+        setTimeout(deletingEffect, 2000);
+        return false;
+      }
+      timer = setTimeout(loopTyping, 80);
+    };
+    loopTyping();
+  }
+
+  function deletingEffect() {
+    let word = words[i].split("");
+    var loopDeleting = function() {
+      if (word.length > 0) {
+        word.pop();
+        el.innerHTML = word.join("");
+      } else {
+        i = (i + 1) % words.length;
+        setTimeout(typingEffect, 400);
+        return false;
+      }
+      timer = setTimeout(loopDeleting, 40);
+    };
+    loopDeleting();
+  }
+  
+  el.innerHTML = "";
+  setTimeout(typingEffect, 800);
+})();
+
+// Platform Cards Scroll Reveal
+(function() {
+  const grid = document.getElementById('platformGrid');
+  if(!grid) return;
+  const cards = grid.querySelectorAll('.platform-card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        cards.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.add('is-visible');
+          }, index * 120);
+        });
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.1 });
+  observer.observe(grid);
+})();
+  
+</script>
+
+</body>
+</html>
