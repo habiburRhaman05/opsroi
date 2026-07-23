@@ -41,15 +41,22 @@ export default function Hero() {
     return () => clearTimeout(timer);
   }, [currentWord, isDeleting, loopNum, typingSpeed]);
 
-  // ── Modal keyboard handler ──
+  // ── Modal keyboard handler + body lock ──
   const closeModal = useCallback(() => setModalOpen(false), []);
   useEffect(() => {
-    if (!modalOpen) return;
+    if (!modalOpen) {
+      document.body.classList.remove('modal-open');
+      return;
+    }
+    document.body.classList.add('modal-open');
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') closeModal();
     };
     window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.classList.remove('modal-open');
+    };
   }, [modalOpen, closeModal]);
 
   return (
@@ -281,31 +288,37 @@ export default function Hero() {
       {/* ─── VIDEO MODAL OVERLAY ─── */}
       {modalOpen && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#0F2B35]/90 backdrop-blur-md animate-in fade-in duration-200"
+          className="fixed inset-0 z-[300] flex items-center justify-center p-4 sm:p-8"
+          style={{ background: 'rgba(15, 43, 53, 0.82)', backdropFilter: 'blur(6px)' }}
           onClick={closeModal}
         >
           <div 
-            className="relative w-full max-w-4xl rounded-2xl overflow-hidden bg-[#163C49] border border-white/20 shadow-2xl transition-all"
+            className="relative w-full max-w-4xl"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
-            <button
-              onClick={closeModal}
-              aria-label="Close modal"
-              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 p-2.5 rounded-full bg-[#12313C]/90 text-white hover:bg-[#7DC243] hover:text-[#163C49] border border-white/20 transition-all shadow-md group"
-            >
-              <X className="w-5 h-5 transition-transform group-hover:rotate-90" />
-            </button>
+            {/* Close Button — above video, top-right of wrapper */}
+            <div className="flex justify-end mb-3">
+              <button
+                onClick={closeModal}
+                aria-label="Close modal"
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-[#7DC243] text-white hover:text-[#163C49] border border-white/25 transition-all duration-200 shadow-lg text-sm font-semibold group"
+              >
+                <X className="w-4 h-4 transition-transform duration-200 group-hover:rotate-90" />
+                <span>Close</span>
+              </button>
+            </div>
 
-            {/* Video iFrame Container */}
-            <div className="relative aspect-video w-full bg-black">
-              <iframe
-                src={`https://www.youtube-nocookie.com/embed/${DEMO_VIDEO_ID}?autoplay=1&rel=0`}
-                title="OpsROI Demo Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full border-0"
-              />
+            {/* Video card */}
+            <div className="rounded-2xl overflow-hidden border border-white/15 shadow-[0_32px_80px_rgba(0,0,0,0.5)]">
+              <div className="relative aspect-video w-full bg-black">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${DEMO_VIDEO_ID}?autoplay=1&rel=0`}
+                  title="OpsROI Demo Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full border-0"
+                />
+              </div>
             </div>
           </div>
         </div>

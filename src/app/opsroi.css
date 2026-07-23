@@ -251,6 +251,10 @@ p { color: var(--ink-soft); }
   pointer-events: none; /* allow clicking through empty space */
 }
 .site-header.scrolled { padding: 12px 16px; }
+/* Hide header & progress bar when video modal is open */
+body.modal-open .site-header,
+body.modal-open .scroll-progress,
+body.modal-open .back-to-top { display: none !important; }
 
 .header-pill {
   position: relative;
@@ -1751,9 +1755,10 @@ section { padding: 88px 0; scroll-margin-top: 84px; }
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .marquee-logo:hover {
-  transform: translateY(-4px) scale(1.03);
+  /* transform: translateY(-4px) scale(1.03);
   box-shadow: var(--shadow);
-  border-color: var(--green);
+  border-color: var(--green); */
+  cursor: pointer;
 }
 .marquee-logo img { max-height: 100%; max-width: 100%; object-fit: contain; }
 @keyframes marquee-scroll {
@@ -1943,7 +1948,7 @@ section { padding: 88px 0; scroll-margin-top: 84px; }
   transition: background 0.2s ease;
 }
 .included-row:last-child { border-bottom: none; }
-.included-row:hover:not(.included-head) { background: rgba(255,255,255,0.05); }
+/* hover effect removed */
 .included-row:nth-child(even):not(.included-head) { background: rgba(255,255,255,0.02); }
 .included-head {
   font-family: var(--display);
@@ -1957,7 +1962,12 @@ section { padding: 88px 0; scroll-margin-top: 84px; }
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 .included-feature { color: #fff; font-weight: 600; font-size: 1rem; }
-.included-replaces { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.included-replaces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 160px; /* forces wrap after ~4 icons per row */
+}
 .included-cost { color: #cfe0e6; font-size: 0.95rem; font-family: var(--body); font-weight: 500; }
 .included-unique { color: var(--gold); font-size: 0.85rem; font-style: italic; }
 .included-col-highlight { display: flex; justify-content: center; }

@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const testimonials = [
   {
-    image: "https://opsroi.com/_next/image?url=https%3A%2F%2Fassets.cdn.filesafe.space%2FaKNqKgojBfecmcYEpyvu%2Fmedia%2F6a4b39548a69aa2441a39fd2.png&w=640&q=75",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAr5xMz13YSMRgr-ItPClBQNUl0qJ0tU4W-GK01HN70g&s=10",
     quote: "We run a home services agency, not a tech company, and every CRM we tried before this made us feel like an edge case. OpsROI set up our pipeline in under a week and it just fit.",
     name: "Maria Keegan",
     role: "Founder, Ironclad Roofing Marketing",
@@ -12,21 +12,14 @@ const testimonials = [
     statLabel: "to a fully running pipeline"
   },
   {
-    image: "https://opsroi.com/_next/image?url=https%3A%2F%2Fassets.cdn.filesafe.space%2FaKNqKgojBfecmcYEpyvu%2Fmedia%2F6a4b39548a69aa2441a39fd2.png&w=640&q=75",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLzFcxG7aql5oQdxFlo-VxiFZoVBuTuTVtLoyKAiOuzlI13euQ-b3xgaI&s=10",
     quote: "The ROI dashboards changed our client conversations completely. Instead of defending our invoice every month, clients open a link and see it themselves. Retention is up since we switched.",
     name: "Devon Park",
     role: "Managing Partner, Bloom Coaching Collective",
     statNum: "96%",
     statLabel: "client retention since switching"
   },
-  {
-    image: "https://opsroi.com/_next/image?url=https%3A%2F%2Fassets.cdn.filesafe.space%2FaKNqKgojBfecmcYEpyvu%2Fmedia%2F6a4b39548a69aa2441a39fd2.png&w=640&q=75",
-    quote: "We scaled from 12 to 40 client accounts without hiring an ops person, because OpsROI already was one. Subaccounts alone saved us a full-time hire.",
-    name: "Talia Reyes",
-    role: "CEO, Talent Bridge Recruiting",
-    statNum: "3.3x",
-    statLabel: "client accounts, same headcount"
-  }
+ 
 ];
 
 export default function Testimonials() {
