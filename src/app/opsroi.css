@@ -2420,3 +2420,7 @@ section { padding: 88px 0; scroll-margin-top: 84px; }
   .footer-bottom { flex-direction: column; text-align: center; gap: 16px; }
 }
 
+
+.glass-chip{
+    @apply rounded-full border border-white/10 bg-white/10 backdrop-blur-xl px-3 py-1 text-xs font-medium text-white;
+}

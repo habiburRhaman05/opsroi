@@ -152,134 +152,103 @@ export default function Hero() {
             </div>
 
             {/* ─── RIGHT COLUMN: OpsROI Interactive Video Poster Card ─── */}
-            <div className="lg:col-span-5 relative w-full">
-              
-              {/* Outer Glowing Border Frame */}
-              <div className="relative group rounded-3xl p-3 bg-white/10 border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.3)] backdrop-blur-2xl transition-all duration-500 hover:border-[#7DC243]/60 hover:shadow-[0_20px_50px_rgba(125,194,67,0.3)]">
-                
-                {/* Poster Box */}
-                <div 
-                  onClick={() => setModalOpen(true)}
-                  className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden bg-[#12313C] cursor-pointer group/poster shadow-inner"
-                >
-                  {/* High-tech SVG Dashboard Mockup Graphic */}
-                  <svg viewBox="0 0 520 325" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-cover transition-transform duration-700 group-hover/poster:scale-105 opacity-90 group-hover/poster:opacity-100">
-                    <rect width="520" height="325" fill="url(#hero-bg-grad)" />
+         <div className="lg:col-span-5 relative w-full">
 
-                    {/* Tech Grid */}
-                    <g opacity="0.08">
-                      {Array.from({ length: 9 }).map((_, i) => (
-                        <line key={`h${i}`} x1="0" y1={36 + i * 34} x2="520" y2={36 + i * 34} stroke="#fff" strokeWidth="1" />
-                      ))}
-                      {Array.from({ length: 13 }).map((_, i) => (
-                        <line key={`v${i}`} x1={40 + i * 38} y1="0" x2={40 + i * 38} y2="325" stroke="#fff" strokeWidth="1" />
-                      ))}
-                    </g>
+  {/* Ambient glow behind the whole card */}
+  <div className="absolute -inset-6 bg-gradient-to-tr from-[#7DC243]/20 via-transparent to-[#ECB84D]/10 blur-3xl rounded-[2rem] opacity-70 pointer-events-none" />
 
-                    {/* Top Kanban Cards */}
-                    <g transform="translate(20, 20)">
-                      <rect width="115" height="92" rx="10" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
-                      <rect x="12" y="12" width="70" height="6" rx="3" fill="#7DC243" />
-                      <rect x="12" y="28" width="90" height="5" rx="2.5" fill="rgba(255,255,255,0.3)" />
-                      <rect x="12" y="40" width="60" height="4" rx="2" fill="rgba(255,255,255,0.15)" />
+  {/* Outer Glowing Border Frame */}
+  <div className="relative group rounded-3xl p-3 bg-white/10 border border-white/20 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-2xl transition-all duration-500 hover:border-[#7DC243]/60 hover:shadow-[0_25px_70px_rgba(125,194,67,0.35)] hover:-translate-y-1">
 
-                      <rect x="128" width="115" height="92" rx="10" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
-                      <rect x="140" y="12" width="55" height="6" rx="3" fill="#ECB84D" />
-                      <rect x="140" y="28" width="85" height="5" rx="2.5" fill="rgba(255,255,255,0.3)" />
-                      <rect x="140" y="40" width="75" height="4" rx="2" fill="rgba(255,255,255,0.15)" />
+    {/* Animated gradient border accent (top edge) */}
+    <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-[#7DC243]/70 to-transparent" />
 
-                      <rect x="256" width="115" height="92" rx="10" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
-                      <rect x="268" y="12" width="65" height="6" rx="3" fill="#7DC243" />
-                      <rect x="268" y="28" width="80" height="5" rx="2.5" fill="rgba(255,255,255,0.3)" />
-                    </g>
+    {/* Poster Box */}
+    <div
+      onClick={() => setModalOpen(true)}
+      className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden bg-[#12313C] cursor-pointer group/poster shadow-inner"
+    >
+      {/* Dashboard mockup image */}
+      <img
+        className="w-full h-full object-cover scale-[1.02] transition-transform duration-700 group-hover/poster:scale-[1.06]"
+        src="https://opsroi-delta.vercel.app/_next/image?url=https%3A%2F%2Fopsroi.com%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fassets.cdn.filesafe.space%252FaKNqKgojBfecmcYEpyvu%252Fmedia%252F6a4b39548a69aa2441a39fd2.png%26w%3D640%26q%3D75&w=384&q=75"
+        alt="OpsROI product dashboard preview"
+      />
 
-                    {/* Chart Area */}
-                    <g transform="translate(20, 130)">
-                      <rect width="351" height="175" rx="10" fill="rgba(22,60,73,0.7)" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
-                      <path d="M 20 120 Q 80 80 140 100 T 260 40 T 330 20 L 330 140 L 20 140 Z" fill="url(#hero-chart-grad)" opacity="0.4" />
-                      <path d="M 20 120 Q 80 80 140 100 T 260 40 T 330 20" stroke="#7DC243" strokeWidth="3" fill="none" strokeLinecap="round" />
-                      
-                      {/* Pulse Node */}
-                      <circle cx="260" cy="40" r="6" fill="#7DC243" />
-                      <circle cx="260" cy="40" r="12" fill="#7DC243" opacity="0.4" className="animate-ping" />
-                    </g>
+      {/* Subtle diagonal shine sweep on hover */}
+      <div className="absolute inset-0 opacity-0 group-hover/poster:opacity-100 transition-opacity duration-700">
+        <div className="absolute -inset-y-10 -left-1/2 w-1/3 bg-gradient-to-r from-transparent via-white/10 to-transparent rotate-12 translate-x-0 group-hover/poster:translate-x-[250%] transition-transform duration-1000 ease-out" />
+      </div>
 
-                    {/* Side Live Stat Widget */}
-                    <g transform="translate(385, 20)">
-                      <rect width="115" height="85" rx="10" fill="rgba(255,255,255,0.09)" stroke="rgba(125,194,67,0.4)" strokeWidth="1" />
-                      <text x="14" y="26" fill="rgba(255,255,255,0.7)" fontSize="9" fontWeight="600" fontFamily="sans-serif">ROI GROWTH</text>
-                      <text x="14" y="54" fill="#7DC243" fontSize="22" fontWeight="bold" fontFamily="sans-serif">+340%</text>
+      {/* Dark Gradient Overlay for Contrast */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0F2B35]/95 via-[#0F2B35]/25 to-[#0F2B35]/10" />
 
-                      <rect y="98" width="115" height="85" rx="10" fill="rgba(255,255,255,0.09)" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
-                      <text x="14" y="124" fill="rgba(255,255,255,0.7)" fontSize="9" fontWeight="600" fontFamily="sans-serif">AUTO CLOSES</text>
-                      <text x="14" y="152" fill="#ECB84D" fontSize="22" fontWeight="bold" fontFamily="sans-serif">94.8%</text>
-                    </g>
+      {/* Fine grid texture overlay for a "tech dashboard" feel */}
+      <div
+        className="absolute inset-0 opacity-[0.06] pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+          backgroundSize: '28px 28px',
+        }}
+      />
 
-                    <defs>
-                      <linearGradient id="hero-bg-grad" x1="0" y1="0" x2="520" y2="325">
-                        <stop offset="0%" stopColor="#163C49" />
-                        <stop offset="50%" stopColor="#1D4E5F" />
-                        <stop offset="100%" stopColor="#0F2B35" />
-                      </linearGradient>
-                      <linearGradient id="hero-chart-grad" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#7DC243" stopOpacity="0.6" />
-                        <stop offset="100%" stopColor="#7DC243" stopOpacity="0" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
+      {/* CENTER ANIMATED PLAY BUTTON */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="relative flex items-center justify-center">
+          {/* Layered pulse rings */}
+          <div className="absolute w-20 h-20 rounded-full bg-[#7DC243]/25 animate-ping [animation-duration:2.2s]" />
+          <div className="absolute w-16 h-16 rounded-full bg-[#7DC243]/30 animate-pulse" />
+          <div className="absolute w-16 h-16 rounded-full border border-[#7DC243]/40" />
 
-                  {/* Dark Gradient Overlay for Contrast */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F2B35]/90 via-[#0F2B35]/30 to-transparent" />
+          {/* Glowing Play Icon Circle */}
+          <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-[#8FDA52] to-[#6BAE36] flex items-center justify-center text-[#163C49] shadow-[0_0_45px_rgba(125,194,67,0.9)] ring-4 ring-white/20 transition-all duration-300 group-hover/poster:scale-110 group-hover/poster:shadow-[0_0_60px_rgba(125,194,67,1)]">
+            <Play className="w-6 h-6 fill-[#163C49] translate-x-0.5" />
+          </div>
+        </div>
+      </div>
 
-                  {/* CENTER ANIMATED PLAY BUTTON */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative flex items-center justify-center">
-                      {/* Pulse rings */}
-                      <div className="absolute w-24 h-24 rounded-full bg-[#7DC243]/40 animate-ping" />
-                      <div className="absolute w-20 h-20 rounded-full bg-[#7DC243]/30 animate-pulse" />
-                      
-                      {/* Glowing Play Icon Circle */}
-                      <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#7DC243] flex items-center justify-center text-[#163C49] shadow-[0_0_40px_rgba(125,194,67,0.85)] transition-all duration-300 group-hover/poster:scale-110 group-hover/poster:shadow-[0_0_55px_rgba(125,194,67,1)]">
-                        <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-[#163C49] translate-x-0.5" />
-                      </div>
-                    </div>
-                  </div>
+      {/* Top Demo Label Pill */}
+      <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#163C49]/90 border border-white/20 text-white text-xs font-semibold backdrop-blur-md shadow-lg">
+        <span className="relative flex h-2 w-2">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7DC243] opacity-75" />
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#7DC243]" />
+        </span>
+        <span>Interactive Product Tour</span>
+      </div>
 
-                  {/* Top Demo Label Pill */}
-                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#163C49]/90 border border-white/20 text-white text-xs font-semibold backdrop-blur-md shadow-lg">
-                    <span className="w-2 h-2 rounded-full bg-[#7DC243] animate-pulse" />
-                    <span>Interactive Product Tour</span>
-                  </div>
+      {/* Duration badge, top right */}
+      <div className="absolute top-4 right-4 px-2.5 py-1 rounded-md bg-black/50 border border-white/15 text-white text-[11px] font-semibold backdrop-blur-md tracking-wide">
+        2:14
+      </div>
 
-                  {/* Bottom Watch Demo Bar */}
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#163C49]/90 border border-white/15 backdrop-blur-md text-xs sm:text-sm text-slate-100">
-                    <span className="font-semibold text-white">See OpsROI in Action</span>
-                    <span className="text-[#7DC243] font-bold flex items-center gap-1 group-hover/poster:translate-x-1 transition-transform">
-                      Watch Demo (2 min) &rarr;
-                    </span>
-                  </div>
+      {/* Bottom Watch Demo Bar */}
+      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#163C49]/90 border border-white/15 backdrop-blur-md text-xs sm:text-sm text-slate-100">
+        <span className="font-semibold text-white">See OpsROI in Action</span>
+        <span className="text-[#7DC243] font-bold flex items-center gap-1 group-hover/poster:translate-x-1 transition-transform">
+          Watch Demo (2 min) &rarr;
+        </span>
+      </div>
+    </div>
 
-                </div>
+    {/* Bottom Live Metrics Bar */}
+    <div className="mt-3 grid grid-cols-3 gap-2 px-3 py-3 bg-[#163C49]/70 rounded-xl border border-white/10 text-center">
+      <div className="transition-transform duration-300 hover:scale-105">
+        <div className="text-lg sm:text-xl font-extrabold text-white tracking-tight">14K+</div>
+        <div className="text-[11px] text-slate-300 font-medium">Agencies</div>
+      </div>
+      <div className="border-x border-white/15 transition-transform duration-300 hover:scale-105">
+        <div className="text-lg sm:text-xl font-extrabold text-[#7DC243] tracking-tight">97%</div>
+        <div className="text-[11px] text-slate-300 font-medium">Satisfaction</div>
+      </div>
+      <div className="transition-transform duration-300 hover:scale-105">
+        <div className="text-lg sm:text-xl font-extrabold text-[#ECB84D] tracking-tight">$2.4M</div>
+        <div className="text-[11px] text-slate-300 font-medium">Avg Impact</div>
+      </div>
+    </div>
 
-                {/* Bottom Live Metrics Bar */}
-                <div className="mt-3 grid grid-cols-3 gap-2 px-3 py-3 bg-[#163C49]/70 rounded-xl border border-white/10 text-center">
-                  <div>
-                    <div className="text-lg sm:text-xl font-extrabold text-white tracking-tight">14K+</div>
-                    <div className="text-[11px] text-slate-300 font-medium">Agencies</div>
-                  </div>
-                  <div className="border-x border-white/15">
-                    <div className="text-lg sm:text-xl font-extrabold text-[#7DC243] tracking-tight">97%</div>
-                    <div className="text-[11px] text-slate-300 font-medium">Satisfaction</div>
-                  </div>
-                  <div>
-                    <div className="text-lg sm:text-xl font-extrabold text-[#ECB84D] tracking-tight">$2.4M</div>
-                    <div className="text-[11px] text-slate-300 font-medium">Avg Impact</div>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
+  </div>
+</div>
 
           </div>
         </div>
