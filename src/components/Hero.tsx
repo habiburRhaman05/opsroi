@@ -61,7 +61,7 @@ export default function Hero() {
 
   return (
     <>
-      <section id="home" className="relative overflow-hidden bg-gradient-to-br from-[#163C49] via-[#1D4E5F] to-[#12313C] pt-[180px] pb-24 lg:pt-[210px] lg:pb-36 text-white selection:bg-[#7DC243] selection:text-[#163C49]">
+      <section id="home" className="relative overflow-hidden bg-gradient-to-br from-[#163C49] via-[#1D4E5F] to-[#12313C] pt-[240px] pb-[240px] lg:pt-[210px] lg:pb-36 text-white selection:bg-[#7DC243] selection:text-[#163C49]">
         {/* Glowing Background Radial Accents */}
         <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-[#7DC243]/20 via-[#ECB84D]/10 to-transparent blur-[130px] rounded-full" />
         <div className="pointer-events-none absolute top-1/3 -right-40 w-96 h-96 bg-[#7DC243]/15 blur-[140px] rounded-full" />
