@@ -49,7 +49,7 @@ export default function PricingPage() {
   <div className="hero-glow hero-glow--a"></div>
   <div className="hero-glow hero-glow--b"></div>
   <div className="container">
-    <div className="page-breadcrumb fade-in-up"><a href="/">Home</a> <span className="sep">/</span> Pricing</div>
+    {/* <div className="page-breadcrumb fade-in-up"><a href="/">Home</a> <span className="sep">/</span> Pricing</div> */}
     <h1 className="fade-in-up" style={{ animationDelay: '0.08s' }}>Straightforward pricing, whatever you run.</h1>
     <p className="lede fade-in-up" style={{ animationDelay: '0.16s' }}>No niche upcharge, no per-client tax on subaccounts. Pick the tier that matches your agency's size.</p>
   </div>
@@ -58,7 +58,7 @@ export default function PricingPage() {
 
 <section id="pricing-plans" style={{ paddingTop: '76px' }}>
   <div className="container">
-    <div className="pricing-grid">
+    <div className="pricing-grid" data-stagger="fade">
       <div className="price-card " >
         <div className="price-tier-name">Growth</div>
         <div className="price-tier-desc">For solo operators and small agencies getting their first real CRM in place.</div>
@@ -189,60 +189,6 @@ export default function PricingPage() {
     </div>
   </div>
 </section>
-
-
-<section id="faq" className="section-alt">
-  <div className="container">
-    <div className="section-head center " style={{ margin: '0 auto 44px' }}>
-      <div className="eyebrow" style={{ justifyContent: 'center' }}>Pricing FAQ</div>
-      <h2>Questions agencies ask about pricing.</h2>
-    </div>
-    <div className="faq-list">
-      <div className="faq-item " >
-        <button className="faq-question">Is there a setup fee on top of the plan price? <svg className="faq-icon" width="18" height="18" viewBox="0 0 18 18"><path d="M9 2v14M2 9h14" stroke="#1D4E5F" strokeWidth="2" strokeLinecap="round"/></svg></button>
-        <div className="faq-answer"><p>No. Your monthly plan covers the build, the configuration, and ongoing support. There's no separate onboarding invoice.</p></div>
-      </div>
-      <div className="faq-item " >
-        <button className="faq-question">Can I upgrade or downgrade my plan later? <svg className="faq-icon" width="18" height="18" viewBox="0 0 18 18"><path d="M9 2v14M2 9h14" stroke="#1D4E5F" strokeWidth="2" strokeLinecap="round"/></svg></button>
-        <div className="faq-answer"><p>Yes, anytime. As your subaccount count or reporting needs grow, we'll move you to the next tier - no re-onboarding required.</p></div>
-      </div>
-      <div className="faq-item " >
-        <button className="faq-question">What happens if I go over my subaccount limit? <svg className="faq-icon" width="18" height="18" viewBox="0 0 18 18"><path d="M9 2v14M2 9h14" stroke="#1D4E5F" strokeWidth="2" strokeLinecap="round"/></svg></button>
-        <div className="faq-answer"><p>We'll flag it and talk through the right tier with you before anything changes - no surprise overage charges.</p></div>
-      </div>
-      <div className="faq-item " >
-        <button className="faq-question">Is there a long-term contract? <svg className="faq-icon" width="18" height="18" viewBox="0 0 18 18"><path d="M9 2v14M2 9h14" stroke="#1D4E5F" strokeWidth="2" strokeLinecap="round"/></svg></button>
-        <div className="faq-answer"><p>No. All plans are month-to-month. If OpsROI isn't the right fit, you can cancel anytime.</p></div>
-      </div>
-      <div className="faq-item " >
-        <button className="faq-question">What if my agency doesn't fit neatly into one tier? <svg className="faq-icon" width="18" height="18" viewBox="0 0 18 18"><path d="M9 2v14M2 9h14" stroke="#1D4E5F" strokeWidth="2" strokeLinecap="round"/></svg></button>
-        <div className="faq-answer"><p>Tell us where you're at on a call and we'll recommend the closest fit, or scope a custom build for larger agencies.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section className="cta-section">
-  <div className="container">
-    <div className="cta-band-premium">
-      <div className="cta-glow cta-glow-1"></div>
-      <div className="cta-glow cta-glow-2"></div>
-
-      <div className="cta-content">
-        <h2 className="cta-title">Not sure which plan fits your agency?</h2>
-        <p className="cta-desc">Book a short call and we'll help you pick the right tier - no niche requirements, no long contracts.</p>
-        <div className="cta-actions">
-          <a href="/contact" className="btn btn-cta-premium">
-            <span>Book a Call</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 
       </main>
       <Footer />

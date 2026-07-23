@@ -9,7 +9,7 @@ export default function Pricing() {
           <h2>Straightforward pricing, whatever you run.</h2>
           <p>No niche upcharge, no per-client tax on subaccounts. Pick the tier that matches your agency&apos;s size.</p>
         </div>
-        <div className="pricing-grid">
+        <div className="pricing-grid" data-stagger="fade">
           <div className="price-card">
             <div className="price-tier-name">Growth</div>
             <div className="price-tier-desc">For solo operators and small agencies getting their first real CRM in place.</div>

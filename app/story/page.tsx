@@ -49,7 +49,7 @@ export default function StoryPage() {
   <div className="hero-glow hero-glow--a"></div>
   <div className="hero-glow hero-glow--b"></div>
   <div className="container">
-    <div className="page-breadcrumb fade-in-up"><a href="/">Home</a> <span className="sep">/</span> Story</div>
+    {/* <div className="page-breadcrumb fade-in-up"><a href="/">Home</a> <span className="sep">/</span> Story</div> */}
     <h1 className="fade-in-up" style={{ animationDelay: '0.08s' }}>Why we built OpsROI.</h1>
     <p className="lede fade-in-up" style={{ animationDelay: '0.16s' }}>A simple frustration: agencies are great at getting clients results, but drown in the operations required to prove it.</p>
   </div>
@@ -77,7 +77,7 @@ export default function StoryPage() {
       <div className="eyebrow" style={{ justifyContent: 'center' }}>What We Believe</div>
       <h2>The principles behind how we build.</h2>
     </div>
-    <div className="grid-3">
+    <div className="grid-3" data-stagger>
       <div className="platform-card " >
         <div className="icon-mark"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2l2 5 5 .5-4 3.5 1.2 5-4.2-2.7L7 15l1-5-4-3.5 5-.5z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg></div>
         <h3>No Niche Lock-In</h3>
@@ -147,25 +147,7 @@ export default function StoryPage() {
 </section>
 
 
-<section className="cta-section">
-  <div className="container">
-    <div className="cta-band-premium">
-      <div className="cta-glow cta-glow-1"></div>
-      <div className="cta-glow cta-glow-2"></div>
 
-      <div className="cta-content">
-        <h2 className="cta-title">Want to see if OpsROI fits your agency?</h2>
-        <p className="cta-desc">Book a short call and we'll walk through what OpsROI would set up for your agency - no niche requirements, no long contracts.</p>
-        <div className="cta-actions">
-          <a href="/contact" className="btn btn-cta-premium">
-            <span>Book a Call</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
       </main>

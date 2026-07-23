@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -7,6 +6,17 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-roboto: var(--font-roboto);
+  --font-bebas: var(--font-bebas-neue);
+  --color-navy: #1D4E5F;
+  --color-navy-deep: #163C49;
+  --color-green: #7DC243;
+  --color-green-deep: #5FA02E;
+  --color-gold: #ECB84D;
+  --color-mist: #F3F6F5;
+  --color-ink: #3E4B4F;
+  --color-ink-soft: #6C7A7D;
+  --color-line: #E4EAE8;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);

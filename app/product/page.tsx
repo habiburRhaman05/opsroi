@@ -49,30 +49,14 @@ export default function ProductPage() {
   <div className="hero-glow hero-glow--a"></div>
   <div className="hero-glow hero-glow--b"></div>
   <div className="container">
-    <div className="page-breadcrumb fade-in-up"><a href="/">Home</a> <span className="sep">/</span> Product</div>
+    {/* <div className="page-breadcrumb fade-in-up"><a href="/">Home</a> <span className="sep">/</span> Product</div> */}
     <h1 className="fade-in-up" style={{ animationDelay: '0.08s' }}>One platform for every stage of the client relationship.</h1>
     <p className="lede fade-in-up" style={{ animationDelay: '0.16s' }}>All the tools your agency needs to capture, run, and prove client work - in one place.</p>
   </div>
 </section>
 
 
-<section style={{ paddingTop: '76px' }}>
-  <div className="container">
-    <div className="feature-panel-grid">
-      <div  >
-        <div className="eyebrow">Automation Builder</div>
-        <h2 style={{ margin: '14px 0 16px' }}>Build the workflow once. It runs on every client, every time.</h2>
-        <p style={{ fontSize: '1.02rem', color: 'var(--ink-soft)', lineHeight: '1.7', marginBottom: '24px' }}>Drag-and-drop logic for follow-up sequences, lead routing, and task automation - no developer required, and no rep left to remember it manually.</p>
-        <a href="/contact" className="btn btn-primary">See It On a Call &rarr;</a>
-      </div>
-      <div className="hero-art " >
-        <div className="hero-image-wrap float-anim">
-          <img src="/image/workflow builder.png" alt="OpsROI automation workflow builder" className="hero-real-image" />
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 
 <section id="product-tabs" className="section-alt feature-tabs">
@@ -237,7 +221,7 @@ export default function ProductPage() {
       <h2>Your all-in-one solution for business growth</h2>
       <p>From first setup to day-to-day running, OpsROI covers the full operational stack behind your client work.</p>
     </div>
-    <div className="grid-3">
+    <div className="grid-3" data-stagger>
       <div className="platform-card " >
         <div className="icon-mark"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="4" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.8"/><path d="M2 8h18" stroke="currentColor" strokeWidth="1.8"/></svg></div>
         <h3>CRM Build &amp; Setup</h3>

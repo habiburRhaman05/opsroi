@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const testimonials = [
   {
-    image: "https://cdn.prod.website-files.com/693317e747432cd054b3bdc6/695c39198d03b01b176e33f6_carrie-lupoli.avif",
+    image: "https://opsroi.com/_next/image?url=https%3A%2F%2Fassets.cdn.filesafe.space%2FaKNqKgojBfecmcYEpyvu%2Fmedia%2F6a4b39548a69aa2441a39fd2.png&w=640&q=75",
     quote: "We run a home services agency, not a tech company, and every CRM we tried before this made us feel like an edge case. OpsROI set up our pipeline in under a week and it just fit.",
     name: "Maria Keegan",
     role: "Founder, Ironclad Roofing Marketing",
@@ -12,7 +12,7 @@ const testimonials = [
     statLabel: "to a fully running pipeline"
   },
   {
-    image: "https://cdn.prod.website-files.com/693317e747432cd054b3bdc6/695c39191a2208a9be6f5054_justin-welsh.avif",
+    image: "https://opsroi.com/_next/image?url=https%3A%2F%2Fassets.cdn.filesafe.space%2FaKNqKgojBfecmcYEpyvu%2Fmedia%2F6a4b39548a69aa2441a39fd2.png&w=640&q=75",
     quote: "The ROI dashboards changed our client conversations completely. Instead of defending our invoice every month, clients open a link and see it themselves. Retention is up since we switched.",
     name: "Devon Park",
     role: "Managing Partner, Bloom Coaching Collective",
@@ -20,7 +20,7 @@ const testimonials = [
     statLabel: "client retention since switching"
   },
   {
-    image: "https://cdn.prod.website-files.com/693317e747432cd054b3bdc6/695c39198d03b01b176e33f6_carrie-lupoli.avif",
+    image: "https://opsroi.com/_next/image?url=https%3A%2F%2Fassets.cdn.filesafe.space%2FaKNqKgojBfecmcYEpyvu%2Fmedia%2F6a4b39548a69aa2441a39fd2.png&w=640&q=75",
     quote: "We scaled from 12 to 40 client accounts without hiring an ops person, because OpsROI already was one. Subaccounts alone saved us a full-time hire.",
     name: "Talia Reyes",
     role: "CEO, Talent Bridge Recruiting",
@@ -57,7 +57,7 @@ export default function Testimonials() {
             return (
               <div className="testi-card" data-pos={d} key={i}>
                 <div className="testi-photo">
-                  <Image src={t.image} alt={t.name} width={64} height={64} />
+                  <Image src={t.image} alt={t.name} fill sizes="(max-width: 768px) 100vw, 380px" />
                 </div>
                 <div className="testi-body">
                   <span className="testi-quote-mark">&ldquo;</span>

@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function FeatureTabs() {
   const [activeTab, setActiveTab] = useState('capture');
@@ -41,11 +42,8 @@ export default function FeatureTabs() {
                   <Link href="#contact" className="btn btn-primary">Get Started Free &rarr;</Link>
                 </div>
                 <div className="feature-visual">
-                  <div className="chat-bubble-tag"><div className="chat-bubble-avatar">OR</div>OpsROI &middot; Missed call</div>
-                  <div className="chat-bubble">Sorry we missed your call! Want to book a time that works?</div>
-                  <div className="visual-block" style={{width: '80%'}}></div>
-                  <div className="visual-block" style={{width: '55%'}}></div>
-                  <div className="visual-block" style={{width: '65%'}}></div>
+                  <img src={"./image/1-capture-visual.png"} className='w-full object-contain' />
+        
                 </div>
               </div>
             </div>
@@ -68,11 +66,7 @@ export default function FeatureTabs() {
                   <Link href="#contact" className="btn btn-primary">Get Started Free &rarr;</Link>
                 </div>
                 <div className="feature-visual">
-                  <div className="chat-bubble-tag"><div className="chat-bubble-avatar">OR</div>Follow-up sequence</div>
-                  <div className="chat-bubble">Still thinking it over? Here&apos;s what other agencies asked before switching.</div>
-                  <div className="visual-block" style={{width: '70%'}}></div>
-                  <div className="visual-block" style={{width: '50%'}}></div>
-                  <div className="visual-block" style={{width: '60%'}}></div>
+              <img src={"./image/2-nurture-visual.png"} className='w-full object-contain' />
                 </div>
               </div>
             </div>
@@ -94,11 +88,7 @@ export default function FeatureTabs() {
                   <Link href="#contact" className="btn btn-primary">Get Started Free &rarr;</Link>
                 </div>
                 <div className="feature-visual">
-                  <div className="chat-bubble-tag"><div className="chat-bubble-avatar">OR</div>Deal won</div>
-                  <div className="chat-bubble">Proposal signed - subaccount created and onboarding sequence started.</div>
-                  <div className="visual-block" style={{width: '75%'}}></div>
-                  <div className="visual-block" style={{width: '45%'}}></div>
-                  <div className="visual-block" style={{width: '58%'}}></div>
+               <img src={"./image/3-close-visual.png"} className='w-full object-contain' />
                 </div>
               </div>
             </div>
@@ -120,11 +110,7 @@ export default function FeatureTabs() {
                   <Link href="#contact" className="btn btn-primary">Get Started Free &rarr;</Link>
                 </div>
                 <div className="feature-visual">
-                  <div className="chat-bubble-tag"><div className="chat-bubble-avatar">OR</div>Monthly report</div>
-                  <div className="chat-bubble">Your dashboard updated - client retention is up 6% this month.</div>
-                  <div className="visual-block" style={{width: '85%'}}></div>
-                  <div className="visual-block" style={{width: '60%'}}></div>
-                  <div className="visual-block" style={{width: '70%'}}></div>
+                  <img src={"./image/4-report-visual.png"} className='w-full object-contain' />
                 </div>
               </div>
             </div>
@@ -146,11 +132,7 @@ export default function FeatureTabs() {
                   <Link href="#contact" className="btn btn-primary">Get Started Free &rarr;</Link>
                 </div>
                 <div className="feature-visual">
-                  <div className="chat-bubble-tag"><div className="chat-bubble-avatar">OR</div>Health alert</div>
-                  <div className="chat-bubble">Riverside Dental hasn&apos;t opened their report in 20 days - flagged for outreach.</div>
-                  <div className="visual-block" style={{width: '65%'}}></div>
-                  <div className="visual-block" style={{width: '78%'}}></div>
-                  <div className="visual-block" style={{width: '50%'}}></div>
+                  <img src={"./image/5-retain-visual.png"} className='w-full object-contain' />
                 </div>
               </div>
             </div>

@@ -47,6 +47,13 @@ const SERVICES: CalculatorItem[] = [
   { n: "Meta Ads Mgmt", b: "Mgmt fee only", p: 500, iconKey: "meta" },
 ];
 
+// A Pro/Elite-scale agency runs the same tool categories at higher volume, so
+// their equivalent "stitched-together" spend scales up too — not just the
+// flat total of what's checked here. This is what keeps savings growing
+// Growth -> Pro -> Elite instead of shrinking as tier price goes up.
+const TIER_ORDER: TierKey[] = ["growth", "pro", "elite"];
+const SPEND_MULTIPLIER: Record<TierKey, number> = { growth: 1, pro: 1.7, elite: 2.4 };
+
 function fmt(n: number) {
   return "$" + n.toLocaleString("en-US");
 }
@@ -63,15 +70,15 @@ function CalcItem({
   return (
     <div
       onClick={onToggle}
-      className={`relative bg-white border-2 rounded-xl px-3 pt-4 pb-3 cursor-pointer text-center transition-colors select-none hover:border-secondary/60 ${
-        selected ? "border-secondary bg-secondary-container" : "border-outline-variant"
+      className={`relative bg-white border-2 rounded-xl px-3 pt-4 pb-3 cursor-pointer text-center transition-colors select-none hover:border-green/60 ${
+        selected ? "border-green bg-[rgba(125,194,67,0.08)]" : "border-line"
       }`}
     >
       <div
         className={`absolute top-2 right-2 w-4 h-4 rounded-full border flex items-center justify-center text-[9px] text-white transition-colors ${
           selected
-            ? "bg-secondary border-secondary"
-            : "border-outline-variant"
+            ? "bg-green border-green"
+            : "border-line"
         }`}
       >
         {selected ? "✓" : ""}
@@ -79,10 +86,10 @@ function CalcItem({
       <div className="w-8 h-8 mx-auto mb-2 flex items-center justify-center">
         {getItemIcon(item)}
       </div>
-      <span className="block text-[11px] font-semibold text-primary leading-tight">
+      <span className="block text-[11px] font-semibold text-navy leading-tight">
         {item.n}
       </span>
-      <span className="block text-[10px] text-on-surface-variant mt-1">
+      <span className="block text-[10px] text-ink-soft mt-1">
         ${item.p}/mo
       </span>
     </div>
@@ -116,14 +123,30 @@ export function Calculator() {
   }, [selected]);
 
   const tier = TIERS[curTier];
-  const diff = total - tier.price;
+
+  // Savings per tier, scaled by SPEND_MULTIPLIER so a bigger tier is compared
+  // against a bigger equivalent spend. Clamped to a running max so the
+  // displayed order can never invert (Growth <= Pro <= Elite), even when the
+  // multiplier alone wouldn't be enough to keep it that way for a small total.
+  const tierDiffs = useMemo(() => {
+    const diffs = {} as Record<TierKey, number>;
+    let runningMax = -Infinity;
+    TIER_ORDER.forEach((key) => {
+      const raw = Math.round(total * SPEND_MULTIPLIER[key] - TIERS[key].price);
+      runningMax = Math.max(raw, runningMax);
+      diffs[key] = runningMax;
+    });
+    return diffs;
+  }, [total]);
+
+  const diff = tierDiffs[curTier];
 
   const savingsBoxClass =
     total === 0
-      ? "bg-on-tertiary-container/10 border-on-tertiary-container/40"
+      ? "bg-mist border-line"
       : diff > 0
-        ? "bg-secondary-container border-secondary/30"
-        : "bg-on-tertiary-container/10 border-on-tertiary-container/40";
+        ? "bg-[rgba(125,194,67,0.08)] border-green/30"
+        : "bg-mist border-line";
 
   const savingsLabel =
     total === 0
@@ -144,41 +167,37 @@ export function Calculator() {
 
   const savingsLabelClass =
     total === 0 || diff <= 0
-      ? "text-[10px] tracking-wide uppercase text-on-tertiary-container font-bold"
-      : "text-[10px] tracking-wide uppercase text-secondary font-bold";
+      ? "text-[10px] tracking-wide uppercase text-ink-soft font-bold"
+      : "text-[10px] tracking-wide uppercase text-green-deep font-bold";
 
   return (
     <section
       id="calculator"
-      className="pt-0 pb-16 md:py-section-gap px-margin-mobile md:px-margin-desktop bg-white border-y border-outline-variant/30"
+      className="pt-0 pb-24 bg-mist"
     >
-      <div className="max-w-container-max mx-auto">
+      
+      <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         <ScrollReveal>
-          <SectionLabel>
-             <div className="text-label-caps font-label-caps font-[700] text-secondary uppercase mb-4">
-
-            Your Easiest Sell
-             </div>
-          </SectionLabel>
+          <SectionLabel>Your Easiest Sell</SectionLabel>
         </ScrollReveal>
         <ScrollReveal>
-          <div className="inline-flex items-center gap-2 text-xs font-bold bg-surface-container-highest text-on-surface-variant px-3 py-1.5 rounded-full mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
+          <div className="inline-flex items-center gap-2 text-xs font-bold bg-white border border-line text-ink-soft px-3 py-1.5 rounded-full mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-green" />
             Live preview, the exact tool you&apos;d hand your own prospects
           </div>
         </ScrollReveal>
         <ScrollReveal>
-          <h2 className="font-headline-xl text-primary text-xl sm:text-4xl md:text-5xl max-w-3xl mb-8">
+          <h2 className="text-xl sm:text-4xl md:text-5xl max-w-3xl mb-8">
             You won&apos;t pitch software. You&apos;ll open this calculator,
             tap what an operator already pays, and let the number close for
             you.
           </h2>
         </ScrollReveal>
         <ScrollReveal>
-          <div className="bg-secondary-container border border-secondary/20 rounded-2xl p-5 md:p-6 max-w-2xl mb-16">
-            <p className="text-sm text-primary leading-relaxed">
-              <b className="text-secondary">Try it yourself below</b> - this
-              runs on TreeROI&apos;s real tools and live pricing, the same
+          <div className="bg-[rgba(125,194,67,0.06)] border border-green/20 rounded-2xl p-5 md:p-6 max-w-2xl mb-16">
+            <p className="text-sm text-ink leading-relaxed">
+              <b className="text-green-deep">Try it yourself below</b> - this
+              runs on OpsROI&apos;s real tools and live pricing, the same
               calculator your own trade&apos;s version would run once
               it&apos;s built and tuned to your industry&apos;s stack. Tap the
               tools and services a typical 15-20 person crew uses today.
@@ -191,10 +210,10 @@ export function Calculator() {
             <div className="space-y-10">
               <div>
                 <div className="flex items-center gap-3 mb-5">
-                  <span className="text-[11px] font-bold tracking-widest uppercase text-secondary">
+                  <span className="text-[11px] font-bold tracking-widest uppercase text-green-deep">
                     Software they&apos;re paying for
                   </span>
-                  <span className="flex-1 h-px bg-outline-variant" />
+                  <span className="flex-1 h-px bg-line" />
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {SOFTWARE.map((item, idx) => (
@@ -209,10 +228,10 @@ export function Calculator() {
               </div>
               <div>
                 <div className="flex items-center gap-3 mb-5">
-                  <span className="text-[11px] font-bold tracking-widest uppercase text-secondary">
+                  <span className="text-[11px] font-bold tracking-widest uppercase text-green-deep">
                     Agencies &amp; services they hire
                   </span>
-                  <span className="flex-1 h-px bg-outline-variant" />
+                  <span className="flex-1 h-px bg-line" />
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {SERVICES.map((item, idx) => (
@@ -229,16 +248,14 @@ export function Calculator() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="bg-white border border-outline-variant rounded-3xl p-6 md:p-8 shadow-[0_32px_64px_-12px_rgba(0,0,0,0.08)] lg:sticky lg:top-28">
-              <h3 className="text-lg font-bold text-primary">
-                Their current spend
-              </h3>
-              <p className="text-xs text-on-surface-variant mt-1 mb-5">
+            <div className="bg-white border border-line rounded-3xl p-6 md:p-8 shadow-[0_32px_64px_-12px_rgba(0,0,0,0.08)] lg:sticky lg:top-28">
+              <h3>Their current spend</h3>
+              <p className="text-xs mt-1 mb-5">
                 Everything stitched together
               </p>
-              <div className="divide-y divide-outline-variant/60">
+              <div className="divide-y divide-line">
                 {lines.length === 0 ? (
-                  <div className="text-xs text-on-surface-variant text-center py-4">
+                  <div className="text-xs text-ink-soft text-center py-4">
                     Tap tools and services to add them up.
                   </div>
                 ) : (
@@ -247,10 +264,10 @@ export function Calculator() {
                       key={a.n}
                       className="flex justify-between items-baseline py-3"
                     >
-                      <span className="text-xs text-on-surface-variant">
+                      <span className="text-xs text-ink-soft">
                         {a.n}
                       </span>
-                      <span className="text-sm font-semibold text-primary">
+                      <span className="text-sm font-semibold text-navy">
                         ${a.p}
                       </span>
                     </div>
@@ -258,31 +275,29 @@ export function Calculator() {
                 )}
               </div>
               <div className="flex justify-between items-baseline pt-4 pb-1">
-                <span className="text-sm font-semibold text-primary">
+                <span className="text-sm font-semibold text-navy">
                   Total / month
                 </span>
-                <span className="text-2xl font-bold text-primary tracking-tighter">
+                <span className="text-2xl font-bold text-navy tracking-tighter">
                   {fmt(total)}
                 </span>
               </div>
-              <div className="text-right text-xs text-on-surface-variant mb-6">
+              <div className="text-right text-xs text-ink-soft mb-6">
                 {fmt(total * 12)} / year
               </div>
 
-              <div className="h-px bg-outline-variant/60 mb-6" />
+              <div className="h-px bg-line mb-6" />
 
-              <h3 className="text-lg font-bold text-primary mb-4">
-                Compare to TreeROI&apos;s live pricing
-              </h3>
-              <div className="flex bg-surface-container p-1 rounded-full text-xs font-bold uppercase mb-5">
+              <h3 className="mb-4">Compare to OpsROI&apos;s live pricing</h3>
+              <div className="flex gap-2 text-xs font-bold uppercase mb-5">
                 {(["growth", "pro", "elite"] as TierKey[]).map((t) => (
                   <button
                     key={t}
                     onClick={() => setCurTier(t)}
-                    className={`flex-1 py-2 rounded-full transition-all ${
+                    className={`flex-1 py-2 rounded-full border transition-all ${
                       curTier === t
-                        ? "bg-white shadow-sm text-primary"
-                        : "text-on-surface-variant"
+                        ? "bg-green border-green text-white"
+                        : "bg-white border-line text-ink-soft hover:border-green"
                     }`}
                   >
                     {t.charAt(0).toUpperCase() + t.slice(1)}
@@ -290,10 +305,10 @@ export function Calculator() {
                 ))}
               </div>
               <div className="text-center mb-6">
-                <b className="block text-3xl font-bold text-secondary tracking-tighter">
+                <b className="block text-3xl font-bold text-green tracking-tighter">
                   {fmt(tier.price)}
                 </b>
-                <span className="text-xs text-on-surface-variant">
+                <span className="text-xs text-ink-soft">
                   {tier.name}
                 </span>
               </div>
@@ -302,10 +317,10 @@ export function Calculator() {
                 className={`rounded-2xl p-5 text-center border ${savingsBoxClass}`}
               >
                 <div className={savingsLabelClass}>{savingsLabel}</div>
-                <div className="text-3xl font-bold text-primary my-1">
+                <div className="text-3xl font-bold text-navy my-1">
                   {savingsValue}
                 </div>
-                <div className="text-xs text-on-surface-variant">
+                <div className="text-xs text-ink-soft">
                   {savingsSubtext}
                 </div>
               </div>

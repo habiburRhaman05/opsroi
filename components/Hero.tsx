@@ -74,13 +74,9 @@ export default function Hero() {
         <div className="hero-art">
           <div className="hero-art-glow"></div>
           <div className="" id="heroImageWrap">
-            <Image src="/opsroi-dashboard-demo.png" alt="OpsROI Dashboard" width={800} height={800} className="hero-real-image" />
-            <div className="hero-float-badge hero-float-badge--a" style={{top: '8%', right: '-6%'}}>
-              <span className="hero-float-dot"></span> Live sync active
-            </div>
-            <div className="hero-float-badge hero-float-badge--b" style={{bottom: '30%', left: '-7%'}}>
-              <strong>+40%</strong> leads this month
-            </div>
+            <img src="/opsroi-dashboard-demo.png" alt="OpsROI Dashboard"   />
+          
+            
           </div>
         </div>
       </div>

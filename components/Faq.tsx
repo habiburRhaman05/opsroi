@@ -42,7 +42,7 @@ export default function Faq() {
           <div className="eyebrow" style={{justifyContent: 'center'}}>FAQ</div>
           <h2>Questions agencies ask before switching.</h2>
         </div>
-        <div className="faq-list">
+        <div className="faq-list" data-stagger>
           {faqs.map((faq, i) => (
             <div className={`faq-item ${openIndex === i ? 'open' : ''}`} key={i}>
               <button className="faq-question" onClick={() => toggle(i)}>
