@@ -75,7 +75,7 @@ const DIFFERENTIATORS: { title: string; body: string; icon: LucideIcon }[] = [
 type Cell = boolean | string;
 const AGENCY_ROWS: { feature: string; competitor: Cell; opsroi: Cell }[] = [
   { feature: "CRM & pipelines", competitor: true, opsroi: true },
-  { feature: "Funnels & websites", competitor: true, opsroi: true },
+ 
   { feature: "White-label client dashboards", competitor: "Paid tier", opsroi: "Included" },
   { feature: "HR & Payroll", competitor: false, opsroi: true },
   { feature: "Inventory management", competitor: false, opsroi: true },

@@ -98,9 +98,9 @@ export default function Hero() {
                 <span className="text-[#7DC243] drop-shadow-sm">
                   AI-powered
                 </span>{' '}
-                business operating system{' '}
+                business operating system{' '} for
                 <span className="block text-slate-100 mt-2 sm:mt-4 truncate max-w-full">
-                  for{' '}
+                  {' '}
                   <span className="text-[#ECB84D] underline decoration-[#ECB84D]/40 underline-offset-8 font-semibold">
                     {currentWord}
                     <span className="animate-pulse text-[#ECB84D] ml-0.5">|</span>
