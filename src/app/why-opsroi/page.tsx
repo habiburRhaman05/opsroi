@@ -29,14 +29,17 @@ import {
    ──────────────────────────────────────────────────────────── */
 
 const TOOL_TAX: { name: string; icon: LucideIcon; cost: string }[] = [
-  { name: "CRM for leads", icon: Users, cost: "$99/mo" },
-  { name: "Scheduling & dispatch", icon: CalendarDays, cost: "$69/mo" },
-  { name: "Estimates", icon: Calculator, cost: "$199/mo" },
-  { name: "Invoicing", icon: ReceiptText, cost: "incl." },
-  { name: "Payroll & HR", icon: Wallet, cost: "$149/mo" },
-  { name: "E-signatures", icon: FileSignature, cost: "$49/mo" },
+   { name: "HR & Payroll", icon: Wallet, cost: "$149/mo" },
+  
+   { name: "Invoicing", icon: ReceiptText, cost: "incl." }, { name: "CRM for leads", icon: Users, cost: "$99/mo" },
   { name: "Reporting", icon: BarChart3, cost: "$199/mo" },
   { name: "Inventory", icon: Package, cost: "$99/mo" },
+   { name: "Scheduling & dispatch", icon: CalendarDays, cost: "$69/mo" },
+  { name: "Estimates", icon: Calculator, cost: "$199/mo" },
+ 
+ 
+  { name: "E-signatures", icon: FileSignature, cost: "$49/mo" },
+  
 ];
 
 const BEFORE_AFTER: { stage: string; before: string; after: string }[] = [
@@ -75,7 +78,7 @@ const DIFFERENTIATORS: { title: string; body: string; icon: LucideIcon }[] = [
 type Cell = boolean | string;
 const AGENCY_ROWS: { feature: string; competitor: Cell; opsroi: Cell }[] = [
   { feature: "CRM & pipelines", competitor: true, opsroi: true },
-  { feature: "Funnels & websites", competitor: true, opsroi: true },
+ 
   { feature: "White-label client dashboards", competitor: "Paid tier", opsroi: "Included" },
   { feature: "HR & Payroll", competitor: false, opsroi: true },
   { feature: "Inventory management", competitor: false, opsroi: true },
@@ -104,7 +107,7 @@ const WHO_CHOOSES: { icon: LucideIcon; label: string; heading: string; body: str
     body: "Subaccounts, white-label dashboards, and automated reporting mean more client accounts per person — and clients stop questioning the invoice because they can see the result themselves.",
     accent: "green",
   },
-  {
+    {
     icon: Wrench,
     label: "A trade business",
     heading: "Same-day estimates, invoices that write themselves.",
@@ -231,10 +234,16 @@ export default function WhyOpsroiPage() {
   return (
     <main>
       {/* ─── Hero ─── */}
-      <section className="page-hero">
+      <section className="page-hero relative overflow-hidden">
+        <div 
+          className="absolute top-0 right-0 pointer-events-none w-[250px] md:w-[350px] z-0" 
+          style={{ transform: 'translate(25%, -25%)', opacity: 0.05 }}
+        >
+          <img src="/watermark.svg" alt="" className="w-full h-auto" aria-hidden="true" />
+        </div>
         <div className="hero-glow hero-glow--a" />
         <div className="hero-glow hero-glow--b" />
-        <div className="container px-5 sm:px-6 lg:px-8">
+        <div className="container px-5 sm:px-6 lg:px-8 relative z-10">
           <div className="eyebrow fade-in-up">Why OpsROI</div>
           <h1 className="fade-in-up" style={{ animationDelay: "0.08s" }}>
             You shouldn&apos;t need five logins <br className="hidden sm:inline" />
@@ -251,7 +260,7 @@ export default function WhyOpsroiPage() {
             style={{ animationDelay: "0.24s" }}
           >
             <Link
-              href="/contact"
+              href="/book"
               className="btn btn-primary w-full sm:w-auto"
             >
               Book a Call
@@ -439,19 +448,25 @@ export default function WhyOpsroiPage() {
             <h2>See exactly what you&apos;re not getting elsewhere.</h2>
           </div>
 
-          <div className="mx-auto mb-8 flex max-w-xs gap-2 rounded-full border border-line bg-white p-1 shadow-sm">
+          <div className="mx-auto mb-8 flex max-w-sm gap-2 rounded-full border border-line bg-white p-1 shadow-sm">
             {(["agencies", "trades"] as const).map((t) => (
               <button
                 key={t}
                 type="button"
+                disabled={t==="trades"}
                 onClick={() => setTab(t)}
-                className={`flex-1 rounded-full px-4 py-2.5 text-sm font-bold capitalize transition-all ${
+                className={`flex-1 flex justify-center items-center gap-2 rounded-full px-4 py-2.5 text-sm font-bold capitalize transition-all ${
                   tab === t
                     ? "bg-navy text-white shadow-sm"
                     : "text-ink-soft hover:text-navy"
-                }`}
+                } ${t === "trades" ? "opacity-80" : ""}`}
               >
                 For {t}
+                {t === "trades" && (
+                  <span className="inline-flex px-1.5 py-0.5 bg-mist text-[9px] uppercase tracking-wider text-ink-soft rounded-md font-bold">
+                    Future
+                  </span>
+                )}
               </button>
             ))}
           </div>

@@ -58,17 +58,7 @@ export default function Compare() {
             </div>
 
             {/* Websites & Sales Funnels — placeholder text until icons uploaded */}
-            <div className="included-row">
-              <span className="included-feature">Websites &amp; Sales Funnels</span>
-              <span className="included-replaces">
-                <BrandLogo name="HubSpot" file="hubspot-com-logo.png" bg="#FF7A59" />
-                <BrandLogo name="Monday.com" file="monday-com-logo.png" bg="#FF3D57" />
-                
-              </span>
-              <span className="included-cost">$297/month</span>
-              <span className="included-col-highlight included-check" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>{CHECK}</span>
-            </div>
-
+            
             {/* Forms, Surveys & Quizzes */}
             <div className="included-row">
               <span className="included-feature">Forms, Surveys &amp; Quizzes</span>

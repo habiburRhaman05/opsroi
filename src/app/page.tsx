@@ -16,6 +16,9 @@ import Footer from '@/src/components/Footer';
 import {Calculator} from '@/src/components/Calculator';
 import HeroSection from '../components/hero-banner';
 import { Club } from '../components/Club';
+import { StraightTalk } from '../components/StraightTalk';
+import { ComparisonTable } from '../components/ComparisonTable';
+import { Platform } from '../components/Platform';
 
 export default function Home() {
   return (
@@ -27,14 +30,16 @@ export default function Home() {
         {/* <HeroSection/> */}
         {/* <TrustCarousel /> */}
         <FeatureTabs />
-        <Services />
+        {/* <Services /> */}
+        <Platform/>
         <HowItWorks />
       
         <Founders />
-        <Compare />
-        <Testimonials />
+        {/* <Compare /> */}
+        <ComparisonTable/>
         <Calculator/>
         <Club />
+        <StraightTalk/>
         <Cta />
         <Integrations />
         <Faq />

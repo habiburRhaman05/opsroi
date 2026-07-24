@@ -35,7 +35,7 @@ const SOFTWARE: CalculatorItem[] = [
   { n: "Training", b: "Trainual", p: 270, iconKey: "training" },
   { n: "Inventory", b: "Sortly", p: 149, iconKey: "inventory" },
   { n: "E-Sign & Docs", b: "DocuSign", p: 75, iconKey: "docusign" },
-  { n: "Email Marketing", b: "Mailchimp", p: 68, iconKey: "mailchimp" },
+  { n: "Email Marketing", b: "Mailchimp", p: 68, iconKey: "email" },
   { n: "Website", b: "WebSite", p: 39, iconKey: "webSite" },
   { n: "Booking", b: "Acuity", p: 27, iconKey: "calendar" },
 ];
@@ -173,7 +173,7 @@ export function Calculator() {
   return (
     <section
       id="calculator"
-      className="pt-20 pb-24 bg-mist "
+      className="pt-20 pb-12 sm:pb-16 bg-white "
     >
       
       <div className="container mx-auto px-6 md:px-8">

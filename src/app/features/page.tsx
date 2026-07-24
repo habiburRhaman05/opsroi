@@ -13,10 +13,16 @@ export default function FeaturesPage() {
     <>
       <main>
         {/* ─── Page Hero ─── */}
-        <section className="page-hero">
+        <section className="page-hero relative overflow-hidden">
+          {/* <div 
+            className="absolute top-0 right-0 pointer-events-none w-[250px] md:w-[350px] z-0" 
+            style={{ transform: 'translate(25%, -25%)', opacity: 0.05 }}
+          >
+            <img src="/watermark.svg" alt="" className="w-full h-auto" aria-hidden="true" />
+          </div> */}
           <div className="hero-glow hero-glow--a" />
           <div className="hero-glow hero-glow--b" />
-          <div className="container px-5 sm:px-6 lg:px-8">
+          <div className="container px-5 sm:px-6 lg:px-8 relative z-10">
             <div className="eyebrow fade-in-up">Features</div>
             <h1 className="fade-in-up" style={{ animationDelay: "0.08s" }}>
               Everything your business needs to run <br/> <span className="text-[#5FA02E]">
@@ -121,7 +127,7 @@ export default function FeaturesPage() {
                   set up for you - no niche requirements, no long contracts.
                 </p>
                 <div className="cta-actions">
-                  <a href="/contact" className="btn btn-cta-premium">
+                  <a href="/book" className="btn btn-cta-premium">
                     <span>Book a Call</span>
                     <svg
                       width="20"
