@@ -14,7 +14,7 @@ export default function Founders() {
           <div className="founder-photo-premium">
             <div className="photo-glow"></div>
             <div className="photo-inner">
-              <Image src="https://opsroi.com/_next/image?url=https%3A%2F%2Fassets.cdn.filesafe.space%2FaKNqKgojBfecmcYEpyvu%2Fmedia%2F6a4b39548a69aa2441a39fd2.png&w=640&q=75" alt="Chris Ruvalcaba" width={320} height={320} />
+              <Image src="/founder.webp"  alt='Chris Ruvalcaba' width={320} height={320} />
             </div>
           </div>
           <div className="founder-content">

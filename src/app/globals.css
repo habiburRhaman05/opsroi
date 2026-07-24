@@ -2,7 +2,6 @@
 @source "../components";
 @source "../app";
 @import "tw-animate-css";
-/* @import "../../node_modules/shadcn/dist/tailwind.css"; */
 @import "./opsroi.css" layer(base);
 
 @custom-variant dark (&:is(.dark *));

@@ -1,142 +1,271 @@
-'use client';
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import type { LucideIcon } from "lucide-react";
+import {
+  Inbox,
+  MessagesSquare,
+  Handshake,
+  PhoneIncoming,
+  Users,
+  BarChart3,
+  HeartHandshake,
+  Check,
+  ArrowRight,
+} from "lucide-react";
+
+type Accent = "green" | "gold" | "navy";
+
+const ACCENT: Record<Accent, { badge: string; check: string; frame: string }> = {
+  green: { badge: "bg-green/12 text-green-deep", check: "bg-green", frame: "from-green/12" },
+  gold: { badge: "bg-gold/15 text-gold", check: "bg-gold", frame: "from-gold/15" },
+  navy: { badge: "bg-navy/10 text-navy", check: "bg-navy", frame: "from-navy/10" },
+};
+
+type Tab = {
+  id: string;
+  label: string;
+  icon: LucideIcon;
+  accent: Accent;
+  heading: string;
+  desc: string;
+  checklist: string[];
+  visual: string;
+};
+
+/* Stage-by-stage content — sourced from opsroi-full-content-package (2).md
+   · "Inside the Platform" + Features breakdown. Edit copy here. */
+const TABS: Tab[] = [
+  {
+    id: "capture",
+    label: "Capture",
+    icon: Inbox,
+    accent: "green",
+    heading: "Get more leads in the door",
+    desc: "Attract the right people, turn interest into leads, and keep your pipeline full — without a separate tool for every channel.",
+    checklist: [
+      "Core CRM & pipelines",
+      "Forms, surveys & quizzes",
+      "Websites & landing pages",
+      "Missed-call text-back",
+      "Chat widget / inbound DMs",
+      "Ad & social lead sync",
+    ],
+    visual: "/image/1-capture-visual.png",
+  },
+  {
+    id: "nurture",
+    label: "Nurture",
+    icon: MessagesSquare,
+    accent: "gold",
+    heading: "Keep leads warm, automatically",
+    desc: "Every lead gets followed up with — every time — without a rep having to remember to send it.",
+    checklist: [
+      "Email & SMS sequences",
+      "Lead scoring & tagging",
+      "Auto-routing to the right rep",
+      "Task reminders for your team",
+      "Multi-channel drip campaigns",
+      "Calendar & booking sync",
+    ],
+    visual: "/image/2-nurture-visual.png",
+  },
+  {
+    id: "close",
+    label: "Close",
+    icon: Handshake,
+    accent: "navy",
+    heading: "Turn conversations into signed clients",
+    desc: "Proposals, contracts, and payment collection live next to the lead record, so nothing gets handled outside the CRM.",
+    checklist: [
+      "Proposal & e-signature",
+      "Invoicing & payment links",
+      "Deal stage automation",
+      "Client onboarding forms",
+      "Subaccount auto-creation",
+      "Won/lost reason tracking",
+    ],
+    visual: "/image/3-close-visual.png",
+  },
+  {
+    id: "communicate",
+    label: "Communicate",
+    icon: PhoneIncoming,
+    accent: "green",
+    heading: "Never miss the phone",
+    desc: "Every inbound call gets answered, qualified, and logged — 24/7 — so a missed call never turns into a lost job.",
+    checklist: [
+      "24/7 AI call answering",
+      "Automatic lead qualification",
+      "Smart routing to the right rep",
+      "Call recording & transcription",
+      "Campaign attribution on the record",
+      "Missed-call text-back",
+    ],
+    visual: "/image/6-communicate-visual.svg",
+  },
+  {
+    id: "team",
+    label: "Run Your Team",
+    icon: Users,
+    accent: "gold",
+    heading: "Manage the people doing the work",
+    desc: "Time tracking, payroll, training, and inventory in the same system as the client work — no second platform.",
+    checklist: [
+      "Time tracking by job / client",
+      "Payroll processing",
+      "Staff onboarding & SOPs",
+      "Video courses & quizzes",
+      "Real-time inventory levels",
+      "Material cost → invoicing",
+    ],
+    visual: "/image/7-team-visual.svg",
+  },
+  {
+    id: "report",
+    label: "Report",
+    icon: BarChart3,
+    accent: "green",
+    heading: "Prove the ROI, without the spreadsheet",
+    desc: "White-labeled dashboards update automatically, so clients see results the moment they log in — not once a month in an email.",
+    checklist: [
+      "Live client dashboards",
+      "Automated monthly reports",
+      "White-label branding",
+      "Attribution by channel",
+      "Custom KPI builder",
+      "Exportable client PDFs",
+    ],
+    visual: "/image/4-report-visual.png",
+  },
+  {
+    id: "retain",
+    label: "Retain",
+    icon: HeartHandshake,
+    accent: "navy",
+    heading: "Keep clients longer, without extra headcount",
+    desc: "Standing support, health alerts, and renewal reminders mean retention isn't riding on one person remembering to follow up.",
+    checklist: [
+      "Client health alerts",
+      "Renewal & upsell reminders",
+      "Standing support team",
+      "Client satisfaction surveys",
+      "Escalation workflows",
+      "Ongoing system tuning",
+    ],
+    visual: "/image/5-retain-visual.png",
+  },
+];
 
 export default function FeatureTabs() {
-  const [activeTab, setActiveTab] = useState('capture');
+  const [activeTab, setActiveTab] = useState("capture");
 
   return (
     <section id="product" className="section-alt feature-tabs">
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="section-head center mx-auto mb-8 md:mb-12">
-          <div className="eyebrow" style={{justifyContent: 'center'}}>Inside the Platform</div>
+          <div className="eyebrow" style={{ justifyContent: "center" }}>
+            Inside the Platform
+          </div>
           <h2>One platform for every stage of the client relationship.</h2>
-          <p>All the tools your agency needs to capture, run, and prove client work - in one place.</p>
+          <p>
+            All the tools your business needs to capture, run, and prove the work
+            — in one place, whether that&apos;s a marketing campaign or a roof.
+          </p>
         </div>
 
         <div className="tabs-wrap w-full">
-          <div className="tab-list flex overflow-x-auto md:overflow-visible flex-nowrap md:flex-wrap justify-start md:justify-center gap-2 pb-4 md:pb-0 scrollbar-hide snap-x" role="tablist">
-            <button className={`tab-btn shrink-0 whitespace-nowrap snap-center ${activeTab === 'capture' ? 'active' : ''}`} onClick={() => setActiveTab('capture')}>Capture</button>
-            <button className={`tab-btn shrink-0 whitespace-nowrap snap-center ${activeTab === 'nurture' ? 'active' : ''}`} onClick={() => setActiveTab('nurture')}>Nurture</button>
-            <button className={`tab-btn shrink-0 whitespace-nowrap snap-center ${activeTab === 'close' ? 'active' : ''}`} onClick={() => setActiveTab('close')}>Close</button>
-            <button className={`tab-btn shrink-0 whitespace-nowrap snap-center ${activeTab === 'report' ? 'active' : ''}`} onClick={() => setActiveTab('report')}>Report</button>
-            <button className={`tab-btn shrink-0 whitespace-nowrap snap-center ${activeTab === 'retain' ? 'active' : ''}`} onClick={() => setActiveTab('retain')}>Retain</button>
+          {/* Tab strip — scrollable on mobile */}
+          <div
+            className="tab-list flex snap-x flex-nowrap justify-start gap-2 overflow-x-auto scrollbar-hide pb-4 md:flex-wrap md:justify-center md:overflow-visible md:pb-0"
+            role="tablist"
+          >
+            {TABS.map((tab) => (
+              <button
+                key={tab.id}
+                className={`tab-btn shrink-0 snap-center whitespace-nowrap ${
+                  activeTab === tab.id ? "active" : ""
+                }`}
+                onClick={() => setActiveTab(tab.id)}
+                role="tab"
+                aria-selected={activeTab === tab.id}
+              >
+                {tab.label}
+              </button>
+            ))}
           </div>
 
           <div className="feature-panel">
-            <div className={`tab-panel ${activeTab === 'capture' ? 'active' : ''}`} id="ftab-capture">
-              <div className="feature-panel-grid grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-12 items-center">
-                <div>
-                  <div className="feature-icon-badge"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 4l14 7-14 7 3-7-3-7z" stroke="#7DC243" strokeWidth="1.8" strokeLinejoin="round"/></svg></div>
-                  <h3>Get more leads in the door</h3>
-                  <p className="feature-desc">Attract the right people, turn interest into leads, and keep your pipeline full - without a separate tool for every channel.</p>
-                  <ul className="feature-checklist">
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Core CRM &amp; pipelines</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Forms, surveys &amp; quizzes</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Websites &amp; landing pages</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Missed-call text-back</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Chat widget / inbound DMs</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Ad &amp; social lead sync</li>
-                  </ul>
-                  <Link href="#contact" className="btn btn-primary">Get Started Free &rarr;</Link>
-                </div>
-                <div className="feature-visual">
-                  <img src={"./image/1-capture-visual.png"} className='w-full object-contain' />
-        
-                </div>
-              </div>
-            </div>
+            {TABS.map((tab) => {
+              const Icon = tab.icon;
+              const accent = ACCENT[tab.accent];
+              return (
+                <div
+                  key={tab.id}
+                  className={`tab-panel ${activeTab === tab.id ? "active" : ""}`}
+                  id={`ftab-${tab.id}`}
+                >
+                  <div className="feature-panel-grid grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.1fr_1fr] lg:gap-12">
+                    {/* Text side */}
+                    <div>
+                      <span
+                        className={`mb-5 flex h-13 w-13 items-center justify-center rounded-2xl ${accent.badge}`}
+                        style={{ width: 52, height: 52 }}
+                      >
+                        <Icon className="h-6 w-6" strokeWidth={1.8} />
+                      </span>
+                      <h3 className="text-[1.4rem] font-bold text-navy">
+                        {tab.heading}
+                      </h3>
+                      <p className="mt-3 text-[1rem] leading-relaxed text-ink-soft">
+                        {tab.desc}
+                      </p>
 
-            {/* Other tabs follow the exact same pattern, I will add them here. */}
-            <div className={`tab-panel ${activeTab === 'nurture' ? 'active' : ''}`} id="ftab-nurture">
-              <div className="feature-panel-grid grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-12 items-center">
-                <div>
-                  <div className="feature-icon-badge"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 19l5-6 4 4 7-9" stroke="#ECB84D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg></div>
-                  <h3>Keep leads warm, automatically</h3>
-                  <p className="feature-desc">Every lead gets followed up with - every time - without a rep having to remember to send it.</p>
-                  <ul className="feature-checklist">
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Email &amp; SMS sequences</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Lead scoring &amp; tagging</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Auto-routing to the right rep</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Task reminders for your team</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Multi-channel drip campaigns</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Calendar &amp; booking sync</li>
-                  </ul>
-                  <Link href="#contact" className="btn btn-primary">Get Started Free &rarr;</Link>
-                </div>
-                <div className="feature-visual">
-              <img src={"./image/2-nurture-visual.png"} className='w-full object-contain' />
-                </div>
-              </div>
-            </div>
+                      <ul className="my-7 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
+                        {tab.checklist.map((item) => (
+                          <li
+                            key={item}
+                            className="flex items-start gap-2.5 text-[0.9rem] text-ink"
+                          >
+                            <span
+                              className={`mt-0.5 flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full ${accent.check}`}
+                            >
+                              <Check className="h-2.5 w-2.5 text-white" strokeWidth={3} />
+                            </span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
 
-            <div className={`tab-panel ${activeTab === 'close' ? 'active' : ''}`} id="ftab-close">
-              <div className="feature-panel-grid grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-12 items-center">
-                <div>
-                  <div className="feature-icon-badge"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="4" width="18" height="14" rx="2" stroke="#1D4E5F" strokeWidth="1.8"/><path d="M2 8h18" stroke="#1D4E5F" strokeWidth="1.8"/></svg></div>
-                  <h3>Turn conversations into signed clients</h3>
-                  <p className="feature-desc">Proposals, contracts, and payment collection live next to the lead record, so nothing gets handled outside the CRM.</p>
-                  <ul className="feature-checklist">
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#1D4E5F"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Proposal &amp; e-signature</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#1D4E5F"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Invoicing &amp; payment links</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#1D4E5F"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Deal stage automation</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#1D4E5F"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Client onboarding forms</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#1D4E5F"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Subaccount auto-creation</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#1D4E5F"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Won/lost reason tracking</li>
-                  </ul>
-                  <Link href="#contact" className="btn btn-primary">Get Started Free &rarr;</Link>
-                </div>
-                <div className="feature-visual">
-               <img src={"./image/3-close-visual.png"} className='w-full object-contain' />
-                </div>
-              </div>
-            </div>
+                      <Link
+                        href="#contact"
+                        className="btn btn-primary inline-flex"
+                      >
+                        Get Started Now
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </div>
 
-            <div className={`tab-panel ${activeTab === 'report' ? 'active' : ''}`} id="ftab-report">
-              <div className="feature-panel-grid grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-12 items-center">
-                <div>
-                  <div className="feature-icon-badge"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#7DC243" strokeWidth="1.8"/><path d="M11 6v5l3.5 2" stroke="#7DC243" strokeWidth="1.8" strokeLinecap="round"/></svg></div>
-                  <h3>Prove the ROI, without the spreadsheet</h3>
-                  <p className="feature-desc">White-labeled dashboards update automatically, so clients see results the moment they log in - not once a month in an email.</p>
-                  <ul className="feature-checklist">
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Live client dashboards</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Automated monthly reports</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>White-label branding</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Attribution by channel</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Custom KPI builder</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#7DC243"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Exportable client PDFs</li>
-                  </ul>
-                  <Link href="#contact" className="btn btn-primary">Get Started Free &rarr;</Link>
+                    {/* Visual side — framed premium panel */}
+                    <div
+                      className={`relative overflow-hidden rounded-2xl border border-line bg-gradient-to-br ${accent.frame} to-mist p-4 shadow-[0_24px_60px_-30px_rgba(29,78,95,0.45)] sm:p-6`}
+                    >
+                      <div
+                        className={`pointer-events-none absolute -right-14 -top-14 h-40 w-40 rounded-full bg-gradient-to-br ${accent.frame} to-transparent opacity-70 blur-2xl`}
+                      />
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={tab.visual}
+                        alt={`${tab.label} — ${tab.heading}`}
+                        className="relative w-full rounded-xl"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div className="feature-visual">
-                  <img src={"./image/4-report-visual.png"} className='w-full object-contain' />
-                </div>
-              </div>
-            </div>
-
-            <div className={`tab-panel ${activeTab === 'retain' ? 'active' : ''}`} id="ftab-retain">
-              <div className="feature-panel-grid grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-12 items-center">
-                <div>
-                  <div className="feature-icon-badge"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 18c0-3.9 3.1-7 7-7s7 3.1 7 7" stroke="#ECB84D" strokeWidth="1.8" strokeLinecap="round"/><circle cx="11" cy="7" r="3.5" stroke="#ECB84D" strokeWidth="1.8"/></svg></div>
-                  <h3>Keep clients longer, without extra headcount</h3>
-                  <p className="feature-desc">Standing support, health alerts, and renewal reminders mean retention isn&apos;t riding on one person remembering to follow up.</p>
-                  <ul className="feature-checklist">
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Client health alerts</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Renewal &amp; upsell reminders</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Standing support team</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Client satisfaction surveys</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Escalation workflows</li>
-                    <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ECB84D"/><path d="M5 8l2 2 4-4.5" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>Ongoing system tuning</li>
-                  </ul>
-                  <Link href="#contact" className="btn btn-primary">Get Started Free &rarr;</Link>
-                </div>
-                <div className="feature-visual">
-                  <img src={"./image/5-retain-visual.png"} className='w-full object-contain' />
-                </div>
-              </div>
-            </div>
-
+              );
+            })}
           </div>
         </div>
       </div>
