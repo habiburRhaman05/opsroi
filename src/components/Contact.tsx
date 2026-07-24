@@ -99,7 +99,7 @@ export default function Contact() {
           <div className="inline-flex items-center justify-center gap-3 mb-6 reveal-up is-revealed">
             <SectionLabel className="justify-center">Contact With US</SectionLabel>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold uppercase tracking-tight font-bebas text-navy">Let&apos;s talk about your agency&apos;s ops.</h2>
+          <h2 className="text-4xl sm:text-4xl font-bold uppercase tracking-tight font-bebas text-navy">Let&apos;s talk about your agency&apos;s ops.</h2>
           <p className="mt-6 text-ink text-lg leading-relaxed">
             Tell us a bit about your agency and we&apos;ll get back to you
             within one business day - no niche is out of scope.

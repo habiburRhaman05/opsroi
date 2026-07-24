@@ -43,7 +43,7 @@ export default function Faq() {
           <div className="inline-flex items-center justify-center gap-3 mb-6 reveal-up is-revealed">
             <SectionLabel className="justify-center">FAQ</SectionLabel>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold uppercase tracking-tight font-bebas text-navy">Questions agencies ask before switching.</h2>
+          <h2 className="text-4xl sm:text-4xl font-bold uppercase tracking-tight font-bebas text-navy">Questions agencies ask before switching.</h2>
         </div>
         
         <div className="space-y-4">
