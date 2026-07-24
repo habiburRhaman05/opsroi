@@ -29,13 +29,14 @@ function getItemIcon(item: CalculatorItem) {
 
 const SOFTWARE: CalculatorItem[] = [
   { n: "CRM & Pipeline", b: "Jobber Plus", p: 599, iconKey: "opportunity" },
-  { n: "Phone & Inbox", b: "OpenPhone ×17", p: 391, iconKey: "conversations" },
+  { n: "HR & Payroll", b: "Gusto", p: 151, iconKey: "hr" },
+ { n: "AI Estimates & Invoicing", b: "Sortly", p: 149, iconKey: "inventory" },
   { n: "Reputation", b: "Podium", p: 399, iconKey: "marketing" },
   { n: "AI Receptionist", b: "AI answering", p: 199, iconKey: "callout" },
   { n: "Call Tracking", b: "CallRail", p: 50, iconKey: "logs" },
-  { n: "HR & Payroll", b: "Gusto", p: 151, iconKey: "hr" },
+ 
   { n: "Training", b: "Trainual", p: 270, iconKey: "training" },
-  { n: "Inventory", b: "Sortly", p: 149, iconKey: "inventory" },
+  
   { n: "E-Sign & Docs", b: "DocuSign", p: 75, iconKey: "docusign" },
   { n: "Email Marketing", b: "Mailchimp", p: 68, iconKey: "mailchimp" },
   { n: "Website", b: "WebSite", p: 39, iconKey: "website" },
