@@ -84,8 +84,8 @@ export default function Compare() {
             <div className="included-row">
               <span className="included-feature">Workflow Automation</span>
               <span className="included-replaces">
-                <BrandLogo name="Salesforce" file="saleforce-com-logo.png" bg="#00A1E0" />
-                <BrandLogo name="Zoho CRM" file="zohocrm-in-logo.png" bg="#E42527" />
+                <BrandLogo name="Salesforce" file="clickup-com-logo.png" bg="#00A1E0" />
+                <BrandLogo name="Zoho CRM" file="activecampaign-com-logo.png" bg="#E42527" />
 
                 {/* <BrandLogo name="GoHighLevel" file="gohighlevel-com-logo.png" bg="#F9A825" /> */}
               </span>
@@ -97,8 +97,8 @@ export default function Compare() {
             <div className="included-row">
               <span className="included-feature">Email &amp; SMS Follow-Up</span>
               <span className="included-replaces">
-           <BrandLogo name="Zoho CRM" file="zohocrm-in-logo.png" bg="#E42527" />
-                <BrandLogo name="Monday.com" file="monday-com-logo.png" bg="#FF3D57" />
+           <BrandLogo name="Zoho CRM" file="creatio-com-logo.png" bg="#E42527" />
+                <BrandLogo name="Monday.com" file="kajabi-com-logo.png" bg="#FF3D57" />
 
               </span>
               <span className="included-cost">$149/month</span>
@@ -109,8 +109,8 @@ export default function Compare() {
             <div className="included-row">
               <span className="included-feature">Booking &amp; Missed-Call Text-Back</span>
               <span className="included-replaces">
-                 <BrandLogo name="Salesforce" file="saleforce-com-logo.png" bg="#00A1E0" />
-                <BrandLogo name="GoHighLevel" file="gohighlevel-com-logo.png" bg="#F9A825" />
+                 <BrandLogo name="Salesforce" file="nutshell-com-logo.png" bg="#00A1E0" />
+                <BrandLogo name="GoHighLevel" file="sugarcrm-com-logo.png" bg="#F9A825" />
               </span>
               <span className="included-cost">$69/month</span>
               <span className="included-col-highlight included-check">{CHECK}</span>

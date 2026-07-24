@@ -15,6 +15,7 @@ import Contact from '@/src/components/Contact';
 import Footer from '@/src/components/Footer';
 import {Calculator} from '@/src/components/Calculator';
 import HeroSection from '../components/hero-banner';
+import { Club } from '../components/Club';
 
 export default function Home() {
   return (
@@ -33,7 +34,7 @@ export default function Home() {
         <Compare />
         <Testimonials />
         <Calculator/>
-        {/* <Pricing /> */}
+        <Club />
         <Cta />
         <Integrations />
         <Faq />

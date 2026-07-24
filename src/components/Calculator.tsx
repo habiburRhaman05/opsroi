@@ -173,10 +173,10 @@ export function Calculator() {
   return (
     <section
       id="calculator"
-      className="pt-20 pb-24 bg-mist"
+      className="pt-20 pb-24 bg-mist "
     >
       
-      <div className="max-w-[1056px] mx-auto px-6 md:px-8">
+      <div className="container mx-auto px-6 md:px-8">
         <div className="text-center mx-auto mb-12 max-w-3xl">
           <ScrollReveal>
             <SectionLabel className="justify-center">Your Easiest Sell</SectionLabel>
@@ -184,7 +184,7 @@ export function Calculator() {
           <ScrollReveal>
             <h2 className="text-xl sm:text-4xl md:text-5xl">
               Tap what they pay.{" "}
-              <span className="text-green">See what they save.</span>
+              <span className="text-green">See what <br/> they save.</span>
             </h2>
           </ScrollReveal>
           <ScrollReveal>

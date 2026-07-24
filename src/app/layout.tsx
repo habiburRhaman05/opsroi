@@ -14,8 +14,17 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "OpsROI - The AI-powered business operating system",
-  description: "One platform to run pipelines, automate follow-ups, and measure ROI.",
+  title: "OpsROI - Own the Software Your Industry Runs On",
+  description:
+    "OpsROI partners with proven contractor founders to build the operating system for their industry. You bring the expertise. We build the platform. You own the market.",
+  icons: {
+    icon: [
+      { type: "image/svg+xml", url: "/opsroi-icon.svg" },
+      { type: "image/png", sizes: "32x32", url: "/favicon-32.png" },
+      { type: "image/png", sizes: "512x512", url: "/favicon-512.png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

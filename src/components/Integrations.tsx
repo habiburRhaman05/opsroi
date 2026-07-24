@@ -31,13 +31,7 @@ const integrationIcons = [
     slug: "make",
     icon: "/intregation-icons/make-com-logo.png",
     url: "https://www.make.com",
-  },
-  {
-    name: "Shopify",
-    slug: "shopify",
-    icon: "/intregation-icons/shopify-com-logo.png",
-    url: "https://www.shopify.com",
-  },
+  }
 ];
 
 export default function Integrations() {

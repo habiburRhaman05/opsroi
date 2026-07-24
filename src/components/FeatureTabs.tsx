@@ -8,25 +8,25 @@ export default function FeatureTabs() {
 
   return (
     <section id="product" className="section-alt feature-tabs">
-      <div className="container">
-        <div className="section-head center" style={{margin: '0 auto 36px'}}>
+      <div className="container px-4 sm:px-6 lg:px-8">
+        <div className="section-head center mx-auto mb-8 md:mb-12">
           <div className="eyebrow" style={{justifyContent: 'center'}}>Inside the Platform</div>
           <h2>One platform for every stage of the client relationship.</h2>
           <p>All the tools your agency needs to capture, run, and prove client work - in one place.</p>
         </div>
 
-        <div className="tabs-wrap">
-          <div className="tab-list" role="tablist">
-            <button className={`tab-btn ${activeTab === 'capture' ? 'active' : ''}`} onClick={() => setActiveTab('capture')}>Capture</button>
-            <button className={`tab-btn ${activeTab === 'nurture' ? 'active' : ''}`} onClick={() => setActiveTab('nurture')}>Nurture</button>
-            <button className={`tab-btn ${activeTab === 'close' ? 'active' : ''}`} onClick={() => setActiveTab('close')}>Close</button>
-            <button className={`tab-btn ${activeTab === 'report' ? 'active' : ''}`} onClick={() => setActiveTab('report')}>Report</button>
-            <button className={`tab-btn ${activeTab === 'retain' ? 'active' : ''}`} onClick={() => setActiveTab('retain')}>Retain</button>
+        <div className="tabs-wrap w-full">
+          <div className="tab-list flex overflow-x-auto md:overflow-visible flex-nowrap md:flex-wrap justify-start md:justify-center gap-2 pb-4 md:pb-0 scrollbar-hide snap-x" role="tablist">
+            <button className={`tab-btn shrink-0 whitespace-nowrap snap-center ${activeTab === 'capture' ? 'active' : ''}`} onClick={() => setActiveTab('capture')}>Capture</button>
+            <button className={`tab-btn shrink-0 whitespace-nowrap snap-center ${activeTab === 'nurture' ? 'active' : ''}`} onClick={() => setActiveTab('nurture')}>Nurture</button>
+            <button className={`tab-btn shrink-0 whitespace-nowrap snap-center ${activeTab === 'close' ? 'active' : ''}`} onClick={() => setActiveTab('close')}>Close</button>
+            <button className={`tab-btn shrink-0 whitespace-nowrap snap-center ${activeTab === 'report' ? 'active' : ''}`} onClick={() => setActiveTab('report')}>Report</button>
+            <button className={`tab-btn shrink-0 whitespace-nowrap snap-center ${activeTab === 'retain' ? 'active' : ''}`} onClick={() => setActiveTab('retain')}>Retain</button>
           </div>
 
           <div className="feature-panel">
             <div className={`tab-panel ${activeTab === 'capture' ? 'active' : ''}`} id="ftab-capture">
-              <div className="feature-panel-grid">
+              <div className="feature-panel-grid grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-12 items-center">
                 <div>
                   <div className="feature-icon-badge"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 4l14 7-14 7 3-7-3-7z" stroke="#7DC243" strokeWidth="1.8" strokeLinejoin="round"/></svg></div>
                   <h3>Get more leads in the door</h3>
@@ -50,7 +50,7 @@ export default function FeatureTabs() {
 
             {/* Other tabs follow the exact same pattern, I will add them here. */}
             <div className={`tab-panel ${activeTab === 'nurture' ? 'active' : ''}`} id="ftab-nurture">
-              <div className="feature-panel-grid">
+              <div className="feature-panel-grid grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-12 items-center">
                 <div>
                   <div className="feature-icon-badge"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 19l5-6 4 4 7-9" stroke="#ECB84D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg></div>
                   <h3>Keep leads warm, automatically</h3>
@@ -72,7 +72,7 @@ export default function FeatureTabs() {
             </div>
 
             <div className={`tab-panel ${activeTab === 'close' ? 'active' : ''}`} id="ftab-close">
-              <div className="feature-panel-grid">
+              <div className="feature-panel-grid grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-12 items-center">
                 <div>
                   <div className="feature-icon-badge"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="4" width="18" height="14" rx="2" stroke="#1D4E5F" strokeWidth="1.8"/><path d="M2 8h18" stroke="#1D4E5F" strokeWidth="1.8"/></svg></div>
                   <h3>Turn conversations into signed clients</h3>
@@ -94,7 +94,7 @@ export default function FeatureTabs() {
             </div>
 
             <div className={`tab-panel ${activeTab === 'report' ? 'active' : ''}`} id="ftab-report">
-              <div className="feature-panel-grid">
+              <div className="feature-panel-grid grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-12 items-center">
                 <div>
                   <div className="feature-icon-badge"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#7DC243" strokeWidth="1.8"/><path d="M11 6v5l3.5 2" stroke="#7DC243" strokeWidth="1.8" strokeLinecap="round"/></svg></div>
                   <h3>Prove the ROI, without the spreadsheet</h3>
@@ -116,7 +116,7 @@ export default function FeatureTabs() {
             </div>
 
             <div className={`tab-panel ${activeTab === 'retain' ? 'active' : ''}`} id="ftab-retain">
-              <div className="feature-panel-grid">
+              <div className="feature-panel-grid grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-12 items-center">
                 <div>
                   <div className="feature-icon-badge"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 18c0-3.9 3.1-7 7-7s7 3.1 7 7" stroke="#ECB84D" strokeWidth="1.8" strokeLinecap="round"/><circle cx="11" cy="7" r="3.5" stroke="#ECB84D" strokeWidth="1.8"/></svg></div>
                   <h3>Keep clients longer, without extra headcount</h3>
