@@ -44,7 +44,7 @@ export default function FeaturesPage() {
               <div className="eyebrow" style={{ justifyContent: "center" }}>
                 The Full Toolkit
               </div>
-              <h2>One login. Every tool the work needs.</h2>
+              <h2>One login. Every tool the <br/> work needs.</h2>
               <p>
                 Everything you&apos;d normally stitch together from six-plus tools,
                 built into one platform — click a card for the details.

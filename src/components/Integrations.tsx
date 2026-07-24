@@ -38,7 +38,13 @@ export default function Integrations() {
   return (
     <section id="integrations" className="integrations-bar">
       <div className="container">
-        <div className="integrations-title">Integrates With Your Favorite Tools</div>
+       
+        <h2 className='text-center mb-4'>
+          Integrates With Your Favorite Tools
+        </h2>
+        <p className="text-center text-ink-soft text-sm sm:text-base max-w-2xl mx-auto leading-relaxed mb-8">
+          OpsROI connects with the tools you already use. <br/>No forced migrations, no data silos — just seamless workflows.
+        </p>
       </div>
 
       <div className="marquee-wrap mx-auto max-w-4xl overflow-hidden" data-lenis-prevent>

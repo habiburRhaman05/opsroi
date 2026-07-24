@@ -123,7 +123,7 @@ export default function FeatureModal({ feature, onClose }: FeatureModalProps) {
           href="/contact"
           className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-green px-6 py-3.5 font-bold text-navy-deep shadow-[0_4px_20px_rgba(125,194,67,0.35)] transition-all duration-300 hover:bg-green-deep hover:text-white sm:w-auto"
         >
-          Get Started Free
+         Get Booking Now
           <ArrowRight className="h-4 w-4" />
         </a>
       </div>

@@ -20,6 +20,13 @@ import {
   Compass,
   Blocks,
   Rocket,
+  Target,
+  Search,
+  Mail,
+  Calendar,
+  Globe,
+  GraduationCap,
+  MessageSquare,
 } from "lucide-react";
 
 export type FeatureAccent = "green" | "gold" | "navy";
@@ -265,6 +272,173 @@ export const FEATURES: Feature[] = [
       "Ongoing system tuning",
     ],
   },
+  {
+  id: "phone-inbox",
+  icon: MessageSquare,
+  accent: "green",
+  title: "Phone & Inbox",
+  tagline:
+    "Calls, texts, email, Facebook, Instagram, and live chat — all managed from one shared inbox.",
+  overview:
+    "Keep every customer conversation in one place. Whether it's a phone call, SMS, email, Facebook message, Instagram DM, or website chat, your entire team has the full conversation history without switching between apps.",
+  howItWorks: [
+    "A customer contacts your business from any channel.",
+    "The conversation appears instantly in the shared inbox.",
+    "Your team replies from one interface.",
+    "Every interaction is automatically logged to the CRM."
+  ],
+  highlights: [
+    "Unified conversations inbox",
+    "Phone, SMS & email",
+    "Facebook & Instagram messaging",
+    "Internal team notes",
+    "CRM conversation history"
+  ],
+},
+
+{
+  id: "training",
+  icon: GraduationCap,
+  accent: "green",
+  title: "Employee Training",
+  tagline:
+    "Onboard new hires and train your team with videos, SOPs, and learning paths.",
+  overview:
+    "Centralize onboarding and employee education with structured training modules, videos, documents, quizzes, and progress tracking so every team member follows the same process.",
+  howItWorks: [
+    "Assign onboarding or training modules.",
+    "Employees complete lessons at their own pace.",
+    "Managers monitor progress and completion.",
+    "Training records stay attached to each employee profile."
+  ],
+  highlights: [
+    "Digital onboarding",
+    "Training videos & SOPs",
+    "Progress tracking",
+    "Knowledge library",
+    "Completion reports"
+  ],
+},
+
+{
+  id: "website-builder",
+  icon: Globe,
+  accent: "navy",
+  title: "Website Builder",
+  tagline:
+    "Create beautiful websites and landing pages that connect directly to your CRM.",
+  overview:
+    "Build responsive websites, landing pages, forms, and sales funnels without code. Every lead automatically flows into your CRM and marketing automations.",
+  howItWorks: [
+    "Choose a professionally designed template.",
+    "Customize pages with the drag-and-drop builder.",
+    "Publish your website instantly.",
+    "Leads automatically enter your CRM."
+  ],
+  highlights: [
+    "Drag-and-drop builder",
+    "Landing pages",
+    "Lead capture forms",
+    "SEO optimized",
+    "CRM integration"
+  ],
+},
+
+{
+  id: "booking-calendar",
+  icon: Calendar,
+  accent: "gold",
+  title: "Booking & Calendar",
+  tagline:
+    "Allow customers to schedule appointments online with automatic reminders.",
+  overview:
+    "Eliminate scheduling back-and-forth by letting customers book available time slots online while your calendar stays synchronized across your team.",
+  howItWorks: [
+    "Customers select an available time.",
+    "Appointments sync to your calendar.",
+    "Confirmation and reminder messages are sent automatically.",
+    "Your team manages bookings from one dashboard."
+  ],
+  highlights: [
+    "Online appointment booking",
+    "Calendar synchronization",
+    "Automatic reminders",
+    "Recurring appointments",
+    "Team scheduling"
+  ],
+},
+
+{
+  id: "email-marketing",
+  icon: Mail,
+  accent: "gold",
+  title: "Email Marketing",
+  tagline:
+    "Build automated email campaigns that nurture leads and increase repeat business.",
+  overview:
+    "Design newsletters, promotional campaigns, and automated email sequences that keep customers engaged throughout every stage of the customer journey.",
+  howItWorks: [
+    "Create an email campaign.",
+    "Select your audience.",
+    "Schedule or automate delivery.",
+    "Track opens, clicks, and conversions."
+  ],
+  highlights: [
+    "Email campaigns",
+    "Automation sequences",
+    "Audience segmentation",
+    "Drag-and-drop builder",
+    "Performance analytics"
+  ],
+},
+
+{
+  id: "seo-management",
+  icon: Search,
+  accent: "green",
+  title: "SEO Management",
+  tagline:
+    "Improve your search rankings and generate more organic leads.",
+  overview:
+    "Monitor keyword rankings, optimize your website, and improve local SEO performance with tools designed to help customers find your business online.",
+  howItWorks: [
+    "Track target keywords.",
+    "Receive optimization recommendations.",
+    "Monitor local rankings.",
+    "Measure SEO growth over time."
+  ],
+  highlights: [
+    "Keyword tracking",
+    "Local SEO",
+    "Site optimization",
+    "Ranking reports",
+    "Performance insights"
+  ],
+},
+
+{
+  id: "marketing-ads",
+  icon: Target,
+  accent: "gold",
+  title: "Google & Meta Ads",
+  tagline:
+    "Launch, manage, and optimize Google and Meta advertising campaigns from one platform.",
+  overview:
+    "Track advertising performance from click to closed customer. Measure ROI, monitor conversions, and optimize campaigns with complete CRM attribution.",
+  howItWorks: [
+    "Connect your advertising accounts.",
+    "Launch Google and Meta campaigns.",
+    "Track every lead and conversion.",
+    "Optimize campaigns using ROI reporting."
+  ],
+  highlights: [
+    "Google Ads management",
+    "Facebook & Instagram Ads",
+    "Conversion tracking",
+    "ROI reporting",
+    "Campaign optimization"
+  ],
+},
 ];
 
 export type PipelineStage = {

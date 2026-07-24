@@ -7,11 +7,11 @@ export default function StoryPage() {
       {/* 1. Hero Section (Solid Navy Style) */}
       <section className="relative pt-24 pb-20 sm:pt-40 sm:pb-40 bg-navy">
         <div className="relative max-w-4xl mx-auto px-5 sm:px-8 text-center">
-          <div className="inline-flex items-center justify-center gap-3 mb-6 reveal-up is-revealed">
+          <div className="inline-flex items-center justify-center gap-3  reveal-up is-revealed">
             <div className="eyebrow fade-in-up">Our Story</div>
           </div>
           
-          <h1 className="font-sans font-bold leading-tight tracking-tight text-white text-4xl sm:text-5xl lg:text-6xl reveal-up is-revealed" style={{ transitionDelay: '0.1s' }}>
+          <h1 className="font-sans font-bold leading-tight tracking-tight text-white   reveal-up is-revealed" style={{ transitionDelay: '0.1s' }}>
             We built the exact system <br className="hidden sm:block" />
             <span className="text-green">we couldn&apos;t find.</span>
           </h1>
@@ -182,10 +182,11 @@ export default function StoryPage() {
           <blockquote className="text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.35] font-sans font-bold text-navy tracking-tight relative">
             <span className="text-ink-soft font-normal">This is not an agency. This is not just software.</span><br className="hidden md:block" />
             <br className="hidden md:block" />
-            It&apos;s the operating system I wish someone had handed me at $1M, <span className="text-green relative inline-block">built by somebody who&apos;s made the 2AM payroll call</span> and felt every one of these problems firsthand.
+            It&apos;s the operating system <br/> I wish someone had handed me at $1M,
+             <span className="text-green relative inline-block">built by somebody who&apos;s made the 2AM payroll call</span> and felt every one of these problems firsthand.
           </blockquote>
           
-          <div className="mt-16 flex flex-col items-center justify-center gap-4 reveal-up is-revealed" style={{ transitionDelay: '0.2s' }}>
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 reveal-up is-revealed" style={{ transitionDelay: '0.2s' }}>
             <div className="w-16 h-16 rounded-full bg-mist border border-line shadow-sm flex items-center justify-center">
              <img src="./founder.webp" className='rounded-full' alt="" />
             </div>
@@ -202,9 +203,13 @@ export default function StoryPage() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <p className="text-green text-sm font-bold tracking-widest mb-4 font-bebas uppercase">The Principles</p>
-            <h2 className="text-4xl sm:text-5xl font-bold uppercase leading-tight tracking-tight font-bebas text-navy">
-              THE SAME SYSTEM, <span className="text-green">PRODUCTIZED.</span>
+         
+             <div className="inline-flex items-center justify-center gap-3  reveal-up is-revealed">
+            <div className="eyebrow fade-in-up">The Principles</div>
+          </div>
+            <h2 className=" capitalize font-bebas text-navy">
+         
+              The same system productized
             </h2>
             <p className="text-ink text-lg leading-relaxed mt-6">
               TreeROI proved the model. Now the same engine powers a growing family of trade-specific platforms - each one built and owned by an operator in that industry.
@@ -214,31 +219,31 @@ export default function StoryPage() {
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="bg-white p-10 rounded-3xl shadow-sm border border-line hover:-translate-y-1 transition-transform duration-300">
               <span className="text-green font-bebas text-3xl">01.</span>
-              <h3 className="text-2xl font-bold font-bebas uppercase tracking-tight text-navy mt-4 mb-3">No Niche Lock-In</h3>
+              <h3 className="text-xl font-bold font-bebas uppercase tracking-tight text-navy mt-4 mb-3">No Niche Lock-In</h3>
               <p className="text-ink leading-relaxed">We provide the universal engine; operators provide the industry expertise. The system scales to fit the specific needs of any trade.</p>
             </div>
             
             <div className="bg-white p-10 rounded-3xl shadow-sm border border-line hover:-translate-y-1 transition-transform duration-300">
               <span className="text-green font-bebas text-3xl">02.</span>
-              <h3 className="text-2xl font-bold font-bebas uppercase tracking-tight text-navy mt-4 mb-3">Built by Operators</h3>
+              <h3 className="text-xl font-bold font-bebas uppercase tracking-tight text-navy mt-4 mb-3">Built by Operators</h3>
               <p className="text-ink leading-relaxed">Software companies build for features. Operators build for outcomes. Every platform in our network is guided by someone doing the actual work.</p>
             </div>
 
             <div className="bg-white p-10 rounded-3xl shadow-sm border border-line hover:-translate-y-1 transition-transform duration-300">
               <span className="text-green font-bebas text-3xl">03.</span>
-              <h3 className="text-2xl font-bold font-bebas uppercase tracking-tight text-navy mt-4 mb-3">ROI Over Vanity</h3>
+              <h3 className="text-xl font-bold font-bebas uppercase tracking-tight text-navy mt-4 mb-3">ROI Over Vanity</h3>
               <p className="text-ink leading-relaxed">We don&apos;t care about page views if they don&apos;t turn into booked jobs. Every tool in the platform is measured by its impact on the bottom line.</p>
             </div>
 
             <div className="bg-white p-10 rounded-3xl shadow-sm border border-line hover:-translate-y-1 transition-transform duration-300">
               <span className="text-green font-bebas text-3xl">04.</span>
-              <h3 className="text-2xl font-bold font-bebas uppercase tracking-tight text-navy mt-4 mb-3">One Seat, One Owner</h3>
+              <h3 className="text-xl font-bold font-bebas uppercase tracking-tight text-navy mt-4 mb-3">One Seat, One Owner</h3>
               <p className="text-ink leading-relaxed">The vertical model works because it&apos;s focused. We partner with one driven operator per industry to own and build their specific CRM.</p>
             </div>
           </div>
           
           <div className="text-center mt-16">
-            <Link href="/services" className="inline-flex items-center justify-center rounded-full bg-navy hover:bg-navy-deep text-white font-bold text-lg tracking-widest px-8 py-4 font-bebas transition-all shadow-lg hover:shadow-xl">
+            <Link href="/features" className="inline-flex items-center justify-center rounded-full bg-navy hover:bg-navy-deep text-white font-bold text-md tracking-widest px-8 py-4 font-bebas transition-all shadow-lg hover:shadow-xl">
               SEE THE PLATFORM
             </Link>
           </div>

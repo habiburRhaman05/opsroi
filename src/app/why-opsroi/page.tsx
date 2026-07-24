@@ -348,6 +348,9 @@ export default function WhyOpsroiPage() {
               Before / After
             </div>
             <h2>The same day, run on one system.</h2>
+            <p>
+              Every step of a typical workday — from lead to invoice — mapped against <br/>the old way of separate tools vs. one connected platform. See the difference side by side.
+            </p>
           </div>
 
           <div className="mx-auto max-w-4xl overflow-hidden rounded-3xl border border-line bg-white shadow-[0_30px_70px_-30px_rgba(29,78,95,0.4)]">
@@ -411,6 +414,9 @@ export default function WhyOpsroiPage() {
               What&apos;s Different
             </div>
             <h2>Four things no other platform does together.</h2>
+            <p>
+              Not a checklist of features you&apos;ve seen before. <br/>These are the structural advantages that make OpsROI fundamentally different from anything else.
+            </p>
           </div>
 
           <div className="grid gap-5 md:grid-cols-2" data-stagger>
@@ -445,7 +451,10 @@ export default function WhyOpsroiPage() {
             <div className="eyebrow" style={{ justifyContent: "center" }}>
               Compare
             </div>
-            <h2>See exactly what you&apos;re not getting elsewhere.</h2>
+            <h2>See exactly what you&apos;re not getting else where.</h2>
+            <p>
+              A straight-up comparison across capabilities: what the leading tools cover <br/>vs. what OpsROI includes. Spoiler — the gap is bigger than you&apos;d expect.
+            </p>
           </div>
 
           <div className="mx-auto mb-8 flex max-w-sm gap-2 rounded-full border border-line bg-white p-1 shadow-sm">
@@ -529,6 +538,9 @@ export default function WhyOpsroiPage() {
               Proof
             </div>
             <h2>The numbers, not just the pitch.</h2>
+            <p>
+              Real metrics from real operators who made the switch. <br/>No vanity stats — just the outcomes that matter to your bottom line.
+            </p>
           </div>
 
           <div className="mx-auto grid max-w-4xl grid-cols-2 gap-4 rounded-3xl bg-gradient-to-br from-[#163C49] to-[#1D4E5F] p-8 sm:grid-cols-4 sm:gap-6 sm:p-10">
@@ -554,6 +566,9 @@ export default function WhyOpsroiPage() {
               FAQ
             </div>
             <h2>Straight answers before you switch.</h2>
+            <p>
+              The questions we hear most from agencies and trades considering OpsROI. <br/>No fine print, no dodging — just honest answers.
+            </p>
           </div>
 
           <div className="mx-auto flex max-w-3xl flex-col gap-3">

@@ -64,7 +64,7 @@ export function ServicesTrack() {
               <Link href="/contact#contact" className="bg-[#295c2b] hover:bg-[#1f4721] text-white px-8 py-3.5 rounded-xl font-bold transition-all shadow-md active:scale-95 text-[15px]">
                 Contact Us
               </Link>
-              <Link href="/about" className="bg-white border border-line text-navy px-8 py-3.5 rounded-xl font-bold hover:bg-mist transition-all active:scale-95 text-[15px]">
+              <Link href="/features" className="bg-white border border-line text-navy px-8 py-3.5 rounded-xl font-bold hover:bg-mist transition-all active:scale-95 text-[15px]">
                 See What We Build
               </Link>
             </div>

@@ -61,7 +61,7 @@ export default function Pricing({ hideHeader = false }: { hideHeader?: boolean }
             >
               <img src="/watermark.svg" alt="" className="w-full h-auto" aria-hidden="true" />
             </div>
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold text-navy text-xs font-extrabold tracking-widest uppercase px-5 py-2 rounded-full shadow-md">
+            <div className="absolute   top-2 left-1/2 -translate-x-1/2 bg-gold text-navy text-xs font-extrabold tracking-widest uppercase px-5 py-2 rounded-full shadow-md">
               Most Popular
             </div>
             
