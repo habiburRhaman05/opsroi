@@ -19,10 +19,7 @@ const faqs = [
     q: "Do I need technical skills to use OpsROI?",
     a: "No. The platform is built to be run by an operator, not a developer. Setup is guided, and ongoing support is a standing team, not a ticket queue."
   },
-  {
-    q: "What happens after the 14-day free trial?",
-    a: "You choose a plan and billing starts from that point — nothing is charged automatically at the end of the trial without you selecting a plan."
-  },
+
   {
     q: "Is there a long-term contract?",
     a: "No. All plans are month-to-month. If OpsROI isn't the right fit, you can cancel anytime."
