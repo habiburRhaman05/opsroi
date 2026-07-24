@@ -5,7 +5,7 @@ export default function StoryPage() {
     <main className="bg-white overflow-hidden">
       
       {/* 1. Hero Section (Solid Navy Style) */}
-      <section className="relative pt-32 pb-32 sm:pt-40 sm:pb-40 bg-navy">
+      <section className="relative pt-24 pb-20 sm:pt-40 sm:pb-40 bg-navy">
         <div className="relative max-w-4xl mx-auto px-5 sm:px-8 text-center">
           <div className="inline-flex items-center justify-center gap-3 mb-6 reveal-up is-revealed">
             <div className="eyebrow fade-in-up">Our Story</div>

@@ -176,6 +176,13 @@ export const MailchimpIcon = () => (
   </svg>
 );
 
+export const EmailIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none">
+    <rect x="3" y="6" width="18" height="12" rx="2" stroke={N} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M3 6l9 6 9-6" stroke={G} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
 export const WebsiteIcon = () => (
 <svg
   xmlns="http://www.w3.org/2000/svg"
@@ -256,5 +263,6 @@ export const ICON_MAP: Record<string, React.ComponentType> = {
   layers_clear: LayersClearIcon,
   person_pin_circle: PersonPinIcon,
   hourglass_bottom: HourglassIcon,
-  website:WebsiteIcon
+  website:WebsiteIcon,
+  email: EmailIcon
 };

@@ -121,7 +121,7 @@ export default function FeaturesPage() {
                   set up for you - no niche requirements, no long contracts.
                 </p>
                 <div className="cta-actions">
-                  <a href="/contact" className="btn btn-cta-premium">
+                  <a href="/book" className="btn btn-cta-premium">
                     <span>Book a Call</span>
                     <svg
                       width="20"
