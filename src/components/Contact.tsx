@@ -181,7 +181,7 @@ export default function Contact() {
                    </div>
                    <div>
                      <h4 className="font-bebas tracking-widest text-sm text-white/50 uppercase mb-1">Location</h4>
-                     <p className="font-medium text-lg leading-snug text-white">Fully Remote<br/><span className="text-white/70 text-base font-normal">Austin, TX &amp; Global</span></p>
+                     <p className="font-medium text-lg leading-snug text-white"><br/><span className="text-white/70 text-base font-normal">Austin, TX &amp; Global</span></p>
                    </div>
                  </div>
                </div>
