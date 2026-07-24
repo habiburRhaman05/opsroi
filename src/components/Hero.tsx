@@ -281,7 +281,7 @@ export default function Hero() {
             <div className="rounded-2xl overflow-hidden border border-white/15 shadow-[0_32px_80px_rgba(0,0,0,0.5)]">
               <div className="relative aspect-video w-full bg-black">
                 <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${DEMO_VIDEO_ID}?autoplay=1&rel=0`}
+                  src={``}
                   title="OpsROI Demo Video"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
