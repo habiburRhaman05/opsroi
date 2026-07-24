@@ -71,7 +71,7 @@ export default function Contact() {
                <p className="text-sm text-ink-soft italic border-l-2 border-green/30 pl-3">&ldquo;{submitted.message}&rdquo;</p>
             </div>
             
-            <button type="button" onClick={() => { setSubmitted(null); reset(); }} className="w-full border-2 border-line hover:border-navy text-navy font-bold rounded-xl py-3 transition-colors">
+            <button type="button" onClick={() => { setSubmitted(null); reset(); }} className="w-full border-2 text-md border-line hover:border-navy text-navy font-bold rounded-xl py-3 transition-colors">
                Send another message
             </button>
           </div>

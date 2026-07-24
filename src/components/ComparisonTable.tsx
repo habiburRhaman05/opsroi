@@ -85,10 +85,15 @@ export function ComparisonTable() {
 
           </ScrollReveal>
           <ScrollReveal delay={100}>
-            <h2 className=" text-[#1D4E5F]  font-bold mx-auto mb-8">
+            <h2 className=" text-[#1D4E5F]  font-bold mx-auto mb-6">
               Everything you&apos;re already paying  <br></br> for, built into one
               platform.
             </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={150}>
+            <p className="text-[#1D4E5F]/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+              See exactly how much your current tool stack costs compared to one unified platform. <br/>The math speaks for itself — one login, one bill, one system.
+            </p>
           </ScrollReveal>
         </div>
 

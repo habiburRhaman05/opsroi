@@ -29,7 +29,7 @@ export default function Home() {
         <Hero />
         {/* <HeroSection/> */}
         {/* <TrustCarousel /> */}
-        <FeatureTabs />
+        {/* <FeatureTabs /> */}
         {/* <Services /> */}
         <Platform/>
         <HowItWorks />

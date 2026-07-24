@@ -26,6 +26,7 @@ export default function HowItWorks() {
         <div className="section-head center mx-auto mb-10 md:mb-[52px]">
           <div className="eyebrow" style={{justifyContent: 'center'}}>How It Works</div>
           <h2>From first call to fully running, in three steps.</h2>
+          <p>No lengthy onboarding or complicated setup. <br/>We map your agency around your sales and delivery process, <br/>build the systems, and keep everything running.</p>
         </div>
 
         <div className={`how-steps !grid !grid-cols-1 lg:!grid-cols-3 !gap-8 lg:!gap-10 mt-8 ${inView ? 'in-view' : ''}`} id="howSteps" ref={stepsRef}>
