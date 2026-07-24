@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import Header from '@/src/components/Header';
 import Footer from '@/src/components/Footer';
 import Link from 'next/link';
+import FeatureTabs from "@/src/components/FeatureTabs";
+import Services from "@/src/components/Services";
 
 export default function ProductPage() {
 
@@ -57,9 +59,10 @@ export default function ProductPage() {
 
 
 
+<FeatureTabs />
+        <Services />
 
-
-<section id="product-tabs" className="section-alt feature-tabs">
+{/* <section id="product-tabs" className="section-alt feature-tabs">
   <div className="container">
     <div className="section-head center " style={{ margin: '0 auto 36px' }}>
       <div className="eyebrow" style={{ justifyContent: 'center' }}>Inside the Platform</div>
@@ -254,7 +257,7 @@ export default function ProductPage() {
       </div>
     </div>
   </div>
-</section>
+</section> */}
 
 
 <section className="cta-section">
