@@ -180,7 +180,7 @@ export default function StoryPage() {
           <span className="block text-[150px] leading-none text-green/10 font-serif font-black absolute -top-20 left-1/2 -translate-x-1/2 pointer-events-none select-none">&quot;</span>
           
           <blockquote className="text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.35] font-sans font-bold text-navy tracking-tight relative">
-            <span className="text-ink-soft font-normal">This is not an agency. This is not just software.</span><br className="hidden md:block" />
+            <span className=" font-normal">This is not an agency. This is not just software.</span><br className="hidden md:block" />
             <br className="hidden md:block" />
             It&apos;s the operating system <br/> I wish someone had handed me at $1M,
              <span className="text-green relative inline-block">built by somebody who&apos;s made the 2AM payroll call</span> and felt every one of these problems firsthand.
