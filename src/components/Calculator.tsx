@@ -3,13 +3,13 @@
 import { useState, useCallback, useMemo } from "react";
 import { ScrollReveal } from "@/src/components/ScrollReveal";
 import { SectionLabel } from "@/src/components/ui/SectionLabel";
-import { ICON_MAP, SearchIcon, PenIcon, DocusignIcon, MailchimpIcon, WixIcon, GoogleAdsIcon, MetaIcon } from "@/src/lib/icons";
+import { ICON_MAP, SearchIcon, PenIcon, DocusignIcon, MailchimpIcon, WebsiteIcon, GoogleAdsIcon, MetaIcon } from "@/src/lib/icons";
 import { TIERS, type CalculatorItem, type TierKey } from "@/src/lib/calculator";
 
 const BRAND_ICONS: Record<string, React.ComponentType> = {
   docusign: DocusignIcon,
   mailchimp: MailchimpIcon,
-  wix: WixIcon,
+  webSite: WebsiteIcon,
   googleads: GoogleAdsIcon,
   meta: MetaIcon,
   search: SearchIcon,
@@ -36,7 +36,7 @@ const SOFTWARE: CalculatorItem[] = [
   { n: "Inventory", b: "Sortly", p: 149, iconKey: "inventory" },
   { n: "E-Sign & Docs", b: "DocuSign", p: 75, iconKey: "docusign" },
   { n: "Email Marketing", b: "Mailchimp", p: 68, iconKey: "mailchimp" },
-  { n: "Website", b: "Wix", p: 39, iconKey: "wix" },
+  { n: "Website", b: "WebSite", p: 39, iconKey: "webSite" },
   { n: "Booking", b: "Acuity", p: 27, iconKey: "calendar" },
 ];
 

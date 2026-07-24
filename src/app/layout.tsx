@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Bebas_Neue, Roboto } from "next/font/google";
 import "./globals.css";
 import ScrollRevealObserver from "@/src/components/ScrollRevealObserver";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 
 
@@ -28,7 +30,9 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-roboto">
         <ScrollRevealObserver />
+           <Header />
         {children}
+            <Footer />
       </body>
     </html>
   );

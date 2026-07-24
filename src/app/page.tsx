@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
   
-      <Header />
+   
       <main>
         <Hero />
         {/* <HeroSection/> */}
@@ -39,7 +39,7 @@ export default function Home() {
         <Faq />
         <Contact />
       </main>
-      <Footer />
+  
     </>
   );
 }

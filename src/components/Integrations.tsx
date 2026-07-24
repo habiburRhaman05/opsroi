@@ -57,7 +57,7 @@ export default function Integrations() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Visit ${item.name}`}
-              className="group flex w-28 shrink-0 flex-col items-center gap-3 rounded-2xl border border-line bg-white px-4 py-5 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-green hover:shadow-xl hover:shadow-green/15 focus-visible:-translate-y-1.5 focus-visible:border-green focus-visible:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/40"
+              className="group flex w-28 shrink-0 flex-col items-center gap-3 rounded-2xl border border-line bg-white px-4 py-5 shadow-sm transition-all duration-300 ease-out  hover:border-green hover:shadow-xl hover:shadow-green/15 focus-visible:-translate-y-1.5 focus-visible:border-green focus-visible:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/40"
             >
               <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-mist transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-rotate-3">
                 <Image

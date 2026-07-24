@@ -33,10 +33,10 @@ export default function Footer() {
           </div>
           <div className="footer-col">
             <h4>Contact &amp; Legal</h4>
-            <a href="mailto:hello@opsroi.com">hello@opsroi.com</a>
-            <a href="tel:+10000000000">(000) 000-0000</a>
-            <Link href="#">Privacy Policy</Link>
-            <Link href="#">Terms of Service</Link>
+            <a href="mailto:support@opsroi.com">support@opsroi.com</a>
+            <a href="tel:+19714490660">+19714490660</a>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="/terms-and-conditions">Terms of Service</Link>
           </div>
         </div>
         <div className="footer-bottom">

@@ -312,7 +312,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4>Email</h4>
-                <p>hello@opsroi.com</p>
+                <p>support@opsroi.com</p>
               </div>
             </div>
             <div className="contact-info-item">
@@ -329,7 +329,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4>Phone</h4>
-                <p>(800) 555-0199</p>
+                <p>+19714490660</p>
               </div>
             </div>
             <div className="contact-info-item">
