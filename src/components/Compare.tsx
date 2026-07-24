@@ -42,7 +42,7 @@ export default function Compare() {
               <span>Features</span>
               <span>Replaces</span>
               <span>Other tools</span>
-              <span className="included-col-highlight" style={{ color: 'var(--gold)' }}>OpsROI</span>
+              <span className="included-col-highlight" style={{ color: 'var(--gold)', display: 'flex', justifyContent: 'center', textAlign: 'center', width: '100%' }}>OpsROI</span>
             </div>
 
             {/* CRM & Pipeline Management */}
@@ -54,7 +54,7 @@ export default function Compare() {
                
               </span>
               <span className="included-cost">$99/month</span>
-              <span className="included-col-highlight included-check">{CHECK}</span>
+              <span className="included-col-highlight included-check" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>{CHECK}</span>
             </div>
 
             {/* Websites & Sales Funnels — placeholder text until icons uploaded */}
@@ -66,7 +66,7 @@ export default function Compare() {
                 
               </span>
               <span className="included-cost">$297/month</span>
-              <span className="included-col-highlight included-check">{CHECK}</span>
+              <span className="included-col-highlight included-check" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>{CHECK}</span>
             </div>
 
             {/* Forms, Surveys & Quizzes */}
@@ -77,7 +77,7 @@ export default function Compare() {
                 <BrandLogo name="Zoho CRM" file="zohocrm-in-logo.png" bg="#E42527" />
               </span>
               <span className="included-cost">$49/month</span>
-              <span className="included-col-highlight included-check">{CHECK}</span>
+              <span className="included-col-highlight included-check" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>{CHECK}</span>
             </div>
 
             {/* Workflow Automation */}
@@ -90,7 +90,7 @@ export default function Compare() {
                 {/* <BrandLogo name="GoHighLevel" file="gohighlevel-com-logo.png" bg="#F9A825" /> */}
               </span>
               <span className="included-cost">$169/month</span>
-              <span className="included-col-highlight included-check">{CHECK}</span>
+              <span className="included-col-highlight included-check" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>{CHECK}</span>
             </div>
 
             {/* Email & SMS Follow-Up */}
@@ -102,7 +102,7 @@ export default function Compare() {
 
               </span>
               <span className="included-cost">$149/month</span>
-              <span className="included-col-highlight included-check">{CHECK}</span>
+              <span className="included-col-highlight included-check" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>{CHECK}</span>
             </div>
 
             {/* Booking & Missed-Call Text-Back */}
@@ -113,7 +113,7 @@ export default function Compare() {
                 <BrandLogo name="GoHighLevel" file="sugarcrm-com-logo.png" bg="#F9A825" />
               </span>
               <span className="included-cost">$69/month</span>
-              <span className="included-col-highlight included-check">{CHECK}</span>
+              <span className="included-col-highlight included-check" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>{CHECK}</span>
             </div>
 
             {/* Client Subaccounts */}
@@ -124,7 +124,7 @@ export default function Compare() {
                 <BrandLogo name="Monday.com" file="monday-com-logo.png" bg="#FF3D57" />
               </span>
               <span className="included-cost">$99/month</span>
-              <span className="included-col-highlight included-check">{CHECK}</span>
+              <span className="included-col-highlight included-check" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>{CHECK}</span>
             </div>
 
             {/* White-Labeled ROI Dashboards */}
@@ -135,7 +135,7 @@ export default function Compare() {
                 <BrandLogo name="harvey" file="harvey-ai-logo.png" bg="#FF3D57" />
               </span>
               <span className="included-cost">$199/month</span>
-              <span className="included-col-highlight included-check">{CHECK}</span>
+              <span className="included-col-highlight included-check" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>{CHECK}</span>
             </div>
 
             {/* Ongoing Ops Support Team */}
@@ -146,7 +146,7 @@ export default function Compare() {
                 <BrandLogo name="Monday.com" file="monday-com-logo.png" bg="#FF3D57" />
               </span>
               <span className="included-cost">-</span>
-              <span className="included-col-highlight included-check">{CHECK}</span>
+              <span className="included-col-highlight included-check" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>{CHECK}</span>
             </div>
 
             {/* Total row */}

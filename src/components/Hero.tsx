@@ -93,18 +93,15 @@ export default function Hero() {
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] sm:leading-[1.2]">
                 The{' '}
                 <span className="text-[#7DC243] drop-shadow-sm">
                   AI-powered
                 </span>{' '}
                 business operating system{' '}
-                <br className="hidden sm:inline" />
-                <span className="inline-flex items-center text-slate-100 mt-1">
+                <span className="block text-slate-100 mt-2 sm:mt-4 truncate max-w-full">
                   for{' '}
-                  <span
-                    className="ml-2.5 text-[#ECB84D] underline decoration-[#ECB84D]/40 underline-offset-8 font-semibold inline-block sm:min-w-[19ch]"
-                  >
+                  <span className="text-[#ECB84D] underline decoration-[#ECB84D]/40 underline-offset-8 font-semibold">
                     {currentWord}
                     <span className="animate-pulse text-[#ECB84D] ml-0.5">|</span>
                   </span>
@@ -113,7 +110,7 @@ export default function Hero() {
 
               {/* Subheadline Paragraph */}
               <p className="text-lg sm:text-xl text-slate-200 leading-relaxed max-w-2xl font-normal mx-auto lg:mx-0">
-                One unified platform to capture leads, run your crew or client accounts, send AI-generated estimates and invoices, and prove your results — instead of duct-taping together six tools that don't talk to each other.
+                One unified platform to capture leads, run your crew or client accounts, send AI-generated estimates and invoices, and prove your results, instead of duct-taping together six tools that don't talk to each other.
               </p>
 
               {/* CTA Action Buttons */}

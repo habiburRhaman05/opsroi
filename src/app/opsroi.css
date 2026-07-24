@@ -1,7 +1,7 @@
 /* ==========================================================================
-   OpsROI — shared stylesheet
-   Palette:  Navy #1D4E5F · Navy Deep #163C49 · Green #7DC243 · Green Deep #5FA02E
-             Gold #ECB84D · Paper #FFFFFF · Mist #F3F6F5 · Ink #3E4B4F
+   OpsROI â€” shared stylesheet
+   Palette:  Navy #1D4E5F Â· Navy Deep #163C49 Â· Green #7DC243 Â· Green Deep #5FA02E
+             Gold #ECB84D Â· Paper #FFFFFF Â· Mist #F3F6F5 Â· Ink #3E4B4F
    Type:     Poppins (display) / Inter (body + utility)
    ========================================================================== */
 
@@ -35,7 +35,7 @@
   transform: translateY(0);
 }
 /* Opacity-only variant for items with their own baseline transform (e.g. the
-   raised "featured" pricing card) — avoids clobbering it on reveal. */
+   raised "featured" pricing card) â€” avoids clobbering it on reveal. */
 .stagger-item-fade {
   opacity: 0;
   transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -82,7 +82,7 @@ html { scroll-behavior: smooth; }
 html, body { overflow-x: hidden; width: 100%; }
 
 /* -------------------- Lenis smooth scroll -------------------- */
-/* Lenis drives scrolling itself once active — hand off from native CSS smoothing */
+/* Lenis drives scrolling itself once active â€” hand off from native CSS smoothing */
 html.lenis, html.lenis body { height: auto; }
 html.lenis { scroll-behavior: auto; }
 .lenis:not(.lenis-autoToggle).lenis-stopped { overflow: clip; }
@@ -147,7 +147,7 @@ html.lenis { scroll-behavior: auto; }
   transform: translateY(0);
 }
 /* opacity-only variant for elements that already carry their own baseline transform
-   (e.g. the raised "featured" pricing card) — avoids clobbering it on reveal */
+   (e.g. the raised "featured" pricing card) â€” avoids clobbering it on reveal */
 .reveal-fade {
   opacity: 0;
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1);
@@ -385,7 +385,7 @@ body.modal-open .back-to-top { display: none !important; }
 
 
 /* ============================================================
-   HERO v2 — full-bleed dark, floating mockup card.
+   HERO v2 â€” full-bleed dark, floating mockup card.
    Every color below is one of the existing tokens
    (--navy, --navy-deep, --green, --green-deep, --gold).
    ============================================================ */
@@ -462,7 +462,7 @@ body.modal-open .back-to-top { display: none !important; }
   to { background-position: -220% center; }
 }
 
-/* ─── Typewriter (dance-free) ─── */
+/* â”€â”€â”€ Typewriter (dance-free) â”€â”€â”€ */
 .hero-typewriter-line {
   display: inline-block;
 }
@@ -522,7 +522,7 @@ body.modal-open .back-to-top { display: none !important; }
 }
 .hero-btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.06); }
 
-/* ─── Trust row ─── */
+/* â”€â”€â”€ Trust row â”€â”€â”€ */
 .hero-trust-row {
   display: flex;
   flex-wrap: wrap;
@@ -540,7 +540,7 @@ body.modal-open .back-to-top { display: none !important; }
   color: var(--green);
 }
 
-/* ─── Right Column — Video Poster ─── */
+/* â”€â”€â”€ Right Column â€” Video Poster â”€â”€â”€ */
 .hero-visual {
   position: relative;
   z-index: 2;
@@ -630,7 +630,7 @@ body.modal-open .back-to-top { display: none !important; }
   white-space: nowrap;
 }
 
-/* ─── Stats row ─── */
+/* â”€â”€â”€ Stats row â”€â”€â”€ */
 .hero-stats-row {
   display: flex;
   align-items: center;
@@ -680,7 +680,7 @@ body.modal-open .back-to-top { display: none !important; }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── Video Modal ─── */
+/* â”€â”€â”€ Video Modal â”€â”€â”€ */
 .video-modal-backdrop {
   position: fixed;
   inset: 0;
@@ -1237,7 +1237,7 @@ section { padding: 88px 0; scroll-margin-top: 84px; }
 }
 
 /* ==========================================================================
-   OpsROI — platform-page additions (trust strip, tabs, compare table,
+   OpsROI â€” platform-page additions (trust strip, tabs, compare table,
    testimonials, pricing, FAQ)
    ========================================================================== */
 
@@ -1533,7 +1533,7 @@ section { padding: 88px 0; scroll-margin-top: 84px; }
 }
 
 /* ==========================================================================
-   OpsROI — integrations bar / feature-tab checklist / testimonial carousel
+   OpsROI â€” integrations bar / feature-tab checklist / testimonial carousel
    ========================================================================== */
 
 /* -------------------- Integrations bar -------------------- */
@@ -1717,9 +1717,9 @@ section { padding: 88px 0; scroll-margin-top: 84px; }
 
 
 /* ============================================================
-   FILE 2 of 2 — CSS ADDITIONS
+   FILE 2 of 2 â€” CSS ADDITIONS
    Append this whole block to the end of style-2.css.
-   Nothing here overrides existing rules — it only adds new
+   Nothing here overrides existing rules â€” it only adds new
    classes used by the 4 updated sections. All colors reuse
    the existing tokens from :root (no new hex values added).
    ============================================================ */
@@ -1774,7 +1774,7 @@ section { padding: 88px 0; scroll-margin-top: 84px; }
   .marquee-wrap { overflow-x: auto; }
 }
 
-/* -------------------- 2) How It Works — animated timeline -------------------- */
+/* -------------------- 2) How It Works â€” animated timeline -------------------- */
 .how-steps {
   position: relative;
   display: grid;
@@ -1863,7 +1863,7 @@ section { padding: 88px 0; scroll-margin-top: 84px; }
   .how-steps-line { display: none; }
 }
 
-/* -------------------- 3) Testimonials — peek carousel -------------------- */
+/* -------------------- 3) Testimonials â€” peek carousel -------------------- */
 .testi-peek-wrap {
   overflow: hidden;
   padding: 0 12%;
@@ -1972,15 +1972,9 @@ section { padding: 88px 0; scroll-margin-top: 84px; }
 .included-unique { color: var(--gold); font-size: 0.85rem; font-style: italic; }
 .included-col-highlight { display: flex; justify-content: center; }
 .included-check { 
-  background: rgba(125,194,67,0.15); 
-  border-radius: 50%; 
-  padding: 6px; 
-  width: 32px; 
-  height: 32px; 
   display: flex;
   align-items: center; 
   justify-content: center;
-  box-shadow: 0 0 12px rgba(125,194,67,0.2);
 }
 
 .included-total { 
@@ -2007,7 +2001,7 @@ section { padding: 88px 0; scroll-margin-top: 84px; }
   .included-head span:nth-child(2), .included-row span.included-replaces { display: none; }
 }
 
-/* -------------------- Testimonials — exact reference match -------------------- */
+/* -------------------- Testimonials â€” exact reference match -------------------- */
 /* Overrides the previous .testi-dark / .testi-card / .testi-avatar rules */
 
 .testi-dark {
@@ -2211,8 +2205,8 @@ section { padding: 88px 0; scroll-margin-top: 84px; }
 }
 
 /* ==========================================================================
-   OpsROI — interior pages (Product / Pricing / Story / Contact)
-   Additive only — reuses existing tokens & components everywhere it can.
+   OpsROI â€” interior pages (Product / Pricing / Story / Contact)
+   Additive only â€” reuses existing tokens & components everywhere it can.
    ========================================================================== */
 
 .page-hero {
@@ -2244,7 +2238,7 @@ section { padding: 88px 0; scroll-margin-top: 84px; }
   .page-hero { padding: 108px 0 52px; }
 }
 
-/* small numbered step list — reused on product/story/contact interior pages */
+/* small numbered step list â€” reused on product/story/contact interior pages */
 .step-row {
   display: flex;
   align-items: flex-start;
@@ -2423,4 +2417,4 @@ section { padding: 88px 0; scroll-margin-top: 84px; }
 
 .glass-chip{
     @apply rounded-full border border-white/10 bg-white/10 backdrop-blur-xl px-3 py-1 text-xs font-medium text-white;
-}
+}

@@ -1,0 +1,32 @@
+<svg width="500" height="340" viewBox="0 0 500 340" fill="none" xmlns="http://www.w3.org/2000/svg" font-family="Inter, 'Segoe UI', sans-serif">
+  <rect x="20" y="16" width="460" height="308" rx="20" fill="#F3F6F5"/>
+
+  <!-- header row -->
+  <circle cx="52" cy="52" r="4" fill="#7DC243"/>
+  <text x="64" y="56" font-size="12" font-weight="700" letter-spacing="0.5" fill="#5FA02E">INCOMING CALL</text>
+  <text x="460" y="56" font-size="11" fill="#9AA9AC" text-anchor="end">AI answering&#8230;</text>
+
+  <!-- main call card -->
+  <rect x="40" y="72" width="420" height="132" rx="16" fill="#FFFFFF" stroke="#E4EAE8"/>
+  <circle cx="78" cy="112" r="22" fill="#1D4E5F"/>
+  <path d="M70 106c0-1.1.9-2 2-2h3l1.6 4-2.4 1.6a11 11 0 005 5l1.6-2.4 4 1.6v3c0 1.1-.9 2-2 2-8.5 0-14-5.5-14-14z" fill="#7DC243"/>
+  <text x="112" y="106" font-size="15" font-weight="700" fill="#1D4E5F">Marcus Reid</text>
+  <rect x="112" y="116" width="96" height="20" rx="10" fill="#EAF5DE"/>
+  <path d="M122 126l3 3 5-5.5" stroke="#5FA02E" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="134" y="130" font-size="11" font-weight="700" fill="#5FA02E">AI Qualified</text>
+  <circle cx="118" cy="158" r="2" fill="#9AA9AC"/>
+  <text x="128" y="162" font-size="12.5" fill="#6C7A7D">(415) 555-0182</text>
+  <circle cx="118" cy="180" r="2" fill="#9AA9AC"/>
+  <text x="128" y="184" font-size="12.5" fill="#6C7A7D">Roofing estimate &#183; routed to Jordan</text>
+
+  <!-- secondary faded rows -->
+  <circle cx="58" cy="240" r="14" fill="#EDF1F0"/>
+  <text x="52" y="244" font-size="10" font-weight="700" fill="#9AA9AC">DL</text>
+  <text x="82" y="236" font-size="12.5" font-weight="700" fill="#9AA9AC">Dana Lowe</text>
+  <text x="82" y="252" font-size="11" fill="#B4C0C2">Missed call &#183; auto-texted back</text>
+
+  <circle cx="58" cy="284" r="14" fill="#EDF1F0"/>
+  <text x="52" y="288" font-size="10" font-weight="700" fill="#9AA9AC">TP</text>
+  <text x="82" y="280" font-size="12.5" font-weight="700" fill="#9AA9AC">Tim Perez</text>
+  <text x="82" y="296" font-size="11" fill="#B4C0C2">Voicemail transcribed &#183; logged to CRM</text>
+</svg>
