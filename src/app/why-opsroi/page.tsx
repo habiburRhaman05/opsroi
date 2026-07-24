@@ -445,7 +445,7 @@ export default function WhyOpsroiPage() {
             <div className="eyebrow" style={{ justifyContent: "center" }}>
               Compare
             </div>
-            <h2>See exactly what you&apos;re not getting elsewhere.</h2>
+            <h2>See exactly what you&apos;re not getting else where.</h2>
           </div>
 
           <div className="mx-auto mb-8 flex max-w-sm gap-2 rounded-full border border-line bg-white p-1 shadow-sm">

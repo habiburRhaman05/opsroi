@@ -56,8 +56,8 @@ export default function BookPage() {
         <div className="container px-5 sm:px-6 lg:px-8">
           <div className="eyebrow fade-in-up">Book a Call</div>
           <h1 className="fade-in-up" style={{ animationDelay: "0.08s" }}>
-            Let&apos;s map your business — <br className="hidden sm:inline" />
-            <span className="text-[#7DC243]">free.</span>
+            Let&apos;s map your business 
+            <span className="text-[#7DC243]"> {" "}free.</span>
           </h1>
           <p className="lede fade-in-up" style={{ animationDelay: "0.16s" }}>
             Pick a time that works. In about 20 minutes we&apos;ll walk through
@@ -119,23 +119,10 @@ export default function BookPage() {
             </div>
 
             {/* Right — GHL calendar embed */}
-            <div className="overflow-hidden rounded-3xl border border-line bg-white shadow-[0_30px_70px_-30px_rgba(29,78,95,0.4)]">
-              <div className="flex items-center gap-3 border-b border-line bg-mist px-6 py-4">
-                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-green/12 text-green-deep">
-                  <CalendarClock className="h-5 w-5" strokeWidth={1.8} />
-                </span>
-                <div>
-                  <div className="text-sm font-bold text-navy">
-                    Choose a time that works
-                  </div>
-                  <div className="text-xs text-ink-soft">
-                    Instant confirmation to your inbox
-                  </div>
-                </div>
-              </div>
+            <div className="p-2 sm:p-3">
 
-              <div className="p-2 sm:p-3">
-                <iframe
+                <iframe src="https://api.leadconnectorhq.com/widget/booking/6M0BCjhf4nYKg3TXYX0e" style={{width: "100%",border:"none",overflow: "hidden"}} scrolling="no" id="6M0BCjhf4nYKg3TXYX0e_1784908485306"></iframe>
+                {/* <iframe
                   src={GHL_CALENDAR_SRC}
                   id={GHL_CALENDAR_ID}
                   title="Book a call with OpsROI"
@@ -147,15 +134,14 @@ export default function BookPage() {
                     // Loading floor; form_embed.js resizes to the calendar's real height.
                     minHeight: 650,
                   }}
-                />
+                /> */}
               </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* GHL auto-resize / embed script */}
-      <Script src={GHL_EMBED_SCRIPT} strategy="afterInteractive" />
+      <Script src={"https://api.leadconnectorhq.com/js/form_embed.js"} strategy="afterInteractive" />
     </main>
   );
 }

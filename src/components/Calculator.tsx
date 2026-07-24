@@ -182,9 +182,9 @@ export function Calculator() {
             <SectionLabel className="justify-center">Your Easiest Sell</SectionLabel>
           </ScrollReveal>
           <ScrollReveal>
-            <h2 className="text-xl sm:text-4xl md:text-5xl">
-              Tap what they pay.{" "}
-              <span className="text-green">See what <br/> they save.</span>
+            <h2 className="mb-4">
+              Tap what they pay.{" "} 
+             See <br></br> what  they save.
             </h2>
           </ScrollReveal>
           <ScrollReveal>

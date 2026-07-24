@@ -67,11 +67,12 @@ export function Platform() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
+  <>
     <section
       id="platform"
-      className="py-24 sm:py-32 px-5 sm:px-8 bg-white"
+      className="pt-24 pb-12 sm:pb-16 sm:pt-32 px-5 sm:px-8 bg-white "
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <ScrollReveal>
             <SectionLabel className="justify-center mb-6" >
@@ -79,7 +80,7 @@ export function Platform() {
             </SectionLabel>
           </ScrollReveal>
           <ScrollReveal>
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-navy tracking-tight leading-[1.15] mb-6">
+            <h2 className="font-extrabold text-navy tracking-tight leading-[1.15] mb-6">
               One operating system. <br className="hidden sm:block" />Every part of the business.
             </h2>
           </ScrollReveal>
@@ -109,13 +110,13 @@ export function Platform() {
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </button>
-          <p className="text-sm text-ink-soft mt-6 font-medium">
-            Every module built in, connected, and running from day one.
-          </p>
+          
         </div>
       </div>
 
-      <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
+     
+    </section>
+     <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
         <SectionLabel className="mb-4">
            <span className="text-[11px] font-bold tracking-widest uppercase text-green">
              The Complete Platform
@@ -132,6 +133,6 @@ export function Platform() {
           <ModalCategory key={title} title={title} keys={keys} />
         ))}
       </Modal>
-    </section>
+  </>
   );
 }

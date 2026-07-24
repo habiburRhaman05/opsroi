@@ -65,7 +65,7 @@ export default function Hero() {
 
               {/* Subheadline Paragraph */}
               <p className="text-lg sm:text-xl text-slate-200 leading-relaxed max-w-2xl font-normal mx-auto lg:mx-0">
-                OpsROI partners with contractors who&apos;ve already won — $3M to $10M operators with real credibility — to build, launch, and own the operating system for their entire industry.
+                OpsROI partners with contractors who&apos;ve already won, $3M to $10M operators with real credibility to build, launch, and own the operating system for their entire industry.
               </p>
 
               {/* CTA Action Buttons */}

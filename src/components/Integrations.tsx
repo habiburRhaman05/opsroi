@@ -38,7 +38,10 @@ export default function Integrations() {
   return (
     <section id="integrations" className="integrations-bar">
       <div className="container">
-        <div className="integrations-title">Integrates With Your Favorite Tools</div>
+       
+        <h2 className='text-center mb-8'>
+          Integrates With Your Favorite Tools
+        </h2>
       </div>
 
       <div className="marquee-wrap mx-auto max-w-4xl overflow-hidden" data-lenis-prevent>

@@ -2,8 +2,8 @@ import { ScrollReveal } from "../ScrollReveal";
 
 export function WhoIsItForHero() {
   return (
-    <header className="pt-20 md:pt-28 pb-12 md:pb-16 px-5 sm:px-8 max-w-7xl mx-auto text-center bg-white">
-      <div className="max-w-3xl mx-auto">
+    <header className="pt-20 md:pt-28 pb-12 md:pb-16 px-5 sm:px-8  text-center bg-white">
+      <div className="max-w-3xl mx-auto relative overflow-hidden">
         <ScrollReveal>
           <div className="inline-flex items-center gap-2 text-xs font-bold tracking-wide bg-green/10 border border-green/20 text-navy px-4 py-1.5 rounded-full mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-green animate-pulse" />

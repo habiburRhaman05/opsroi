@@ -85,8 +85,8 @@ export function ComparisonTable() {
 
           </ScrollReveal>
           <ScrollReveal delay={100}>
-            <h2 className="font-headline-xl text-primary max-w-2xl font-bold mx-auto text-3xl sm:text-4xl md:text-5xl mb-8">
-              Everything you&apos;re already paying for, built into one
+            <h2 className=" text-[#1D4E5F]  font-bold mx-auto mb-8">
+              Everything you&apos;re already paying  <br></br> for, built into one
               platform.
             </h2>
           </ScrollReveal>
@@ -96,7 +96,7 @@ export function ComparisonTable() {
           <div className="bg-white border border-outline-variant/50 rounded-3xl overflow-hidden max-w-3xl mx-auto shadow-ambient-shadow">
             <div className="hidden sm:grid grid-cols-[1fr_auto_auto] items-center gap-6 px-7 py-3 bg-surface-container-highest text-[11px] font-bold tracking-widest uppercase text-on-surface-variant">
               <span>Feature</span>
-              <span className="text-right">Elsewhere</span>
+              <span className="text-right">Else where</span>
               <span className="text-right">Included</span>
             </div>
             <div ref={rowsRef}>

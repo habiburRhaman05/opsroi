@@ -257,21 +257,20 @@ body.modal-open .scroll-progress,
 body.modal-open .back-to-top { display: none !important; }
 
 .header-pill {
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgb(255 255 255 / 91%);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 999px;
-  padding: 8px 12px 8px 28px;
-  box-shadow: 0 8px 32px rgba(29, 78, 95, 0.08);
-  transition: all 0.3s ease;
-  pointer-events: auto; /* enable clicks inside pill */
+    -webkit-backdrop-filter: blur(20px);
+    pointer-events: auto;
+    background: #ffffffe8;
+    border: 1px solid #ffffff80;
+    border-radius: 999px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 8px 12px 8px 28px;
+    transition: all .3s;
+    display: flex;
+    position: relative;
+    box-shadow: 0 8px 32px #1d4e5f14;
+    width: 100%;
 }
 .site-header.scrolled .header-pill {
   background: rgba(255, 255, 255, 0.85);
@@ -2417,4 +2416,4 @@ section { padding: 88px 0; scroll-margin-top: 84px; }
 
 .glass-chip{
     @apply rounded-full border border-white/10 bg-white/10 backdrop-blur-xl px-3 py-1 text-xs font-medium text-white;
-}
+}

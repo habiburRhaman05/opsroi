@@ -22,17 +22,17 @@ export function Club() {
       >
         <img src="/watermark.svg" alt="" className="w-full h-auto" aria-hidden="true" />
       </div>
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
+      <div className="container px-5 sm:px-8 relative z-10">
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <div className="inline-flex items-center justify-center gap-3 mb-6">
+        
            
              <SectionLabel className="justify-center">
 The Club</SectionLabel>
            
-          </div>
+     
           
-          <h2 className="font-bebas text-navy text-4xl sm:text-2xl md:text-4xl uppercase tracking-tight mb-6 leading-none">
-            One founder per industry. The next slot has your trade on it.
+          <h2 className="font-bebas text-navy     mb-6 leading-none">
+            One founder per industry. The next slot <br></br> has your trade on it.
           </h2>
           
           <p className="text-lg text-ink leading-relaxed">

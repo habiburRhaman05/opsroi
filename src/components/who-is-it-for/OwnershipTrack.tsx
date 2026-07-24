@@ -66,12 +66,10 @@ export function OwnershipTrack() {
               </div>
 
               <div className="flex flex-wrap items-center gap-4 mt-12 pt-10 border-t border-white/10">
-                <Link href="/apply#apply" className="bg-green hover:bg-green-deep text-navy px-8 py-3.5 rounded-xl font-bold transition-all shadow-md active:scale-95 text-[15px]">
+                <Link href="/contact" className="bg-green hover:bg-green-deep text-navy px-8 py-3.5 rounded-xl font-bold transition-all shadow-md active:scale-95 text-[15px]">
                   Apply Now
                 </Link>
-                <Link href="/model" className="bg-transparent border border-white/20 text-white px-8 py-3.5 rounded-xl font-bold hover:bg-white/10 transition-all active:scale-95 text-[15px]">
-                  Read the Full Model
-                </Link>
+                
               </div>
             </div>
           </div>

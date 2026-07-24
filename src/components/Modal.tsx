@@ -29,7 +29,7 @@ export function Modal({ open, onClose, children }: ModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-[100] bg-navy/80 backdrop-blur-sm flex items-start justify-center px-4 py-8 md:py-14 overflow-y-auto"
+      className="fixed inset-0 bg-navy/80 z-[100] overflow-y-auto backdrop-blur-sm flex items-start justify-center px-4 py-8 md:py-14 "
       role="dialog"
       aria-modal="true"
       onClick={(e) => {

@@ -19,7 +19,7 @@ const NOT_FOR_YOU = [
 export function StraightTalk() {
   return (
     <section id="fit" className="py-24 sm:py-32 bg-white relative">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <div className="container px-5 sm:px-8">
         <div className="relative">
           
           <div className="text-center mb-16 relative z-10">
@@ -30,7 +30,7 @@ export function StraightTalk() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={100}>
-              <h2 className="text-4xl sm:text-5xl font-extrabold text-navy tracking-tight leading-[1.15] max-w-3xl mx-auto font-bebas uppercase">
+              <h2 className="  text-navy  mx-auto font-bebas ">
                 We don&apos;t work with everyone. <br className="hidden sm:block" /> Here&apos;s the honest filter.
               </h2>
             </ScrollReveal>
