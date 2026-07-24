@@ -18,17 +18,17 @@ export default function Footer() {
           </div>
           <div className="footer-col">
             <h4>Product</h4>
-            <Link href="#product">Platform Overview</Link>
-            <Link href="#why">Why OpsROI</Link>
-            <Link href="#pricing">Pricing Plans</Link>
-            <Link href="#integrations">Integrations</Link>
-            <Link href="#compare">Compare Tools</Link>
+            <Link href="/#product">Platform Overview</Link>
+            <Link href="/#why">Why OpsROI</Link>
+            <Link href="/pricing">Pricing Plans</Link>
+            <Link href="/#integrations">Integrations</Link>
+            <Link href="/#compare">Compare Tools</Link>
           </div>
           <div className="footer-col">
             <h4>Company</h4>
-            <Link href="#founders">Our Founders</Link>
-            <Link href="#faq">FAQ</Link>
-            <Link href="#contact">Contact Us</Link>
+            <Link href="/story">Our Founders</Link>
+            <Link href="/#faq">FAQ</Link>
+            <Link href="/contact">Contact Us</Link>
             <Link href="#">Careers</Link>
           </div>
           <div className="footer-col">
@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
         <div className="footer-bottom">
           <span>&copy; 2026 OpsROI. All rights reserved.</span>
-          <span>Agency operations, powered end-to-end.</span>
+          <span>Built by business owners, for business owners.</span>
         </div>
       </div>
     </footer>

@@ -41,8 +41,7 @@ export default function StoryPage() {
   }, []);
 
   return (
-    <>
-      <Header />
+  
       <main>
         
 <section className="page-hero">
@@ -252,7 +251,6 @@ export default function StoryPage() {
 </section>
 
       </main>
-      <Footer />
-    </>
+    
   );
 }

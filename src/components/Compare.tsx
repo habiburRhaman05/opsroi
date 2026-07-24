@@ -25,7 +25,7 @@ const CHECK = (
 
 export default function Compare() {
   return (
-    <section className="included-compare">
+    <section id="compare" className="included-compare">
       <div className="container">
         <div className="section-head center" style={{ margin: '0 auto 48px', maxWidth: '600px' }}>
           <div className="eyebrow" style={{ justifyContent: 'center' }}>Compare</div>

@@ -21,7 +21,7 @@ export default function HowItWorks() {
   }, []);
 
   return (
-    <section className="section-alt how-it-works">
+    <section id="why" className="section-alt how-it-works">
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="section-head center mx-auto mb-10 md:mb-[52px]">
           <div className="eyebrow" style={{justifyContent: 'center'}}>How It Works</div>

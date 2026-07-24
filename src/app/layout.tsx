@@ -4,6 +4,7 @@ import "./globals.css";
 import ScrollRevealObserver from "@/src/components/ScrollRevealObserver";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ScrollProgress from "../components/ScrollProgress";
 
 
 
@@ -38,6 +39,7 @@ export default function RootLayout({
       className={` ${roboto.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col font-roboto">
+        <ScrollProgress />
         <ScrollRevealObserver />
            <Header />
         {children}

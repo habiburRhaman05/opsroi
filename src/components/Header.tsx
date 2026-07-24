@@ -6,7 +6,8 @@ import { usePathname } from 'next/navigation';
 
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
-  { href: '/features', label: 'Our Features' },
+  { href: '/why-opsroi', label: 'Why OpsROI' },
+  { href: '/features', label: 'Features' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/story', label: 'Story' },
 ];

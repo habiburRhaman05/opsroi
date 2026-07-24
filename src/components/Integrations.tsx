@@ -36,7 +36,7 @@ const integrationIcons = [
 
 export default function Integrations() {
   return (
-    <section className="integrations-bar">
+    <section id="integrations" className="integrations-bar">
       <div className="container">
         <div className="integrations-title">Integrates With Your Favorite Tools</div>
       </div>

@@ -12,7 +12,6 @@ interface Seat {
 }
 
 interface ClubGridProps {
-  liveSeat: Seat;
   openSeats: Seat[];
 }
 

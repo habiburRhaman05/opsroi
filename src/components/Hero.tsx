@@ -5,13 +5,8 @@ import { Play, X, ArrowRight, CheckCircle2, Zap, ShieldCheck, Sparkles } from 'l
 
 const WORDS = [
   "Marketing Agencies.",
-  "Tree Service Companies.",
   "Roofing Contractors.",
-  "HVAC Companies.",
-  "Coaching Businesses.",
-  "Electrical Contractors.",
-  "Landscaping Companies.",
-  "Home Service Businesses."
+  "HR & Payroll Management.",
 ];
 const DEMO_VIDEO_ID = "dQw4w9WgXcQ"; // Demo video ID
 

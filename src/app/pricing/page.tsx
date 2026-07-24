@@ -41,8 +41,7 @@ export default function PricingPage() {
   }, []);
 
   return (
-    <>
-      <Header />
+
       <main>
         
 <section className="page-hero">
@@ -191,7 +190,6 @@ export default function PricingPage() {
 </section>
 
       </main>
-      <Footer />
-    </>
+   
   );
 }
