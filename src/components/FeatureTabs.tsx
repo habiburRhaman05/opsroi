@@ -163,12 +163,12 @@ export default function FeatureTabs() {
 
   return (
     <section id="product" className="section-alt feature-tabs relative overflow-hidden">
-      {/* <div 
-        className="absolute top-0 right-0 pointer-events-none w-[400px] md:w-[600px] z-0" 
+      <div 
+        className="absolute top-0 right-0 pointer-events-none w-[250px] md:w-[350px] z-0" 
         style={{ transform: 'translate(25%, -25%)', opacity: 0.06, filter: 'invert(1)' }}
       >
         <img src="/watermark.svg" alt="" className="w-full h-auto" aria-hidden="true" />
-      </div> */}
+      </div>
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="section-head center mx-auto mb-8 md:mb-12">
           <div className="eyebrow" style={{ justifyContent: "center" }}>

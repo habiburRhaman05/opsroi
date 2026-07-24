@@ -186,8 +186,8 @@ export const EmailIcon = () => (
 export const WebsiteIcon = () => (
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  width="800"
-  height="800"
+  width="20"
+  height="20"
   viewBox="0 0 64 64"
   fill="none"
   stroke="#000000"

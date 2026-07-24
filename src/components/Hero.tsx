@@ -3,46 +3,10 @@
 import { useEffect, useState, useCallback } from 'react';
 import { Play, X, ArrowRight, CheckCircle2, Zap, ShieldCheck, Sparkles } from 'lucide-react';
 
-const WORDS = [
-  "Marketing Agencies.",
-  "Roofing Contractors.",
-  "HR & Payroll Management.",
-];
 const DEMO_VIDEO_ID = "dQw4w9WgXcQ"; // Demo video ID
 
 export default function Hero() {
-  const [currentWord, setCurrentWord] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [loopNum, setLoopNum] = useState(0);
-  const [typingSpeed, setTypingSpeed] = useState(80);
   const [modalOpen, setModalOpen] = useState(false);
-
-  // ── Typewriter effect ──
-  useEffect(() => {
-    let timer: NodeJS.Timeout;
-    const handleType = () => {
-      const i = loopNum % WORDS.length;
-      const fullText = WORDS[i];
-
-      setCurrentWord(
-        isDeleting
-          ? fullText.substring(0, currentWord.length - 1)
-          : fullText.substring(0, currentWord.length + 1)
-      );
-
-      setTypingSpeed(isDeleting ? 40 : 90);
-
-      if (!isDeleting && currentWord === fullText) {
-        setTimeout(() => setIsDeleting(true), 2000);
-      } else if (isDeleting && currentWord === '') {
-        setIsDeleting(false);
-        setLoopNum(loopNum + 1);
-        setTypingSpeed(400);
-      }
-    };
-    timer = setTimeout(handleType, typingSpeed);
-    return () => clearTimeout(timer);
-  }, [currentWord, isDeleting, loopNum, typingSpeed]);
 
   // ── Modal keyboard handler + body lock ──
   const closeModal = useCallback(() => setModalOpen(false), []);
@@ -87,30 +51,21 @@ export default function Hero() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7DC243] opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#7DC243]"></span>
                 </span>
-                <span className="text-[#7DC243]">AI-Powered OS</span>
-                <span className="text-white/40">•</span>
-                <span className="text-slate-100">Built for Modern Agencies</span>
+                <span className="text-[#7DC243]">For Proven Contractor Founders</span>
               </div>
 
               {/* Main Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] sm:leading-[1.2]">
-                The{' '}
+                You built the business. <br className="hidden lg:block" />
+                Now own the{' '}
                 <span className="text-[#7DC243] drop-shadow-sm">
-                  AI-powered
-                </span>{' '}
-                business operating system{' '} for
-                <span className="block text-slate-100 mt-2 sm:mt-4 truncate max-w-full">
-                  {' '}
-                  <span className="text-[#ECB84D] underline decoration-[#ECB84D]/40 underline-offset-8 font-semibold">
-                    {currentWord}
-                    <span className="animate-pulse text-[#ECB84D] ml-0.5">|</span>
-                  </span>
+                  software your industry runs on.
                 </span>
               </h1>
 
               {/* Subheadline Paragraph */}
               <p className="text-lg sm:text-xl text-slate-200 leading-relaxed max-w-2xl font-normal mx-auto lg:mx-0">
-                One unified platform to capture leads, run your crew or client accounts, send AI-generated estimates and invoices, and prove your results, instead of duct-taping together six tools that don't talk to each other.
+                OpsROI partners with contractors who&apos;ve already won — $3M to $10M operators with real credibility — to build, launch, and own the operating system for their entire industry.
               </p>
 
               {/* CTA Action Buttons */}

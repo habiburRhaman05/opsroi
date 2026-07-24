@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/why-opsroi', label: 'Why OpsROI' },
   { href: '/features', label: 'Features' },
+  { href: '/who-its-for', label: 'Who Its For' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/story', label: 'Our Story' },
 ];

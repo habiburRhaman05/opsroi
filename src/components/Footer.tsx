@@ -36,7 +36,8 @@ export default function Footer() {
             <h4 className="text-white font-bebas tracking-widest text-lg mb-6 uppercase">Product</h4>
             <ul className="space-y-4 text-white/70 font-medium">
               <li><Link href="/#product" className="hover:text-green transition-colors">Platform Overview</Link></li>
-              <li><Link href="/#why" className="hover:text-green transition-colors">Why OpsROI</Link></li>
+              <li><Link href="/who-its-for" className="hover:text-green transition-colors">Who It&apos;s For</Link></li>
+              <li><Link href="/why-opsroi" className="hover:text-green transition-colors">Why OpsROI</Link></li>
               <li><Link href="/pricing" className="hover:text-green transition-colors">Pricing Plans</Link></li>
               <li><Link href="/#integrations" className="hover:text-green transition-colors">Integrations</Link></li>
               <li><Link href="/#compare" className="hover:text-green transition-colors">Compare Tools</Link></li>

@@ -173,7 +173,7 @@ export function Calculator() {
   return (
     <section
       id="calculator"
-      className="pt-20 pb-12 sm:pb-16 bg-mist "
+      className="pt-20 pb-12 sm:pb-16 bg-white "
     >
       
       <div className="container mx-auto px-6 md:px-8">

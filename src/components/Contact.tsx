@@ -11,7 +11,6 @@ const contactSchema = z.object({
   agency: z.string().min(1, "Agency name is required"),
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(7, "Please enter a valid phone number"),
-  clients: z.string().min(1, "Please select an option"),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
@@ -33,7 +32,6 @@ export default function Contact() {
       agency: "",
       email: "",
       phone: "",
-      clients: "",
       message: "",
     },
   });
@@ -70,14 +68,6 @@ export default function Contact() {
                <p className="font-bold text-navy mb-1">{submitted.name}</p>
                <p className="text-sm mb-2">{submitted.agency} &middot; {submitted.email}</p>
                <p className="text-sm mb-4">{submitted.phone}</p>
-               <p className="text-sm text-ink-soft mb-2 italic font-medium">
-                  {submitted.clients === "marketing" && "Marketing / Ad Agency"}
-                  {submitted.clients === "coaching" && "Coaching & Consulting"}
-                  {submitted.clients === "creative" && "Creative / Design Studio"}
-                  {submitted.clients === "home" && "Home Services"}
-                  {submitted.clients === "recruiting" && "Recruiting"}
-                  {submitted.clients === "other" && "Other"}
-               </p>
                <p className="text-sm text-ink-soft italic border-l-2 border-green/30 pl-3">&ldquo;{submitted.message}&rdquo;</p>
             </div>
             
@@ -136,23 +126,6 @@ export default function Contact() {
                     <input type="tel" id="phone" placeholder="(555) 123-4567" {...register("phone")} className={`bg-mist border rounded-xl px-4 py-3 focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all ${errors.phone ? 'border-red-500' : 'border-line'}`} />
                     {errors.phone && <span className="text-red-500 text-xs font-medium">{errors.phone.message}</span>}
                  </div>
-               </div>
-
-               <div className="flex flex-col gap-2">
-                  <label htmlFor="clients" className="text-sm font-semibold text-navy">What does your agency serve?</label>
-                  <div className="relative">
-                    <select id="clients" {...register("clients")} className={`w-full bg-mist border rounded-xl px-4 py-3 appearance-none focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all cursor-pointer ${errors.clients ? 'border-red-500' : 'border-line'}`}>
-                      <option value="" disabled hidden>Select an option...</option>
-                      <option value="marketing">Marketing / Ad Agency</option>
-                      <option value="coaching">Coaching &amp; Consulting</option>
-                      <option value="creative">Creative / Design Studio</option>
-                      <option value="home">Home Services</option>
-                      <option value="recruiting">Recruiting</option>
-                      <option value="other">Other - any niche welcome</option>
-                    </select>
-                    <svg className="w-5 h-5 absolute right-4 top-1/2 -translate-y-1/2 text-ink-soft pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                  </div>
-                  {errors.clients && <span className="text-red-500 text-xs font-medium">{errors.clients.message}</span>}
                </div>
 
                <div className="flex flex-col gap-2">

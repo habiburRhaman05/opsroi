@@ -71,29 +71,7 @@ export const FEATURES: Feature[] = [
       "Scheduling & shift management",
     ],
   },
-  {
-    id: "ai-invoicing",
-    icon: ReceiptText,
-    accent: "gold",
-    layout: "wide",
-    title: "AI Invoicing",
-    tagline:
-      "Turn a completed job into an accurate, itemized invoice in seconds — with a payment link attached.",
-    overview:
-      "The moment a job is marked complete, OpsROI generates an accurate invoice — line items, labor, materials, and taxes pulled straight from the job record — ready to send in seconds instead of built by hand at the end of a long day.",
-    howItWorks: [
-      "A job or deal is marked complete.",
-      "OpsROI pulls time logged, materials used, and your rate card.",
-      "An itemized invoice is drafted automatically.",
-      "You review (or auto-send) and it goes out with a payment link.",
-    ],
-    highlights: [
-      "Auto-generated from completed jobs",
-      "Line-item accuracy from time & materials",
-      "One-click send with payment link",
-      "Editable before send — AI drafts, you approve",
-    ],
-  },
+
   {
     id: "crm-build",
     icon: Database,
@@ -112,6 +90,35 @@ export const FEATURES: Feature[] = [
     ],
     stat: { value: "4.5 days", label: "average time to a live pipeline" },
   },
+  {
+  id: "ai-estimates-invoicing",
+  icon: ReceiptText,
+  accent: "gold",
+  layout: "wide",
+  title: "AI Estimates & Invoicing",
+  tagline:
+    "Generate accurate estimates and invoices automatically — from the first quote to the final payment.",
+
+  overview:
+    "From the moment a lead requests a quote to the moment the job is completed, OpsROI handles the paperwork for you. AI drafts professional estimates using your pricing, labor, materials, and past jobs, then automatically converts completed work into accurate, itemized invoices with payment links. You review, approve, and send — in minutes instead of hours.",
+
+  howItWorks: [
+    "A rep logs job details from a call or site visit.",
+    "OpsROI generates a branded estimate using your rates, labor, materials, and pricing history.",
+    "You review, edit if needed, and send it with e-sign support.",
+    "Once the job is completed, OpsROI automatically converts the approved estimate and actual job data into an itemized invoice.",
+    "Review (or auto-send) the invoice with a secure payment link."
+  ],
+
+  highlights: [
+    "AI-generated estimates from job details",
+    "Automatic estimate-to-invoice conversion",
+    "Accurate labor, materials & tax calculations",
+    "Editable before sending — AI drafts, you approve",
+    "Branded documents with e-sign support",
+    "Built-in payment links for faster collections"
+  ],
+},
   {
     id: "workflow-automation",
     icon: Workflow,
@@ -163,28 +170,7 @@ export const FEATURES: Feature[] = [
       "Searchable call history",
     ],
   },
-  {
-    id: "ai-estimates",
-    icon: Calculator,
-    accent: "green",
-    title: "AI Estimates",
-    tagline:
-      "Turn job details into an accurate, ready-to-send estimate in minutes — not days.",
-    overview:
-      "Describe the job or pull from a site visit, and OpsROI drafts pricing based on your rates, past jobs, and materials — so estimates go out same-day instead of “we'll get back to you.” AI drafts, you approve.",
-    howItWorks: [
-      "A rep logs job details from a call or site visit.",
-      "OpsROI drafts pricing using your rate history and material costs.",
-      "You review and adjust the draft.",
-      "The estimate is sent — branded and e-sign ready.",
-    ],
-    highlights: [
-      "AI-drafted pricing from job details",
-      "Editable, branded templates",
-      "Instant delivery with e-sign built in",
-      "Approved estimates flow into scheduling",
-    ],
-  },
+ 
   {
     id: "inventory",
     icon: Package,
