@@ -10,14 +10,14 @@ export default function FeaturePipeline() {
           </div>
           <h2>The feature delivery pipeline</h2>
           <p>
-            Every feature above shares one thing — the same record. A lead becomes
+            Every feature above shares one thing - the same record. A lead becomes
             a contact, a contact becomes a job, and it moves through OpsROI end to
             end without re-entry or a gap between logins.
           </p>
         </div>
 
         <div className="relative">
-          {/* Connecting line — desktop only, sits behind the icon circles */}
+          {/* Connecting line - desktop only, sits behind the icon circles */}
           <div
             className="pointer-events-none absolute left-[10%] right-[10%] top-7 hidden h-0.5 bg-gradient-to-r from-green/30 via-gold/50 to-green/30 lg:block"
             aria-hidden="true"

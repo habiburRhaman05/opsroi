@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import FeatureCard from "@/src/components/features/FeatureCard";
-import FeatureModal from "@/src/components/features/FeatureModal";
-import FeaturePipeline from "@/src/components/features/FeaturePipeline";
+import FeatureCard from "@/src/components/pages/features/FeatureCard";
+import FeatureModal from "@/src/components/pages/features/FeatureModal";
+import FeaturePipeline from "@/src/components/pages/features/FeaturePipeline";
 import { FEATURES, DELIVERY_STEPS, type Feature } from "@/src/lib/features";
 
 export default function FeaturesPage() {
@@ -31,13 +31,13 @@ export default function FeaturesPage() {
             </h1>
             <p className="lede fade-in-up" style={{ animationDelay: "0.16s" }}>
               From the first lead to the last invoice, here&apos;s everything
-              inside OpsROI — for agencies and trades alike. Tap any feature to see
+              inside OpsROI - for agencies and trades alike. Tap any feature to see
               exactly how it works.
             </p>
           </div>
         </section>
 
-        {/* ─── All Features — one grid ─── */}
+        {/* All Features - one grid */}
         <section>
           <div className="container px-5 sm:px-6 lg:px-8">
             <div className="section-head center" style={{ margin: "0 auto 44px" }}>
@@ -47,7 +47,7 @@ export default function FeaturesPage() {
               <h2>One login. Every tool the <br/> work needs.</h2>
               <p>
                 Everything you&apos;d normally stitch together from six-plus tools,
-                built into one platform — click a card for the details.
+                built into one platform - click a card for the details.
               </p>
             </div>
 

@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "Book a Call | OpsROI",
   description:
-    "Pick a time for a free 20-minute walkthrough. We'll map exactly what OpsROI would set up for your business — no pressure, no long contracts.",
+    "Pick a time for a free 20-minute walkthrough. We'll map exactly what OpsROI would set up for your business - no pressure, no long contracts.",
 };
 
 /* Your GoHighLevel booking calendar. Replace the src/id here to swap calendars. */
@@ -31,11 +31,11 @@ const STEPS = [
   {
     icon: Blocks,
     title: "We show what we'd build",
-    body: "You'll see exactly what OpsROI would set up around your workflow — CRM, automations, and reporting.",
+    body: "You'll see exactly what OpsROI would set up around your workflow - CRM, automations, and reporting.",
   },
   {
     icon: CircleCheck,
-    title: "You decide — zero pressure",
+    title: "You decide - zero pressure",
     body: "No niche requirements, no long contracts. If it's not the right fit, we'll tell you.",
   },
 ];
@@ -61,7 +61,7 @@ export default function BookPage() {
           </h1>
           <p className="lede fade-in-up" style={{ animationDelay: "0.16s" }}>
             Pick a time that works. In about 20 minutes we&apos;ll walk through
-            exactly what OpsROI would set up for you — no pressure, no long
+            exactly what OpsROI would set up for you - no pressure, no long
             contracts.
           </p>
         </div>

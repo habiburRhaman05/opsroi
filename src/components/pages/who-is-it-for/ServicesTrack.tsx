@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CheckCircle2, Ban } from "lucide-react";
-import { ScrollReveal } from "../ScrollReveal";
+import { ScrollReveal } from "../../shared/ScrollReveal";
 
 const FOR_YOU = [
   "You run a contractor or home-service business tired of duct-taped software",

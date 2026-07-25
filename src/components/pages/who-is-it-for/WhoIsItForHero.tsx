@@ -1,4 +1,4 @@
-import { ScrollReveal } from "../ScrollReveal";
+import { ScrollReveal } from "../../shared/ScrollReveal";
 
 export function WhoIsItForHero() {
   return (

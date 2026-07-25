@@ -43,7 +43,7 @@ const TABS: Tab[] = [
     icon: Inbox,
     accent: "green",
     heading: "Get more leads in the door",
-    desc: "Attract the right people, turn interest into leads, and keep your pipeline full — without a separate tool for every channel.",
+    desc: "Attract the right people, turn interest into leads, and keep your pipeline full - without a separate tool for every channel.",
     checklist: [
       "Core CRM & pipelines",
       "Forms, surveys & quizzes",
@@ -60,7 +60,7 @@ const TABS: Tab[] = [
     icon: MessagesSquare,
     accent: "gold",
     heading: "Keep leads warm, automatically",
-    desc: "Every lead gets followed up with — every time — without a rep having to remember to send it.",
+    desc: "Every lead gets followed up with - every time - without a rep having to remember to send it.",
     checklist: [
       "Email & SMS sequences",
       "Lead scoring & tagging",
@@ -94,7 +94,7 @@ const TABS: Tab[] = [
     icon: PhoneIncoming,
     accent: "green",
     heading: "Never miss the phone",
-    desc: "Every inbound call gets answered, qualified, and logged — 24/7 — so a missed call never turns into a lost job.",
+    desc: "Every inbound call gets answered, qualified, and logged - 24/7 - so a missed call never turns into a lost job.",
     checklist: [
       "24/7 AI call answering",
       "Automatic lead qualification",
@@ -111,7 +111,7 @@ const TABS: Tab[] = [
     icon: Users,
     accent: "gold",
     heading: "Manage the people doing the work",
-    desc: "Time tracking, payroll, training, and inventory in the same system as the client work — no second platform.",
+    desc: "Time tracking, payroll, training, and inventory in the same system as the client work - no second platform.",
     checklist: [
       "Time tracking by job / client",
       "Payroll processing",
@@ -128,7 +128,7 @@ const TABS: Tab[] = [
     icon: BarChart3,
     accent: "green",
     heading: "Prove the ROI, without the spreadsheet",
-    desc: "White-labeled dashboards update automatically, so clients see results the moment they log in — not once a month in an email.",
+    desc: "White-labeled dashboards update automatically, so clients see results the moment they log in - not once a month in an email.",
     checklist: [
       "Live client dashboards",
       "Automated monthly reports",
@@ -177,12 +177,12 @@ export default function FeatureTabs() {
           <h2>One platform for every stage of the client relationship.</h2>
           <p>
             All the tools your business needs to capture, run, and prove the work
-            — in one place, whether that&apos;s a marketing campaign or a roof.
+            - in one place, whether that&apos;s a marketing campaign or a roof.
           </p>
         </div>
 
         <div className="tabs-wrap w-full">
-          {/* Tab strip — scrollable on mobile */}
+          {/* Tab strip - scrollable on mobile */}
           <div
             className="tab-list flex snap-x flex-nowrap justify-start gap-2 overflow-x-auto scrollbar-hide pb-4 md:flex-wrap md:justify-center md:overflow-visible md:pb-0"
             role="tablist"
@@ -263,7 +263,7 @@ export default function FeatureTabs() {
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={tab.visual}
-                        alt={`${tab.label} — ${tab.heading}`}
+                        alt={`${tab.label} - ${tab.heading}`}
                         className="relative w-full rounded-xl"
                         loading="lazy"
                       />

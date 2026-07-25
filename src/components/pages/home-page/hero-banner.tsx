@@ -33,7 +33,7 @@ export default function HeroSection() {
 
           {/* Paragraph */}
           <p className="text-teal-50/70 text-base sm:text-lg max-w-[90%] mb-10 leading-relaxed font-light">
-            One platform to run pipelines, automate follow-up, and prove ROI — powered by AI, built for any agency.
+            One platform to run pipelines, automate follow-up, and prove ROI - powered by AI, built for any agency.
           </p>
 
           {/* CTA Buttons */}

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { CheckCircle2, Ban } from "lucide-react";
-import { ScrollReveal } from "../ScrollReveal";
+import { ScrollReveal } from "../../shared/ScrollReveal";
 
 const FOR_YOU = [
-  <>You run a <span className="font-bold text-white">$3M–$10M</span> contracting business you built yourself</>,
+  <>You run a <span className="font-bold text-white">$3M-$10M</span> contracting business you built yourself</>,
   "Your name carries weight in your trade, people call you for advice",
   "You want an asset that outlives the trucks and the crews",
   "You'll run your own company on the platform, publicly",

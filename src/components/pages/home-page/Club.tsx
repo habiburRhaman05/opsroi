@@ -1,6 +1,6 @@
 "use client"
 import { ClubGrid } from "./ClubGrid";
-import { SectionLabel } from "./ui/SectionLabel";
+import { SectionLabel } from "../../ui/SectionLabel";
 
 const OPEN_SEATS: any[] = [
   { name: "TreeROI", trade: "Tree care", founder: "Chris Ruvalcaba", url: "https://treeroi.com" },

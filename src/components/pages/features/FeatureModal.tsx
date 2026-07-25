@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { X, Check, ArrowRight } from "lucide-react";
+import { useBodyLock } from "@/src/hooks/useBodyLock";
 import type { Feature, FeatureAccent } from "@/src/lib/features";
 
 const ACCENT: Record<FeatureAccent, { badge: string; icon: string; stat: string }> = {
@@ -17,17 +18,17 @@ type FeatureModalProps = {
 
 export default function FeatureModal({ feature, onClose }: FeatureModalProps) {
   const [visible, setVisible] = useState(false);
+  const isOpen = feature !== null;
+  useBodyLock(isOpen);
 
   const handleClose = useCallback(() => onClose(), [onClose]);
 
-  // Escape to close + body scroll lock while open (mirrors Hero modal behavior).
+  // Escape to close + visibility animation
   useEffect(() => {
     if (!feature) {
-      document.body.classList.remove("modal-open");
       setVisible(false);
       return;
     }
-    document.body.classList.add("modal-open");
     const raf = requestAnimationFrame(() => setVisible(true));
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") handleClose();
@@ -36,7 +37,6 @@ export default function FeatureModal({ feature, onClose }: FeatureModalProps) {
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener("keydown", onKey);
-      document.body.classList.remove("modal-open");
     };
   }, [feature, handleClose]);
 

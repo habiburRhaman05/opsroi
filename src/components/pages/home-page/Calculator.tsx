@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useMemo } from "react";
-import { ScrollReveal } from "@/src/components/ScrollReveal";
+import { ScrollReveal } from "@/src/components/shared/ScrollReveal";
 import { SectionLabel } from "@/src/components/ui/SectionLabel";
 import { ICON_MAP, SearchIcon, PenIcon, DocusignIcon, MailchimpIcon, WebsiteIcon, GoogleAdsIcon, MetaIcon } from "@/src/lib/icons";
 import { TIERS, type CalculatorItem, type TierKey } from "@/src/lib/calculator";
@@ -48,7 +48,7 @@ const SERVICES: CalculatorItem[] = [
 ];
 
 // A Pro/Elite-scale agency runs the same tool categories at higher volume, so
-// their equivalent "stitched-together" spend scales up too — not just the
+// their equivalent "stitched-together" spend scales up too - not just the
 // flat total of what's checked here. This is what keeps savings growing
 // Growth -> Pro -> Elite instead of shrinking as tier price goes up.
 const TIER_ORDER: TierKey[] = ["growth", "pro", "elite"];

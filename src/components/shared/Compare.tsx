@@ -57,7 +57,7 @@ export default function Compare() {
               <span className="included-col-highlight included-check" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>{CHECK}</span>
             </div>
 
-            {/* Websites & Sales Funnels — placeholder text until icons uploaded */}
+            {/* Websites & Sales Funnels - placeholder text until icons uploaded */}
             
             {/* Forms, Surveys & Quizzes */}
             <div className="included-row">

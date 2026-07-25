@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 
-import { MODULES, SUBSET, CATS, type ModuleKey } from "../lib/modules";
-import { ICON_MAP } from "../lib/icons";
-import { ScrollReveal } from "./ScrollReveal";
-import { SectionLabel } from "./ui/SectionLabel";
-import { Modal } from "./Modal";
+import { MODULES, SUBSET, CATS, type ModuleKey } from "../../../lib/modules";
+import { ICON_MAP } from "../../../lib/icons";
+import { ScrollReveal } from "../../shared/ScrollReveal";
+import { SectionLabel } from "../../ui/SectionLabel";
+import { Modal } from "../../shared/Modal";
 
 function ModuleCard({ moduleKey }: { moduleKey: ModuleKey }) {
   const [name, desc] = MODULES[moduleKey];

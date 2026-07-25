@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { SectionLabel } from './ui/SectionLabel';
+import { SectionLabel } from '../../ui/SectionLabel';
 
 const faqs = [
   {
@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: "How long does setup actually take?",
-    a: "Most businesses are fully live in 4–5 business days. We map your current sales and delivery process on a short call, then build your CRM, automations, and reporting around it."
+    a: "Most businesses are fully live in 4-5 business days. We map your current sales and delivery process on a short call, then build your CRM, automations, and reporting around it."
   },
   {
     q: "Can we migrate from our current CRM or field service software?",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "What kind of support do we get after setup?",
-    a: "A real, standing team you can reach when something needs to change — a new pipeline, a new automation, a new report — not a ticket queue."
+    a: "A real, standing team you can reach when something needs to change - a new pipeline, a new automation, a new report - not a ticket queue."
   }
 ];
 

@@ -40,7 +40,7 @@ export default function Testimonials() {
       <div className="container">
         <h2 className="testi-heading">Why agencies choose OpsROI</h2>
         <p className="text-center text-white/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed mb-12 -mt-4">
-          Hear from the agencies and trades already running their operations <br/>on one platform — and what changed after they switched.
+          Hear from the agencies and trades already running their operations <br/>on one platform - and what changed after they switched.
         </p>
 
         <div className="testi-3d-stage" id="testiStage" data-lenis-prevent>

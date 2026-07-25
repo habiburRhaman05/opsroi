@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useMemo } from "react";
 
-import { ICON_MAP, SearchIcon, PenIcon, DocusignIcon, MailchimpIcon, WebsiteIcon, GoogleAdsIcon, MetaIcon } from ".././lib/icons";
-import { TIERS, type CalculatorItem } from ".././lib/calculator";
-import { ScrollReveal } from "./ScrollReveal";
-import { SectionLabel } from "./ui/SectionLabel";
+import { ICON_MAP, SearchIcon, PenIcon, DocusignIcon, MailchimpIcon, WebsiteIcon, GoogleAdsIcon, MetaIcon } from "../../../lib/icons";
+import { TIERS, type CalculatorItem } from "../../../lib/calculator";
+import { ScrollReveal } from "../../shared/ScrollReveal";
+import { SectionLabel } from "../../ui/SectionLabel";
 import { ArrowDown } from "lucide-react";
 
 const BRAND_ICONS: Record<string, React.ComponentType> = {
@@ -53,22 +53,13 @@ const SERVICES: CalculatorItem[] = [
 const ALL_ITEMS = [...SOFTWARE, ...SERVICES];
 
 export function ComparisonTable() {
-  const rowsRef = useRef<HTMLDivElement>(null);
-  const totalElsewhereRef = useRef<HTMLDivElement>(null);
-  const totalPlatformRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!rowsRef.current) return;
-
+  const totalElsewhere = useMemo(() => {
     const total = ALL_ITEMS.reduce((s, a) => s + a.p, 0);
-    if (totalElsewhereRef.current) {
-      totalElsewhereRef.current.textContent =
-        "$" + total.toLocaleString("en-US") + "/mo";
-    }
-    if (totalPlatformRef.current) {
-      totalPlatformRef.current.textContent =
-        "$" + TIERS.growth.price.toLocaleString("en-US") + "/mo";
-    }
+    return "$" + total.toLocaleString("en-US") + "/mo";
+  }, []);
+
+  const totalPlatform = useMemo(() => {
+    return "$" + TIERS.growth.price.toLocaleString("en-US") + "/mo";
   }, []);
 
   return (
@@ -93,7 +84,7 @@ export function ComparisonTable() {
           </ScrollReveal>
           <ScrollReveal delay={150}>
             <p className="text-[#1D4E5F]/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-              See exactly how much your current tool stack costs compared to one unified platform. <br/>The math speaks for itself — one login, one bill, one system.
+              See exactly how much your current tool stack costs compared to one unified platform. <br/>The math speaks for itself - one login, one bill, one system.
             </p>
           </ScrollReveal>
         </div>
@@ -104,8 +95,7 @@ export function ComparisonTable() {
               <span>Feature</span>
               <span className="text-right">Else where</span>
               <span className="text-right">Included</span>
-            </div>
-            <div ref={rowsRef}>
+            </div>            <div>
               {ALL_ITEMS.map((item) => (
                 <div
                   key={item.n}
@@ -141,11 +131,8 @@ export function ComparisonTable() {
               <div className="text-[10px] font-bold tracking-widest uppercase text-white/60">
                 Buying it all separately
               </div>
-              <div
-                ref={totalElsewhereRef}
-                className="text-2xl font-bold tracking-tighter"
-              >
-                $0/mo
+              <div className="text-2xl font-bold tracking-tighter">
+                {totalElsewhere}
               </div>
               <span className="material-symbols-outlined text-white/40 my-1">
                 <ArrowDown/>
@@ -153,11 +140,8 @@ export function ComparisonTable() {
               <div className="text-[10px] font-bold tracking-widest uppercase text-secondary-fixed">
                 One platform
               </div>
-              <div
-                ref={totalPlatformRef}
-                className="text-2xl font-bold tracking-tighter"
-              >
-                $0/mo
+              <div className="text-2xl font-bold tracking-tighter">
+                {totalPlatform}
               </div>
             </div>
           </div>

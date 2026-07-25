@@ -43,7 +43,7 @@ export default function Integrations() {
           Integrates With Your Favorite Tools
         </h2>
         <p className="text-center text-ink-soft text-sm sm:text-base max-w-2xl mx-auto leading-relaxed mb-8">
-          OpsROI connects with the tools you already use. <br/>No forced migrations, no data silos — just seamless workflows.
+          OpsROI connects with the tools you already use. <br/>No forced migrations, no data silos - just seamless workflows.
         </p>
       </div>
 

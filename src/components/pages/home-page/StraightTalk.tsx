@@ -1,10 +1,10 @@
 import { Check, X, ShieldCheck, Award, Rocket, Megaphone, CircleDollarSign, TrendingDown, Clock, Zap } from "lucide-react";
-import { ScrollReveal } from "./ScrollReveal";
-import { SectionLabel } from "./ui/SectionLabel";
+import { ScrollReveal } from "../../shared/ScrollReveal";
+import { SectionLabel } from "../../ui/SectionLabel";
 
 const FOR_YOU = [
-  { icon: ShieldCheck, text: <>You run a <span className="font-extrabold text-navy">$3M–$10M</span> contracting business you built yourself.</> },
-  { icon: Award, text: <>Your name carries weight in your trade — people call you for advice.</> },
+  { icon: ShieldCheck, text: <>You run a <span className="font-extrabold text-navy">$3M-$10M</span> contracting business you built yourself.</> },
+  { icon: Award, text: <>Your name carries weight in your trade - people call you for advice.</> },
   { icon: Rocket, text: <>You want an asset that outlives the trucks and the crews.</> },
   { icon: Megaphone, text: <>You&apos;ll run your own company on the platform, publicly.</> },
 ];

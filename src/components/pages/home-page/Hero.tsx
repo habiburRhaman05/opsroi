@@ -1,29 +1,24 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { Play, X, ArrowRight, CheckCircle2, Zap, ShieldCheck, Sparkles } from 'lucide-react';
+import { useBodyLock } from '@/src/hooks/useBodyLock';
 
 const DEMO_VIDEO_ID = "dQw4w9WgXcQ"; // Demo video ID
 
 export default function Hero() {
   const [modalOpen, setModalOpen] = useState(false);
+  useBodyLock(modalOpen);
 
-  // ── Modal keyboard handler + body lock ──
+  // ── Modal keyboard handler ──
   const closeModal = useCallback(() => setModalOpen(false), []);
   useEffect(() => {
-    if (!modalOpen) {
-      document.body.classList.remove('modal-open');
-      return;
-    }
-    document.body.classList.add('modal-open');
+    if (!modalOpen) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') closeModal();
     };
     window.addEventListener('keydown', onKey);
-    return () => {
-      window.removeEventListener('keydown', onKey);
-      document.body.classList.remove('modal-open');
-    };
+    return () => window.removeEventListener('keydown', onKey);
   }, [modalOpen, closeModal]);
 
   return (
@@ -95,7 +90,7 @@ export default function Hero() {
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <Zap className="w-4 h-4 text-[#ECB84D] shrink-0" />
-                  <span>4–5 day complete setup</span>
+                  <span>4-5 day complete setup</span>
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-[#7DC243] shrink-0" />
@@ -220,7 +215,7 @@ export default function Hero() {
             className="relative w-full max-w-4xl"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button — above video, top-right of wrapper */}
+            {/* Close Button - above video, top-right of wrapper */}
             <div className="flex justify-end mb-3">
               <button
                 onClick={closeModal}

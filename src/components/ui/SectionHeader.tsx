@@ -1,4 +1,4 @@
-import { ScrollReveal } from "@/src/components/ScrollReveal";
+import { ScrollReveal } from "@/src/components/shared/ScrollReveal";
 import { SectionLabel } from "@/src/components/ui/SectionLabel";
 
 type SectionHeaderProps = {
