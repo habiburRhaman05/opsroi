@@ -38,116 +38,106 @@ export default function Compare() {
         <div className="included-card">
           <div className="included-table-wrap">
 
-            <div className="included-row included-head">
-              <span>Features</span>
-              <span>Replaces</span>
-              <span>Other tools</span>
-              <span className="included-col-highlight" style={{ color: 'var(--gold)', display: 'flex', justifyContent: 'center', textAlign: 'center', width: '100%' }}>OpsROI</span>
-            </div>
+           {/* CRM & Pipeline Management */}
+<div className="included-row">
+  <span className="included-feature">CRM &amp; Pipeline Management</span>
+  <span className="included-replaces">
+    <BrandLogo name="Salesforce" file="saleforce-com-logo.png" bg="#00A1E0" />
+    <BrandLogo name="HubSpot CRM" file="hubspot-com-logo.png" bg="#FF7A59" />
+  </span>
+  <span className="included-cost">$99/month</span>
+  <span className="included-col-highlight included-check">{CHECK}</span>
+</div>
 
-            {/* CRM & Pipeline Management */}
-            <div className="included-row">
-              <span className="included-feature">CRM &amp; Pipeline Management</span>
-              <span className="included-replaces">
-                <BrandLogo name="Salesforce" file="saleforce-com-logo.png" bg="#00A1E0" />
-                <BrandLogo name="GoHighLevel" file="gohighlevel-com-logo.png" bg="#F9A825" />
-               
-              </span>
-              <span className="included-cost">$99/month</span>
-              <span className="included-col-highlight included-check" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>{CHECK}</span>
-            </div>
+{/* Forms, Surveys & Quizzes */}
+<div className="included-row">
+  <span className="included-feature">Forms, Surveys &amp; Quizzes</span>
+  <span className="included-replaces">
+    <BrandLogo name="Typeform" file="typeform-ie-logo.png" bg="#262627" />
+    <BrandLogo name="Jotform" file="jotform-com-logo.png" bg="#FF6100" />
+  </span>
+  <span className="included-cost">$49/month</span>
+  <span className="included-col-highlight included-check">{CHECK}</span>
+</div>
 
-            {/* Websites & Sales Funnels - placeholder text until icons uploaded */}
-            
-            {/* Forms, Surveys & Quizzes */}
-            <div className="included-row">
-              <span className="included-feature">Forms, Surveys &amp; Quizzes</span>
-              <span className="included-replaces">
-              <BrandLogo name="Salesflare" file="salesflare-com-logo.png" bg="#3AA1FF" />
-                <BrandLogo name="Zoho CRM" file="zohocrm-in-logo.png" bg="#E42527" />
-              </span>
-              <span className="included-cost">$49/month</span>
-              <span className="included-col-highlight included-check" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>{CHECK}</span>
-            </div>
+{/* Workflow Automation */}
+<div className="included-row">
+  <span className="included-feature">Workflow Automation</span>
+  <span className="included-replaces">
+    <BrandLogo name="Zapier" file="zapier-com-logo.png" bg="#FF4F00" />
+    <BrandLogo name="Make" file="make-com-logo.png" bg="#6C63FF" />
+  </span>
+  <span className="included-cost">$169/month</span>
+  <span className="included-col-highlight included-check">{CHECK}</span>
+</div>
 
-            {/* Workflow Automation */}
-            <div className="included-row">
-              <span className="included-feature">Workflow Automation</span>
-              <span className="included-replaces">
-                <BrandLogo name="Salesforce" file="clickup-com-logo.png" bg="#00A1E0" />
-                <BrandLogo name="Zoho CRM" file="activecampaign-com-logo.png" bg="#E42527" />
+{/* Email & SMS Follow-Up */}
+<div className="included-row">
+  <span className="included-feature">Email &amp; SMS Follow-Up</span>
+  <span className="included-replaces">
+    <BrandLogo name="ActiveCampaign" file="activecampaign-com-logo.png" bg="#356AE6" />
+    <BrandLogo name="Klaviyo" file="klaviyo-com-logo.png" bg="#006B5F" />
+  </span>
+  <span className="included-cost">$149/month</span>
+  <span className="included-col-highlight included-check">{CHECK}</span>
+</div>
 
-                {/* <BrandLogo name="GoHighLevel" file="gohighlevel-com-logo.png" bg="#F9A825" /> */}
-              </span>
-              <span className="included-cost">$169/month</span>
-              <span className="included-col-highlight included-check" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>{CHECK}</span>
-            </div>
+{/* Booking & Missed-Call Text-Back */}
+<div className="included-row">
+  <span className="included-feature">Booking &amp; Missed-Call Text-Back</span>
+  <span className="included-replaces">
+    <BrandLogo name="Calendly" file="calendly-com-logo.png" bg="#006BFF" />
+    <BrandLogo name="GoHighLevel" file="gohighlevel-com-logo.png" bg="#F9A825" />
+  </span>
+  <span className="included-cost">$69/month</span>
+  <span className="included-col-highlight included-check">{CHECK}</span>
+</div>
 
-            {/* Email & SMS Follow-Up */}
-            <div className="included-row">
-              <span className="included-feature">Email &amp; SMS Follow-Up</span>
-              <span className="included-replaces">
-           <BrandLogo name="Zoho CRM" file="creatio-com-logo.png" bg="#E42527" />
-                <BrandLogo name="Monday.com" file="kajabi-com-logo.png" bg="#FF3D57" />
+{/* Client Subaccounts */}
+<div className="included-row">
+  <span className="included-feature">Client Subaccounts</span>
+  <span className="included-replaces">
+    <BrandLogo name="GoHighLevel" file="gohighlevel-com-logo.png" bg="#F9A825" />
+    <BrandLogo name="ClickUp" file="clickup-com-logo.png" bg="#7B68EE" />
+  </span>
+  <span className="included-cost">$99/month</span>
+  <span className="included-col-highlight included-check">{CHECK}</span>
+</div>
 
-              </span>
-              <span className="included-cost">$149/month</span>
-              <span className="included-col-highlight included-check" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>{CHECK}</span>
-            </div>
+{/* White-Labeled ROI Dashboards */}
+<div className="included-row">
+  <span className="included-feature">White-Labeled ROI Dashboards</span>
+  <span className="included-replaces">
+    <BrandLogo name="AgencyAnalytics" file="agencyanalytics-com-logo.png" bg="#2A6DF4" />
+    <BrandLogo name="Databox" file="databox-com-logo.png" bg="#3B82F6" />
+  </span>
+  <span className="included-cost">$199/month</span>
+  <span className="included-col-highlight included-check">{CHECK}</span>
+</div>
 
-            {/* Booking & Missed-Call Text-Back */}
-            <div className="included-row">
-              <span className="included-feature">Booking &amp; Missed-Call Text-Back</span>
-              <span className="included-replaces">
-                 <BrandLogo name="Salesforce" file="nutshell-com-logo.png" bg="#00A1E0" />
-                <BrandLogo name="GoHighLevel" file="sugarcrm-com-logo.png" bg="#F9A825" />
-              </span>
-              <span className="included-cost">$69/month</span>
-              <span className="included-col-highlight included-check" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>{CHECK}</span>
-            </div>
+{/* Ongoing Ops Support Team */}
+<div className="included-row">
+  <span className="included-feature">Ongoing Ops Support Team</span>
 
-            {/* Client Subaccounts */}
-            <div className="included-row">
-              <span className="included-feature">Client Subaccounts</span>
-              <span className="included-replaces">
-                 <BrandLogo name="Zoho CRM" file="replicate-com-logo.png" bg="#E42527" />
-                <BrandLogo name="Monday.com" file="monday-com-logo.png" bg="#FF3D57" />
-              </span>
-              <span className="included-cost">$99/month</span>
-              <span className="included-col-highlight included-check" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>{CHECK}</span>
-            </div>
+  <span className="included-replaces">
+    <BrandLogo
+      name="Zendesk"
+      file="zendesk-com-logo.png"
+      bg="#03363D"
+    />
+    <BrandLogo
+      name="Intercom"
+      file="intercom-com-logo.png"
+      bg="#1F8DED"
+    />
+  </span>
 
-            {/* White-Labeled ROI Dashboards */}
-            <div className="included-row">
-              <span className="included-feature">White-Labeled ROI Dashboards</span>
-              <span className="included-replaces">
-                 <BrandLogo name="Zoho CRM" file="system9-io-logo.png" bg="#E42527" />
-                <BrandLogo name="harvey" file="harvey-ai-logo.png" bg="#FF3D57" />
-              </span>
-              <span className="included-cost">$199/month</span>
-              <span className="included-col-highlight included-check" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>{CHECK}</span>
-            </div>
+  <span className="included-cost">$500+/month</span>
 
-            {/* Ongoing Ops Support Team */}
-            <div className="included-row">
-              <span className="included-feature">Ongoing Ops Support Team</span>
-              <span className="included-replaces">
-              <BrandLogo name="mail chimp" file="mailchimp-com-logo.png" bg="#E42527" />
-                <BrandLogo name="Monday.com" file="monday-com-logo.png" bg="#FF3D57" />
-              </span>
-              <span className="included-cost">-</span>
-              <span className="included-col-highlight included-check" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>{CHECK}</span>
-            </div>
-
-            {/* Total row */}
-            <div className="included-row included-total">
-              <span className="included-feature">Overall price</span>
-              <span></span>
-              <span className="included-cost included-cost-strike">$1,130+/month</span>
-              <span className="included-col-highlight included-price">
-                <span className="included-price-symbol">$</span>247<span className="included-price-per">/mo</span>
-              </span>
-            </div>
+  <span className="included-col-highlight included-check">
+    {CHECK}
+  </span>
+</div>
 
           </div>
 

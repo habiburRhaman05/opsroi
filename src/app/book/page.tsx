@@ -119,23 +119,21 @@ export default function BookPage() {
             </div>
 
             {/* Right — GHL calendar embed */}
-            <div className="p-2 sm:p-3">
-
-                <iframe src="https://api.leadconnectorhq.com/widget/booking/6M0BCjhf4nYKg3TXYX0e" style={{width: "100%",border:"none",overflow: "hidden"}} scrolling="no" id="6M0BCjhf4nYKg3TXYX0e_1784908485306"></iframe>
-                {/* <iframe
-                  src={GHL_CALENDAR_SRC}
-                  id={GHL_CALENDAR_ID}
-                  title="Book a call with OpsROI"
-                  scrolling="no"
-                  style={{
-                    width: "100%",
-                    border: "none",
-                    overflow: "hidden",
-                    // Loading floor; form_embed.js resizes to the calendar's real height.
-                    minHeight: 650,
-                  }}
-                /> */}
-              </div>
+          <div className="w-full overflow-hidden rounded-3xl border border-line bg-white shadow-xl">
+  <iframe
+    src="https://api.leadconnectorhq.com/widget/booking/6M0BCjhf4nYKg3TXYX0e"
+    id="6M0BCjhf4nYKg3TXYX0e_1784908485306"
+    title="Book a Call"
+    className="w-full"
+    style={{
+      border: 0,
+      width: "100%",
+      minHeight: "820px",
+      overflow: "hidden",
+    }}
+    scrolling="no"
+  />
+</div>
           </div>
         </div>
       </section>
