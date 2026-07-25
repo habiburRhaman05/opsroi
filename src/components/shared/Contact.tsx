@@ -26,7 +26,6 @@ const businessTypes = [
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   agency: z.string().min(1, "Business name is required"),
-  businessType: z.string().min(1, "Please select your business type"),
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(7, "Please enter a valid phone number"),
   message: z.string().min(10, "Message must be at least 10 characters"),
@@ -48,7 +47,6 @@ export default function Contact() {
     defaultValues: {
       name: "",
       agency: "",
-      businessType: "",
       email: "",
       phone: "",
       message: "",
@@ -134,14 +132,6 @@ export default function Contact() {
                  </div>
                </div>
                
-               <div className="flex flex-col gap-2">
-                  <label htmlFor="businessType" className="text-sm font-semibold text-navy">What does your business serve?</label>
-                  <select id="businessType" {...register("businessType")} className={`bg-mist border rounded-xl px-4 py-3 focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all ${errors.businessType ? 'border-red-500' : 'border-line'}`}>
-                    <option value="">Select your industry...</option>
-                    {businessTypes.map(t => <option key={t} value={t}>{t}</option>)}
-                  </select>
-                  {errors.businessType && <span className="text-red-500 text-xs font-medium">{errors.businessType.message}</span>}
-               </div>
 
                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                  <div className="flex flex-col gap-2">
