@@ -27,18 +27,16 @@ export function Club() {
         
            
              <SectionLabel className="justify-center">
-The Club</SectionLabel>
+The OpsROI Network</SectionLabel>
            
      
           
           <h2 className="font-bebas text-navy     mb-6 leading-none">
-            One founder per industry. The next slot <br></br> has your trade on it.
+            One engine. A family of <br></br>trade-built CRMs.
           </h2>
           
           <p className="text-lg text-ink leading-relaxed">
-            <span className="font-bold text-navy">1 industry live.</span>{" "}
-            7 future builds currently in development. The moment a founder claims a seat, it&apos;s
-            off the board for good - no second seat, ever.
+            OpsROI is the engine underneath a growing network of niche, trade-specific CRMs &mdash; each one a purpose-built version of the platform for a single industry, built and owned by an operator who actually works in that trade. <span className="font-bold text-navy">TreeROI</span> is live today. The rest of the board is open.
           </p>
         </div>
 

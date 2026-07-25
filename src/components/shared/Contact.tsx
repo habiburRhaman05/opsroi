@@ -6,9 +6,27 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { SectionLabel } from "../ui/SectionLabel";
 
+const businessTypes = [
+  "Marketing / Ad Agency",
+  "Coaching & Consulting",
+  "Creative / Design Studio",
+  "Home Services",
+  "Recruiting",
+  "Tree Service",
+  "Roofing",
+  "HVAC",
+  "Electrical",
+  "Landscaping",
+  "Restoration / Rebuild",
+  "Pressure Washing",
+  "General Contracting",
+  "Other",
+];
+
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
-  agency: z.string().min(1, "Agency name is required"),
+  agency: z.string().min(1, "Business name is required"),
+  businessType: z.string().min(1, "Please select your business type"),
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(7, "Please enter a valid phone number"),
   message: z.string().min(10, "Message must be at least 10 characters"),
@@ -30,6 +48,7 @@ export default function Contact() {
     defaultValues: {
       name: "",
       agency: "",
+      businessType: "",
       email: "",
       phone: "",
       message: "",
@@ -89,10 +108,10 @@ export default function Contact() {
           <div className="inline-flex items-center justify-center gap-3 mb-6 reveal-up is-revealed">
             <SectionLabel className="justify-center">Contact With US</SectionLabel>
           </div>
-          <h2 className="text-4xl sm:text-4xl font-bold uppercase tracking-tight font-bebas text-navy">Let&apos;s talk about your agency&apos;s ops.</h2>
+          <h2 className="text-4xl sm:text-4xl font-bold uppercase tracking-tight font-bebas text-navy">Let&apos;s talk about your business.</h2>
           <p className="mt-6 text-ink text-lg leading-relaxed">
-            Tell us a bit about your agency and we&apos;ll get back to you
-            within one business day - no niche is out of scope.
+            Tell us a bit about your business and we&apos;ll get back to you
+            within one business day &mdash; no niche is out of scope.
           </p>
         </div>
 
@@ -109,12 +128,21 @@ export default function Contact() {
                     {errors.name && <span className="text-red-500 text-xs font-medium">{errors.name.message}</span>}
                  </div>
                  <div className="flex flex-col gap-2">
-                    <label htmlFor="agency" className="text-sm font-semibold text-navy">Agency name</label>
-                    <input type="text" id="agency" placeholder="Acme Agency" {...register("agency")} className={`bg-mist border rounded-xl px-4 py-3 focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all ${errors.agency ? 'border-red-500' : 'border-line'}`} />
+                    <label htmlFor="agency" className="text-sm font-semibold text-navy">Business name</label>
+                    <input type="text" id="agency" placeholder="Acme Contractors" {...register("agency")} className={`bg-mist border rounded-xl px-4 py-3 focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all ${errors.agency ? 'border-red-500' : 'border-line'}`} />
                     {errors.agency && <span className="text-red-500 text-xs font-medium">{errors.agency.message}</span>}
                  </div>
                </div>
                
+               <div className="flex flex-col gap-2">
+                  <label htmlFor="businessType" className="text-sm font-semibold text-navy">What does your business serve?</label>
+                  <select id="businessType" {...register("businessType")} className={`bg-mist border rounded-xl px-4 py-3 focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all ${errors.businessType ? 'border-red-500' : 'border-line'}`}>
+                    <option value="">Select your industry...</option>
+                    {businessTypes.map(t => <option key={t} value={t}>{t}</option>)}
+                  </select>
+                  {errors.businessType && <span className="text-red-500 text-xs font-medium">{errors.businessType.message}</span>}
+               </div>
+
                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                  <div className="flex flex-col gap-2">
                     <label htmlFor="email" className="text-sm font-semibold text-navy">Email</label>

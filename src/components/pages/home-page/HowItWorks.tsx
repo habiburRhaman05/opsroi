@@ -26,7 +26,7 @@ export default function HowItWorks() {
         <div className="section-head center mx-auto mb-10 md:mb-[52px]">
           <div className="eyebrow" style={{justifyContent: 'center'}}>How It Works</div>
           <h2>From first call to fully running, in three steps.</h2>
-          <p>No lengthy onboarding or complicated setup. <br/>We map your agency around your sales and delivery process, <br/>build the systems, and keep everything running.</p>
+          <p>No lengthy onboarding or complicated setup. <br/>We map your business around your sales and delivery process, <br/>build the systems, and keep everything running.</p>
         </div>
 
         <div className={`how-steps !grid !grid-cols-1 lg:!grid-cols-3 !gap-8 lg:!gap-10 mt-8 ${inView ? 'in-view' : ''}`} id="howSteps" ref={stepsRef}>
@@ -39,8 +39,8 @@ export default function HowItWorks() {
             </div>
             <div className="how-step-card !p-6 lg:!p-[26px_24px] flex-grow flex flex-col justify-start">
               <div className="founder-role">Step One</div>
-              <h3>We map your agency</h3>
-              <p>A short call to understand how your agency sells, delivers, and reports today - no assumptions about your niche.</p>
+              <h3>We map your business</h3>
+              <p>A short call to understand how you sell, deliver, and get paid today - no assumptions about your industry, your niche, or your crew size.</p>
             </div>
           </div>
 
@@ -64,7 +64,7 @@ export default function HowItWorks() {
             <div className="how-step-card !p-6 lg:!p-[26px_24px] flex-grow flex flex-col justify-start">
               <div className="founder-role">Step Three</div>
               <h3>We keep it running</h3>
-              <p>OpsROI stays on as your ops partner - maintaining, adjusting, and supporting as your agency grows.</p>
+              <p>OpsROI stays on as your ops partner - maintaining, adjusting, and supporting as you grow, add crew, add clients, or add a new service line.</p>
             </div>
           </div>
         </div>

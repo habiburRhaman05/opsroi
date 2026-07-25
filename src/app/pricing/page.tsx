@@ -17,7 +17,7 @@ export default function PricingPage() {
      <div className="eyebrow fade-in-up">Pricing</div>
     {/* <div className="page-breadcrumb fade-in-up"><a href="/">Home</a> <span className="sep">/</span> Pricing</div> */}
     <h1 className="fade-in-up" style={{ animationDelay: '0.08s' }}>Straightforward pricing, whatever you run.</h1>
-    <p className="lede fade-in-up" style={{ animationDelay: '0.16s' }}>No niche upcharge, no per-client tax on subaccounts. Pick the tier that matches your agency's size.</p>
+    <p className="lede fade-in-up" style={{ animationDelay: '0.16s' }}>No niche upcharge, no per-client tax on subaccounts. Pick the tier that matches your business&apos;s size &mdash; agency or trade.</p>
   </div>
 </section>
 
@@ -25,7 +25,7 @@ export default function PricingPage() {
 <Pricing hideHeader={true} />
 
 
-{/* <Compare/> */}
+<Compare/>
 
       </main>
    

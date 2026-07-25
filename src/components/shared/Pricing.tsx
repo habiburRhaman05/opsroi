@@ -16,7 +16,7 @@ export default function Pricing({ hideHeader = false }: { hideHeader?: boolean }
               Straightforward pricing, whatever you run.
             </h2>
             <p className="text-lg text-ink leading-relaxed">
-              No niche upcharge, no per-client tax on subaccounts. Pick the tier that matches your agency&apos;s size.
+              No niche upcharge, no per-client tax on subaccounts. Pick the tier that matches your business&apos;s size &mdash; agency or trade.
             </p>
           </div>
         )}
@@ -34,13 +34,13 @@ export default function Pricing({ hideHeader = false }: { hideHeader?: boolean }
             </div>
             <div className="relative z-10 flex flex-col flex-1">
               <div className="text-3xl font-bold text-navy font-bebas tracking-wide uppercase mb-3">Growth</div>
-            <div className="text-ink-soft text-[15px] mb-8 min-h-[48px]">For solo operators and small agencies getting their first real CRM in place.</div>
+            <div className="text-ink-soft text-[15px] mb-8 min-h-[48px]">For solo operators and small businesses getting their first real system in place.</div>
               <div className="mb-10">
                 <span className="text-5xl font-extrabold text-navy tracking-tight font-bebas">$2,950</span>
                 <span className="text-ink-soft ml-2 font-medium">/ month</span>
               </div>
               <ul className="space-y-5 mb-12 flex-1">
-              {['Up to 5 client subaccounts', 'Core CRM & pipelines', 'Standard automations', 'Email support'].map(f => (
+              {['Up to 5 client/job subaccounts', 'Core CRM & pipelines', 'Standard automations', 'Document signing', 'Email support'].map(f => (
                 <li key={f} className="flex items-start gap-3 text-ink font-medium">
                   <svg width="22" height="22" viewBox="0 0 18 18" className="shrink-0 mt-0.5"><path d="M4 9l3 3 7-7.5" stroke="#7DC243" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   <span>{f}</span>
@@ -70,13 +70,13 @@ export default function Pricing({ hideHeader = false }: { hideHeader?: boolean }
             
             <div className="relative z-10 flex flex-col flex-1">
               <div className="text-3xl font-bold text-white font-bebas tracking-wide uppercase mb-3">Pro</div>
-              <div className="text-white/70 text-[15px] mb-8 min-h-[48px]">For agencies running multiple client accounts who need reporting and automation to scale.</div>
+              <div className="text-white/70 text-[15px] mb-8 min-h-[48px]">For businesses running multiple accounts or crews who need automation and reporting to scale.</div>
               <div className="mb-10">
                 <span className="text-5xl font-extrabold text-gold tracking-tight font-bebas">$4,995</span>
                 <span className="text-white/70 ml-2 font-medium">/ month</span>
               </div>
               <ul className="space-y-5 mb-12 flex-1">
-                {['Up to 25 client subaccounts', 'White-labeled ROI dashboards', 'Advanced workflow automation', 'Priority support', 'Guided onboarding & setup'].map(f => (
+                {['Up to 25 client/job subaccounts', 'White-labeled ROI dashboards', 'Advanced workflow automation', 'AI Estimates & AI Invoicing', 'HR & Payroll', 'Priority support', 'Guided onboarding & setup'].map(f => (
                   <li key={f} className="flex items-start gap-3 text-white font-medium">
                     <svg width="22" height="22" viewBox="0 0 18 18" className="shrink-0 mt-0.5"><path d="M4 9l3 3 7-7.5" stroke="#7DC243" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
                     <span>{f}</span>
@@ -99,7 +99,7 @@ export default function Pricing({ hideHeader = false }: { hideHeader?: boolean }
             </div>
             <div className="relative z-10 flex flex-col flex-1">
               <div className="text-3xl font-bold text-navy font-bebas tracking-wide uppercase mb-3">Elite</div>
-            <div className="text-ink-soft text-[15px] mb-8 min-h-[48px]">For larger agencies that need unlimited scale and a dedicated ops partner.</div>
+            <div className="text-ink-soft text-[15px] mb-8 min-h-[48px]">For larger businesses that need unlimited scale and a dedicated ops partner.</div>
               <div className="mb-10">
                 <span className="text-5xl font-extrabold text-navy tracking-tight font-bebas">$7,495</span>
                 <span className="text-ink-soft ml-2 font-medium">/ month</span>
