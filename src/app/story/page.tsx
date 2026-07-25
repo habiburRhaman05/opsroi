@@ -12,12 +12,12 @@ export default function StoryPage() {
           </div>
           
           <h1 className="font-sans font-bold leading-tight tracking-tight text-white   reveal-up is-revealed" style={{ transitionDelay: '0.1s' }}>
-            We built the exact system <br className="hidden sm:block" />
-            <span className="text-green">we couldn&apos;t find.</span>
+            Why we built <br className="hidden sm:block" />
+            <span className="text-green">OpsROI.</span>
           </h1>
           
           <p className="mt-6 text-white/80 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto reveal-up is-revealed" style={{ transitionDelay: '0.2s' }}>
-            OpsROI wasn&apos;t designed in a boardroom. It was forged out of necessity by an operator who was tired of losing margin to disconnected tools and broken workflows. This is our story.
+            A simple frustration: running a business shouldn&apos;t require logging into eight different apps just to get one job done, start to finish.
           </p>
         </div>
       </section>
@@ -243,8 +243,8 @@ export default function StoryPage() {
           </div>
           
           <div className="text-center mt-16">
-            <Link href="/features" className="inline-flex items-center justify-center rounded-full bg-navy hover:bg-navy-deep text-white font-bold text-md tracking-widest px-8 py-4 font-bebas transition-all shadow-lg hover:shadow-xl">
-              SEE THE PLATFORM
+            <Link href="/book" className="inline-flex items-center justify-center rounded-full bg-navy hover:bg-navy-deep text-white font-bold text-md tracking-widest px-8 py-4 font-bebas transition-all shadow-lg hover:shadow-xl">
+              Book a Call
             </Link>
           </div>
 

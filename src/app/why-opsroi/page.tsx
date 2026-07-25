@@ -60,17 +60,17 @@ const DIFFERENTIATORS: { title: string; body: string; icon: LucideIcon }[] = [
   },
   {
     title: "It doesn't assume what you run",
-    body: "Agency, coaching, tree service, roofing, HVAC — pipelines, fields, and workflows are configured around how you actually sell and deliver, not someone else's template.",
+    body: "Agency, coaching, tree service, roofing, HVAC - pipelines, fields, and workflows are configured around how you actually sell and deliver, not someone else's template.",
     icon: Building2,
   },
   {
     title: "AI does the paperwork, not just the chatting",
-    body: "Not a chatbot in your inbox. AI generates estimates from job details, turns completed work into invoices, and answers & qualifies every inbound call — 24/7, without you touching it.",
+    body: "Not a chatbot in your inbox. AI generates estimates from job details, turns completed work into invoices, and answers & qualifies every inbound call - 24/7, without you touching it.",
     icon: Sparkles,
   },
   {
     title: "Support doesn't disappear after setup",
-    body: "No login-and-a-knowledge-base handoff. OpsROI stays on as a standing ops partner — when the business changes, the platform gets adjusted with you.",
+    body: "No login-and-a-knowledge-base handoff. OpsROI stays on as a standing ops partner - when the business changes, the platform gets adjusted with you.",
     icon: ShieldCheck,
   },
 ];
@@ -104,7 +104,7 @@ const WHO_CHOOSES: { icon: LucideIcon; label: string; heading: string; body: str
     icon: Building2,
     label: "A marketing agency",
     heading: "Manage more accounts without adding headcount.",
-    body: "Subaccounts, white-label dashboards, and automated reporting mean more client accounts per person — and clients stop questioning the invoice because they can see the result themselves.",
+    body: "Subaccounts, white-label dashboards, and automated reporting mean more client accounts per person - and clients stop questioning the invoice because they can see the result themselves.",
     accent: "green",
   },
     {
@@ -126,15 +126,15 @@ const PROOF: { value: string; label: string }[] = [
 const FAQ: { q: string; a: string }[] = [
   {
     q: "Is OpsROI just GoHighLevel with extra steps?",
-    a: "No — it's built to also run the operational side of a business (HR, payroll, inventory, AI estimates/invoicing) that GoHighLevel and similar tools were never built to touch. GoHighLevel gets you leads; OpsROI runs the business behind them.",
+    a: "No - it's built to also run the operational side of a business (HR, payroll, inventory, AI estimates/invoicing) that GoHighLevel and similar tools were never built to touch. GoHighLevel gets you leads; OpsROI runs the business behind them.",
   },
   {
-    q: "We already use Jobber or ServiceTitan — is switching worth it?",
-    a: "If scheduling and invoicing are the only things you need, maybe not. If you're also running a separate CRM for leads, a separate payroll tool, and a spreadsheet for inventory, OpsROI consolidates all of it — and adds AI-generated estimates and invoicing on top.",
+    q: "We already use Jobber or ServiceTitan - is switching worth it?",
+    a: "If scheduling and invoicing are the only things you need, maybe not. If you're also running a separate CRM for leads, a separate payroll tool, and a spreadsheet for inventory, OpsROI consolidates all of it - and adds AI-generated estimates and invoicing on top.",
   },
   {
     q: "Do I have to switch everything at once?",
-    a: "No. Most businesses migrate in stages during the 4–5 day setup — we prioritize whatever's causing the most pain first.",
+    a: "No. Most businesses migrate in stages during the 4-5 day setup - we prioritize whatever's causing the most pain first.",
   },
 ];
 
@@ -252,7 +252,7 @@ export default function WhyOpsroiPage() {
           <p className="lede fade-in-up" style={{ animationDelay: "0.16s" }}>
             Lead-gen software doesn&apos;t run your crew. Job software doesn&apos;t
             prove your ROI. Payroll software doesn&apos;t talk to either. OpsROI was
-            built because that&apos;s insane — and because the person who built it
+            built because that&apos;s insane - and because the person who built it
             was living it.
           </p>
           <div
@@ -314,7 +314,7 @@ export default function WhyOpsroiPage() {
           </div>
 
           <p className="mx-auto mt-5 max-w-5xl text-center text-sm font-semibold text-ink-soft">
-            $1,600+/month across 8 logins and 8 bills —{" "}
+            $1,600+/month across 8 logins and 8 bills -{" "}
             <span className="text-navy">
               and that&apos;s before a single lost lead.
             </span>
@@ -333,7 +333,7 @@ export default function WhyOpsroiPage() {
               and scan back (Tool 5, or no tool at all). The job&apos;s scheduled on
               a whiteboard (Tool 6). When it&apos;s done, someone writes the invoice
               by hand and hopes they remember which materials were used. At month
-              end, someone builds a report by hand — a very long night in a
+              end, someone builds a report by hand - a very long night in a
               spreadsheet.
             </p>
           </div>
@@ -349,7 +349,7 @@ export default function WhyOpsroiPage() {
             </div>
             <h2>The same day, run on one system.</h2>
             <p>
-              Every step of a typical workday — from lead to invoice — mapped against <br/>the old way of separate tools vs. one connected platform. See the difference side by side.
+              Every step of a typical workday - from lead to invoice - mapped against <br/>the old way of separate tools vs. one connected platform. See the difference side by side.
             </p>
           </div>
 
@@ -453,7 +453,7 @@ export default function WhyOpsroiPage() {
             </div>
             <h2>See exactly what you&apos;re not getting else where.</h2>
             <p>
-              A straight-up comparison across capabilities: what the leading tools cover <br/>vs. what OpsROI includes. Spoiler — the gap is bigger than you&apos;d expect.
+              A straight-up comparison across capabilities: what the leading tools cover <br/>vs. what OpsROI includes. Spoiler - the gap is bigger than you&apos;d expect.
             </p>
           </div>
 
@@ -539,7 +539,7 @@ export default function WhyOpsroiPage() {
             </div>
             <h2>The numbers, not just the pitch.</h2>
             <p>
-              Real metrics from real operators who made the switch. <br/>No vanity stats — just the outcomes that matter to your bottom line.
+              Real metrics from real operators who made the switch. <br/>No vanity stats - just the outcomes that matter to your bottom line.
             </p>
           </div>
 
@@ -567,7 +567,7 @@ export default function WhyOpsroiPage() {
             </div>
             <h2>Straight answers before you switch.</h2>
             <p>
-              The questions we hear most from agencies and trades considering OpsROI. <br/>No fine print, no dodging — just honest answers.
+              The questions we hear most from agencies and trades considering OpsROI. <br/>No fine print, no dodging - just honest answers.
             </p>
           </div>
 

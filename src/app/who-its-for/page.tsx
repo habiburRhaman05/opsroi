@@ -1,7 +1,7 @@
-import { OwnershipTrack } from "@/src/components/who-is-it-for/OwnershipTrack";
-import { ServicesTrack } from "@/src/components/who-is-it-for/ServicesTrack";
-import { StillNotSure } from "@/src/components/who-is-it-for/StillNotSure";
-import { WhoIsItForHero } from "@/src/components/who-is-it-for/WhoIsItForHero";
+import { OwnershipTrack } from "@/src/components/pages/who-is-it-for/OwnershipTrack";
+import { ServicesTrack } from "@/src/components/pages/who-is-it-for/ServicesTrack";
+import { StillNotSure } from "@/src/components/pages/who-is-it-for/StillNotSure";
+import { WhoIsItForHero } from "@/src/components/pages/who-is-it-for/WhoIsItForHero";
 import type { Metadata } from "next";
 
 

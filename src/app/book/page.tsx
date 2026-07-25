@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "Book a Call | OpsROI",
   description:
-    "Pick a time for a free 20-minute walkthrough. We'll map exactly what OpsROI would set up for your business — no pressure, no long contracts.",
+    "Pick a time for a free 20-minute walkthrough. We'll map exactly what OpsROI would set up for your business - no pressure, no long contracts.",
 };
 
 /* Your GoHighLevel booking calendar. Replace the src/id here to swap calendars. */
@@ -31,11 +31,11 @@ const STEPS = [
   {
     icon: Blocks,
     title: "We show what we'd build",
-    body: "You'll see exactly what OpsROI would set up around your workflow — CRM, automations, and reporting.",
+    body: "You'll see exactly what OpsROI would set up around your workflow - CRM, automations, and reporting.",
   },
   {
     icon: CircleCheck,
-    title: "You decide — zero pressure",
+    title: "You decide - zero pressure",
     body: "No niche requirements, no long contracts. If it's not the right fit, we'll tell you.",
   },
 ];
@@ -61,7 +61,7 @@ export default function BookPage() {
           </h1>
           <p className="lede fade-in-up" style={{ animationDelay: "0.16s" }}>
             Pick a time that works. In about 20 minutes we&apos;ll walk through
-            exactly what OpsROI would set up for you — no pressure, no long
+            exactly what OpsROI would set up for you - no pressure, no long
             contracts.
           </p>
         </div>
@@ -119,23 +119,21 @@ export default function BookPage() {
             </div>
 
             {/* Right — GHL calendar embed */}
-            <div className="p-2 sm:p-3">
-
-                <iframe src="https://api.leadconnectorhq.com/widget/booking/6M0BCjhf4nYKg3TXYX0e" style={{width: "100%",border:"none",overflow: "hidden"}} scrolling="no" id="6M0BCjhf4nYKg3TXYX0e_1784908485306"></iframe>
-                {/* <iframe
-                  src={GHL_CALENDAR_SRC}
-                  id={GHL_CALENDAR_ID}
-                  title="Book a call with OpsROI"
-                  scrolling="no"
-                  style={{
-                    width: "100%",
-                    border: "none",
-                    overflow: "hidden",
-                    // Loading floor; form_embed.js resizes to the calendar's real height.
-                    minHeight: 650,
-                  }}
-                /> */}
-              </div>
+          <div className="w-full overflow-hidden rounded-3xl border border-line bg-white shadow-xl">
+  <iframe
+    src="https://api.leadconnectorhq.com/widget/booking/6M0BCjhf4nYKg3TXYX0e"
+    id="6M0BCjhf4nYKg3TXYX0e_1784908485306"
+    title="Book a Call"
+    className="w-full"
+    style={{
+      border: 0,
+      width: "100%",
+      minHeight: "820px",
+      overflow: "hidden",
+    }}
+    scrolling="no"
+  />
+</div>
           </div>
         </div>
       </section>
