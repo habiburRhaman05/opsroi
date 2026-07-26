@@ -3,6 +3,14 @@ import { ScrollReveal } from "../../shared/ScrollReveal";
 export function WhoIsItForHero() {
   return (
     <header className="relative overflow-hidden bg-gradient-to-br from-[#163C49] via-[#1D4E5F] to-[#12313C] pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-[210px] lg:pb-36 text-white selection:bg-[#7DC243] selection:text-[#163C49]">
+      {/* Watermark SVG */}
+      <div 
+        className="absolute top-0 right-0 pointer-events-none w-[150px] md:w-[250px] lg:w-[350px] z-0" 
+        style={{ transform: 'translate(20%, -20%)', opacity: 0.05 }}
+      >
+        <img src="/watermark.svg" alt="" className="w-full h-auto" aria-hidden="true" />
+      </div>
+
       {/* Glowing Background Radial Accents */}
       <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-[#7DC243]/20 via-[#ECB84D]/10 to-transparent blur-[130px] rounded-full" />
       <div className="pointer-events-none absolute top-1/3 -right-40 w-96 h-96 bg-[#7DC243]/15 blur-[140px] rounded-full" />

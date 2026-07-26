@@ -56,6 +56,24 @@ export type Feature = {
  */
 export const FEATURES: Feature[] = [
   {
+    id: "crm-build",
+    icon: Database,
+    accent: "navy",
+    title: "CRM Build & Setup",
+    tagline:
+      "Custom stages, fields, and subaccounts configured around how you actually sell and deliver.",
+    overview:
+      "We stand up a CRM shaped around your real sales and delivery process — not a generic template you have to bend to. Pipelines, stages, custom fields, and subaccounts are configured and ready to use from day one, so your team starts working instead of setting up.",
+    highlights: [
+      "Custom pipelines & deal stages",
+      "Tailored fields for your workflow",
+      "Client / job subaccounts",
+      "Data migrated from your old CRM",
+      "Live in 4–5 business days",
+    ],
+    stat: { value: "4.5 days", label: "average time to a live pipeline" },
+  },
+  {
     id: "hr-payroll",
     icon: Users,
     accent: "navy",
@@ -79,24 +97,7 @@ export const FEATURES: Feature[] = [
     ],
   },
 
-  {
-    id: "crm-build",
-    icon: Database,
-    accent: "navy",
-    title: "CRM Build & Setup",
-    tagline:
-      "Custom stages, fields, and subaccounts configured around how you actually sell and deliver.",
-    overview:
-      "We stand up a CRM shaped around your real sales and delivery process — not a generic template you have to bend to. Pipelines, stages, custom fields, and subaccounts are configured and ready to use from day one, so your team starts working instead of setting up.",
-    highlights: [
-      "Custom pipelines & deal stages",
-      "Tailored fields for your workflow",
-      "Client / job subaccounts",
-      "Data migrated from your old CRM",
-      "Live in 4–5 business days",
-    ],
-    stat: { value: "4.5 days", label: "average time to a live pipeline" },
-  },
+  
   {
   id: "ai-estimates-invoicing",
   icon: ReceiptText,
