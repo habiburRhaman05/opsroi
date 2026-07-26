@@ -24,6 +24,14 @@ export default function Hero() {
   return (
     <>
       <section id="home" className="relative overflow-hidden bg-gradient-to-br from-[#163C49] via-[#1D4E5F] to-[#12313C] pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-[210px] lg:pb-36 text-white selection:bg-[#7DC243] selection:text-[#163C49]">
+        {/* Watermark SVG */}
+        <div 
+          className="absolute top-0 right-0 pointer-events-none w-[150px] md:w-[250px] lg:w-[350px] z-0" 
+          style={{ transform: 'translate(20%, -20%)', opacity: 0.05 }}
+        >
+          <img src="/watermark.svg" alt="" className="w-full h-auto" aria-hidden="true" />
+        </div>
+
         {/* Glowing Background Radial Accents */}
         <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-[#7DC243]/20 via-[#ECB84D]/10 to-transparent blur-[130px] rounded-full" />
         <div className="pointer-events-none absolute top-1/3 -right-40 w-96 h-96 bg-[#7DC243]/15 blur-[140px] rounded-full" />
@@ -41,7 +49,7 @@ export default function Hero() {
             <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 lg:pr-4">
               
               {/* Feature Pill Badge */}
-              <div className="inline-flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 px-4 py-1.5 rounded-full bg-[#7DC243]/15 border border-[#7DC243]/35 text-[#7DC243] text-xs sm:text-sm font-semibold tracking-wide shadow-[0_0_20px_rgba(125,194,67,0.2)] backdrop-blur-md">
+              <div className="fade-in-up inline-flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 px-4 py-1.5 rounded-full bg-[#7DC243]/15 border border-[#7DC243]/35 text-[#7DC243] text-xs sm:text-sm font-semibold tracking-wide shadow-[0_0_20px_rgba(125,194,67,0.2)] backdrop-blur-md">
                 <span className="flex h-2 w-2 relative">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7DC243] opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#7DC243]"></span>
@@ -50,7 +58,7 @@ export default function Hero() {
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] sm:leading-[1.2]">
+              <h1 className="fade-in-up text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] sm:leading-[1.2]" style={{ animationDelay: '0.1s' }}>
                 You built the business. <br className="hidden lg:block" />
                 Now own the{' '}
                 <span className="text-[#7DC243] drop-shadow-sm">
@@ -59,15 +67,15 @@ export default function Hero() {
               </h1>
 
               {/* Subheadline Paragraph */}
-              <p className="text-lg sm:text-xl text-slate-200 leading-relaxed max-w-2xl font-normal mx-auto lg:mx-0">
+              <p className="fade-in-up text-lg sm:text-xl text-slate-200 leading-relaxed max-w-2xl font-normal mx-auto lg:mx-0" style={{ animationDelay: '0.2s' }}>
                 OpsROI partners with contractors who&apos;ve already won, $3M to $10M operators with real credibility to build, launch, and own the operating system for their entire industry.
               </p>
 
               {/* CTA Action Buttons */}
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
+              <div className="fade-in-up pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 w-full sm:w-auto" style={{ animationDelay: '0.3s' }}>
                 <a
                   href="#contact"
-                  className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-extrabold text-[#163C49] bg-[#7DC243] hover:bg-[#6eb238] shadow-[0_4px_25px_rgba(125,194,67,0.4)] hover:shadow-[0_6px_35px_rgba(125,194,67,0.6)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 text-base w-full sm:w-auto"
+                  className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-extrabold text-[#163C49] bg-[#7DC243] hover:bg-[#6eb238] shadow-[0_4px_25px_rgba(125,194,67,0.4)] hover:text-white hover:shadow-[0_6px_35px_rgba(125,194,67,0.6)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 text-base w-full sm:w-auto"
                 >
                   <span>Get Started</span>
                   <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -83,7 +91,7 @@ export default function Hero() {
               </div>
 
               {/* Trust Badges */}
-              <div className="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 w-full border-t border-white/15 text-xs sm:text-sm text-slate-200 font-medium">
+              <div className="fade-in-up pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 w-full border-t border-white/15 text-xs sm:text-sm text-slate-200 font-medium" style={{ animationDelay: '0.4s' }}>
                 <div className="flex items-center justify-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#7DC243] shrink-0" />
                   <span>No long-term contracts</span>
@@ -101,7 +109,7 @@ export default function Hero() {
             </div>
 
             {/* ─── RIGHT COLUMN: OpsROI Interactive Video Poster Card ─── */}
-         <div className="lg:col-span-5 relative w-full">
+         <div className="fade-in-up lg:col-span-5 relative w-full" style={{ animationDelay: '0.2s' }}>
 
   {/* Ambient glow behind the whole card */}
   <div className="absolute -inset-6 bg-gradient-to-tr from-[#7DC243]/20 via-transparent to-[#ECB84D]/10 blur-3xl rounded-[2rem] opacity-70 pointer-events-none" />

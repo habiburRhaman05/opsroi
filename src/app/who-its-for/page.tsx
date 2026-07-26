@@ -1,9 +1,9 @@
+import { AssetModel } from "@/src/components/pages/who-is-it-for/AssetModel";
 import { OwnershipTrack } from "@/src/components/pages/who-is-it-for/OwnershipTrack";
 import { ServicesTrack } from "@/src/components/pages/who-is-it-for/ServicesTrack";
 import { StillNotSure } from "@/src/components/pages/who-is-it-for/StillNotSure";
 import { WhoIsItForHero } from "@/src/components/pages/who-is-it-for/WhoIsItForHero";
 import type { Metadata } from "next";
-
 
 export const metadata: Metadata = {
   title: "Who It's For - OpsROI",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function WhoIsItForPage() {
   return (
-    <main className="pt-16">
+    <main>
       <WhoIsItForHero />
       <OwnershipTrack />
       <ServicesTrack />

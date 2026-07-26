@@ -12,14 +12,20 @@ export default function Founders() {
           <p>Chris Ruvalcaba started in tree care &mdash; running Monkey Man on a stack of tools that never quite talked to each other. So he built one platform that did it all, ran his own business on it, and then opened it up to every agency and trade tired of the same problem.</p>
         </div>
 
-        <div className="founder-card-premium">
-          <div className="founder-photo-premium">
+        <div className="founder-card-premium relative overflow-hidden">
+          <div 
+            className="absolute top-0 right-0 pointer-events-none w-[150px] md:w-[250px] z-0" 
+            style={{ transform: 'translate(20%, -20%)', opacity: 0.05 }}
+          >
+            <img src="/watermark.svg" alt="" className="w-full h-auto" aria-hidden="true" />
+          </div>
+          <div className="founder-photo-premium relative z-10">
             <div className="photo-glow"></div>
             <div className="photo-inner">
               <Image src="/founder.webp"  alt='Chris Ruvalcaba' width={320} height={320} />
             </div>
           </div>
-          <div className="founder-content">
+          <div className="founder-content relative z-10">
             <div className="founder-role">Founder &amp; Owner</div>
             <h3>Chris Ruvalcaba</h3>
             <p>Chris started in tree care &mdash; running Monkey Man on a stack of tools that never quite talked to each other: one for leads, one for scheduling, one for invoicing, one for payroll. Every handoff between them was a place things slipped: a follow-up that never went out, an invoice that went out late, a crew member whose hours didn&apos;t add up right at the end of the week.</p>

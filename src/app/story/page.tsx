@@ -1,3 +1,4 @@
+import { SectionLabel } from '@/src/components/ui/SectionLabel';
 import Link from 'next/link';
 
 export default function StoryPage() {
@@ -5,18 +6,26 @@ export default function StoryPage() {
     <main className="bg-white overflow-hidden">
       
       {/* 1. Hero Section (Solid Navy Style) */}
-      <section className="relative pt-24 pb-20 sm:pt-40 sm:pb-40 bg-navy">
-        <div className="relative max-w-4xl mx-auto px-5 sm:px-8 text-center">
-          <div className="inline-flex items-center justify-center gap-3  reveal-up is-revealed">
-            <div className="eyebrow fade-in-up">Our Story</div>
+      <section className="relative overflow-hidden pt-24 pb-20 sm:pt-40 sm:pb-40 bg-navy">
+        {/* Watermark SVG */}
+        <div 
+          className="absolute top-0 right-0 pointer-events-none w-[150px] md:w-[250px] lg:w-[350px] z-0" 
+          style={{ transform: 'translate(20%, -20%)', opacity: 0.05 }}
+        >
+          <img src="/watermark.svg" alt="" className="w-full h-auto" aria-hidden="true" />
+        </div>
+        
+        <div className="relative max-w-4xl mx-auto px-5 sm:px-8 text-center z-10">
+          <div className="inline-flex items-center justify-center gap-3 fade-in-up">
+            <div className="eyebrow">Our Story</div>
           </div>
           
-          <h1 className="font-sans font-bold leading-tight tracking-tight text-white   reveal-up is-revealed" style={{ transitionDelay: '0.1s' }}>
+          <h1 className="fade-in-up text-4xl sm:text-5xl font-bebas font-bold tracking-tight text-white" style={{ animationDelay: '0.1s' }}>
             Why we built <br className="hidden sm:block" />
-            <span className="text-green">OpsROI.</span>
+            <span className="text-[#7DC243]">OpsROI.</span>
           </h1>
           
-          <p className="mt-6 text-white/80 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto reveal-up is-revealed" style={{ transitionDelay: '0.2s' }}>
+          <p className="fade-in-up mt-6 text-white/80 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto" style={{ animationDelay: '0.2s' }}>
             A simple frustration: running a business shouldn&apos;t require logging into eight different apps just to get one job done, start to finish.
           </p>
         </div>
@@ -172,6 +181,14 @@ export default function StoryPage() {
    
 {/* 4. The Founder Statement */}
 <section className="bg-navy py-24 sm:py-32 relative overflow-hidden">
+  {/* Watermark SVG */}
+  <div 
+    className="absolute top-0 right-0 pointer-events-none w-[150px] md:w-[250px] lg:w-[350px] z-0" 
+    style={{ transform: 'translate(20%, -20%)', opacity: 0.05 }}
+  >
+    <img src="/watermark.svg" alt="" className="w-full h-auto" aria-hidden="true" />
+  </div>
+
   {/* dot texture */}
   <div className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[size:28px_28px]" />
   {/* glows */}
@@ -208,8 +225,9 @@ export default function StoryPage() {
 
      <div className="relative">
   <div className="flex items-center gap-3 mb-6">
-    <span className="h-px w-10 bg-green" />
-    <span className="text-green text-xs font-bebas tracking-[0.25em] uppercase">From the Founder</span>
+    <span className="eye"></span>
+     <SectionLabel className="justify-center">
+    From the Founder</SectionLabel>
   </div>
 
   <p className="text-lg sm:text-xl text-mist/60 font-medium mb-4">
@@ -217,7 +235,7 @@ export default function StoryPage() {
   </p>
 
   <blockquote className="text-3xl sm:text-4xl md:text-5xl leading-[1.25] font-bold text-white tracking-tight">
-    I built the system I run my own company on —{' '}
+    I built the system I run my own company on, {' '}
     <span className="bg-green/15 text-green px-1.5 py-0.5 rounded-md box-decoration-clone">
       we&apos;re still the ones maintaining it
     </span>.

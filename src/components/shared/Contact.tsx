@@ -166,6 +166,13 @@ export default function Contact() {
           {/* Info Side */}
           <div className="bg-navy p-8 sm:p-12 lg:w-2/5 flex flex-col justify-center text-white relative overflow-hidden">
              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(125,194,67,0.15),transparent_60%)]"></div>
+             {/* Watermark SVG */}
+             <div 
+               className="absolute top-0 right-0 pointer-events-none w-[150px] md:w-[200px] z-0" 
+               style={{ transform: 'translate(20%, -20%)', opacity: 0.05 }}
+             >
+               <img src="/watermark.svg" alt="" className="w-full h-auto" aria-hidden="true" />
+             </div>
              <div className="relative z-10 space-y-10">
                <div>
                  <h3 className="text-2xl font-bold font-bebas uppercase tracking-wide text-gold mb-4">Contact Information</h3>
@@ -193,15 +200,34 @@ export default function Contact() {
                    </div>
                  </div>
 
-                 <div className="flex items-start gap-4">
-                   <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 text-green">
-                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="10" r="3"/><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/></svg>
-                   </div>
-                   <div>
-                     <h4 className="font-bebas tracking-widest text-sm text-white/50 uppercase mb-1">Location</h4>
-                     <p className="font-medium text-lg leading-snug text-white"><br/><span className="text-white/70 text-base font-normal">Austin, TX &amp; Global</span></p>
-                   </div>
-                 </div>
+                <div className="flex items-start gap-4">
+  <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 text-green">
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="10" r="3" />
+      <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+    </svg>
+  </div>
+
+  <div>
+    <h4 className="font-bebas tracking-widest text-sm text-white/50 uppercase">
+      Location
+    </h4>
+
+    <p className="font-medium text-lg  mt-2 leading-snug text-white">
+      17280 Boones Ferry Rd<br />
+      Lake Oswego, OR 97035
+    </p>
+  </div>
+</div>
                </div>
              </div>
           </div>

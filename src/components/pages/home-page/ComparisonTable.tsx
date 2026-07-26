@@ -135,7 +135,7 @@ export function ComparisonTable() {
                 {totalElsewhere}
               </div>
               <span className="material-symbols-outlined text-white/40 my-1">
-                <ArrowDown/>
+                <ArrowDown className="text-green-300"/>
               </span>
               <div className="text-[10px] font-bold tracking-widest uppercase text-secondary-fixed">
                 One platform

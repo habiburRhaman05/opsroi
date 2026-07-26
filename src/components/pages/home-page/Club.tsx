@@ -16,12 +16,7 @@ const OPEN_SEATS: any[] = [
 export function Club() {
   return (
     <section className="pt-12 sm:pt-16 pb-12 sm:pb-16 bg-mist relative overflow-hidden">
-      <div 
-        className="absolute top-0 right-0 pointer-events-none w-[250px] md:w-[350px] z-0" 
-        style={{ transform: 'translate(25%, -25%)', opacity: 0.06, filter: 'invert(1)' }}
-      >
-        <img src="/watermark.svg" alt="" className="w-full h-auto" aria-hidden="true" />
-      </div>
+     
       <div className="container px-5 sm:px-8 relative z-10">
         <div className="text-center mb-16 max-w-3xl mx-auto">
         
