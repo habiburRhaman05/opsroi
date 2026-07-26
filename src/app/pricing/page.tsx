@@ -25,7 +25,7 @@ export default function PricingPage() {
 <Pricing hideHeader={true} />
 
 
-<Compare/>
+{/* <Compare/> */}
 
       </main>
    

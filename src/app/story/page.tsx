@@ -169,33 +169,65 @@ export default function StoryPage() {
           </article>
         </div>
       </section>
-      {/* 4. The Founder Statement */}
-      <section className="bg-white py-32 sm:py-40 border-y border-line relative overflow-hidden">
-        {/* Subtle decorative glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(125,194,67,0.05)_0%,transparent_70%)] rounded-full pointer-events-none"></div>
-        
-        <div className="max-w-5xl mx-auto px-5 sm:px-8 text-center relative z-10">
-          <span className="block text-[150px] leading-none text-green/10 font-serif font-black absolute -top-20 left-1/2 -translate-x-1/2 pointer-events-none select-none">&quot;</span>
-          
-          <blockquote className="text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.35] font-sans font-bold text-navy tracking-tight relative">
-            <span className=" font-normal">This is not an agency. This is not just software.</span><br className="hidden md:block" />
-            <br className="hidden md:block" />
-            It&apos;s the operating system <br/> I wish someone had handed me at $1M,
-             <span className="text-green relative inline-block">built by somebody who&apos;s made the 2AM payroll call</span> and felt every one of these problems firsthand.
-          </blockquote>
-          
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 reveal-up is-revealed" style={{ transitionDelay: '0.2s' }}>
-            <div className="w-16 h-16 rounded-full bg-mist border border-line shadow-sm flex items-center justify-center">
-             <img src="./founder.webp" className='rounded-full' alt="" />
-            </div>
-            <div>
-              <p className="text-navy font-bold text-lg">Chris Ruvalcaba</p>
-              <p className="text-ink-soft text-sm uppercase tracking-widest font-bebas mt-1">Founder, OpsROI</p>
+   
+{/* 4. The Founder Statement */}
+<section className="bg-navy py-24 sm:py-32 relative overflow-hidden">
+  {/* dot texture */}
+  <div className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[size:28px_28px]" />
+  {/* glows */}
+  <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(125,194,67,0.18)_0%,transparent_70%)] rounded-full pointer-events-none blur-2xl" />
+  <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(125,194,67,0.08)_0%,transparent_70%)] rounded-full pointer-events-none" />
+
+  <div className="container px-6 sm:px-8 relative z-10">
+    <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+
+      {/* Photo column */}
+      <div className="lg:col-span-4 order-2 lg:order-1">
+        <div className="relative max-w-xs mx-auto lg:max-w-none">
+          <div className="absolute -inset-3 border-2 border-green/40 rounded-2xl -z-10 translate-x-3 translate-y-3" />
+          <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-navy-deep">
+            <img
+              src="./founder.webp"
+              alt="Chris Ruvalcaba, Founder of OpsROI"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/10 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-5">
+              <p className="text-white font-bold text-lg">Chris Ruvalcaba</p>
+              <p className="text-green text-xs uppercase tracking-widest font-bebas mt-1">Founder, OpsROI</p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
+      {/* Quote column */}
+      <div className="lg:col-span-8 order-1 lg:order-2 relative">
+        <span className="absolute -top-16 -left-2 sm:-left-6 text-[10rem] sm:text-[13rem] leading-none font-serif font-black text-green/10 select-none pointer-events-none">
+          &quot;
+        </span>
+
+     <div className="relative">
+  <div className="flex items-center gap-3 mb-6">
+    <span className="h-px w-10 bg-green" />
+    <span className="text-green text-xs font-bebas tracking-[0.25em] uppercase">From the Founder</span>
+  </div>
+
+  <p className="text-lg sm:text-xl text-mist/60 font-medium mb-4">
+    Not an agency. Not just software.
+  </p>
+
+  <blockquote className="text-3xl sm:text-4xl md:text-5xl leading-[1.25] font-bold text-white tracking-tight">
+    I built the system I run my own company on —{' '}
+    <span className="bg-green/15 text-green px-1.5 py-0.5 rounded-md box-decoration-clone">
+      we&apos;re still the ones maintaining it
+    </span>.
+  </blockquote>
+</div>
+      </div>
+
+    </div>
+  </div>
+</section>
       {/* 5. What We Believe / Founder Context */}
       <section className="bg-mist py-24 sm:py-32">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
