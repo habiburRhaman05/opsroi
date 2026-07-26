@@ -198,8 +198,10 @@ export default function Contact() {
                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="10" r="3"/><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/></svg>
                    </div>
                    <div>
-                     <h4 className="font-bebas tracking-widest text-sm text-white/50 uppercase mb-1">Location</h4>
-                     <p className="font-medium text-lg leading-snug text-white"><br/><span className="text-white/70 text-base font-normal">Austin, TX &amp; Global</span></p>
+                     <h4 className="font-bebas tracking-widest text-sm text-white/50 uppercase ">Location</h4>
+                     <p className="font-medium text-lg leading-snug text-white"><br/>
+                     7280 Boones Ferry Rd, Lake Oswego
+                      </p>
                    </div>
                  </div>
                </div>
