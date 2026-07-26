@@ -78,7 +78,7 @@ export default function Header() {
         <Link href="/" className="brand" onClick={() => setIsNavOpen(false)}>
           <Image src="/OpsROI-header.webp" alt="OpsROI logo" width={100} height={32} />
         </Link>
-        <nav className="nav hidden md:flex" id="siteNav">
+        <nav className="nav hidden lg:flex" id="siteNav">
           {NAV_LINKS.map(({ href, label }) => {
             const isActive = href === '/' ? pathname === '/' : pathname.startsWith(href);
             return (
@@ -93,10 +93,10 @@ export default function Header() {
           })}
         </nav>
         <div className="header-actions">
-          <Link href="/contact" className="btn btn-primary hidden md:inline-flex">Contact us</Link>
+          <Link href="/contact" className="btn btn-primary hidden lg:inline-flex">Contact us</Link>
           <button 
             type="button" 
-            className="md:hidden text-navy p-1 focus:outline-none flex items-center justify-center" 
+            className="lg:hidden text-navy p-1 focus:outline-none flex items-center justify-center" 
             aria-label="Toggle menu" 
             onClick={() => setIsNavOpen(true)}
           >
@@ -107,7 +107,7 @@ export default function Header() {
     </header>
 
     {/* Full-screen Mobile Menu Overlay */}
-    <div className={`fixed inset-0 z-[100] bg-white transform transition-transform duration-300 ease-in-out flex flex-col md:hidden ${isNavOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+    <div className={`fixed inset-0 z-[100] bg-white transform transition-transform duration-300 ease-in-out flex flex-col lg:hidden ${isNavOpen ? 'translate-x-0' : 'translate-x-full'}`}>
       
       {/* Mobile Menu Header */}
       <div className="flex items-center justify-between p-6 border-b border-line bg-mist">

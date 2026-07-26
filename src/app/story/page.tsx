@@ -181,6 +181,14 @@ export default function StoryPage() {
    
 {/* 4. The Founder Statement */}
 <section className="bg-navy py-24 sm:py-32 relative overflow-hidden">
+  {/* Watermark SVG */}
+  <div 
+    className="absolute top-0 right-0 pointer-events-none w-[150px] md:w-[250px] lg:w-[350px] z-0" 
+    style={{ transform: 'translate(20%, -20%)', opacity: 0.05 }}
+  >
+    <img src="/watermark.svg" alt="" className="w-full h-auto" aria-hidden="true" />
+  </div>
+
   {/* dot texture */}
   <div className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[size:28px_28px]" />
   {/* glows */}

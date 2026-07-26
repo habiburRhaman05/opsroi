@@ -23,6 +23,8 @@ import {
   Wrench,
 } from "lucide-react";
 
+import { AssetModel } from "@/src/components/pages/who-is-it-for/AssetModel";
+
 /* ────────────────────────────────────────────────────────────
    Data — edit copy here; the layout adapts.
    Sourced from opsroi-full-content-package.md · "Why OpsROI".
@@ -276,6 +278,8 @@ export default function WhyOpsroiPage() {
         </div>
       </section>
 
+   
+
       {/* ─── The tool-stack tax ─── */}
       <section>
         <div className="container px-5 sm:px-6 lg:px-8">
@@ -297,15 +301,15 @@ export default function WhyOpsroiPage() {
               return (
                 <div
                   key={tool.name}
-                  className="flex flex-col items-center gap-2 rounded-xl border border-dashed border-line bg-mist/50 px-3 py-5 text-center"
+                  className="group flex flex-col items-center gap-3 rounded-[1.5rem] border border-dashed border-line/80 bg-white px-4 py-6 text-center shadow-sm hover:shadow-[0_15px_30px_-10px_rgba(22,60,73,0.1)] hover:-translate-y-1 transition-all duration-500"
                 >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white text-ink-soft shadow-sm">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-ink-soft shadow-md border border-line/50 group-hover:scale-110 group-hover:text-navy group-hover:border-navy/20 transition-all duration-500">
                     <Icon className="h-5 w-5" strokeWidth={1.7} />
                   </span>
-                  <span className="text-[13px] font-semibold text-navy">
+                  <span className="text-[14px] font-bold text-navy mt-1 group-hover:text-[#7DC243] transition-colors duration-300">
                     {tool.name}
                   </span>
-                  <span className="text-xs font-medium text-ink-soft">
+                  <span className="text-[13px] font-medium text-ink-soft">
                     {tool.cost}
                   </span>
                 </div>
@@ -320,23 +324,7 @@ export default function WhyOpsroiPage() {
             </span>
           </p>
 
-          <div className="mx-auto mt-10 max-w-3xl rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-mist px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-ink-soft">
-              <Clock className="h-3.5 w-3.5" />
-              A typical Tuesday, before OpsROI
-            </div>
-            <p className="text-sm leading-relaxed text-ink-soft">
-              A lead fills out a form (Tool 1). Someone remembers to add them to the
-              CRM (Tool 2). A rep books a visit through a separate calendar (Tool 3)
-              because it wasn&apos;t synced. The estimate gets built by hand in a
-              spreadsheet (Tool 4), emailed as a PDF for the client to print, sign,
-              and scan back (Tool 5, or no tool at all). The job&apos;s scheduled on
-              a whiteboard (Tool 6). When it&apos;s done, someone writes the invoice
-              by hand and hopes they remember which materials were used. At month
-              end, someone builds a report by hand - a very long night in a
-              spreadsheet.
-            </p>
-          </div>
+         
         </div>
       </section>
 
@@ -558,62 +546,7 @@ export default function WhyOpsroiPage() {
         </div>
       </section>
 
-      {/* ─── FAQ ─── */}
-      <section>
-        <div className="container px-5 sm:px-6 lg:px-8">
-          <div className="section-head center" style={{ margin: "0 auto 40px" }}>
-            <div className="eyebrow" style={{ justifyContent: "center" }}>
-              FAQ
-            </div>
-            <h2>Straight answers before you switch.</h2>
-            <p>
-              The questions we hear most from agencies and trades considering OpsROI. <br/>No fine print, no dodging - just honest answers.
-            </p>
-          </div>
-
-          <div className="mx-auto flex max-w-3xl flex-col gap-3">
-            {FAQ.map((f, i) => {
-              const open = openFaq === i;
-              return (
-                <div
-                  key={f.q}
-                  className={`overflow-hidden rounded-2xl border bg-white transition-colors ${
-                    open ? "border-green/40" : "border-line"
-                  }`}
-                >
-                  <button
-                    type="button"
-                    onClick={() => setOpenFaq(open ? null : i)}
-                    className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
-                    aria-expanded={open}
-                  >
-                    <span className="text-[15px] font-bold text-navy">{f.q}</span>
-                    <span
-                      className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
-                        open ? "rotate-45 bg-green text-white" : "bg-mist text-navy"
-                      }`}
-                    >
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                        <path d="M7 2v10M2 7h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                      </svg>
-                    </span>
-                  </button>
-                  <div
-                    className="grid transition-all duration-300 ease-out"
-                    style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
-                  >
-                    <div className="overflow-hidden">
-                      <p className="px-6 pb-5 text-sm leading-relaxed text-ink-soft">
-                        {f.a}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+     
 
     
     </main>
