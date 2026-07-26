@@ -33,24 +33,22 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="text-white font-bebas tracking-widest text-lg mb-6 uppercase">Product</h4>
+            <h4 className="text-white font-bebas tracking-widest text-lg mb-6 uppercase">Platform</h4>
             <ul className="space-y-4 text-white/70 font-medium">
-              <li><Link href="/#product" className="hover:text-green transition-colors">Platform Overview</Link></li>
-              <li><Link href="/who-its-for" className="hover:text-green transition-colors">Who It&apos;s For</Link></li>
+              <li><Link href="/features" className="hover:text-green transition-colors">Explore Features</Link></li>
               <li><Link href="/why-opsroi" className="hover:text-green transition-colors">Why OpsROI</Link></li>
+              <li><Link href="/who-its-for" className="hover:text-green transition-colors">Who It&apos;s For</Link></li>
               <li><Link href="/pricing" className="hover:text-green transition-colors">Pricing Plans</Link></li>
               <li><Link href="/#integrations" className="hover:text-green transition-colors">Integrations</Link></li>
-              <li><Link href="/#compare" className="hover:text-green transition-colors">Compare Tools</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-bebas tracking-widest text-lg mb-6 uppercase">Company</h4>
             <ul className="space-y-4 text-white/70 font-medium">
-              <li><Link href="/story" className="hover:text-green transition-colors">Our Founders</Link></li>
+              <li><Link href="/story" className="hover:text-green transition-colors">Our Story</Link></li>
               <li><Link href="/#faq" className="hover:text-green transition-colors">FAQ</Link></li>
               <li><Link href="/contact" className="hover:text-green transition-colors">Contact Us</Link></li>
-              <li><Link href="#" className="hover:text-green transition-colors">Careers</Link></li>
             </ul>
           </div>
 
