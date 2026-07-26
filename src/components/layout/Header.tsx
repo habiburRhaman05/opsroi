@@ -65,7 +65,7 @@ export default function Header() {
       </div>
       <button
         type="button"
-        className={`back-to-top ${showBackToTop ? 'is-visible' : ''}`}
+        className={`back-to-top border-4 shadow-2xl border-[#6BAE36] ${showBackToTop ? 'is-visible' : ''}`}
         aria-label="Back to top"
         onClick={scrollToTop}
       >

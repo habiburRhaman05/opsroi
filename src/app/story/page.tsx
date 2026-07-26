@@ -7,16 +7,16 @@ export default function StoryPage() {
       {/* 1. Hero Section (Solid Navy Style) */}
       <section className="relative pt-24 pb-20 sm:pt-40 sm:pb-40 bg-navy">
         <div className="relative max-w-4xl mx-auto px-5 sm:px-8 text-center">
-          <div className="inline-flex items-center justify-center gap-3  reveal-up is-revealed">
-            <div className="eyebrow fade-in-up">Our Story</div>
+          <div className="inline-flex items-center justify-center gap-3 fade-in-up">
+            <div className="eyebrow">Our Story</div>
           </div>
           
-          <h1 className="font-sans font-bold leading-tight tracking-tight text-white   reveal-up is-revealed" style={{ transitionDelay: '0.1s' }}>
+          <h1 className="fade-in-up text-4xl sm:text-5xl font-bebas font-bold tracking-tight text-white" style={{ animationDelay: '0.1s' }}>
             Why we built <br className="hidden sm:block" />
-            <span className="text-green">OpsROI.</span>
+            <span className="text-[#7DC243]">OpsROI.</span>
           </h1>
           
-          <p className="mt-6 text-white/80 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto reveal-up is-revealed" style={{ transitionDelay: '0.2s' }}>
+          <p className="fade-in-up mt-6 text-white/80 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto" style={{ animationDelay: '0.2s' }}>
             A simple frustration: running a business shouldn&apos;t require logging into eight different apps just to get one job done, start to finish.
           </p>
         </div>

@@ -27,21 +27,15 @@ export default function Home() {
    
       <main>
         <Hero />
-        {/* <HeroSection/> */}
-        {/* <TrustCarousel /> */}
-        {/* <FeatureTabs /> */}
-        {/* <Services /> */}
         <Platform/>
         <HowItWorks />
-      
         <Founders />
-        {/* <Compare /> */}
         <ComparisonTable/>
         <Calculator/>
         <Club />
         <StraightTalk/>
-        <Cta />
         <Integrations />
+        <Cta />
         <Faq />
         <Contact />
       </main>

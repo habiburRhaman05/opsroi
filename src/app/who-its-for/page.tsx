@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function WhoIsItForPage() {
   return (
-    <main className="pt-16">
+    <main>
       <WhoIsItForHero />
       <OwnershipTrack />
       <ServicesTrack />

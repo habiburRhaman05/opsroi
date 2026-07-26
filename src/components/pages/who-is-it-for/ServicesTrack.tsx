@@ -22,7 +22,7 @@ export function ServicesTrack() {
         <ScrollReveal>
           <div className="bg-white rounded-[2rem] border border-line/60 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.08)] p-8 sm:p-12 md:p-16">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-8 h-8 flex items-center justify-center bg-[#295c2b] text-white rounded-full text-sm font-bold shrink-0">2</div>
+              <div className="w-8 h-8 flex items-center justify-center bg-[#1D4E5F] text-white rounded-full text-sm font-bold shrink-0">2</div>
               <h2 className="text-3xl md:text-4xl font-semibold text-navy tracking-tight">Get your growth systems built</h2>
             </div>
             <p className="text-base sm:text-lg text-ink-soft max-w-3xl mb-12 leading-relaxed">
@@ -31,14 +31,14 @@ export function ServicesTrack() {
 
             <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
               <div className="space-y-6">
-                <h3 className="text-lg font-bold text-[#295c2b] flex items-center gap-3">
-                  <span className="w-2 h-2 bg-[#295c2b] rounded-full" />
+                <h3 className="text-lg font-bold text-[#1D4E5F] flex items-center gap-3">
+                  <span className="w-2 h-2 bg-[#1D4E5F] rounded-full" />
                   This is for you if…
                 </h3>
                 <ul className="space-y-5">
                   {FOR_YOU.map((item, i) => (
                     <li key={i} className="flex gap-4 items-start text-[15px] text-ink font-medium">
-                      <CheckCircle2 className="w-5 h-5 text-[#295c2b] shrink-0 mt-0.5" strokeWidth={2} />
+                      <CheckCircle2 className="w-5 h-5 text-[#7DC243] shrink-0 mt-0.5" strokeWidth={2} />
                       <span className="leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -61,7 +61,7 @@ export function ServicesTrack() {
             </div>
 
             <div className="flex flex-wrap items-center gap-4 mt-12 pt-10 border-t border-mist">
-              <Link href="/contact#contact" className="bg-[#295c2b] hover:bg-[#1f4721] text-white px-8 py-3.5 rounded-xl font-bold transition-all shadow-md active:scale-95 text-[15px]">
+              <Link href="/contact#contact" className="bg-[#7DC243] hover:bg-[#6eb238] text-[#163C49] px-8 py-3.5 rounded-xl font-bold transition-all shadow-[0_4px_25px_rgba(125,194,67,0.4)] hover:shadow-[0_6px_35px_rgba(125,194,67,0.6)] active:scale-95 text-[15px]">
                 Contact Us
               </Link>
               <Link href="/features" className="bg-white border border-line text-navy px-8 py-3.5 rounded-xl font-bold hover:bg-mist transition-all active:scale-95 text-[15px]">
