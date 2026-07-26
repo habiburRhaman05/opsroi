@@ -160,7 +160,7 @@ export default function StoryPage() {
                  <img src="/logos/RoofersROI/RoofersROI-1.png" alt="RoofersROI" className="w-full max-w-[140px] h-auto object-contain" />
                </a>
                <a href="https://contractorsroi.com" target="_blank" rel="noopener noreferrer" className="bg-white border border-line rounded-2xl p-6 text-center shadow-sm flex flex-col items-center justify-center aspect-square transition-transform hover:-translate-y-1 hover:shadow-md cursor-pointer">
-                 <img src="/logos/ContractorsROI/ContractorsROI-1.png" alt="ContractorsROI" className="w-full max-w-[140px] h-auto object-contain" />
+                 <img src="/logos/ContractorsROI/ContractorsROI-1.png" alt="ContractorsROI" className="w-full max-w-[150px] h-auto object-contain" />
                </a>
                <div className="bg-white border border-line rounded-2xl p-6 text-center shadow-sm flex flex-col items-center justify-center aspect-square">
                  <p className="font-bebas text-2xl text-navy text-ink-soft">More...</p>
