@@ -1,10 +1,20 @@
 "use client";
 
 import { useState, useCallback, useMemo } from "react";
+import { Check, TrendingUp, Sparkles } from "lucide-react";
 import { ScrollReveal } from "@/src/components/shared/ScrollReveal";
 import { SectionLabel } from "@/src/components/ui/SectionLabel";
-import { ICON_MAP, SearchIcon, PenIcon, DocusignIcon, MailchimpIcon, WebsiteIcon, GoogleAdsIcon, MetaIcon } from "@/src/lib/icons";
-import { TIERS, type CalculatorItem, type TierKey } from "@/src/lib/calculator";
+import {
+  ICON_MAP,
+  SearchIcon,
+  PenIcon,
+  DocusignIcon,
+  MailchimpIcon,
+  WebsiteIcon,
+  GoogleAdsIcon,
+  MetaIcon,
+} from "@/src/lib/icons";
+import { TIERS, type CalculatorItem } from "@/src/lib/calculator";
 
 const BRAND_ICONS: Record<string, React.ComponentType> = {
   docusign: DocusignIcon,
@@ -27,32 +37,38 @@ function getItemIcon(item: CalculatorItem) {
 
 const SOFTWARE: CalculatorItem[] = [
   { n: "CRM & Pipeline", b: "Jobber Plus", p: 599, iconKey: "opportunity" },
-  { n: "Phone & Inbox", b: "OpenPhone ×17", p: 391, iconKey: "conversations" },
+  { n: "Phone & Inbox", b: "OpenPhone x17", p: 391, iconKey: "conversations" },
   { n: "Reputation", b: "Podium", p: 399, iconKey: "marketing" },
-  { n: "AI Receptionist", b: "AI answering", p: 199, iconKey: "callout" },
-  { n: "Call Tracking", b: "CallRail", p: 50, iconKey: "logs" },
-  { n: "HR & Payroll", b: "Gusto", p: 151, iconKey: "hr" },
-  { n: "Training", b: "Trainual", p: 270, iconKey: "training" },
-  { n: "Inventory", b: "Sortly", p: 149, iconKey: "inventory" },
-  { n: "E-Sign & Docs", b: "DocuSign", p: 75, iconKey: "docusign" },
-  { n: "Email Marketing", b: "Mailchimp", p: 68, iconKey: "email" },
-  { n: "Website", b: "WebSite", p: 39, iconKey: "webSite" },
-  { n: "Booking", b: "Acuity", p: 27, iconKey: "calendar" },
+  { n: "AI Receptionist", b: "AI answering", p: 249, iconKey: "callout" },
+  { n: "Call Tracking", b: "CallRail", p: 89, iconKey: "logs" },
+  { n: "HR & Payroll", b: "Gusto", p: 199, iconKey: "hr" },
+  { n: "Training", b: "Trainual", p: 299, iconKey: "training" },
+  { n: "Inventory", b: "Sortly", p: 179, iconKey: "inventory" },
+  { n: "E-Sign & Docs", b: "DocuSign", p: 129, iconKey: "docusign" },
+  { n: "Email Marketing", b: "Mailchimp", p: 149, iconKey: "email" },
+  { n: "Website", b: "WebSite", p: 199, iconKey: "webSite" },
+  { n: "Booking", b: "Acuity", p: 89, iconKey: "calendar" },
 ];
 
 const SERVICES: CalculatorItem[] = [
   { n: "SEO Management", b: "Local retainer", p: 1500, iconKey: "search" },
   { n: "Blog Content", b: "4 posts / mo", p: 800, iconKey: "pen" },
-  { n: "Google Ads Mgmt", b: "Mgmt fee only", p: 750, iconKey: "googleads" },
-  { n: "Meta Ads Mgmt", b: "Mgmt fee only", p: 500, iconKey: "meta" },
+  { n: "Google Ads Management", b: "Management fee only", p: 750, iconKey: "googleads" },
+  { n: "Meta Ads Management", b: "Management fee only", p: 500, iconKey: "meta" },
 ];
 
-// A Pro/Elite-scale agency runs the same tool categories at higher volume, so
-// their equivalent "stitched-together" spend scales up too - not just the
-// flat total of what's checked here. This is what keeps savings growing
-// Growth -> Pro -> Elite instead of shrinking as tier price goes up.
-const TIER_ORDER: TierKey[] = ["growth", "pro", "elite"];
-const SPEND_MULTIPLIER: Record<TierKey, number> = { growth: 1, pro: 1.7, elite: 2.4 };
+// Preselect a realistic mid-market baseline so the calc opens showing meaningful savings
+// instead of a $0 vs $2,950 mismatch. Keys mirror the "sw{index}" / "sv{index}" pattern below.
+const DEFAULT_SELECTED: Record<string, boolean> = {
+  sw0: true, // CRM & Pipeline
+  sw1: true, // Phone & Inbox
+  sw2: true, // Reputation
+  sw3: true, // AI Receptionist
+  sw9: true, // Email Marketing
+  sw10: true, // Website
+  sv0: true, // SEO Management
+  sv2: true, // Google Ads Management
+};
 
 function fmt(n: number) {
   return "$" + n.toLocaleString("en-US");
@@ -68,142 +84,127 @@ function CalcItem({
   onToggle: () => void;
 }) {
   return (
-    <div
+    <button
+      type="button"
       onClick={onToggle}
-      className={`relative bg-white border-2 rounded-xl px-3 pt-4 pb-3 cursor-pointer text-center transition-colors select-none hover:border-green/60 ${
-        selected ? "border-green bg-[rgba(125,194,67,0.08)]" : "border-line"
+      aria-pressed={selected}
+      className={`group relative overflow-hidden rounded-xl p-4 text-left transition-all duration-300 ease-out ${
+        selected
+          ? "bg-white ring-1 ring-green/50 shadow-[0_14px_36px_-18px_rgba(125,194,67,0.45)] -translate-y-0.5"
+          : "bg-white ring-1 ring-line hover:ring-green/40 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_-18px_rgba(15,43,53,0.18)]"
       }`}
     >
-      <div
-        className={`absolute top-2 right-2 w-4 h-4 rounded-full border flex items-center justify-center text-[9px] text-white transition-colors ${
+      {/* Corner check indicator */}
+      <span
+        className={`absolute top-2.5 right-2.5 flex h-5 w-5 items-center justify-center rounded-full transition-all duration-300 ${
           selected
-            ? "bg-green border-green"
-            : "border-line"
+            ? "bg-green ring-2 ring-green/25 scale-100"
+            : "bg-white ring-1 ring-line scale-90 group-hover:ring-green/50"
         }`}
       >
-        {selected ? "✓" : ""}
-      </div>
-      <div className="w-8 h-8 mx-auto mb-2 flex items-center justify-center">
-        {getItemIcon(item)}
-      </div>
-      <span className="block text-[11px] font-semibold text-navy leading-tight">
+        <Check
+          className={`h-3 w-3 text-white transition-all duration-300 ${
+            selected ? "opacity-100 scale-100" : "opacity-0 scale-50"
+          }`}
+          strokeWidth={3}
+        />
+      </span>
+
+      {/* Icon in a tile */}
+      <span
+        className={`mb-3 flex h-9 w-9 items-center justify-center rounded-lg transition-colors duration-300 ${
+          selected
+            ? "bg-green/12 text-green-deep ring-1 ring-green/20"
+            : "bg-mist text-navy group-hover:bg-green/12 group-hover:text-green-deep"
+        }`}
+      >
+        <span className="[&_svg]:h-4 [&_svg]:w-4">{getItemIcon(item)}</span>
+      </span>
+
+      <div className="block text-[12px] font-bold text-navy leading-tight font-display uppercase tracking-tight">
         {item.n}
-      </span>
-      <span className="block text-[10px] text-ink-soft mt-1">
+      </div>
+      <div
+        className={`mt-1 text-[11px] font-semibold tabular-nums transition-colors duration-300 ${
+          selected ? "text-green-deep" : "text-ink-soft"
+        }`}
+      >
         ${item.p}/mo
-      </span>
-    </div>
+      </div>
+    </button>
   );
 }
 
 export function Calculator() {
-  const [selected, setSelected] = useState<Record<string, boolean>>({});
-  const [curTier, setCurTier] = useState<TierKey>("growth");
+  const [selected, setSelected] = useState<Record<string, boolean>>(DEFAULT_SELECTED);
+  const [pulse, setPulse] = useState(0);
 
   const toggle = useCallback((key: string) => {
     setSelected((prev) => ({ ...prev, [key]: !prev[key] }));
+    setPulse((p) => p + 1);
   }, []);
 
-  const { total, lines } = useMemo(() => {
+  const { total, count } = useMemo(() => {
     let t = 0;
-    const l: CalculatorItem[] = [];
+    let c = 0;
     SOFTWARE.forEach((a, i) => {
       if (selected["sw" + i]) {
         t += a.p;
-        l.push(a);
+        c += 1;
       }
     });
     SERVICES.forEach((a, i) => {
       if (selected["sv" + i]) {
         t += a.p;
-        l.push(a);
+        c += 1;
       }
     });
-    return { total: t, lines: l };
+    return { total: t, count: c };
   }, [selected]);
 
-  const tier = TIERS[curTier];
-
-  // Savings per tier, scaled by SPEND_MULTIPLIER so a bigger tier is compared
-  // against a bigger equivalent spend. Clamped to a running max so the
-  // displayed order can never invert (Growth <= Pro <= Elite), even when the
-  // multiplier alone wouldn't be enough to keep it that way for a small total.
-  const tierDiffs = useMemo(() => {
-    const diffs = {} as Record<TierKey, number>;
-    let runningMax = -Infinity;
-    TIER_ORDER.forEach((key) => {
-      const raw = Math.round(total * SPEND_MULTIPLIER[key] - TIERS[key].price);
-      runningMax = Math.max(raw, runningMax);
-      diffs[key] = runningMax;
-    });
-    return diffs;
-  }, [total]);
-
-  const diff = tierDiffs[curTier];
-
-  const savingsBoxClass =
-    total === 0
-      ? "bg-mist border-line"
-      : diff > 0
-        ? "bg-[rgba(125,194,67,0.08)] border-green/30"
-        : "bg-mist border-line";
-
-  const savingsLabel =
-    total === 0
-      ? "Add their tools"
-      : diff > 0
-        ? "They save"
-        : "Comparable spend";
-
-  const savingsValue =
-    total === 0 ? "$0" : diff > 0 ? fmt(diff) : fmt(Math.abs(diff));
-
-  const savingsSubtext =
-    total === 0
-      ? "to see the savings"
-      : diff > 0
-        ? `${fmt(diff * 12)} / year · plus one system, not ten`
-        : "more / mo, but everything consolidated & managed";
-
-  const savingsLabelClass =
-    total === 0 || diff <= 0
-      ? "text-[10px] tracking-wide uppercase text-ink-soft font-bold"
-      : "text-[10px] tracking-wide uppercase text-green-deep font-bold";
+  const growth = TIERS.growth;
+  const diff = total - growth.price;
+  const hasSelection = total > 0;
+  const isSaving = diff > 0;
 
   return (
-    <section
-      id="calculator"
-      className="pt-20 pb-12 sm:pb-16 bg-white "
-    >
-      
-      <div className="container mx-auto px-6 md:px-8">
-        <div className="text-center mx-auto mb-12 max-w-3xl">
+    <section id="calculator" className="py-14 sm:py-20 px-5 sm:px-8 bg-white">
+      <div className="container mx-auto">
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <ScrollReveal>
-            <SectionLabel className="justify-center">Your Easiest Sell</SectionLabel>
+            <SectionLabel className="justify-center mb-4">
+              Your Easiest Sell
+            </SectionLabel>
           </ScrollReveal>
           <ScrollReveal>
-            <h2 className="mb-4">
-              Tap what they pay.{" "} 
-             See <br></br> what  they save.
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy tracking-tight leading-tight mb-4">
+              Tap What They Pay.
+              <br className="hidden sm:block" />
+              See What They Save.
             </h2>
           </ScrollReveal>
           <ScrollReveal>
-            <p className="text-ink-soft text-sm sm:text-base mx-auto max-w-xl">
+            <p className="text-base text-ink-soft leading-relaxed">
               A live calculator running on real OpsROI pricing. Pick the tools
-              and services a typical crew uses — the number closes itself.
+              a typical crew uses; the number closes itself.
             </p>
           </ScrollReveal>
         </div>
 
-        <div className="grid lg:grid-cols-[1.4fr_1fr] gap-10 items-start">
+        <div className="grid lg:grid-cols-[1.35fr_1fr] gap-6 lg:gap-10 items-stretch">
+          {/* LEFT: Tool grid */}
           <ScrollReveal>
-            <div className="space-y-10">
+            <div className="space-y-8">
               <div>
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="text-[11px] font-bold tracking-widest uppercase text-green-deep">
-                    Software they&apos;re paying for
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-green-deep font-display">
+                    Software They&apos;re Paying For
                   </span>
                   <span className="flex-1 h-px bg-line" />
+                  <span className="text-[10px] font-bold text-ink-soft/60 font-display tabular-nums">
+                    {SOFTWARE.length} tools
+                  </span>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {SOFTWARE.map((item, idx) => (
@@ -216,12 +217,16 @@ export function Calculator() {
                   ))}
                 </div>
               </div>
+
               <div>
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="text-[11px] font-bold tracking-widest uppercase text-green-deep">
-                    Agencies &amp; services they hire
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-green-deep font-display">
+                    Agencies &amp; Services They Hire
                   </span>
                   <span className="flex-1 h-px bg-line" />
+                  <span className="text-[10px] font-bold text-ink-soft/60 font-display tabular-nums">
+                    {SERVICES.length} services
+                  </span>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {SERVICES.map((item, idx) => (
@@ -237,87 +242,138 @@ export function Calculator() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal>
-            <div className="bg-white border border-line rounded-3xl p-6 md:p-8 shadow-[0_32px_64px_-12px_rgba(0,0,0,0.08)] lg:sticky lg:top-28">
-              <h3>Their current spend</h3>
-              <p className="text-xs mt-1 mb-5">
-                Everything stitched together
-              </p>
-              <div className="divide-y divide-line">
-                {lines.length === 0 ? (
-                  <div className="text-xs text-ink-soft text-center py-4">
-                    Tap tools and services to add them up.
+          {/* RIGHT: Summary panel */}
+          <ScrollReveal className="lg:h-full">
+            <div className="lg:h-full flex flex-col rounded-2xl overflow-hidden bg-navy-deep text-white shadow-[0_30px_80px_-40px_rgba(15,43,53,0.6)]">
+              {/* Ambient glows */}
+              <div className="relative flex flex-col flex-1">
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-green/18 blur-3xl"
+                />
+
+                {/* Their spend */}
+                <div className="relative p-6 sm:p-7 border-b border-white/8">
+                  <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/60 font-display">
+                    <TrendingUp className="h-3 w-3 text-green" />
+                    Their Current Spend
                   </div>
-                ) : (
-                  lines.map((a) => (
-                    <div
-                      key={a.n}
-                      className="flex justify-between items-baseline py-3"
-                    >
-                      <span className="text-xs text-ink-soft">
-                        {a.n}
-                      </span>
-                      <span className="text-sm font-semibold text-navy">
-                        ${a.p}
-                      </span>
+                  <div
+                    key={`total-${pulse}`}
+                    className="mt-3 flex items-baseline gap-2 animate-[valuePop_0.4s_ease-out]"
+                  >
+                    <span className="text-4xl sm:text-5xl font-bold text-white font-display tabular-nums leading-none">
+                      {fmt(total)}
+                    </span>
+                    <span className="text-sm text-white/60 font-semibold">/mo</span>
+                  </div>
+                  <div className="mt-1.5 text-[13px] text-white/60">
+                    {hasSelection ? (
+                      <>
+                        {count} {count === 1 ? "tool" : "tools"} selected ·{" "}
+                        <span className="text-white/80 font-semibold">
+                          {fmt(total * 12)}/yr
+                        </span>
+                      </>
+                    ) : (
+                      "Tap tools to add them up"
+                    )}
+                  </div>
+                </div>
+
+                {/* Compare to OpsROI */}
+                <div className="p-6 sm:p-7 border-b border-white/8">
+                  <div className="flex items-center justify-between gap-3 mb-3">
+                    <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-green font-display">
+                      OpsROI Growth Plan
                     </div>
-                  ))
-                )}
-              </div>
-              <div className="flex justify-between items-baseline pt-4 pb-1">
-                <span className="text-sm font-semibold text-navy">
-                  Total / month
-                </span>
-                <span className="text-2xl font-bold text-navy tracking-tighter">
-                  {fmt(total)}
-                </span>
-              </div>
-              <div className="text-right text-xs text-ink-soft mb-6">
-                {fmt(total * 12)} / year
-              </div>
+                    <span className="rounded-full border border-green/30 bg-green/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.14em] text-green font-display">
+                      Starts Here
+                    </span>
+                  </div>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-3xl sm:text-4xl font-bold text-white font-display tabular-nums leading-none">
+                      {fmt(growth.price)}
+                    </span>
+                    <span className="text-sm text-white/60 font-semibold">/mo</span>
+                  </div>
+                  <div className="mt-1.5 text-[12px] text-white/60 leading-snug">
+                    Marketing and lead gen, one platform. Pro and Elite scale with team size.
+                  </div>
+                </div>
 
-              <div className="h-px bg-line mb-6" />
-
-              <h3 className="mb-4">Compare to OpsROI&apos;s live pricing</h3>
-              <div className="flex gap-2 text-xs font-bold uppercase mb-5">
-                {(["growth", "pro", "elite"] as TierKey[]).map((t) => (
-                  <button
-                    key={t}
-                    onClick={() => setCurTier(t)}
-                    className={`flex-1 py-2 rounded-full border transition-all ${
-                      curTier === t
-                        ? "bg-green border-green text-white"
-                        : "bg-white border-line text-ink-soft hover:border-green"
+                {/* Savings hero - anchored to bottom */}
+                <div className="relative p-6 sm:p-7 mt-auto">
+                  <div
+                    className={`relative rounded-xl border-2 p-5 transition-all duration-500 ${
+                      isSaving
+                        ? "border-green/50 bg-green/12 shadow-[0_20px_60px_-30px_rgba(125,194,67,0.5)]"
+                        : "border-white/10 bg-white/3"
                     }`}
                   >
-                    {t.charAt(0).toUpperCase() + t.slice(1)}
-                  </button>
-                ))}
-              </div>
-              <div className="text-center mb-6">
-                <b className="block text-3xl font-bold text-green tracking-tighter">
-                  {fmt(tier.price)}
-                </b>
-                <span className="text-xs text-ink-soft">
-                  {tier.name}
-                </span>
-              </div>
-
-              <div
-                className={`rounded-2xl p-5 text-center border ${savingsBoxClass}`}
-              >
-                <div className={savingsLabelClass}>{savingsLabel}</div>
-                <div className="text-3xl font-bold text-navy my-1">
-                  {savingsValue}
-                </div>
-                <div className="text-xs text-ink-soft">
-                  {savingsSubtext}
+                    <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] font-display">
+                      {isSaving ? (
+                        <>
+                          <Sparkles className="h-3 w-3 text-green" />
+                          <span className="text-green">They Save</span>
+                        </>
+                      ) : (
+                        <span className="text-white/50">Add Their Tools</span>
+                      )}
+                    </div>
+                    <div
+                      key={`savings-${pulse}`}
+                      className="mt-2 flex items-baseline gap-2 animate-[valuePop_0.4s_ease-out]"
+                    >
+                      <span
+                        className={`text-4xl sm:text-5xl font-bold font-display tabular-nums leading-none transition-colors duration-500 ${
+                          isSaving ? "text-white" : "text-white/70"
+                        }`}
+                      >
+                        {hasSelection
+                          ? isSaving
+                            ? fmt(diff)
+                            : fmt(Math.abs(diff))
+                          : "$0"}
+                      </span>
+                      {hasSelection && (
+                        <span className="text-sm text-white/60 font-semibold">
+                          /mo
+                        </span>
+                      )}
+                    </div>
+                    <div className="mt-2 text-[12px] text-white/70 leading-snug">
+                      {hasSelection
+                        ? isSaving
+                          ? `That's ${fmt(diff * 12)}/yr, plus one system instead of ten.`
+                          : "More per month, but everything is consolidated & managed."
+                        : "to see the savings."}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </ScrollReveal>
         </div>
       </div>
+
+      {/* Local keyframe for the number pop */}
+      <style jsx>{`
+        @keyframes valuePop {
+          0% {
+            transform: translateY(4px);
+            opacity: 0.4;
+          }
+          60% {
+            transform: translateY(-2px);
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+      `}</style>
     </section>
   );
 }

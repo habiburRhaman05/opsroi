@@ -61,8 +61,8 @@
   --ink-soft: #6C7A7D;
   --line: #E4EAE8;
 
-  --display: var(--font-bebas-neue), 'Segoe UI', sans-serif;
-  --body: var(--font-roboto), 'Segoe UI', sans-serif;
+  --display: var(--font-display), 'Segoe UI', sans-serif;
+  --body: var(--font-body), 'Segoe UI', sans-serif;
 
   --radius: 16px;
   --radius-sm: 10px;
@@ -160,28 +160,39 @@ html.lenis { scroll-behavior: auto; }
 
 body {
   font-family: var(--body);
+  font-weight: 400;
   color: var(--ink);
   background: var(--paper);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 img { max-width: 100%; display: block; }
 
 a { color: inherit; text-decoration: none; }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--display);
   color: var(--navy);
   line-height: 1.15;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.005em;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-wrap: balance;
 }
 
-h1 { font-size: clamp(2.4rem, 4.2vw, 3.6rem); font-weight: 800; }
-h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; }
-h3 { font-size: 1.25rem; font-weight: 700; }
+h1 { font-size: clamp(2.25rem, 4.2vw, 3.75rem); line-height: 1.1; }
+h2 { font-size: clamp(1.875rem, 3vw, 3rem); line-height: 1.15; }
+h3 { font-size: clamp(1.125rem, 1.5vw, 1.25rem); line-height: 1.3; }
+h4 { font-size: clamp(1rem, 1.25vw, 1.125rem); line-height: 1.3; }
 
-p { color: var(--ink-soft); }
+p, li, blockquote { color: var(--ink-soft); text-wrap: pretty; }
+
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
 
 .eyebrow {
   display: inline-flex;
@@ -1739,6 +1750,7 @@ section { padding: 88px 0; scroll-margin-top: 84px; }
   animation: marquee-scroll 34s linear infinite;
 }
 .marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+.marquee-track.marquee-reverse { animation-direction: reverse; }
 .marquee-logo {
   flex: 0 0 auto;
   height: 68px;
@@ -2415,5 +2427,5 @@ section { padding: 88px 0; scroll-margin-top: 84px; }
 
 
 .glass-chip{
-    @apply rounded-full border border-white/10 bg-white/10 backdrop-blur-xl px-3 py-1 text-xs font-medium text-white;
+    @apply rounded-full border border-white/10 bg-white/10 backdrop-blur-xl px-3 py-1 text-xs font-semibold text-white;
 }

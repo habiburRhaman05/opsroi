@@ -3,14 +3,15 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { ArrowRight } from 'lucide-react';
 
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/why-opsroi', label: 'Why OpsROI' },
   { href: '/features', label: 'Features' },
-  { href: '/who-its-for', label: 'Who Its For' },
+  { href: '/who-its-for', label: "Who It's For" },
   { href: '/pricing', label: 'Pricing' },
-  { href: '/story', label: 'Our Story' },
+  { href: '/our-story', label: 'Our Story' },
 ];
 
 export default function Header() {
@@ -44,7 +45,6 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isNavOpen) {
       document.body.style.overflow = 'hidden';
@@ -65,7 +65,7 @@ export default function Header() {
       </div>
       <button
         type="button"
-        className={`back-to-top border-4 shadow-2xl border-[#6BAE36] ${showBackToTop ? 'is-visible' : ''}`}
+        className={`back-to-top border-4 shadow-2xl border-green-deep ${showBackToTop ? 'is-visible' : ''}`}
         aria-label="Back to top"
         onClick={scrollToTop}
       >
@@ -73,89 +73,114 @@ export default function Header() {
           <path d="M9 14V4M9 4l-5 5M9 4l5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
-    <header className={`container site-header ${isScrolled ? 'scrolled' : ''}`} id="siteHeader">
-      <div className="header-pill">
-        <Link href="/" className="brand" onClick={() => setIsNavOpen(false)}>
-          <Image src="/OpsROI-header.webp" alt="OpsROI logo" width={100} height={32} />
-        </Link>
-        <nav className="nav hidden lg:flex" id="siteNav">
-          {NAV_LINKS.map(({ href, label }) => {
-            const isActive = href === '/' ? pathname === '/' : pathname.startsWith(href);
-            return (
-              <Link
-                key={href}
-                href={href}
-                className={isActive ? 'active' : ''}
-              >
-                {label}
-              </Link>
-            );
-          })}
-        </nav>
-        <div className="header-actions">
-          <Link href="/contact" className="btn btn-primary hidden lg:inline-flex">Contact us</Link>
-          <button 
-            type="button" 
-            className="lg:hidden text-navy p-1 focus:outline-none flex items-center justify-center" 
-            aria-label="Toggle menu" 
-            onClick={() => setIsNavOpen(true)}
+
+      <header
+        className={`fixed inset-x-0 top-0 z-[100] transition-all duration-300 ${
+          isScrolled
+            ? 'bg-white/95 backdrop-blur-md border-b border-line/70 shadow-[0_1px_20px_-10px_rgba(15,43,53,0.15)]'
+            : 'bg-white border-b border-line/40'
+        }`}
+      >
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-6 lg:h-[72px] lg:px-8">
+          <Link href="/" onClick={() => setIsNavOpen(false)} className="flex items-center">
+            <Image src="/OpsROI-header.webp" alt="OpsROI logo" width={110} height={32} priority />
+          </Link>
+
+          <nav className="hidden lg:flex items-center gap-8">
+            {NAV_LINKS.map(({ href, label }) => {
+              const isActive = href === '/' ? pathname === '/' : pathname.startsWith(href);
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  className={`relative text-[13px] font-bold uppercase tracking-[0.14em] font-display transition-colors duration-200 ${
+                    isActive ? 'text-navy' : 'text-navy/70 hover:text-navy'
+                  }`}
+                >
+                  {label}
+                  {isActive && (
+                    <span
+                      aria-hidden
+                      className="absolute -bottom-1.5 left-0 right-0 h-0.5 rounded-full bg-green"
+                    />
+                  )}
+                </Link>
+              );
+            })}
+          </nav>
+
+          <div className="flex items-center gap-3">
+            <Link
+              href="/contact"
+              className="group hidden lg:inline-flex items-center justify-center gap-2 rounded-full bg-green px-5 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-navy-deep transition-colors duration-200 hover:bg-green-deep hover:text-white font-display"
+            >
+              Contact Us
+              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+            </Link>
+            <button
+              type="button"
+              className="lg:hidden text-navy p-1 focus:outline-none flex items-center justify-center"
+              aria-label="Toggle menu"
+              onClick={() => setIsNavOpen(true)}
+            >
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                <path d="M3 12h18M3 6h18M3 18h18" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Full-screen mobile menu */}
+      <div className={`fixed inset-0 z-[110] bg-white transform transition-transform duration-300 ease-in-out flex flex-col lg:hidden ${isNavOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="flex items-center justify-between p-6 border-b border-line bg-mist">
+          <Link href="/" onClick={() => setIsNavOpen(false)}>
+            <Image src="/OpsROI-header.webp" alt="OpsROI logo" width={110} height={35} />
+          </Link>
+          <button
+            type="button"
+            className="text-navy p-2 bg-white rounded-full shadow-sm border border-line focus:outline-none"
+            onClick={() => setIsNavOpen(false)}
+            aria-label="Close menu"
           >
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
           </button>
         </div>
-      </div>
-    </header>
 
-    {/* Full-screen Mobile Menu Overlay */}
-    <div className={`fixed inset-0 z-[100] bg-white transform transition-transform duration-300 ease-in-out flex flex-col lg:hidden ${isNavOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-      
-      {/* Mobile Menu Header */}
-      <div className="flex items-center justify-between p-6 border-b border-line bg-mist">
-        <Link href="/" onClick={() => setIsNavOpen(false)}>
-          <Image src="/OpsROI-header.webp" alt="OpsROI logo" width={110} height={35} />
-        </Link>
-        <button 
-          type="button" 
-          className="text-navy p-2 bg-white rounded-full shadow-sm border border-line focus:outline-none" 
-          onClick={() => setIsNavOpen(false)}
-          aria-label="Close menu"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
-        </button>
-      </div>
+        <div className="flex flex-col flex-1 overflow-y-auto px-6 py-8">
+          <div className="flex flex-col gap-6">
+            {NAV_LINKS.map(({ href, label }) => {
+              const isActive = href === '/' ? pathname === '/' : pathname.startsWith(href);
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  onClick={() => setIsNavOpen(false)}
+                  className={`text-2xl font-bold tracking-wide uppercase transition-colors flex items-center justify-between group font-display ${isActive ? 'text-green' : 'text-navy'}`}
+                >
+                  <span>{label}</span>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className={`transition-transform duration-300 ${isActive ? 'translate-x-0 opacity-100 text-green' : '-translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 text-green/50'}`}>
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
 
-      {/* Mobile Menu Links */}
-      <div className="flex flex-col flex-1 overflow-y-auto px-6 py-8">
-        <div className="flex flex-col gap-6">
-          {NAV_LINKS.map(({ href, label }) => {
-            const isActive = href === '/' ? pathname === '/' : pathname.startsWith(href);
-            return (
-              <Link
-                key={href}
-                href={href}
-                onClick={() => setIsNavOpen(false)}
-                className={`text-2xl font-bebas tracking-wide uppercase transition-colors flex items-center justify-between group ${isActive ? 'text-green' : 'text-navy'}`}
-              >
-                <span>{label}</span>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className={`transition-transform duration-300 ${isActive ? 'translate-x-0 opacity-100 text-green' : '-translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 text-green/50'}`}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </Link>
-            );
-          })}
+        <div className="p-6 border-t border-line bg-mist pb-8">
+          <Link
+            href="/contact"
+            onClick={() => setIsNavOpen(false)}
+            className="w-full flex items-center justify-center bg-green hover:bg-green-deep text-white font-bold text-lg tracking-widest uppercase rounded-xl py-4 transition-colors shadow-md gap-3 font-display"
+          >
+            <span>Contact Us</span>
+            <ArrowRight className="h-5 w-5" />
+          </Link>
         </div>
       </div>
-
-      {/* Mobile Menu Footer CTA */}
-      <div className="p-6 border-t border-line bg-mist pb-8">
-        <Link 
-          href="/contact" 
-          onClick={() => setIsNavOpen(false)}
-          className="w-full flex items-center justify-center bg-green hover:bg-green-deep text-white font-bebas text-xl tracking-widest uppercase rounded-xl py-4 transition-colors shadow-md gap-3"
-        >
-          <span>Contact Us</span>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </Link>
-      </div>
-    </div>
     </>
   );
 }

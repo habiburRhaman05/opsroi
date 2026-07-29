@@ -12,7 +12,7 @@ export default function PrivacyPage() {
       <main className="pt-24 md:pt-32 pb-16 md:pb-24 px-margin-mobile md:px-margin-desktop bg-surface-container-low min-h-screen">
         <div className="max-w-4xl mx-auto bg-white rounded-[40px] border border-outline-variant/40 shadow-ambient-shadow overflow-hidden">
           <div className="bg-surface-container-lowest px-8 py-8 md:px-14 md:py-10 text-center border-b border-outline-variant/40">
-            <div className="text-label-caps font-label-caps uppercase text-[#7fc42a] font-bold mb-4 tracking-widest">
+            <div className="text-label-caps font-label-caps uppercase text-green font-bold mb-4 tracking-widest">
               Legal
             </div>
             <h1 className="font-display-lg-mobile md:font-display-lg text-primary text-4xl md:text-5xl">
@@ -23,11 +23,20 @@ export default function PrivacyPage() {
             </p>
           </div>
           <div className="p-8 md:p-14">
+          <h2 className="text-xl font-bold text-primary mt-0 mb-3">
+            Overview
+          </h2>
           <p className="text-sm text-primary/80 mb-4">
             This Privacy Policy explains how <strong>OpsROI</strong>, an
             Oregon limited liability company operating OpsROI (&quot;OpsROI,&quot; &quot;we,&quot;
             &quot;us,&quot; &quot;our&quot;), collects, uses, shares, and protects
             information through our website and CRM platform (the &quot;Services&quot;).
+          </p>
+          <p className="text-sm text-primary/80 mb-4">
+            In short: we collect the information needed to operate the Services, we
+            use it to provide those Services and meet legal obligations, and we do
+            not sell personal information to third parties. The full details, along
+            with your rights and choices, are set out below.
           </p>
           <p className="text-sm text-primary/80 mb-4">
             This Policy covers two categories of people:
@@ -177,21 +186,28 @@ export default function PrivacyPage() {
           </p>
 
           <h2 className="text-xl font-bold text-primary mt-10 mb-3">
-            7. Data Security
+            7. Third-Party Links
+          </h2>
+          <p className="text-sm text-primary/90 leading-relaxed mb-4">
+            Our website and Services may contain links to third-party websites, integrations, or resources that are not operated by us (for example, links to payment processors, help articles, or partner tools). We do not control those third parties and are not responsible for their content, privacy practices, or the way they collect, use, or share information. This Policy applies only to information collected by OpsROI. We encourage you to review the privacy policies of any third-party site or service you visit or use.
+          </p>
+
+          <h2 className="text-xl font-bold text-primary mt-10 mb-3">
+            8. Data Security
           </h2>
           <p className="text-sm text-primary/90 leading-relaxed mb-4">
             We maintain reasonable administrative, technical, and physical safeguards designed to protect information against unauthorized access, alteration, disclosure, or destruction. No method of transmission or storage is 100% secure, and we cannot guarantee absolute security.
           </p>
 
           <h2 className="text-xl font-bold text-primary mt-10 mb-3">
-            8. Data Retention
+            9. Data Retention
           </h2>
           <p className="text-sm text-primary/90 leading-relaxed mb-4">
             We retain Customer and End Customer data for as long as the Customer account is active, and for a reasonable period afterward to comply with legal obligations, resolve disputes, and enforce agreements. Customers may request export or deletion of their data as described in our Terms of Service.
           </p>
 
           <h2 className="text-xl font-bold text-primary mt-10 mb-3">
-            9. Your Rights
+            10. Your Rights
           </h2>
           <p className="text-sm text-primary/90 leading-relaxed mb-4">
             Depending on your location, you may have rights to:
@@ -218,28 +234,28 @@ export default function PrivacyPage() {
           </p>
 
           <h2 className="text-xl font-bold text-primary mt-10 mb-3">
-            10. Children&apos;s Privacy
+            11. Children&apos;s Privacy
           </h2>
           <p className="text-sm text-primary/90 leading-relaxed mb-4">
             The Services are intended for business use and are not directed to children under 18. We do not knowingly collect personal information from children.
           </p>
 
           <h2 className="text-xl font-bold text-primary mt-10 mb-3">
-            11. International Users
+            12. International Users
           </h2>
           <p className="text-sm text-primary/90 leading-relaxed mb-4">
             The Services are hosted in the United States and intended for use by U.S.-based businesses. If you access the Services from outside the U.S., your information will be transferred to and processed in the U.S.
           </p>
 
           <h2 className="text-xl font-bold text-primary mt-10 mb-3">
-            12. Changes To This Policy
+            13. Changes To This Policy
           </h2>
           <p className="text-sm text-primary/90 leading-relaxed mb-4">
             We may update this Privacy Policy from time to time. Material changes will be posted on this page with an updated &quot;Last Updated&quot; date, and where required, we will provide additional notice.
           </p>
 
           <h2 className="text-xl font-bold text-primary mt-10 mb-3">
-            13. Contact Us
+            14. Contact Us
           </h2>
           <p className="text-sm text-primary/90 leading-relaxed mb-4">
             <strong>OpsROI</strong>

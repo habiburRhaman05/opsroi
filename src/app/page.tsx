@@ -19,6 +19,7 @@ import { Club } from '../components/pages/home-page/Club';
 import { StraightTalk } from '../components/pages/home-page/StraightTalk';
 import { ComparisonTable } from '../components/pages/home-page/ComparisonTable';
 import { Platform } from '../components/pages/home-page/Platform';
+import { CompetitorCompare } from '../components/pages/home-page/CompetitorCompare';
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
         <Calculator/>
         <Club />
         <StraightTalk/>
+        <CompetitorCompare />
         <Integrations />
         <Cta />
         <Faq />
