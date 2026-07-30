@@ -7,8 +7,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-roboto: var(--font-roboto);
-  --font-bebas: var(--font-bebas-neue);
+  --font-body: var(--font-body);
+  --font-display: var(--font-display);
+  --font-roboto: var(--font-body);
+  --font-bebas: var(--font-display);
   --color-navy: #1D4E5F;
   --color-navy-deep: #163C49;
   --color-green: #7DC243;
@@ -205,5 +207,132 @@
   .reveal-fade.is-revealed { opacity: 1; }
   @media (prefers-reduced-motion: reduce) {
     .reveal, .reveal-fade { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ============================================================
+     Site-wide classy animation set
+     1. .scroll-reveal — fade + rise as ScrollReveal wrappers enter
+     2. .hover-lift-md — magnetic lift + drop-shadow for cards/CTAs
+     3. .animate-underline — green underline slides in on hover for links
+     4. .animate-icon-bump — icon nudges up on parent .group hover
+     ============================================================ */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .hover-lift-md {
+    transition:
+      transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+  }
+  .hover-lift-md:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 50px -20px rgba(15, 43, 53, 0.22);
+  }
+
+  /* Smooth card hover — apply this class to any card that has hover:-translate-y-* / hover:shadow-* / hover:border-*.
+     Uses a quart-out cubic-bezier and slightly longer duration so lift, shadow and border
+     changes glide together instead of snapping. GPU-accelerated with will-change. */
+  .card-smooth {
+    transition-property: transform, box-shadow, border-color, background-color, opacity;
+    transition-duration: 0.45s;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+  }
+  .card-smooth-icon {
+    transition-property: transform, background-color, color, box-shadow;
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card-smooth, .card-smooth-icon { transition: none; }
+  }
+
+  @keyframes opsroi-underline-slide {
+    from { transform: scaleX(0); transform-origin: left; }
+    to   { transform: scaleX(1); transform-origin: left; }
+  }
+  .animate-underline {
+    position: relative;
+    display: inline-block;
+  }
+  .animate-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .animate-underline:hover::after {
+    transform: scaleX(1);
+  }
+
+  @keyframes opsroi-icon-bump {
+    0%   { transform: translateY(0) scale(1); }
+    45%  { transform: translateY(-3px) scale(1.06); }
+    100% { transform: translateY(0) scale(1); }
+  }
+  .group:hover .animate-icon-bump {
+    animation: opsroi-icon-bump 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-reveal, .scroll-reveal.revealed {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .hover-lift-md:hover { transform: none; }
+    .animate-underline::after { transform: scaleX(1); transition: none; }
+    .group:hover .animate-icon-bump { animation: none; }
+  }
+
+  @keyframes opsroi-glow-pulse {
+    0%, 100% { opacity: 0.55; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.08); }
+  }
+  @keyframes opsroi-float-gentle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+  @keyframes opsroi-shimmer-sweep {
+    0% { transform: translateX(-120%) skewX(-20deg); }
+    60%, 100% { transform: translateX(220%) skewX(-20deg); }
+  }
+  @keyframes opsroi-ring-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(125, 194, 67, 0.55); }
+    70% { box-shadow: 0 0 0 12px rgba(125, 194, 67, 0); }
+  }
+  .animate-opsroi-glow { animation: opsroi-glow-pulse 6s ease-in-out infinite; }
+  .animate-opsroi-glow-slow { animation: opsroi-glow-pulse 9s ease-in-out infinite; }
+  .animate-opsroi-float { animation: opsroi-float-gentle 4s ease-in-out infinite; }
+  .animate-opsroi-shimmer { animation: opsroi-shimmer-sweep 3.5s ease-in-out infinite; }
+  @keyframes opsroi-column-sweep {
+    0% { transform: translateX(-100%); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateX(100%); opacity: 0; }
+  }
+  .animate-opsroi-column-sweep { animation: opsroi-column-sweep 3.6s ease-in-out infinite; }
+  .animate-opsroi-ring { animation: opsroi-ring-pulse 2.4s ease-out infinite; }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-opsroi-glow, .animate-opsroi-glow-slow, .animate-opsroi-float,
+    .animate-opsroi-shimmer, .animate-opsroi-ring, .animate-opsroi-column-sweep { animation: none; }
   }
 }

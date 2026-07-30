@@ -24,9 +24,14 @@ import {
 } from "lucide-react";
 
 import { AssetModel } from "@/src/components/pages/who-is-it-for/AssetModel";
+import { ScrollReveal } from "@/src/components/shared/ScrollReveal";
+import { SectionLabel } from "@/src/components/ui/SectionLabel";
+import { CompetitorCompare } from "@/src/components/pages/home-page/CompetitorCompare";
+import { PageHero } from "@/src/components/shared/PageHero";
+import { CountUp } from "@/src/components/shared/CountUp";
 
 /* ────────────────────────────────────────────────────────────
-   Data — edit copy here; the layout adapts.
+   Data, edit copy here; the layout adapts.
    Sourced from opsroi-full-content-package.md · "Why OpsROI".
    ──────────────────────────────────────────────────────────── */
 
@@ -77,30 +82,6 @@ const DIFFERENTIATORS: { title: string; body: string; icon: LucideIcon }[] = [
   },
 ];
 
-type Cell = boolean | string;
-const AGENCY_ROWS: { feature: string; competitor: Cell; opsroi: Cell }[] = [
-  { feature: "CRM & pipelines", competitor: true, opsroi: true },
- 
-  { feature: "White-label client dashboards", competitor: "Paid tier", opsroi: "Included" },
-  { feature: "HR & Payroll", competitor: false, opsroi: true },
-  { feature: "Inventory management", competitor: false, opsroi: true },
-  { feature: "AI estimates & invoices", competitor: false, opsroi: true },
-  { feature: "Document signing", competitor: "Limited", opsroi: "Full e-sign" },
-  { feature: "Done-for-you setup & support", competitor: false, opsroi: "Included" },
-  { feature: "Also serves field / trade teams", competitor: false, opsroi: true },
-];
-const TRADE_ROWS: { feature: string; competitor: Cell; opsroi: Cell }[] = [
-  { feature: "Job scheduling & dispatch", competitor: true, opsroi: true },
-  { feature: "Estimates & invoicing", competitor: "Manual entry", opsroi: "AI-generated" },
-  { feature: "Inventory tracking", competitor: "Add-on", opsroi: "Included" },
-  { feature: "HR & payroll", competitor: false, opsroi: true },
-  { feature: "Lead capture & marketing", competitor: false, opsroi: true },
-  { feature: "Client-facing ROI reporting", competitor: false, opsroi: true },
-  { feature: "Missed-call text-back & AI receptionist", competitor: false, opsroi: true },
-  { feature: "Document signing", competitor: "Add-on", opsroi: "Included" },
-  { feature: "Built by someone who's run your trade", competitor: "Rarely", opsroi: true },
-];
-
 const WHO_CHOOSES: { icon: LucideIcon; label: string; heading: string; body: string; accent: "green" | "gold" }[] = [
   {
     icon: Building2,
@@ -118,11 +99,33 @@ const WHO_CHOOSES: { icon: LucideIcon; label: string; heading: string; body: str
   },
 ];
 
-const PROOF: { value: string; label: string }[] = [
-  { value: "4.5 days", label: "avg. time to a fully running system" },
-  { value: "96%", label: "customer retention after switching" },
-  { value: "3.3x", label: "more accounts, same headcount" },
-  { value: "8-in-1", label: "tools replaced by one platform" },
+const PROOF: { value: React.ReactNode; label: string }[] = [
+  {
+    value: (
+      <>
+        <CountUp end={4.5} decimals={1} duration={1600} />
+        <span className="text-lg font-semibold text-white/60 ml-1">days</span>
+      </>
+    ),
+    label: "avg. time to a fully running system",
+  },
+  {
+    value: <CountUp end={96} suffix="%" duration={1800} />,
+    label: "customer retention after switching",
+  },
+  {
+    value: <CountUp end={3.3} decimals={1} suffix="x" duration={1600} />,
+    label: "more accounts, same headcount",
+  },
+  {
+    value: (
+      <>
+        <CountUp end={8} duration={1400} />
+        <span>-in-1</span>
+      </>
+    ),
+    label: "tools replaced by one platform",
+  },
 ];
 
 const FAQ: { q: string; a: string }[] = [
@@ -141,175 +144,72 @@ const FAQ: { q: string; a: string }[] = [
 ];
 
 /* ────────────────────────────────────────────────────────────
-   Small helpers
-   ──────────────────────────────────────────────────────────── */
-
-function CompareCell({ value, positive }: { value: Cell; positive?: boolean }) {
-  if (value === true) {
-    return (
-      <span className="mx-auto flex h-6 w-6 items-center justify-center rounded-full bg-green">
-        <Check className="h-3.5 w-3.5 text-white" strokeWidth={3} />
-      </span>
-    );
-  }
-  if (value === false) {
-    return (
-      <span className="mx-auto flex h-6 w-6 items-center justify-center rounded-full bg-ink-soft/15">
-        <X className="h-3.5 w-3.5 text-ink-soft" strokeWidth={2.5} />
-      </span>
-    );
-  }
-  return (
-    <span
-      className={`inline-block text-xs font-semibold ${
-        positive ? "text-green-deep" : "text-ink-soft"
-      }`}
-    >
-      {value}
-    </span>
-  );
-}
-
-function CompareTable({
-  competitor,
-  rows,
-}: {
-  competitor: string;
-  rows: { feature: string; competitor: Cell; opsroi: Cell }[];
-}) {
-  return (
-    <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-[0_20px_50px_-24px_rgba(29,78,95,0.25)]">
-      <div className="grid grid-cols-[1.5fr_1fr_1fr] sm:grid-cols-[1.8fr_1fr_1fr]">
-        {/* Header */}
-        <div className="bg-mist px-4 py-4 text-[13px] font-bold text-navy sm:px-6">
-          Capability
-        </div>
-        <div className="bg-mist px-2 py-4 text-center text-[13px] font-bold text-ink-soft sm:px-4">
-          {competitor}
-        </div>
-        <div className="bg-navy px-2 py-4 text-center text-[13px] font-bold text-white sm:px-4">
-          OpsROI
-        </div>
-
-        {/* Rows */}
-        {rows.map((r, i) => {
-          const last = i === rows.length - 1;
-          return (
-            <Fragment key={r.feature}>
-              <div
-                className={`flex items-center px-4 py-3.5 text-[13px] leading-snug text-ink sm:px-6 ${
-                  last ? "" : "border-b border-line"
-                }`}
-              >
-                {r.feature}
-              </div>
-              <div
-                className={`flex items-center justify-center px-2 py-3.5 text-center sm:px-4 ${
-                  last ? "" : "border-b border-line"
-                }`}
-              >
-                <CompareCell value={r.competitor} />
-              </div>
-              <div
-                className={`flex items-center justify-center bg-green/[0.05] px-2 py-3.5 text-center sm:px-4 ${
-                  last ? "" : "border-b border-green/15"
-                }`}
-              >
-                <CompareCell value={r.opsroi} positive />
-              </div>
-            </Fragment>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
-/* ────────────────────────────────────────────────────────────
    Page
    ──────────────────────────────────────────────────────────── */
 
 export default function WhyOpsroiPage() {
-  const [tab, setTab] = useState<"agencies" | "trades">("agencies");
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
     <main>
       {/* ─── Hero ─── */}
-      <section className="page-hero relative overflow-hidden">
-        <div 
-          className="absolute top-0 right-0 pointer-events-none w-[250px] md:w-[350px] z-0" 
-          style={{ transform: 'translate(25%, -25%)', opacity: 0.05 }}
-        >
-          <img src="/watermark.svg" alt="" className="w-full h-auto" aria-hidden="true" />
-        </div>
-        <div className="hero-glow hero-glow--a" />
-        <div className="hero-glow hero-glow--b" />
-        <div className="container px-5 sm:px-6 lg:px-8 relative z-10">
-          <div className="eyebrow fade-in-up">Why OpsROI</div>
-          <h1 className="fade-in-up" style={{ animationDelay: "0.08s" }}>
-            You shouldn&apos;t need five logins <br className="hidden sm:inline" />
-            to run one business.
-          </h1>
-          <p className="lede fade-in-up" style={{ animationDelay: "0.16s" }}>
-            Lead-gen software doesn&apos;t run your crew. Job software doesn&apos;t
-            prove your ROI. Payroll software doesn&apos;t talk to either. OpsROI was
-            built because that&apos;s insane - and because the person who built it
-            was living it.
-          </p>
-          <div
-            className="fade-in-up mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
-            style={{ animationDelay: "0.24s" }}
-          >
-            <Link
-              href="/book"
-              className="btn btn-primary w-full sm:w-auto"
-            >
-              Book a Call
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/features"
-              className="btn w-full border-white/40 bg-white/5 text-white backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-white/80 hover:bg-white/15 sm:w-auto"
-            >
-              Explore the Platform
-            </Link>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Why OpsROI"
+        title={
+          <>
+            You Shouldn&apos;t Need Five Logins
+            <br className="hidden sm:block" />
+            To Run <span className="text-green">One Business.</span>
+          </>
+        }
+        description="Lead gen software doesn't run your crew. Job software doesn't prove your ROI. Payroll software doesn't talk to either. OpsROI was built because that's insane, and because the person who built it was living it."
+        primaryCta={{ label: "See The Fit", href: "/book" }}
+        secondaryCta={{ label: "Explore The Platform", href: "/features" }}
+      />
 
    
 
       {/* ─── The tool-stack tax ─── */}
-      <section>
-        <div className="container px-5 sm:px-6 lg:px-8">
-          <div className="section-head center" style={{ margin: "0 auto 44px" }}>
-            <div className="eyebrow" style={{ justifyContent: "center" }}>
-              The Problem
-            </div>
-            <h2>The tool-stack tax.</h2>
-            <p>
-              Most agencies and trades run one business through five to eight tools
-              that don&apos;t share data. Every handoff is a place a lead goes cold,
-              a job gets under-billed, or a client stops trusting your numbers.
-            </p>
+      <section className="py-14 sm:py-20 px-5 sm:px-8 bg-white">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+            <ScrollReveal>
+              <SectionLabel className="justify-center mb-4">The Problem</SectionLabel>
+            </ScrollReveal>
+            <ScrollReveal>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy tracking-tight leading-tight mb-4 font-display uppercase">
+                The Tool Stack Tax.
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal>
+              <p className="text-base text-ink-soft leading-relaxed">
+                Most agencies and trades run one business through five to eight
+                tools that don&apos;t share data. Every handoff is a place a lead
+                goes cold, a job gets under-billed, or a client stops trusting
+                your numbers.
+              </p>
+            </ScrollReveal>
           </div>
 
-          <div className="mx-auto grid max-w-5xl grid-cols-2 gap-3 sm:grid-cols-4">
+          <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 sm:grid-cols-4">
             {TOOL_TAX.map((tool) => {
               const Icon = tool.icon;
               return (
                 <div
                   key={tool.name}
-                  className="group flex flex-col items-center gap-3 rounded-[1.5rem] border border-dashed border-line/80 bg-white px-4 py-6 text-center shadow-sm hover:shadow-[0_15px_30px_-10px_rgba(22,60,73,0.1)] hover:-translate-y-1 transition-all duration-500"
+                  className="group card-smooth relative flex flex-col items-center gap-3 overflow-hidden rounded-2xl border border-line bg-white px-4 py-6 text-center hover:-translate-y-1.5 hover:border-green/40 hover:shadow-[0_24px_40px_-20px_rgba(125,194,67,0.3)]"
                 >
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-ink-soft shadow-md border border-line/50 group-hover:scale-110 group-hover:text-navy group-hover:border-navy/20 transition-all duration-500">
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -bottom-12 -right-12 h-32 w-32 rounded-full bg-green/12 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  />
+                  <span className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-mist text-navy card-smooth-icon group-hover:bg-green group-hover:text-white group-hover:shadow-[0_0_18px_rgba(125,194,67,0.35)] animate-icon-bump">
                     <Icon className="h-5 w-5" strokeWidth={1.7} />
                   </span>
-                  <span className="text-[14px] font-bold text-navy mt-1 group-hover:text-[#7DC243] transition-colors duration-300">
+                  <span className="text-[13px] font-bold text-navy uppercase tracking-tight font-display leading-tight">
                     {tool.name}
                   </span>
-                  <span className="text-[13px] font-medium text-ink-soft">
+                  <span className="text-xs font-semibold text-ink-soft tabular-nums">
                     {tool.cost}
                   </span>
                 </div>
@@ -329,61 +229,100 @@ export default function WhyOpsroiPage() {
       </section>
 
       {/* ─── Before / After ─── */}
-      <section className="section-alt">
-        <div className="container px-5 sm:px-6 lg:px-8">
-          <div className="section-head center" style={{ margin: "0 auto 44px" }}>
-            <div className="eyebrow" style={{ justifyContent: "center" }}>
-              Before / After
-            </div>
-            <h2>The same day, run on one system.</h2>
-            <p>
-              Every step of a typical workday - from lead to invoice - mapped against <br/>the old way of separate tools vs. one connected platform. See the difference side by side.
-            </p>
+      <section className="py-14 sm:py-20 px-5 sm:px-8 bg-mist">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+            <ScrollReveal>
+              <SectionLabel className="justify-center mb-4">Before / After</SectionLabel>
+            </ScrollReveal>
+            <ScrollReveal>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy tracking-tight leading-tight mb-4 font-display uppercase">
+                The Same Day, Run On One System.
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal>
+              <p className="text-base text-ink-soft leading-relaxed">
+                Every step of a typical workday, from lead to invoice, mapped
+                against the old way of separate tools vs. one connected
+                platform. See the difference side by side.
+              </p>
+            </ScrollReveal>
           </div>
 
-          <div className="mx-auto max-w-4xl overflow-hidden rounded-3xl border border-line bg-white shadow-[0_30px_70px_-30px_rgba(29,78,95,0.4)]">
-            <div className="grid grid-cols-[0.8fr_1.3fr_1.4fr] sm:grid-cols-[1fr_1.4fr_1.5fr]">
-              {/* Header row */}
-              <div className="border-b border-line bg-mist px-4 py-5 sm:px-6" />
-              <div className="border-b border-line bg-mist px-4 py-5 text-[11px] font-bold uppercase tracking-widest text-ink-soft sm:px-6">
-                Before OpsROI
-              </div>
-              <div className="relative border-b border-green/20 bg-gradient-to-br from-green to-green-deep px-4 py-5 sm:px-6">
-                <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-white">
-                  <Sparkles className="h-3.5 w-3.5" />
-                  With OpsROI
-                </div>
-              </div>
+          <div className="relative mx-auto max-w-4xl">
+            {/* Ambient animated green glow behind the OpsROI column */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -inset-4 rounded-3xl bg-linear-to-r from-transparent via-transparent to-green/15 blur-3xl animate-opsroi-glow-slow"
+            />
 
-              {BEFORE_AFTER.map((r, i) => {
-                const last = i === BEFORE_AFTER.length - 1;
-                const line = last ? "" : "border-b";
-                return (
-                  <Fragment key={r.stage}>
-                    <div
-                      className={`flex items-center bg-white px-4 py-4 text-[13px] font-bold text-navy sm:px-6 ${line} border-line`}
-                    >
-                      {r.stage}
-                    </div>
-                    <div
-                      className={`flex items-start gap-2.5 bg-white px-4 py-4 text-[13px] leading-snug text-ink-soft sm:px-6 ${line} border-line`}
-                    >
-                      <span className="mt-px flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-ink-soft/10">
-                        <X className="h-3 w-3 text-ink-soft" strokeWidth={2.5} />
-                      </span>
-                      {r.before}
-                    </div>
-                    <div
-                      className={`flex items-start gap-2.5 bg-green/[0.06] px-4 py-4 text-[13px] font-medium leading-snug text-navy sm:px-6 ${line} border-green/15`}
-                    >
-                      <span className="mt-px flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green shadow-[0_2px_8px_rgba(125,194,67,0.4)]">
-                        <Check className="h-3 w-3 text-white" strokeWidth={3} />
-                      </span>
-                      {r.after}
-                    </div>
-                  </Fragment>
-                );
-              })}
+            <div className="relative overflow-hidden rounded-3xl border border-line bg-white shadow-[0_30px_70px_-30px_rgba(29,78,95,0.4)]">
+              <div className="grid grid-cols-[0.8fr_1.3fr_1.4fr] sm:grid-cols-[1fr_1.4fr_1.5fr]">
+                {/* Header row */}
+                <div className="border-b border-line bg-mist px-4 py-5 text-[10px] font-bold uppercase tracking-widest text-ink-soft font-display sm:px-6">
+                  Stage
+                </div>
+                <div className="border-b border-line bg-mist px-4 py-5 text-[11px] font-bold uppercase tracking-widest text-ink-soft sm:px-6 font-display">
+                  <div className="flex items-center gap-1.5">
+                    <span className="flex h-4 w-4 items-center justify-center rounded-full bg-ink-soft/15">
+                      <X className="h-2.5 w-2.5" strokeWidth={3} />
+                    </span>
+                    Before OpsROI
+                  </div>
+                </div>
+                <div className="relative border-b border-green/20 bg-linear-to-br from-green to-green-deep px-4 py-5 sm:px-6 overflow-hidden">
+                  {/* Green top accent bar */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-linear-to-r from-green-deep via-white/40 to-green-deep"
+                  />
+                  {/* Smooth green shimmer sweep across header */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 overflow-hidden"
+                  >
+                    <span className="absolute inset-y-0 left-0 w-full bg-linear-to-r from-transparent via-white/30 to-transparent animate-opsroi-column-sweep" />
+                  </span>
+                  <div className="relative flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-white font-display">
+                    <Sparkles className="h-3.5 w-3.5 animate-opsroi-float" />
+                    With OpsROI
+                  </div>
+                </div>
+
+                {BEFORE_AFTER.map((r, i) => {
+                  const last = i === BEFORE_AFTER.length - 1;
+                  const line = last ? "" : "border-b";
+                  const stageNumber = String(i + 1).padStart(2, "0");
+                  return (
+                    <Fragment key={r.stage}>
+                      <div
+                        className={`flex items-center gap-3 bg-white px-4 py-4 text-[13px] font-bold text-navy sm:px-6 ${line} border-line font-display uppercase tracking-tight`}
+                      >
+                        <span className="inline-flex items-center justify-center rounded-md bg-mist text-ink-soft text-[10px] px-1.5 py-0.5 tabular-nums font-display tracking-wider border border-line">
+                          {stageNumber}
+                        </span>
+                        <span className="min-w-0 truncate">{r.stage}</span>
+                      </div>
+                      <div
+                        className={`flex items-start gap-2.5 bg-white px-4 py-4 text-[13px] leading-snug text-ink-soft sm:px-6 ${line} border-line`}
+                      >
+                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-line bg-mist">
+                          <X className="h-3 w-3 text-ink-soft/70" strokeWidth={2.5} />
+                        </span>
+                        {r.before}
+                      </div>
+                      <div
+                        className={`relative flex items-start gap-2.5 bg-green/6 px-4 py-4 text-[13px] font-semibold leading-snug text-navy sm:px-6 ${line} border-green/15`}
+                      >
+                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green shadow-[0_2px_10px_rgba(125,194,67,0.5)] ring-2 ring-green/25">
+                          <Check className="h-3 w-3 text-white" strokeWidth={3.2} />
+                        </span>
+                        {r.after}
+                      </div>
+                    </Fragment>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
@@ -395,16 +334,24 @@ export default function WhyOpsroiPage() {
       </section>
 
       {/* ─── What's actually different ─── */}
-      <section>
-        <div className="container px-5 sm:px-6 lg:px-8">
-          <div className="section-head center" style={{ margin: "0 auto 44px" }}>
-            <div className="eyebrow" style={{ justifyContent: "center" }}>
-              What&apos;s Different
-            </div>
-            <h2>Four things no other platform does together.</h2>
-            <p>
-              Not a checklist of features you&apos;ve seen before. <br/>These are the structural advantages that make OpsROI fundamentally different from anything else.
-            </p>
+      <section className="py-14 sm:py-20 px-5 sm:px-8 bg-white">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+            <ScrollReveal>
+              <SectionLabel className="justify-center mb-4">What&apos;s Different</SectionLabel>
+            </ScrollReveal>
+            <ScrollReveal>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy tracking-tight leading-tight mb-4 font-display uppercase">
+                Four Things No Other Platform Does Together.
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal>
+              <p className="text-base text-ink-soft leading-relaxed">
+                Not a checklist of features you&apos;ve seen before. These are the
+                structural advantages that make OpsROI fundamentally different
+                from anything else.
+              </p>
+            </ScrollReveal>
           </div>
 
           <div className="grid gap-5 md:grid-cols-2" data-stagger>
@@ -413,18 +360,28 @@ export default function WhyOpsroiPage() {
               return (
                 <div
                   key={d.title}
-                  className="relative flex h-full flex-col rounded-2xl border border-line bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-green hover:shadow-xl hover:shadow-green/10"
+                  data-cursor-glow
+                  className="group card-smooth relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white p-7 sm:p-8 hover:-translate-y-1.5 hover:border-green/40 hover:shadow-[0_28px_50px_-22px_rgba(125,194,67,0.32)]"
                 >
-                  <span className="absolute right-6 top-6 text-4xl font-extrabold text-mist">
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -right-2 -top-4 text-[7rem] font-bold leading-none text-navy/4.5 font-display select-none transition-colors duration-350 group-hover:text-green/20"
+                  >
                     0{i + 1}
                   </span>
-                  <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green/12 text-green-deep">
-                    <Icon className="h-6 w-6" strokeWidth={1.8} />
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -bottom-16 -right-16 h-40 w-40 rounded-full bg-green/12 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  />
+                  <span className="relative z-10 mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-mist text-navy card-smooth-icon group-hover:bg-green group-hover:text-white group-hover:shadow-[0_0_20px_rgba(125,194,67,0.35)] animate-icon-bump">
+                    <Icon className="h-5 w-5" strokeWidth={1.8} />
                   </span>
-                  <h3 className="mb-2 max-w-[24ch] text-lg font-bold text-navy">
+                  <h3 className="relative z-10 mb-3 max-w-[24ch] text-lg font-bold text-navy leading-snug">
                     {d.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-ink-soft">{d.body}</p>
+                  <p className="relative z-10 text-sm leading-relaxed text-ink-soft">
+                    {d.body}
+                  </p>
                 </div>
               );
             })}
@@ -432,84 +389,49 @@ export default function WhyOpsroiPage() {
         </div>
       </section>
 
-      {/* ─── Side-by-side comparison (tabbed) ─── */}
-      <section className="section-alt">
-        <div className="container px-5 sm:px-6 lg:px-8">
-          <div className="section-head center" style={{ margin: "0 auto 32px" }}>
-            <div className="eyebrow" style={{ justifyContent: "center" }}>
-              Compare
-            </div>
-            <h2>See exactly what you&apos;re not getting else where.</h2>
-            <p>
-              A straight-up comparison across capabilities: what the leading tools cover <br/>vs. what OpsROI includes. Spoiler - the gap is bigger than you&apos;d expect.
-            </p>
-          </div>
-
-          <div className="mx-auto mb-8 flex max-w-sm gap-2 rounded-full border border-line bg-white p-1 shadow-sm">
-            {(["agencies", "trades"] as const).map((t) => (
-              <button
-                key={t}
-                type="button"
-                disabled={t==="trades"}
-                onClick={() => setTab(t)}
-                className={`flex-1 flex justify-center items-center gap-2 rounded-full px-4 py-2.5 text-sm font-bold capitalize transition-all ${
-                  tab === t
-                    ? "bg-navy text-white shadow-sm"
-                    : "text-ink-soft hover:text-navy"
-                } ${t === "trades" ? "opacity-80" : ""}`}
-              >
-                For {t}
-                {t === "trades" && (
-                  <span className="inline-flex px-1.5 py-0.5 bg-mist text-[9px] uppercase tracking-wider text-ink-soft rounded-md font-bold">
-                    Future
-                  </span>
-                )}
-              </button>
-            ))}
-          </div>
-
-          <div className="mx-auto max-w-3xl">
-            {tab === "agencies" ? (
-              <CompareTable competitor="GoHighLevel" rows={AGENCY_ROWS} />
-            ) : (
-              <CompareTable competitor="Jobber / ServiceTitan" rows={TRADE_ROWS} />
-            )}
-          </div>
-        </div>
-      </section>
+      {/* ─── Side-by-side comparison (multi-competitor) ─── */}
+      <CompetitorCompare />
 
       {/* ─── Who chooses OpsROI ─── */}
-      <section>
-        <div className="container px-5 sm:px-6 lg:px-8">
-          <div className="section-head center" style={{ margin: "0 auto 44px" }}>
-            <div className="eyebrow" style={{ justifyContent: "center" }}>
-              Who Chooses OpsROI
-            </div>
-            <h2>Two businesses, the same reason.</h2>
-            <p>Different work, the same underlying fix: one system instead of six.</p>
+      <section className="py-14 sm:py-20 px-5 sm:px-8 bg-white">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+            <ScrollReveal>
+              <SectionLabel className="justify-center mb-4">Who Chooses OpsROI</SectionLabel>
+            </ScrollReveal>
+            <ScrollReveal>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy tracking-tight leading-tight mb-4 font-display uppercase">
+                Two Businesses, The Same Reason.
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal>
+              <p className="text-base text-ink-soft leading-relaxed">
+                Different work, the same underlying fix: one system instead of
+                six.
+              </p>
+            </ScrollReveal>
           </div>
 
           <div className="grid gap-5 md:grid-cols-2">
             {WHO_CHOOSES.map((w) => {
               const Icon = w.icon;
-              const badge =
-                w.accent === "green"
-                  ? "bg-green/12 text-green-deep"
-                  : "bg-gold/15 text-gold";
               return (
                 <div
                   key={w.label}
-                  className="flex h-full flex-col rounded-2xl border border-line bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5 sm:p-8"
+                  data-cursor-glow
+                  className="group card-smooth relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white p-7 sm:p-8 hover:-translate-y-1.5 hover:border-green/40 hover:shadow-[0_28px_50px_-22px_rgba(125,194,67,0.32)]"
                 >
                   <span
-                    className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl ${badge}`}
-                  >
-                    <Icon className="h-6 w-6" strokeWidth={1.8} />
+                    aria-hidden
+                    className="pointer-events-none absolute -bottom-16 -right-16 h-40 w-40 rounded-full bg-green/12 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  />
+                  <span className="relative mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-mist text-navy card-smooth-icon group-hover:bg-green group-hover:text-white group-hover:shadow-[0_0_20px_rgba(125,194,67,0.35)] animate-icon-bump">
+                    <Icon className="h-5 w-5" strokeWidth={1.8} />
                   </span>
-                  <div className="mb-1 text-xs font-bold uppercase tracking-widest text-ink-soft">
+                  <div className="mb-2 text-[10px] font-bold uppercase tracking-[0.18em] text-green font-display">
                     {w.label}
                   </div>
-                  <h3 className="mb-3 text-xl font-bold text-navy">{w.heading}</h3>
+                  <h3 className="mb-3 text-xl font-bold text-navy leading-snug">{w.heading}</h3>
                   <p className="text-sm leading-relaxed text-ink-soft">{w.body}</p>
                 </div>
               );
@@ -519,29 +441,46 @@ export default function WhyOpsroiPage() {
       </section>
 
       {/* ─── Proof ─── */}
-      <section className="section-alt">
-        <div className="container px-5 sm:px-6 lg:px-8">
-          <div className="section-head center" style={{ margin: "0 auto 40px" }}>
-            <div className="eyebrow" style={{ justifyContent: "center" }}>
-              Proof
-            </div>
-            <h2>The numbers, not just the pitch.</h2>
-            <p>
-              Real metrics from real operators who made the switch. <br/>No vanity stats - just the outcomes that matter to your bottom line.
-            </p>
+      <section className="py-14 sm:py-20 px-5 sm:px-8 bg-mist">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+            <ScrollReveal>
+              <SectionLabel className="justify-center mb-4">Proof</SectionLabel>
+            </ScrollReveal>
+            <ScrollReveal>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy tracking-tight leading-tight mb-4 font-display uppercase">
+                The Numbers, Not Just The Pitch.
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal>
+              <p className="text-base text-ink-soft leading-relaxed">
+                Real metrics from real operators who made the switch. No vanity
+                stats, just the outcomes that matter to your bottom line.
+              </p>
+            </ScrollReveal>
           </div>
 
-          <div className="mx-auto grid max-w-4xl grid-cols-2 gap-4 rounded-3xl bg-gradient-to-br from-[#163C49] to-[#1D4E5F] p-8 sm:grid-cols-4 sm:gap-6 sm:p-10">
-            {PROOF.map((s) => (
-              <div key={s.label} className="text-center">
-                <div className="text-3xl font-extrabold tracking-tight text-gold sm:text-4xl">
-                  {s.value}
+          <div className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl bg-navy-deep p-8 sm:p-10 shadow-[0_30px_80px_-40px_rgba(15,43,53,0.6)]">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -top-24 -right-24 h-60 w-60 rounded-full bg-green/20 blur-3xl"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -bottom-24 -left-16 h-48 w-48 rounded-full bg-gold/10 blur-3xl"
+            />
+            <div className="relative grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-8">
+              {PROOF.map((s) => (
+                <div key={s.label} className="text-center">
+                  <div className="text-3xl sm:text-4xl font-bold text-white tabular-nums leading-none font-display">
+                    {s.value}
+                  </div>
+                  <div className="mt-3 text-[11px] font-bold uppercase tracking-[0.14em] text-white/60 leading-snug font-display">
+                    {s.label}
+                  </div>
                 </div>
-                <div className="mt-2 text-xs leading-snug text-slate-300 sm:text-[13px]">
-                  {s.label}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

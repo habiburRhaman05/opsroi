@@ -85,8 +85,8 @@ export default function FeatureModal({ feature, onClose }: FeatureModalProps) {
 
         {feature.stat && (
           <div className={`mb-6 flex items-baseline gap-3 rounded-2xl border px-5 py-4 ${accent.stat}`}>
-            <span className="text-2xl font-extrabold tracking-tight">{feature.stat.value}</span>
-            <span className="text-sm font-medium text-ink-soft">{feature.stat.label}</span>
+            <span className="text-2xl font-bold tracking-tight">{feature.stat.value}</span>
+            <span className="text-sm font-semibold text-ink-soft">{feature.stat.label}</span>
           </div>
         )}
 

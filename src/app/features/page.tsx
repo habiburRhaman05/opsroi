@@ -5,6 +5,9 @@ import FeatureCard from "@/src/components/pages/features/FeatureCard";
 import FeatureModal from "@/src/components/pages/features/FeatureModal";
 import FeaturePipeline from "@/src/components/pages/features/FeaturePipeline";
 import { FEATURES, DELIVERY_STEPS, type Feature } from "@/src/lib/features";
+import { ScrollReveal } from "@/src/components/shared/ScrollReveal";
+import { SectionLabel } from "@/src/components/ui/SectionLabel";
+import { PageHero } from "@/src/components/shared/PageHero";
 
 export default function FeaturesPage() {
   const [selected, setSelected] = useState<Feature | null>(null);
@@ -13,44 +16,38 @@ export default function FeaturesPage() {
     <>
       <main>
         {/* ─── Page Hero ─── */}
-        <section className="page-hero relative overflow-hidden">
-          {/* Watermark SVG */}
-          <div 
-            className="absolute top-0 right-0 pointer-events-none w-[150px] md:w-[250px] lg:w-[350px] z-0" 
-            style={{ transform: 'translate(20%, -20%)', opacity: 0.05 }}
-          >
-            <img src="/watermark.svg" alt="" className="w-full h-auto" aria-hidden="true" />
-          </div>
-
-          <div className="hero-glow hero-glow--a" />
-          <div className="hero-glow hero-glow--b" />
-          <div className="container px-5 sm:px-6 lg:px-8 relative z-10">
-            <div className="eyebrow fade-in-up">Features</div>
-            <h1 className="fade-in-up" style={{ animationDelay: "0.08s" }}>
-              Everything your business needs to run <br/> <span className="text-[#5FA02E]">
-                in one platform.
-              </span>
-            </h1>
-            <p className="lede fade-in-up" style={{ animationDelay: "0.16s" }}>
-              From the first lead to the last invoice, here&apos;s everything
-              inside OpsROI - for agencies and trades alike. Tap any feature to see
-              exactly how it works.
-            </p>
-          </div>
-        </section>
+        <PageHero
+          eyebrow="Features"
+          title={
+            <>
+              Everything Your Business Needs
+              <br className="hidden sm:block" />
+              To Run <span className="text-green">In One Platform.</span>
+            </>
+          }
+          description="From the first lead to the last invoice, here's everything inside OpsROI, for agencies and trades alike. Tap any feature to see exactly how it works."
+          primaryCta={{ label: "See It Live", href: "/book" }}
+          secondaryCta={{ label: "See Pricing", href: "/pricing" }}
+        />
 
         {/* All Features - one grid */}
-        <section>
-          <div className="container px-5 sm:px-6 lg:px-8">
-            <div className="section-head center" style={{ margin: "0 auto 44px" }}>
-              <div className="eyebrow" style={{ justifyContent: "center" }}>
-                The Full Toolkit
-              </div>
-              <h2>One login. Every tool the <br/> work needs.</h2>
-              <p>
-                Everything you&apos;d normally stitch together from six-plus tools,
-                built into one platform - click a card for the details.
-              </p>
+        <section className="py-14 sm:py-20 px-5 sm:px-8 bg-white">
+          <div className="container">
+            <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+              <ScrollReveal>
+                <SectionLabel className="justify-center mb-4">The Full Toolkit</SectionLabel>
+              </ScrollReveal>
+              <ScrollReveal>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy tracking-tight leading-tight mb-4 font-display uppercase">
+                  One Login. Every Tool The Work Needs.
+                </h2>
+              </ScrollReveal>
+              <ScrollReveal>
+                <p className="text-base text-ink-soft leading-relaxed">
+                  Everything you&apos;d normally stitch together from six-plus
+                  tools, built into one platform. Click a card for the details.
+                </p>
+              </ScrollReveal>
             </div>
 
             <div
@@ -72,18 +69,24 @@ export default function FeaturesPage() {
         <FeaturePipeline />
 
         {/* ─── How We Deliver (done-for-you) ─── */}
-        <section>
-          <div className="container px-5 sm:px-6 lg:px-8">
-            <div className="section-head center" style={{ margin: "0 auto 44px" }}>
-              <div className="eyebrow" style={{ justifyContent: "center" }}>
-                Done For You
-              </div>
-              <h2>How our team gets you running.</h2>
-              <p>
-                You don&apos;t build any of this yourself. From first call to fully
-                running, our team maps, builds, and maintains it around how your
-                business actually works.
-              </p>
+        <section className="py-14 sm:py-20 px-5 sm:px-8 bg-mist">
+          <div className="container">
+            <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+              <ScrollReveal>
+                <SectionLabel className="justify-center mb-4">Done For You</SectionLabel>
+              </ScrollReveal>
+              <ScrollReveal>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy tracking-tight leading-tight mb-4 font-display uppercase">
+                  How Our Team Gets You Running.
+                </h2>
+              </ScrollReveal>
+              <ScrollReveal>
+                <p className="text-base text-ink-soft leading-relaxed">
+                  You don&apos;t build any of this yourself. From first call to
+                  fully running, our team maps, builds, and maintains it around
+                  how your business actually works.
+                </p>
+              </ScrollReveal>
             </div>
 
             <div
@@ -95,18 +98,32 @@ export default function FeaturesPage() {
                 return (
                   <div
                     key={step.id}
-                    className="relative flex h-full flex-col rounded-2xl border border-line bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-green hover:shadow-xl hover:shadow-green/10"
+                    data-cursor-glow
+                    className="group card-smooth relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white p-7 sm:p-8 hover:-translate-y-1.5 hover:border-green/40 hover:shadow-[0_28px_50px_-22px_rgba(125,194,67,0.32)]"
                   >
-                    <span className="absolute right-6 top-6 text-4xl font-extrabold text-mist">
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute -right-2 -top-4 text-[7rem] font-bold leading-none text-navy/4.5 font-display select-none transition-colors duration-350 group-hover:text-green/20"
+                    >
                       {step.step}
                     </span>
-                    <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green/12 text-green-deep">
-                      <Icon className="h-6 w-6" strokeWidth={1.8} />
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute -bottom-16 -right-16 h-40 w-40 rounded-full bg-green/12 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    />
+                    <span className="relative z-10 mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-mist text-navy card-smooth-icon group-hover:bg-green group-hover:text-white group-hover:shadow-[0_0_22px_rgba(125,194,67,0.4)] animate-icon-bump">
+                      <Icon className="h-6 w-6" strokeWidth={1.7} />
                     </span>
-                    <h3 className="mb-2 text-lg font-bold text-navy">
+                    <div className="relative z-10 mb-3 flex items-center gap-3">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-green font-display">
+                        Step {step.step}
+                      </span>
+                      <span aria-hidden className="h-px flex-1 bg-line" />
+                    </div>
+                    <h3 className="relative z-10 mb-3 text-lg sm:text-xl font-bold text-navy leading-snug">
                       {step.title}
                     </h3>
-                    <p className="text-sm leading-relaxed text-ink-soft">
+                    <p className="relative z-10 text-sm text-ink-soft leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -130,7 +147,7 @@ export default function FeaturesPage() {
                 </p>
                 <div className="cta-actions">
                   <a href="/book" className="btn btn-cta-premium">
-                    <span>Book a Call</span>
+                    <span>Get Started</span>
                     <svg
                       width="20"
                       height="20"

@@ -1,72 +1,100 @@
-'use client';
-import { useEffect, useRef, useState } from 'react';
+"use client";
+
+import { Compass, Blocks, Rocket } from "lucide-react";
+import { ScrollReveal } from "../../shared/ScrollReveal";
+import { SectionLabel } from "../../ui/SectionLabel";
+
+const STEPS = [
+  {
+    number: "01",
+    label: "Step One",
+    icon: Compass,
+    title: "We Map Your Business",
+    description:
+      "A short call to understand how you sell, deliver, and get paid today. No assumptions about your industry, your niche, or your crew size.",
+  },
+  {
+    number: "02",
+    label: "Step Two",
+    icon: Blocks,
+    title: "We Build The Systems",
+    description:
+      "Your CRM, automations, and reporting get built and configured around that exact workflow.",
+  },
+  {
+    number: "03",
+    label: "Step Three",
+    icon: Rocket,
+    title: "We Keep It Running",
+    description:
+      "OpsROI stays on as your ops partner: maintaining, adjusting, and supporting as you grow, add crew, add clients, or add a new service line.",
+  },
+];
 
 export default function HowItWorks() {
-  const stepsRef = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          observer.disconnect();
-        }
-      });
-    }, { threshold: 0.35 });
-
-    if (stepsRef.current) observer.observe(stepsRef.current);
-    
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="why" className="section-alt how-it-works">
-      <div className="container px-4 sm:px-6 lg:px-8">
-        <div className="section-head center mx-auto mb-10 md:mb-[52px]">
-          <div className="eyebrow" style={{justifyContent: 'center'}}>How It Works</div>
-          <h2>From first call to fully running, in three steps.</h2>
-          <p>No lengthy onboarding or complicated setup. <br/>We map your business around your sales and delivery process, <br/>build the systems, and keep everything running.</p>
+    <section id="why" className="py-14 sm:py-20 px-5 sm:px-8 bg-mist">
+      <div className="container">
+        {/* Section header */}
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+          <ScrollReveal>
+            <SectionLabel className="justify-center mb-4">How It Works</SectionLabel>
+          </ScrollReveal>
+          <ScrollReveal>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy tracking-tight leading-tight mb-4">
+              From First Call To Fully Running,
+              <br className="hidden sm:block" />
+              In Three Steps.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal>
+            <p className="text-base text-ink-soft leading-relaxed">
+              No lengthy onboarding or complicated setup. We map your business
+              around your sales and delivery process, build the systems, and keep
+              everything running.
+            </p>
+          </ScrollReveal>
         </div>
 
-        <div className={`how-steps !grid !grid-cols-1 lg:!grid-cols-3 !gap-8 lg:!gap-10 mt-8 ${inView ? 'in-view' : ''}`} id="howSteps" ref={stepsRef}>
-          <div className="how-steps-line hidden lg:block"><span></span></div>
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 items-stretch">
+          {STEPS.map((step) => {
+            const Icon = step.icon;
+            return (
+              <ScrollReveal key={step.number}>
+                <div data-cursor-glow className="group card-smooth relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white p-7 sm:p-8 hover:-translate-y-1 hover:border-line/0 hover:shadow-[0_24px_50px_-24px_rgba(15,43,53,0.22)]">
+                  {/* Oversized watermark number */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -right-2 -top-4 text-[7rem] font-bold leading-none text-navy/[0.045] font-display select-none"
+                  >
+                    {step.number}
+                  </span>
 
-          <div className="how-step flex flex-col h-full" style={{'--d': '0s'} as any}>
-            <div className="how-step-marker shrink-0">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 4l14 7-14 7 3-7-3-7z" stroke="var(--green)" strokeWidth="1.8" strokeLinejoin="round"/></svg>
-              <span className="how-step-num">01</span>
-            </div>
-            <div className="how-step-card !p-6 lg:!p-[26px_24px] flex-grow flex flex-col justify-start">
-              <div className="founder-role">Step One</div>
-              <h3>We map your business</h3>
-              <p>A short call to understand how you sell, deliver, and get paid today - no assumptions about your industry, your niche, or your crew size.</p>
-            </div>
-          </div>
+                  {/* Icon in a soft tile */}
+                  <span className="relative z-10 mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-mist text-navy transition-colors duration-300 group-hover:bg-green group-hover:text-white">
+                    <Icon className="h-6 w-6" strokeWidth={1.7} />
+                  </span>
 
-          <div className="how-step flex flex-col h-full" style={{'--d': '0.15s'} as any}>
-            <div className="how-step-marker shrink-0">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="16" height="16" rx="4" stroke="var(--gold)" strokeWidth="1.8"/><path d="M3 9h16" stroke="var(--gold)" strokeWidth="1.8"/></svg>
-              <span className="how-step-num">02</span>
-            </div>
-            <div className="how-step-card !p-6 lg:!p-[26px_24px] flex-grow flex flex-col justify-start">
-              <div className="founder-role">Step Two</div>
-              <h3>We build the systems</h3>
-              <p>Your CRM, automations, and reporting get built and configured around that exact workflow.</p>
-            </div>
-          </div>
+                  {/* Step label + horizontal separator */}
+                  <div className="relative z-10 mb-3 flex items-center gap-3">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-green font-display">
+                      {step.label}
+                    </span>
+                    <span aria-hidden className="h-px flex-1 bg-line" />
+                  </div>
 
-          <div className="how-step flex flex-col h-full" style={{'--d': '0.3s'} as any}>
-            <div className="how-step-marker shrink-0">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3v4M11 15v4M3 11h4M15 11h4" stroke="var(--navy)" strokeWidth="1.8" strokeLinecap="round"/><circle cx="11" cy="11" r="4" stroke="var(--navy)" strokeWidth="1.8"/></svg>
-              <span className="how-step-num">03</span>
-            </div>
-            <div className="how-step-card !p-6 lg:!p-[26px_24px] flex-grow flex flex-col justify-start">
-              <div className="founder-role">Step Three</div>
-              <h3>We keep it running</h3>
-              <p>OpsROI stays on as your ops partner - maintaining, adjusting, and supporting as you grow, add crew, add clients, or add a new service line.</p>
-            </div>
-          </div>
+                  <h3 className="relative z-10 mb-3 text-lg sm:text-xl font-bold text-navy leading-snug">
+                    {step.title}
+                  </h3>
+
+                  <p className="relative z-10 text-sm text-ink-soft leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </ScrollReveal>
+            );
+          })}
         </div>
       </div>
     </section>

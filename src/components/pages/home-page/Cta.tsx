@@ -13,7 +13,7 @@ export default function Cta() {
             <p className="cta-desc">Book a short call and we&apos;ll walk through what OpsROI would set up for your agency - no niche requirements, no long contracts.</p>
             <div className="cta-actions">
               <Link href="/book" className="btn btn-cta-premium">
-                <span>Book a Call</span>
+                <span>Show Me How</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>
             </div>

@@ -57,7 +57,7 @@ export default function BookPage() {
           <div className="eyebrow fade-in-up">Book a Call</div>
           <h1 className="fade-in-up" style={{ animationDelay: "0.08s" }}>
             Let&apos;s map your business 
-            <span className="text-[#7DC243]"> {" "}free.</span>
+            <span className="text-green"> {" "}free.</span>
           </h1>
           <p className="lede fade-in-up" style={{ animationDelay: "0.16s" }}>
             Pick a time that works. In about 20 minutes we&apos;ll walk through
@@ -71,7 +71,7 @@ export default function BookPage() {
       <section>
         <div className="container px-5 sm:px-6 lg:px-8">
           <div className="grid items-start gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
-            {/* Left — what to expect */}
+            {/* Left: what to expect */}
             <div className="lg:sticky lg:top-28">
               <div className="eyebrow">What to expect</div>
               <h2 className="mb-8 text-[1.7rem] font-bold leading-tight text-navy sm:text-[2rem]">
@@ -118,7 +118,7 @@ export default function BookPage() {
               </div>
             </div>
 
-            {/* Right — GHL calendar embed */}
+            {/* Right: GHL calendar embed */}
           <div className="w-full overflow-hidden rounded-3xl border border-line bg-white shadow-xl">
   <iframe
     src="https://api.leadconnectorhq.com/widget/booking/6M0BCjhf4nYKg3TXYX0e"

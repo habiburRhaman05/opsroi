@@ -18,54 +18,100 @@ export function ClubGrid({ openSeats }: ClubGridProps) {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full max-w-7xl mx-auto">
       {openSeats.map((seat) => {
         const isLive = seat.name === "TreeROI";
-        const Wrapper = isLive ? "a" : "div";
-        
+
+        if (isLive) {
+          return (
+            <a
+              key={seat.name}
+              href={seat.url || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group card-smooth relative flex h-full flex-col items-start overflow-hidden rounded-3xl bg-navy-deep p-6 sm:p-8 text-white shadow-[0_30px_60px_-25px_rgba(15,43,53,0.6)] hover:-translate-y-1 hover:shadow-[0_35px_70px_-25px_rgba(125,194,67,0.35)] cursor-pointer"
+            >
+              {/* Ambient green glow */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -top-20 -right-20 h-56 w-56 rounded-full bg-green/25 blur-3xl"
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -bottom-20 -left-20 h-48 w-48 rounded-full bg-gold/10 blur-3xl"
+              />
+
+              {/* LIVE badge with pulse */}
+              <div className="relative inline-flex items-center gap-2 rounded-full bg-green/15 border border-green/40 px-3 py-1 mb-10">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-green opacity-75 animate-ping" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-green" />
+                </span>
+                <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-green font-display">
+                  Live
+                </span>
+              </div>
+
+              {/* Logo */}
+              <div className="relative h-10 w-full mb-6">
+                <Image
+                  src={`/logos/${seat.name}/${seat.name}-2.png`}
+                  alt={seat.name}
+                  fill
+                  className="object-contain object-left"
+                  unoptimized
+                />
+              </div>
+
+              {/* Trade + founder */}
+              <p className="text-sm font-semibold text-white/75 mt-auto">
+                {seat.trade} {seat.founder && `· ${seat.founder}`}
+              </p>
+
+              {/* Visit indicator arrow */}
+              <span className="absolute top-6 right-6 text-white/40 group-hover:text-green group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                >
+                  <path d="M7 17L17 7M8 7h9v9" />
+                </svg>
+              </span>
+            </a>
+          );
+        }
+
+        // Upcoming - ghosted / shadow-only treatment
         return (
-          <Wrapper
+          <div
             key={seat.name}
-            href={isLive ? (seat.url || "#") : undefined}
-            target={isLive ? "_blank" : undefined}
-            rel={isLive ? "noopener noreferrer" : undefined}
-            className={`bg-white border border-line rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col items-start h-full relative overflow-hidden transition-all duration-300 group hover:shadow-xl hover:-translate-y-1 hover:border-green/50 hover:bg-navy ${
-              isLive
-                ? "cursor-pointer"
-                : "opacity-80 cursor-default"
-            }`}
+            className="card-smooth relative flex h-full flex-col items-start overflow-hidden rounded-3xl border border-line/60 bg-white p-6 sm:p-8 shadow-[0_4px_20px_-8px_rgba(15,43,53,0.08)] hover:border-line hover:shadow-[0_10px_30px_-15px_rgba(15,43,53,0.12)]"
           >
-            {/* Decorative hover background element */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-green/5 rounded-bl-full -z-10 transition-transform duration-500 group-hover:scale-150"></div>
-            
-            <div className={`inline-flex px-3 py-1 text-[10px] font-bold tracking-widest rounded-full uppercase mb-10 transition-colors ${
-              isLive
-                ? "bg-green/10 text-green-deep group-hover:bg-white/10 group-hover:text-white"
-                : "bg-mist text-ink-soft group-hover:bg-white/10 group-hover:text-white"
-            }`}>
-              {isLive ? "Live" : "Upcoming"}
+            {/* Upcoming badge */}
+            <div className="inline-flex items-center rounded-full bg-mist border border-line/70 px-3 py-1 mb-10">
+              <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-ink-soft/70 font-display">
+                Upcoming
+              </span>
             </div>
-            
-            <div className="relative h-10 w-full mb-6">
+
+            {/* Logo - muted */}
+            <div className="relative h-10 w-full mb-6 opacity-60 grayscale-[15%]">
               <Image
                 src={`/logos/${seat.name}/${seat.name}-1.png`}
                 alt={seat.name}
                 fill
-                className="object-contain object-left opacity-100 group-hover:opacity-0 transition-opacity duration-300"
-                unoptimized
-              />
-              <Image
-                src={`/logos/${seat.name}/${seat.name}-2.png`}
-                alt={`${seat.name} hover`}
-                fill
-                className="object-contain object-left opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="object-contain object-left"
                 unoptimized
               />
             </div>
-            
-            <p className={`text-sm font-medium mt-auto transition-colors ${
-              isLive ? "text-ink-soft group-hover:text-white/70" : "text-ink-soft/70 group-hover:text-white/70"
-            }`}>
-              {seat.trade} {seat.founder && `· ${seat.founder}`}
+
+            {/* Trade */}
+            <p className="text-sm font-semibold text-ink-soft/70 mt-auto">
+              {seat.trade}
             </p>
-          </Wrapper>
+          </div>
         );
       })}
     </div>

@@ -23,8 +23,8 @@ export const SOFTWARE: CalculatorItem[] = [
 export const SERVICES: CalculatorItem[] = [
   { n: "SEO Management", b: "Local retainer", p: 1500, iconKey: "search" },
   { n: "Blog Content", b: "4 posts / mo", p: 800, iconKey: "pen" },
-  { n: "Google Ads Mgmt", b: "Mgmt fee only", p: 750, iconKey: "googleads" },
-  { n: "Meta Ads Mgmt", b: "Mgmt fee only", p: 500, iconKey: "meta" },
+  { n: "Google Ads Management", b: "Management fee only", p: 750, iconKey: "googleads" },
+  { n: "Meta Ads Management", b: "Management fee only", p: 500, iconKey: "meta" },
 ];
 
 export type TierKey = "growth" | "pro" | "elite";

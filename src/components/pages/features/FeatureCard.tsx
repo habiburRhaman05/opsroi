@@ -1,36 +1,7 @@
 "use client";
 
-import { ArrowRight, Check } from "lucide-react";
-import type { Feature, FeatureAccent } from "@/src/lib/features";
-
-/** Static Tailwind class sets per accent (Tailwind can't build class names dynamically). */
-const ACCENT: Record<FeatureAccent, { badge: string; icon: string; glow: string }> = {
-  green: {
-    badge: "bg-green/12 group-hover:bg-green/20",
-    icon: "text-green-deep",
-    glow: "from-green/10",
-  },
-  gold: {
-    badge: "bg-gold/15 group-hover:bg-gold/25",
-    icon: "text-gold",
-    glow: "from-gold/10",
-  },
-  navy: {
-    badge: "bg-navy/10 group-hover:bg-navy/15",
-    icon: "text-navy",
-    glow: "from-navy/10",
-  },
-};
-
-/** Grid-span classes per bento tile size. */
-const SPAN: Record<NonNullable<Feature["layout"]> | "default", string> = {
-  xl: "sm:col-span-2 lg:col-span-2 lg:row-span-2",
-  wide: "sm:col-span-2 lg:col-span-2",
-  default: "",
-};
-
-const SHELL =
-  "group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white text-left shadow-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-green hover:shadow-xl hover:shadow-green/10 focus-visible:-translate-y-1.5 focus-visible:border-green focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/40";
+import { ArrowRight } from "lucide-react";
+import type { Feature } from "@/src/lib/features";
 
 type FeatureCardProps = {
   feature: Feature;
@@ -39,36 +10,42 @@ type FeatureCardProps = {
 
 export default function FeatureCard({ feature, onOpen }: FeatureCardProps) {
   const Icon = feature.icon;
-  const accent = ACCENT[feature.accent];
-  const layout = feature.layout ?? "default";
 
-  const viewDetails = (
-    <span className="mt-auto inline-flex items-center gap-1.5 pt-1 text-sm font-semibold text-green-deep transition-colors group-hover:text-green">
-      View Details
-      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-    </span>
-  );
-
-  // ── Compact tile (1×1) ──
   return (
     <button
       type="button"
       onClick={() => onOpen(feature)}
+      data-cursor-glow
       aria-label={`View details for ${feature.title}`}
-      className={`${SHELL} p-5`}
+      className="group card-smooth relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white p-6 text-left hover:-translate-y-1.5 hover:border-green/40 hover:shadow-[0_28px_50px_-22px_rgba(125,194,67,0.35)]"
     >
+      {/* Corner accent that fades in on hover */}
       <span
-        className={`mb-4 flex h-11 w-11 items-center justify-center rounded-xl transition-all duration-300 ease-out group-hover:scale-110 group-hover:-rotate-3 ${accent.badge}`}
-      >
-        <Icon className={`h-5 w-5 ${accent.icon}`} strokeWidth={1.8} />
+        aria-hidden
+        className="pointer-events-none absolute top-0 right-0 h-20 w-20 rounded-bl-3xl bg-linear-to-br from-green/12 to-transparent opacity-0 transition-opacity duration-350 group-hover:opacity-100"
+      />
+      {/* Ambient green glow that fades in on hover */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute -bottom-16 -right-16 h-40 w-40 rounded-full bg-green/15 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+      />
+
+      <span className="relative mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-mist text-navy card-smooth-icon group-hover:bg-green group-hover:text-white group-hover:ring-2 group-hover:ring-green/25 group-hover:shadow-[0_0_20px_rgba(125,194,67,0.35)] animate-icon-bump">
+        <Icon className="h-5 w-5" strokeWidth={1.8} />
       </span>
-      <h3 className="mb-1.5 text-base font-bold leading-snug text-navy">
+
+      <h3 className="relative mb-2 text-base font-bold leading-snug text-navy transition-colors duration-300 group-hover:text-green-deep">
         {feature.title}
       </h3>
-      <p className="mb-4 line-clamp-3 text-[13px] leading-relaxed text-ink-soft">
+
+      <p className="relative mb-5 line-clamp-3 text-sm leading-relaxed text-ink-soft">
         {feature.tagline}
       </p>
-      {viewDetails}
+
+      <span className="relative mt-auto inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-green-deep transition-colors group-hover:text-green font-display">
+        View Details
+        <ArrowRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1" />
+      </span>
     </button>
   );
 }

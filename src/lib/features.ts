@@ -24,9 +24,7 @@ import {
   Search,
   Mail,
   Calendar,
-  Globe,
   GraduationCap,
-  MessageSquare,
 } from "lucide-react";
 
 export type FeatureAccent = "green" | "gold" | "navy";
@@ -52,7 +50,7 @@ export type Feature = {
 
 /**
  * Every OpsROI feature, rendered as one flat grid on /features.
- * This is the primary edit surface — swap copy freely, the layout adapts.
+ * This is the primary edit surface - swap copy freely, the layout adapts.
  */
 export const FEATURES: Feature[] = [
   {
@@ -63,13 +61,13 @@ export const FEATURES: Feature[] = [
     tagline:
       "Custom stages, fields, and subaccounts configured around how you actually sell and deliver.",
     overview:
-      "We stand up a CRM shaped around your real sales and delivery process — not a generic template you have to bend to. Pipelines, stages, custom fields, and subaccounts are configured and ready to use from day one, so your team starts working instead of setting up.",
+      "We stand up a CRM shaped around your real sales and delivery process, not a generic template you have to bend to. Pipelines, stages, custom fields, and subaccounts are configured and ready to use from day one, so your team starts working instead of setting up.",
     highlights: [
       "Custom pipelines & deal stages",
       "Tailored fields for your workflow",
       "Client / job subaccounts",
       "Data migrated from your old CRM",
-      "Live in 4–5 business days",
+      "Live in 4 to 5 business days",
     ],
     stat: { value: "4.5 days", label: "average time to a live pipeline" },
   },
@@ -80,14 +78,14 @@ export const FEATURES: Feature[] = [
     layout: "xl",
     title: "HR & Payroll",
     tagline:
-      "Hire, onboard, schedule, and run payroll for your whole team — in the same system as the work.",
+      "Hire, onboard, schedule, and run payroll for your whole team, in the same system as the work.",
     overview:
       "Run your team from the same platform you run your clients and jobs on. Track time by employee, job, or project, run payroll without exporting hours to a third tool, and give new hires a self-serve onboarding flow instead of a stack of paperwork.",
     howItWorks: [
       "A new hire is added and completes onboarding forms digitally.",
       "They're placed on the schedule and assigned to jobs or accounts.",
       "Hours are tracked automatically as work is logged.",
-      "Payroll runs directly from those hours — no exporting.",
+      "Payroll runs directly from those hours, no exporting.",
     ],
     highlights: [
       "Employee records & onboarding",
@@ -105,10 +103,10 @@ export const FEATURES: Feature[] = [
   layout: "wide",
   title: "AI Estimates & Invoicing",
   tagline:
-    "Generate accurate estimates and invoices automatically — from the first quote to the final payment.",
+    "Generate accurate estimates and invoices automatically, from the first quote to the final payment.",
 
   overview:
-    "From the moment a lead requests a quote to the moment the job is completed, OpsROI handles the paperwork for you. AI drafts professional estimates using your pricing, labor, materials, and past jobs, then automatically converts completed work into accurate, itemized invoices with payment links. You review, approve, and send — in minutes instead of hours.",
+    "From the moment a lead requests a quote to the moment the job is completed, OpsROI handles the paperwork for you. AI drafts professional estimates using your pricing, labor, materials, and past jobs, then automatically converts completed work into accurate, itemized invoices with payment links. You review, approve, and send in minutes instead of hours.",
 
   howItWorks: [
     "A rep logs job details from a call or site visit.",
@@ -122,7 +120,7 @@ export const FEATURES: Feature[] = [
     "AI-generated estimates from job details",
     "Automatic estimate-to-invoice conversion",
     "Accurate labor, materials & tax calculations",
-    "Editable before sending — AI drafts, you approve",
+    "Editable before sending, AI drafts, you approve",
     "Branded documents with e-sign support",
     "Built-in payment links for faster collections"
   ],
@@ -135,7 +133,7 @@ export const FEATURES: Feature[] = [
     tagline:
       "Lead routing, follow-up sequences, and internal task automation so nothing falls through the cracks.",
     overview:
-      "Build the follow-up once and it runs on every client or job, every time. Drag-and-drop logic handles lead routing, multi-channel sequences, and internal task hand-offs — no developer required, and no rep left to remember it manually.",
+      "Build the follow-up once and it runs on every client or job, every time. Drag-and-drop logic handles lead routing, multi-channel sequences, and internal task hand-offs, with no developer required, and no rep left to remember it manually.",
     highlights: [
       "Drag-and-drop automation builder",
       "Email & SMS sequences",
@@ -151,9 +149,9 @@ export const FEATURES: Feature[] = [
     accent: "gold",
     title: "AI Receptionist",
     tagline:
-      "Answers, qualifies, and routes every inbound call 24/7 — creating a CRM contact automatically.",
+      "Answers, qualifies, and routes every inbound call 24/7, creating a CRM contact automatically.",
     overview:
-      "Never miss an inbound call again. The AI receptionist picks up around the clock, qualifies the caller, answers common questions, and routes hot leads to the right rep or crew — logging a CRM contact automatically for every conversation.",
+      "Never miss an inbound call again. The AI receptionist picks up around the clock, qualifies the caller, answers common questions, and routes hot leads to the right rep or crew, logging a CRM contact automatically for every conversation.",
     highlights: [
       "24/7 call answering",
       "Automatic lead qualification",
@@ -168,7 +166,7 @@ export const FEATURES: Feature[] = [
     accent: "navy",
     title: "Call Tracking",
     tagline:
-      "Know exactly which campaign or ad drove every call — recording, transcription, and attribution.",
+      "Know exactly which campaign or ad drove every call, with recording, transcription, and attribution.",
     overview:
       "Tie every phone call back to the campaign or ad that earned it. Calls are recorded, transcribed, and attributed directly on the CRM record, so you can prove which channels actually drive revenue.",
     highlights: [
@@ -185,9 +183,9 @@ export const FEATURES: Feature[] = [
     accent: "green",
     title: "Inventory Management",
     tagline:
-      "Track materials, equipment, and stock in real time — tied directly to jobs and invoices.",
+      "Track materials, equipment, and stock in real time, tied directly to jobs and invoices.",
     overview:
-      "Know what's in stock, what's on a truck, and what's been used on a job — in real time, tied directly to the job or client record it belongs to, so nothing gets billed twice or forgotten.",
+      "Know what's in stock, what's on a truck, and what's been used on a job in real time, tied directly to the job or client record it belongs to, so nothing gets billed twice or forgotten.",
     howItWorks: [
       "Materials and equipment are logged into inventory with quantities.",
       "A crew pulls materials for a specific job.",
@@ -207,9 +205,9 @@ export const FEATURES: Feature[] = [
     accent: "navy",
     title: "Document Signing",
     tagline:
-      "Contracts, proposals, and work orders — signed from any device in seconds, filed automatically.",
+      "Contracts, proposals, and work orders, signed from any device in seconds and filed automatically.",
     overview:
-      "Send contracts, proposals, and work orders that clients view and sign from any device, with every signature tracked automatically against the client or job record — no separate DocuSign or PandaDoc subscription.",
+      "Send contracts, proposals, and work orders that clients view and sign from any device, with every signature tracked automatically against the client or job record, no separate DocuSign or PandaDoc subscription.",
     howItWorks: [
       "A document is generated from a template.",
       "It's sent to the client via email or SMS link.",
@@ -231,7 +229,7 @@ export const FEATURES: Feature[] = [
     tagline:
       "Automated, white-labeled dashboards that show clients or ownership exactly what the work produced.",
     overview:
-      "White-labeled dashboards update on their own, so clients or ownership see results the moment they log in — not once a month in an email you had to build by hand. Every number ties back to the one question that matters: is this working?",
+      "White-labeled dashboards update on their own, so clients or ownership see results the moment they log in, not once a month in an email you had to build by hand. Every number ties back to the one question that matters: is this working?",
     highlights: [
       "Live white-label dashboards",
       "Automated reports",
@@ -247,7 +245,7 @@ export const FEATURES: Feature[] = [
     accent: "gold",
     title: "Client / Job Subaccounts",
     tagline:
-      "Every client or job site gets its own clean, organized workspace — created automatically.",
+      "Every client or job site gets its own clean, organized workspace, created automatically.",
     overview:
       "Each client or job gets an isolated, organized workspace that's created, maintained, and supported for you. New accounts spin up automatically when a deal closes, so onboarding is instant and nothing is shared by accident.",
     highlights: [
@@ -263,9 +261,9 @@ export const FEATURES: Feature[] = [
     accent: "navy",
     title: "Ongoing Support",
     tagline:
-      "A standing team you can reach when something needs to change — not a ticket queue.",
+      "A standing team you can reach when something needs to change, not a ticket queue.",
     overview:
-      "You're never left holding a platform you can't adjust. A standing support team is on call to build the new pipeline, tweak the automation, or add the report — plus health alerts and renewal reminders so retention isn't riding on one person remembering to follow up.",
+      "You're never left holding a platform you can't adjust. A standing support team is on call to build the new pipeline, tweak the automation, or add the report, plus health alerts and renewal reminders so retention isn't riding on one person remembering to follow up.",
     highlights: [
       "Standing support team",
       "Client health alerts",
@@ -274,30 +272,6 @@ export const FEATURES: Feature[] = [
     ],
   },
   {
-  id: "phone-inbox",
-  icon: MessageSquare,
-  accent: "green",
-  title: "Phone & Inbox",
-  tagline:
-    "Calls, texts, email, Facebook, Instagram, and live chat — all managed from one shared inbox.",
-  overview:
-    "Keep every customer conversation in one place. Whether it's a phone call, SMS, email, Facebook message, Instagram DM, or website chat, your entire team has the full conversation history without switching between apps.",
-  howItWorks: [
-    "A customer contacts your business from any channel.",
-    "The conversation appears instantly in the shared inbox.",
-    "Your team replies from one interface.",
-    "Every interaction is automatically logged to the CRM."
-  ],
-  highlights: [
-    "Unified conversations inbox",
-    "Phone, SMS & email",
-    "Facebook & Instagram messaging",
-    "Internal team notes",
-    "CRM conversation history"
-  ],
-},
-
-{
   id: "training",
   icon: GraduationCap,
   accent: "green",
@@ -318,30 +292,6 @@ export const FEATURES: Feature[] = [
     "Progress tracking",
     "Knowledge library",
     "Completion reports"
-  ],
-},
-
-{
-  id: "website-builder",
-  icon: Globe,
-  accent: "navy",
-  title: "Website Builder",
-  tagline:
-    "Create beautiful websites and landing pages that connect directly to your CRM.",
-  overview:
-    "Build responsive websites, landing pages, forms, and sales funnels without code. Every lead automatically flows into your CRM and marketing automations.",
-  howItWorks: [
-    "Choose a professionally designed template.",
-    "Customize pages with the drag-and-drop builder.",
-    "Publish your website instantly.",
-    "Leads automatically enter your CRM."
-  ],
-  highlights: [
-    "Drag-and-drop builder",
-    "Landing pages",
-    "Lead capture forms",
-    "SEO optimized",
-    "CRM integration"
   ],
 },
 
@@ -451,7 +401,7 @@ export type PipelineStage = {
 };
 
 /**
- * The feature delivery pipeline — how a lead moves through OpsROI end to end,
+ * The feature delivery pipeline, how a lead moves through OpsROI end to end,
  * on one shared record. Rendered as the pipeline section on /features.
  */
 export const PIPELINE_STAGES: PipelineStage[] = [
@@ -461,7 +411,7 @@ export const PIPELINE_STAGES: PipelineStage[] = [
     step: "01",
     title: "Capture",
     description:
-      "Leads and job requests land straight in the CRM — auto-tagged, routed, and never lost between tools.",
+      "Leads and job requests land straight in the CRM, auto-tagged, routed, and never lost between tools.",
   },
   {
     id: "nurture",
@@ -485,7 +435,7 @@ export const PIPELINE_STAGES: PipelineStage[] = [
     step: "04",
     title: "Report",
     description:
-      "White-labeled dashboards update automatically — clients see the ROI the moment they log in.",
+      "White-labeled dashboards update automatically, clients see the ROI the moment they log in.",
   },
   {
     id: "retain",
@@ -506,7 +456,7 @@ export type DeliveryStep = {
 };
 
 /**
- * How our team gets each feature live for you — the human, done-for-you side.
+ * How our team gets each feature live for you: the human, done-for-you side.
  * Rendered as the "how we deliver" section on /features.
  */
 export const DELIVERY_STEPS: DeliveryStep[] = [
@@ -516,7 +466,7 @@ export const DELIVERY_STEPS: DeliveryStep[] = [
     step: "01",
     title: "We map your business",
     description:
-      "A short call to understand how you sell, deliver, and get paid today — no assumptions about your industry, niche, or crew size. We listen for your actual workflow, not fit you into ours.",
+      "A short call to understand how you sell, deliver, and get paid today, with no assumptions about your industry, niche, or crew size. We listen for your actual workflow, not fit you into ours.",
   },
   {
     id: "build",
@@ -524,7 +474,7 @@ export const DELIVERY_STEPS: DeliveryStep[] = [
     step: "02",
     title: "We build the systems",
     description:
-      "Your CRM, automations, and reporting get built and configured around that exact workflow — pipelines named the way you think, fields that match your intake, dashboards showing the numbers you care about.",
+      "Your CRM, automations, and reporting get built and configured around that exact workflow: pipelines named the way you think, fields that match your intake, dashboards showing the numbers you care about.",
   },
   {
     id: "run",
@@ -532,6 +482,6 @@ export const DELIVERY_STEPS: DeliveryStep[] = [
     step: "03",
     title: "We keep it running",
     description:
-      "OpsROI stays on as your ops partner after launch — maintaining, adjusting, and supporting as you grow, add crew, add clients, or add a new service line. Not a one-time setup you're left to maintain alone.",
+      "OpsROI stays on as your ops partner after launch, maintaining, adjusting, and supporting as you grow, add crew, add clients, or add a new service line. Not a one-time setup you're left to maintain alone.",
   },
 ];

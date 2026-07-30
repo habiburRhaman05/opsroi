@@ -34,7 +34,7 @@ type Tab = {
   visual: string;
 };
 
-/* Stage-by-stage content — sourced from opsroi-full-content-package (2).md
+/* Stage-by-stage content, sourced from opsroi-full-content-package (2).md
    · "Inside the Platform" + Features breakdown. Edit copy here. */
 const TABS: Tab[] = [
   {
@@ -253,7 +253,7 @@ export default function FeatureTabs() {
                       </Link>
                     </div>
 
-                    {/* Visual side — framed premium panel */}
+                    {/* Visual side: framed premium panel */}
                     <div
                       className={`relative overflow-hidden rounded-2xl border border-line bg-gradient-to-br ${accent.frame} to-mist p-4 shadow-[0_24px_60px_-30px_rgba(29,78,95,0.45)] sm:p-6`}
                     >

@@ -12,7 +12,7 @@ export default function CookiePolicyPage() {
       <main className="pt-24 md:pt-32 pb-16 md:pb-24 px-margin-mobile md:px-margin-desktop bg-surface-container-low min-h-screen">
         <div className="max-w-4xl mx-auto bg-white rounded-[40px] border border-outline-variant/40 shadow-ambient-shadow overflow-hidden">
           <div className="bg-surface-container-lowest px-8 py-8 md:px-14 md:py-10 text-center border-b border-outline-variant/40">
-            <div className="text-label-caps font-label-caps uppercase text-[#7fc42a] font-bold mb-4 tracking-widest">
+            <div className="text-label-caps font-label-caps uppercase text-green font-bold mb-4 tracking-widest">
               Legal
             </div>
             <h1 className="font-display-lg-mobile md:font-display-lg text-primary text-4xl md:text-5xl">
