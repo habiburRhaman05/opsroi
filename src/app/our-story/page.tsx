@@ -489,7 +489,7 @@ export default function OurStoryPage() {
                   />
                   <div className="relative h-full rounded-2xl overflow-hidden aspect-4/5 lg:aspect-auto lg:min-h-96 bg-navy shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-green/30">
                     <img
-                      src="/founder.webp"
+                      src="/chris.jpg"
                       alt="Chris Ruvalcaba, Founder of OpsROI"
                       className="w-full h-full object-cover"
                     />
