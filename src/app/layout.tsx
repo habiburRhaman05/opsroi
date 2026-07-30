@@ -21,17 +21,42 @@ const barlowCondensed = Barlow_Condensed({
   display: "swap",
 });
 
+const SITE_URL = "https://opsroi.com";
+const SITE_TITLE = "OpsROI - Own the Software Your Industry Runs On";
+const SITE_DESCRIPTION =
+  "OpsROI partners with proven contractor founders to build the operating system for their industry. You bring the expertise. We build the platform. You own the market.";
+
 export const metadata: Metadata = {
-  title: "OpsROI - Own the Software Your Industry Runs On",
-  description:
-    "OpsROI partners with proven contractor founders to build the operating system for their industry. You bring the expertise. We build the platform. You own the market.",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
   icons: {
     icon: [
-      { type: "image/svg+xml", url: "/opsroi-icon.svg" },
       { type: "image/png", sizes: "32x32", url: "/favicon-32.png" },
       { type: "image/png", sizes: "512x512", url: "/favicon-512.png" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: "/favicon-512.png",
+  },
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    siteName: "OpsROI",
+    images: [
+      {
+        url: "/favicon-512.png",
+        width: 512,
+        height: 512,
+        alt: "OpsROI",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: ["/favicon-512.png"],
   },
 };
 
