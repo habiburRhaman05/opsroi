@@ -48,19 +48,12 @@ export default function Hero() {
               </span>
 
               <h1
-                className="fade-in-up mt-7 text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white font-display"
+                className="hero-title fade-in-up mt-7 text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white font-display"
                 style={{ animationDelay: '0.08s' }}
               >
                 You built the business.
                 <br />
-                Now own the{' '}
-                <span className="relative inline-block text-green">
-                  software
-                  <span
-                    aria-hidden
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gold/70"
-                  />
-                </span>
+                Now own the <span className="text-green">software</span>
                 <br />
                 your industry runs on.
               </h1>

@@ -31,7 +31,7 @@ The OpsROI Network</SectionLabel>
           </h2>
           
           <p className="text-lg text-ink leading-relaxed">
-            OpsROI is the engine underneath a growing network of niche, trade-specific CRMs &mdash; each one a purpose-built version of the platform for a single industry, built and owned by an operator who actually works in that trade. <span className="font-bold text-navy">TreeROI</span> is live today. The rest of the board is open.
+            OpsROI is the engine underneath a growing network of niche, trade-specific CRMs, each one a purpose-built version of the platform for a single industry, built and owned by an operator who actually works in that trade. <span className="font-bold text-navy">TreeROI</span> is live today. The rest of the board is open.
           </p>
         </div>
 
