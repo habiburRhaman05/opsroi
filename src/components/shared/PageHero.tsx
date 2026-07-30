@@ -62,7 +62,7 @@ export function PageHero({
           </div>
         </ScrollReveal>
         <ScrollReveal>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight leading-[1.05] font-display uppercase">
+          <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight leading-[1.05] font-display uppercase">
             {title}
           </h1>
         </ScrollReveal>

@@ -17,8 +17,8 @@
   --color-green-deep: #5FA02E;
   --color-gold: #ECB84D;
   --color-mist: #F3F6F5;
-  --color-ink: #3E4B4F;
-  --color-ink-soft: #6C7A7D;
+  --color-ink: #1E2A2D;
+  --color-ink-soft: #48555A;
   --color-line: #E4EAE8;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -211,10 +211,10 @@
 
   /* ============================================================
      Site-wide classy animation set
-     1. .scroll-reveal — fade + rise as ScrollReveal wrappers enter
-     2. .hover-lift-md — magnetic lift + drop-shadow for cards/CTAs
-     3. .animate-underline — green underline slides in on hover for links
-     4. .animate-icon-bump — icon nudges up on parent .group hover
+     1. .scroll-reveal:fade + rise as ScrollReveal wrappers enter
+     2. .hover-lift-md:magnetic lift + drop-shadow for cards/CTAs
+     3. .animate-underline:green underline slides in on hover for links
+     4. .animate-icon-bump:icon nudges up on parent .group hover
      ============================================================ */
   .scroll-reveal {
     opacity: 0;
@@ -241,7 +241,7 @@
     box-shadow: 0 24px 50px -20px rgba(15, 43, 53, 0.22);
   }
 
-  /* Smooth card hover — apply this class to any card that has hover:-translate-y-* / hover:shadow-* / hover:border-*.
+  /* Smooth card hover:apply this class to any card that has hover:-translate-y-* / hover:shadow-* / hover:border-*.
      Uses a quart-out cubic-bezier and slightly longer duration so lift, shadow and border
      changes glide together instead of snapping. GPU-accelerated with will-change. */
   .card-smooth {

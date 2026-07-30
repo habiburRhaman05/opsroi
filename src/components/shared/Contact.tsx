@@ -108,7 +108,7 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center justify-center gap-3 mb-6 reveal-up is-revealed">
-            <SectionLabel className="justify-center">Contact With Us</SectionLabel>
+            <SectionLabel className="justify-center">Contact Us</SectionLabel>
           </div>
           <h2 className="text-4xl sm:text-4xl font-bold uppercase tracking-tight font-display text-navy">
             Let&apos;s Talk About Your Business.

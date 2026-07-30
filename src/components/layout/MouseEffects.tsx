@@ -27,7 +27,7 @@ export default function MouseEffects() {
     const cleanups: Array<() => void> = [];
 
     // ─────────────────────────────────────────────────────
-    // 1. Cursor Glow — green radial spotlight tracks cursor
+    // 1. Cursor Glow:green radial spotlight tracks cursor
     //    Adds a positioned overlay as first child (behind content).
     //    Parent gets position:relative if not already positioned.
     // ─────────────────────────────────────────────────────
@@ -81,7 +81,7 @@ export default function MouseEffects() {
     });
 
     // ─────────────────────────────────────────────────────
-    // 2. Magnetic — element translates a fraction of the
+    // 2. Magnetic:element translates a fraction of the
     //    cursor's offset from its center on hover.
     //    Strength via data-magnetic-strength (default 0.25).
     // ─────────────────────────────────────────────────────
@@ -124,7 +124,7 @@ export default function MouseEffects() {
     });
 
     // ─────────────────────────────────────────────────────
-    // 3. 3D Tilt — element rotates in 3D toward the cursor.
+    // 3. 3D Tilt:element rotates in 3D toward the cursor.
     //    Max tilt via data-tilt-amount (default 6 degrees).
     //    Note: overrides any CSS hover: translate on the element.
     // ─────────────────────────────────────────────────────
