@@ -21,6 +21,7 @@ const legalLinks = [
   { label: "Terms & Conditions", href: "/terms-and-conditions" },
   { label: "Cookie Policy", href: "/cookie-policy" },
   { label: "Refund Policy", href: "/refund-policy" },
+  { label: "EULA", href: "/eula" },
 ];
 
 const socialLinks = [
