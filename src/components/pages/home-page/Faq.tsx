@@ -95,7 +95,7 @@ export default function Faq() {
                     A 20-minute call to answer everything and see if your industry seat is still open.
                   </p>
                   <Link
-                    href="/book"
+                    href="/book-a-demo"
                     className="group inline-flex items-center gap-2 rounded-xl bg-green px-5 py-3 text-[13px] font-bold uppercase tracking-[0.14em] text-navy-deep hover:bg-white transition-all font-display shadow-[0_0_20px_rgba(125,194,67,0.4)] hover:shadow-[0_0_30px_rgba(125,194,67,0.6)] hover:-translate-y-0.5"
                   >
                     Let&apos;s Talk

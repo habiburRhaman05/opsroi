@@ -26,8 +26,8 @@ export default function FeaturesPage() {
             </>
           }
           description="From the first lead to the last invoice, here's everything inside OpsROI, for agencies and trades alike. Tap any feature to see exactly how it works."
-          primaryCta={{ label: "See It Live", href: "/book" }}
-          secondaryCta={{ label: "See Pricing", href: "/pricing" }}
+          primaryCta={{ label: "Book a Demo", href: "/book-a-demo" }}
+          secondaryCta={{ label: "Why OpsROI", href: "/why-opsroi" }}
         />
 
         {/* All Features - one grid */}
@@ -146,7 +146,7 @@ export default function FeaturesPage() {
                   set up for you - no niche requirements, no long contracts.
                 </p>
                 <div className="cta-actions">
-                  <a href="/book" className="btn btn-cta-premium">
+                  <a href="/book-a-demo" className="btn btn-cta-premium">
                     <span>Get Started</span>
                     <svg
                       width="20"

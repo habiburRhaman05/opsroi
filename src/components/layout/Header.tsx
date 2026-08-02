@@ -10,8 +10,8 @@ const NAV_LINKS = [
   { href: '/why-opsroi', label: 'Why OpsROI' },
   { href: '/features', label: 'Features' },
   { href: '/who-its-for', label: "Who It's For" },
-  { href: '/pricing', label: 'Pricing' },
   { href: '/our-story', label: 'Our Story' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export default function Header() {
@@ -111,10 +111,10 @@ export default function Header() {
 
           <div className="flex items-center gap-3">
             <Link
-              href="/contact"
+              href="/book-a-demo"
               className="group hidden lg:inline-flex items-center justify-center gap-2 rounded-full bg-green px-5 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-navy-deep transition-colors duration-200 hover:bg-green-deep hover:text-white font-display"
             >
-              Contact Us
+              Book a Demo
               <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
             <button
@@ -172,11 +172,11 @@ export default function Header() {
 
         <div className="p-6 border-t border-line bg-mist pb-8">
           <Link
-            href="/contact"
+            href="/book-a-demo"
             onClick={() => setIsNavOpen(false)}
             className="w-full flex items-center justify-center bg-green hover:bg-green-deep text-white font-bold text-lg tracking-widest uppercase rounded-xl py-4 transition-colors shadow-md gap-3 font-display"
           >
-            <span>Contact Us</span>
+            <span>Book a Demo</span>
             <ArrowRight className="h-5 w-5" />
           </Link>
         </div>

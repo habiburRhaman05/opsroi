@@ -14,7 +14,7 @@ export default function PricingPage() {
           </>
         }
         description="No niche upcharge, no per client tax on subaccounts. Pick the tier that matches your business size, agency or trade."
-        primaryCta={{ label: "Get A Quote", href: "/book" }}
+        primaryCta={{ label: "Get A Quote", href: "/book-a-demo" }}
       />
 
       <Pricing hideHeader={true} />

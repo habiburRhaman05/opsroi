@@ -11,7 +11,6 @@ import Integrations from '@/src/components/pages/home-page/Integrations';
 import Pricing from '@/src/components/shared/Pricing';
 import Cta from '@/src/components/pages/home-page/Cta';
 import Faq from '@/src/components/pages/home-page/Faq';
-import Contact from '@/src/components/shared/Contact';
 import Footer from '@/src/components/layout/Footer';
 import {Calculator} from '@/src/components/pages/home-page/Calculator';
 import HeroSection from '../components/pages/home-page/hero-banner';
@@ -39,7 +38,6 @@ export default function Home() {
         <Integrations />
         <Cta />
         <Faq />
-        <Contact />
       </main>
   
     </>

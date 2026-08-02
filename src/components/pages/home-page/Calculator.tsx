@@ -192,7 +192,7 @@ export function Calculator() {
           </ScrollReveal>
         </div>
 
-        <div className="grid lg:grid-cols-[1.35fr_1fr] gap-6 lg:gap-10 items-stretch">
+        <div className="grid lg:grid-cols-[1.35fr_1fr] gap-6 lg:gap-10 items-start">
           {/* LEFT: Tool grid */}
           <ScrollReveal>
             <div className="space-y-8">
@@ -243,47 +243,82 @@ export function Calculator() {
           </ScrollReveal>
 
           {/* RIGHT: Summary panel */}
-          <ScrollReveal className="lg:h-full">
-            <div className="lg:h-full flex flex-col rounded-2xl overflow-hidden bg-navy-deep text-white shadow-[0_30px_80px_-40px_rgba(15,43,53,0.6)]">
-              {/* Ambient glows */}
-              <div className="relative flex flex-col flex-1">
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-green/18 blur-3xl"
-                />
+          <ScrollReveal className="lg:sticky lg:top-24">
+            <div className="relative rounded-2xl overflow-hidden bg-navy-deep text-white shadow-[0_30px_80px_-40px_rgba(15,43,53,0.6)] ring-1 ring-white/8">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -top-24 -right-24 h-56 w-56 rounded-full bg-green/20 blur-3xl"
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -bottom-20 -left-20 h-48 w-48 rounded-full bg-green/10 blur-3xl"
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-x-0 top-0 h-0.5 bg-linear-to-r from-transparent via-green/60 to-transparent"
+              />
 
+              <div className="relative p-6 sm:p-7 space-y-6">
                 {/* Their spend */}
-                <div className="relative p-6 sm:p-7 border-b border-white/8">
-                  <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/60 font-display">
-                    <TrendingUp className="h-3 w-3 text-green" />
-                    Their Current Spend
+                <div>
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/60 font-display">
+                      <TrendingUp className="h-3 w-3 text-white/50" />
+                      Their Current Spend
+                    </div>
+                    {hasSelection && (
+                      <span className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] font-bold text-white/70 tabular-nums font-display">
+                        {count} {count === 1 ? "tool" : "tools"}
+                      </span>
+                    )}
                   </div>
                   <div
                     key={`total-${pulse}`}
-                    className="mt-3 flex items-baseline gap-2 animate-[valuePop_0.4s_ease-out]"
+                    className="mt-2 flex items-baseline gap-2 animate-[valuePop_0.4s_ease-out]"
                   >
                     <span className="text-4xl sm:text-5xl font-bold text-white font-display tabular-nums leading-none">
                       {fmt(total)}
                     </span>
                     <span className="text-sm text-white/60 font-semibold">/mo</span>
                   </div>
-                  <div className="mt-1.5 text-[13px] text-white/60">
-                    {hasSelection ? (
-                      <>
-                        {count} {count === 1 ? "tool" : "tools"} selected ·{" "}
-                        <span className="text-white/80 font-semibold">
-                          {fmt(total * 12)}/yr
-                        </span>
-                      </>
-                    ) : (
-                      "Tap tools to add them up"
-                    )}
+                  <div className="mt-1 text-[12px] text-white/50 tabular-nums">
+                    {hasSelection ? `${fmt(total * 12)} per year` : "Tap tools to add them up"}
                   </div>
                 </div>
 
-                {/* Compare to OpsROI */}
-                <div className="p-6 sm:p-7 border-b border-white/8">
-                  <div className="flex items-center justify-between gap-3 mb-3">
+                {/* Visual bar comparison */}
+                {hasSelection && (
+                  <div className="space-y-2.5">
+                    <div>
+                      <div className="mb-1.5 flex items-center justify-between text-[11px] font-semibold text-white/70">
+                        <span className="uppercase tracking-wider text-[10px] font-bold text-white/50 font-display">Their Stack</span>
+                        <span className="tabular-nums">{fmt(total)}</span>
+                      </div>
+                      <div className="h-2 w-full overflow-hidden rounded-full bg-white/8">
+                        <div
+                          className="h-full rounded-full bg-white/40 transition-[width] duration-500 ease-out"
+                          style={{ width: `${Math.min(100, (total / Math.max(total, growth.price)) * 100)}%` }}
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="mb-1.5 flex items-center justify-between text-[11px] font-semibold">
+                        <span className="uppercase tracking-wider text-[10px] font-bold text-green font-display">OpsROI</span>
+                        <span className="tabular-nums text-white/80">{fmt(growth.price)}</span>
+                      </div>
+                      <div className="h-2 w-full overflow-hidden rounded-full bg-white/8">
+                        <div
+                          className="h-full rounded-full bg-linear-to-r from-green to-green-deep transition-[width] duration-500 ease-out shadow-[0_0_12px_rgba(125,194,67,0.5)]"
+                          style={{ width: `${Math.min(100, (growth.price / Math.max(total, growth.price)) * 100)}%` }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* OpsROI plan strip */}
+                <div className="rounded-xl border border-white/10 bg-white/3 p-4">
+                  <div className="flex items-center justify-between gap-3">
                     <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-green font-display">
                       OpsROI Growth Plan
                     </div>
@@ -291,26 +326,26 @@ export function Calculator() {
                       Starts Here
                     </span>
                   </div>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-3xl sm:text-4xl font-bold text-white font-display tabular-nums leading-none">
+                  <div className="mt-2 flex items-baseline gap-2">
+                    <span className="text-2xl sm:text-3xl font-bold text-white font-display tabular-nums leading-none">
                       {fmt(growth.price)}
                     </span>
                     <span className="text-sm text-white/60 font-semibold">/mo</span>
                   </div>
-                  <div className="mt-1.5 text-[12px] text-white/60 leading-snug">
+                  <p className="mt-1.5 text-[12px] text-white/60 leading-snug">
                     Marketing and lead gen, one platform. Pro and Elite scale with team size.
-                  </div>
+                  </p>
                 </div>
 
-                {/* Savings hero - anchored to bottom */}
-                <div className="relative p-6 sm:p-7 mt-auto">
-                  <div
-                    className={`relative rounded-xl border-2 p-5 transition-all duration-500 ${
-                      isSaving
-                        ? "border-green/50 bg-green/12 shadow-[0_20px_60px_-30px_rgba(125,194,67,0.5)]"
-                        : "border-white/10 bg-white/3"
-                    }`}
-                  >
+                {/* Savings hero */}
+                <div
+                  className={`relative rounded-xl border-2 p-5 transition-all duration-500 ${
+                    isSaving
+                      ? "border-green/50 bg-green/12 shadow-[0_20px_60px_-30px_rgba(125,194,67,0.5)]"
+                      : "border-white/10 bg-white/3"
+                  }`}
+                >
+                  <div className="flex items-center justify-between gap-3">
                     <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] font-display">
                       {isSaving ? (
                         <>
@@ -321,34 +356,39 @@ export function Calculator() {
                         <span className="text-white/50">Add Their Tools</span>
                       )}
                     </div>
-                    <div
-                      key={`savings-${pulse}`}
-                      className="mt-2 flex items-baseline gap-2 animate-[valuePop_0.4s_ease-out]"
-                    >
-                      <span
-                        className={`text-4xl sm:text-5xl font-bold font-display tabular-nums leading-none transition-colors duration-500 ${
-                          isSaving ? "text-white" : "text-white/70"
-                        }`}
-                      >
-                        {hasSelection
-                          ? isSaving
-                            ? fmt(diff)
-                            : fmt(Math.abs(diff))
-                          : "$0"}
+                    {isSaving && (
+                      <span className="rounded-full bg-green/20 border border-green/40 px-2.5 py-0.5 text-[10px] font-bold text-green tabular-nums font-display">
+                        {Math.round((diff / total) * 100)}% less
                       </span>
-                      {hasSelection && (
-                        <span className="text-sm text-white/60 font-semibold">
-                          /mo
-                        </span>
-                      )}
-                    </div>
-                    <div className="mt-2 text-[12px] text-white/70 leading-snug">
+                    )}
+                  </div>
+                  <div
+                    key={`savings-${pulse}`}
+                    className="mt-2 flex items-baseline gap-2 animate-[valuePop_0.4s_ease-out]"
+                  >
+                    <span
+                      className={`text-4xl sm:text-5xl font-bold font-display tabular-nums leading-none transition-colors duration-500 ${
+                        isSaving ? "text-white" : "text-white/70"
+                      }`}
+                    >
                       {hasSelection
                         ? isSaving
-                          ? `That's ${fmt(diff * 12)}/yr, plus one system instead of ten.`
-                          : "More per month, but everything is consolidated & managed."
-                        : "to see the savings."}
-                    </div>
+                          ? fmt(diff)
+                          : fmt(Math.abs(diff))
+                        : "$0"}
+                    </span>
+                    {hasSelection && (
+                      <span className="text-sm text-white/60 font-semibold">
+                        /mo
+                      </span>
+                    )}
+                  </div>
+                  <div className="mt-2 text-[12px] text-white/70 leading-snug">
+                    {hasSelection
+                      ? isSaving
+                        ? `That's ${fmt(diff * 12)}/yr, plus one system instead of ten.`
+                        : "More per month, but everything is consolidated & managed."
+                      : "to see the savings."}
                   </div>
                 </div>
               </div>
