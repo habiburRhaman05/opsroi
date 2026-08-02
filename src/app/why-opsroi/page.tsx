@@ -163,7 +163,7 @@ export default function WhyOpsroiPage() {
           </>
         }
         description="Lead gen software doesn't run your crew. Job software doesn't prove your ROI. Payroll software doesn't talk to either. OpsROI was built because that's insane, and because the person who built it was living it."
-        primaryCta={{ label: "See The Fit", href: "/book" }}
+        primaryCta={{ label: "See The Fit", href: "/book-a-demo" }}
         secondaryCta={{ label: "Explore The Platform", href: "/features" }}
       />
 

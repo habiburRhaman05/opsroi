@@ -12,8 +12,8 @@ export function WhoIsItForHero() {
         </>
       }
       description="OpsROI works with contractor businesses two different ways. Find the one that matches where you are."
-      primaryCta={{ label: "Check If You're A Fit", href: "/book" }}
-      secondaryCta={{ label: "See Pricing", href: "/pricing" }}
+      primaryCta={{ label: "Book a Demo", href: "/book-a-demo" }}
+      secondaryCta={{ label: "Explore Features", href: "/features" }}
     />
   );
 }

@@ -310,7 +310,7 @@ export default function OurStoryPage() {
           </>
         }
         description="Chris Ruvalcaba sold a week of tree work in 2008 anyway. Eight years later Monkeyman's was doing more than $5 million a year, running without him. The operating system he built to do it became OpsROI, opened up for founders in every trade."
-        primaryCta={{ label: "Talk To Us", href: "/book" }}
+        primaryCta={{ label: "Talk To Us", href: "/book-a-demo" }}
         secondaryCta={{ label: "See What We Do", href: "/features" }}
       />
 
@@ -555,7 +555,7 @@ export default function OurStoryPage() {
               </ScrollReveal>
               <ScrollReveal>
                 <Link
-                  href="/book"
+                  href="/book-a-demo"
                   data-magnetic
                   data-magnetic-strength="0.2"
                   className="group inline-flex items-center justify-center gap-2 rounded-xl bg-green px-6 py-3.5 text-sm font-bold uppercase tracking-widest text-navy-deep hover:bg-navy-deep hover:text-white card-smooth font-display shadow-[0_0_25px_rgba(125,194,67,0.4)] hover:shadow-[0_0_35px_rgba(125,194,67,0.6)]"

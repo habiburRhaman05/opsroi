@@ -6,7 +6,7 @@ const platformLinks = [
   { label: "Explore Features", href: "/features" },
   { label: "Why OpsROI", href: "/why-opsroi" },
   { label: "Who It's For", href: "/who-its-for" },
-  { label: "Pricing Plans", href: "/pricing" },
+  { label: "Book a Demo", href: "/book-a-demo" },
   { label: "Integrations", href: "/#integrations" },
 ];
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Mail, Phone, MapPin, Clock, ArrowRight } from "lucide-react";
 import { SectionLabel } from "../ui/SectionLabel";
 import FormField from "../ui/FormField";
@@ -16,10 +16,9 @@ import {
 import { toE164US } from "@/src/lib/validations/shared";
 
 export default function Contact() {
-  const [submittedName, setSubmittedName] = useState<string | null>(null);
+  const router = useRouter();
 
   const {
-    isSubmitted,
     isSubmitting,
     submitError,
     handleSubmit,
@@ -45,60 +44,9 @@ export default function Contact() {
       if (!res.ok) {
         throw new Error("We couldn't send your message. Please try again.");
       }
-      setSubmittedName(data.name);
+      router.push("/thank-you");
     },
   });
-
-  if (isSubmitted) {
-    return (
-      <section
-        id="contact"
-        className="py-24 sm:py-32 bg-white relative overflow-hidden"
-      >
-        <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
-          <div className="inline-flex items-center justify-center gap-3 mb-6">
-            <span className="w-8 h-px bg-green" />
-            <span className="text-green text-xs font-bold tracking-widest font-display uppercase">
-              Message Sent
-            </span>
-          </div>
-          <h2 className="text-4xl sm:text-5xl font-bold uppercase tracking-tight font-display text-navy">
-            Thank You{submittedName ? `, ${submittedName}` : ""}!
-          </h2>
-          <p className="mt-6 text-ink text-lg leading-relaxed mb-12">
-            We&apos;ve received your message and will get back to you within one
-            business day.
-          </p>
-
-          <div className="bg-white border border-line rounded-3xl p-8 sm:p-12 shadow-xl shadow-navy/5 max-w-xl mx-auto text-left relative overflow-hidden">
-            <div className="w-16 h-16 rounded-full bg-green/10 flex items-center justify-center text-green mb-6 mx-auto">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              >
-                <path d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold text-navy text-center mb-6">
-              We&apos;ll Be In Touch Shortly
-            </h3>
-            <button
-              type="button"
-              onClick={() => window.location.reload()}
-              className="w-full border-2 text-md border-line hover:border-navy text-navy font-bold rounded-xl py-3 transition-colors uppercase tracking-[0.14em] font-display"
-            >
-              Send Another Message
-            </button>
-          </div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section

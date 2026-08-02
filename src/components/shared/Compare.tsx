@@ -142,8 +142,8 @@ export default function Compare() {
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <Link href="/pricing" className="btn btn-primary" style={{ padding: '16px 36px', fontSize: '1.05rem' }}>
-              See Full Pricing &amp; Plans &rarr;
+            <Link href="/book-a-demo" className="btn btn-primary" style={{ padding: '16px 36px', fontSize: '1.05rem' }}>
+              Book a Demo &rarr;
             </Link>
           </div>
         </div>

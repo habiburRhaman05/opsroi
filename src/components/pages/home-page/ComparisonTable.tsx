@@ -336,7 +336,7 @@ export function ComparisonTable() {
 
               {/* CTA */}
               <Link
-                href="/book"
+                href="/book-a-demo"
                 className="group relative flex items-center justify-center gap-2 rounded-xl bg-green px-6 py-4 text-sm font-bold uppercase tracking-[0.14em] text-navy-deep hover:bg-white transition-all font-display shadow-[0_0_30px_rgba(125,194,67,0.5)] hover:shadow-[0_0_40px_rgba(125,194,67,0.7)] hover:-translate-y-0.5"
               >
                 Show Me My Savings
