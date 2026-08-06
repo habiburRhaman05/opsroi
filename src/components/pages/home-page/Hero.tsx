@@ -4,6 +4,8 @@ import { useState, useCallback, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Play, X, ArrowRight } from 'lucide-react';
 
+// Product tour asset: the poster is the first-frame still, shown while the
+// video loads and whenever it is paused before playback starts.
 const HERO_VIDEO_URL =
   'https://assets.cdn.filesafe.space/aKNqKgojBfecmcYEpyvu/media/6a744e8b888087201908606b.mp4';
 const HERO_VIDEO_POSTER =
