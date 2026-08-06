@@ -241,13 +241,10 @@ export default function Hero() {
               {/* Frame */}
               <div className="relative rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-2.5 shadow-[0_40px_120px_-20px_rgba(0,0,0,0.7)] backdrop-blur-sm">
                 {/* Top meta strip */}
-                <div className="flex items-center justify-between px-4 pt-1 pb-3">
+                <div className="flex items-center px-4 pt-1 pb-3">
                   <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/70 font-display">
                     <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-green" />
                     Product Tour
-                  </div>
-                  <div className="rounded-full border border-white/12 bg-navy-deep/60 px-2.5 py-0.5 text-[10px] font-bold text-white/80 font-display tracking-widest">
-                    2:14
                   </div>
                 </div>
 
