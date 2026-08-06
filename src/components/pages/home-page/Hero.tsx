@@ -1,22 +1,145 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { Play, X, ArrowRight } from 'lucide-react';
-import { useBodyLock } from '@/src/hooks/useBodyLock';
+
+const HERO_VIDEO_URL =
+  'https://assets.cdn.filesafe.space/aKNqKgojBfecmcYEpyvu/media/6a744e8b888087201908606b.mp4';
+const HERO_VIDEO_POSTER =
+  'https://opsroi-delta.vercel.app/_next/image?url=https%3A%2F%2Fopsroi.com%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fassets.cdn.filesafe.space%252FaKNqKgojBfecmcYEpyvu%252Fmedia%252F6a4b39548a69aa2441a39fd2.png%26w%3D640%26q%3D75&w=384&q=75';
 
 export default function Hero() {
-  const [modalOpen, setModalOpen] = useState(false);
-  useBodyLock(modalOpen);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const slotRef = useRef<HTMLDivElement>(null);
+  // Playback state carried across the inline <-> mini-player move, which
+  // re-mounts the <video> element and would otherwise restart it.
+  const resumeRef = useRef<{ time: number; paused: boolean } | null>(null);
+  const [playing, setPlaying] = useState(false);
+  const [docked, setDocked] = useState(false);
 
-  const closeModal = useCallback(() => setModalOpen(false), []);
+  // Play inline, in place of the ambient preview loop: restart with sound.
+  const playVideo = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    setPlaying(true);
+    video.loop = false;
+    video.muted = false;
+    video.currentTime = 0;
+    void video.play();
+  }, []);
+
+  const stopVideo = useCallback(() => {
+    const video = videoRef.current;
+    resumeRef.current = null;
+    setPlaying(false);
+    setDocked(false);
+    if (!video) return;
+    video.muted = true;
+    video.loop = true;
+    video.currentTime = 0;
+    void video.play();
+  }, []);
+
+  // Dock to a corner mini player once the hero player scrolls out of view,
+  // and pop back into the section on the way up.
   useEffect(() => {
-    if (!modalOpen) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') closeModal();
+    if (!playing) {
+      setDocked(false);
+      return;
+    }
+    const slot = slotRef.current;
+    if (!slot) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const video = videoRef.current;
+        // Leave a paused video where it is.
+        if (!entry.isIntersecting && video?.paused) return;
+        if (video) {
+          resumeRef.current = { time: video.currentTime, paused: video.paused };
+        }
+        setDocked(!entry.isIntersecting);
+      },
+      { threshold: 0.35 },
+    );
+    observer.observe(slot);
+    return () => observer.disconnect();
+  }, [playing]);
+
+  // Restore position/playback after the element is re-parented.
+  useEffect(() => {
+    const video = videoRef.current;
+    const resume = resumeRef.current;
+    if (!video || !resume) return;
+
+    const apply = () => {
+      video.currentTime = resume.time;
+      if (!resume.paused) void video.play();
     };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [modalOpen, closeModal]);
+    if (video.readyState >= 1) apply();
+    else video.addEventListener('loadedmetadata', apply, { once: true });
+    return () => video.removeEventListener('loadedmetadata', apply);
+  }, [docked]);
+
+  const renderPlayer = (mini: boolean) => (
+    <div className={mini ? 'relative aspect-[16/10] w-full' : 'absolute inset-0'}>
+      <video
+        ref={videoRef}
+        src={HERO_VIDEO_URL}
+        poster={HERO_VIDEO_POSTER}
+        autoPlay
+        muted={!playing}
+        loop={!playing}
+        playsInline
+        preload="metadata"
+        controls={playing}
+        onEnded={stopVideo}
+        aria-label="OpsROI product tour"
+        className="h-full w-full object-cover"
+      />
+
+      {/* Overlay: only while the ambient loop is showing */}
+      {!playing && (
+        <button
+          type="button"
+          onClick={playVideo}
+          aria-label="Play product demo"
+          className="absolute inset-0 block w-full cursor-pointer"
+        >
+          {/* Contrast wash */}
+          <span className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-navy-deep/10 to-transparent" />
+
+          {/* Play button */}
+          <span className="absolute inset-0 flex items-center justify-center">
+            <span className="relative flex h-20 w-20 items-center justify-center">
+              <span
+                aria-hidden
+                className="absolute inset-0 rounded-full border border-white/40 transition-transform duration-500 group-hover:scale-110"
+              />
+              <span
+                aria-hidden
+                className="absolute inset-2 rounded-full border border-white/25"
+              />
+              <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-white text-navy-deep shadow-2xl transition-all duration-300 group-hover:bg-green group-hover:text-navy-deep group-hover:scale-105">
+                <Play className="h-5 w-5 translate-x-0.5" fill="currentColor" />
+              </span>
+            </span>
+          </span>
+
+          {/* Caption bar */}
+          <span className="absolute inset-x-4 bottom-4 flex items-center justify-between rounded-xl border border-white/10 bg-navy-deep/70 px-4 py-2.5 backdrop-blur-md">
+            <span className="text-xs font-semibold text-white/90 font-display uppercase tracking-[0.14em]">
+              See OpsROI in Action
+            </span>
+            <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-green font-display group-hover:translate-x-0.5 transition-transform">
+              Watch &rarr;
+            </span>
+          </span>
+        </button>
+      )}
+    </div>
+  );
 
   return (
     <>
@@ -126,88 +249,53 @@ export default function Hero() {
                   </div>
                 </div>
 
-                <button
-                  type="button"
-                  onClick={() => setModalOpen(true)}
-                  className="group relative block w-full overflow-hidden rounded-2xl bg-navy-deep transition-transform duration-500 hover:-translate-y-0.5"
-                  aria-label="Play product demo"
+                {/* Slot: holds the layout even while the video is docked */}
+                <div
+                  ref={slotRef}
+                  className="group relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-navy-deep"
                 >
-                  <div className="relative aspect-[16/10] w-full">
-                    <img
-                      src="https://opsroi-delta.vercel.app/_next/image?url=https%3A%2F%2Fopsroi.com%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fassets.cdn.filesafe.space%252FaKNqKgojBfecmcYEpyvu%252Fmedia%252F6a4b39548a69aa2441a39fd2.png%26w%3D640%26q%3D75&w=384&q=75"
-                      alt="OpsROI product dashboard preview"
-                      className="h-full w-full object-cover"
-                    />
-
-                    {/* Contrast wash */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-navy-deep/10 to-transparent" />
-
-                    {/* Play button */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="relative flex h-20 w-20 items-center justify-center">
-                        <span
-                          aria-hidden
-                          className="absolute inset-0 rounded-full border border-white/40 transition-transform duration-500 group-hover:scale-110"
-                        />
-                        <span
-                          aria-hidden
-                          className="absolute inset-2 rounded-full border border-white/25"
-                        />
-                        <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-white text-navy-deep shadow-2xl transition-all duration-300 group-hover:bg-green group-hover:text-navy-deep group-hover:scale-105">
-                          <Play className="h-5 w-5 translate-x-0.5" fill="currentColor" />
-                        </span>
+                  {docked ? (
+                    <div className="flex h-full w-full items-center justify-center px-6 text-center">
+                      <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/45 font-display">
+                        Playing in mini player
                       </span>
                     </div>
-
-                    {/* Caption bar */}
-                    <div className="absolute inset-x-4 bottom-4 flex items-center justify-between rounded-xl border border-white/10 bg-navy-deep/70 px-4 py-2.5 backdrop-blur-md">
-                      <span className="text-xs font-semibold text-white/90 font-display uppercase tracking-[0.14em]">
-                        See OpsROI in Action
-                      </span>
-                      <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-green font-display group-hover:translate-x-0.5 transition-transform">
-                        Watch &rarr;
-                      </span>
-                    </div>
-                  </div>
-                </button>
+                  ) : (
+                    renderPlayer(false)
+                  )}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Video modal */}
-      {modalOpen && (
-        <div
-          className="fixed inset-0 z-[300] flex items-center justify-center p-4 sm:p-8"
-          style={{ background: 'rgba(8, 21, 39, 0.86)', backdropFilter: 'blur(6px)' }}
-          onClick={closeModal}
-        >
-          <div className="relative w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
-            <div className="mb-3 flex justify-end">
-              <button
-                onClick={closeModal}
-                aria-label="Close modal"
-                className="group inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/10"
+      {/* Corner mini player — portalled out so the frame's backdrop-blur
+          doesn't trap the fixed positioning */}
+      {docked &&
+        createPortal(
+          <div className="pip-dock-in fixed bottom-5 right-5 z-[200] w-[240px] overflow-hidden rounded-xl border border-white/15 bg-navy-deep shadow-[0_24px_60px_rgba(0,0,0,0.6)] sm:w-[320px] lg:w-[360px]">
+            <div className="flex items-center justify-between gap-3 px-3 py-2">
+              <a
+                href="#home"
+                className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/70 font-display transition-colors hover:text-white"
               >
-                <X className="h-4 w-4 transition-transform duration-200 group-hover:rotate-90" />
-                Close
+                <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-green" />
+                Product Tour
+              </a>
+              <button
+                type="button"
+                onClick={stopVideo}
+                aria-label="Close mini player"
+                className="rounded-full p-1 text-white/60 transition-colors hover:bg-white/10 hover:text-white"
+              >
+                <X className="h-4 w-4" />
               </button>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-white/10 shadow-[0_32px_80px_rgba(0,0,0,0.5)]">
-              <div className="relative aspect-video w-full bg-black">
-                <iframe
-                  src=""
-                  title="OpsROI Demo Video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="h-full w-full border-0"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+            {renderPlayer(true)}
+          </div>,
+          document.body,
+        )}
     </>
   );
 }
